@@ -1,5 +1,5 @@
 ---
-title: GirnarSoft Pvt. Ltd. 
+title: GirnarSoft
 body_class: work
 excerpt: I worked as a content developer for company's website carbay, which is an international automobile portal (similar to cardekho)
 year: 2015 - 2016
