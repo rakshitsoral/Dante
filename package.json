@@ -1,7 +1,7 @@
 {
-	"name": "tedgoas",
+	"name": "rakshitsoral",
 	"version": "1.0.0",
-	"description": "Ted Goas is a reliable product designer and front-end developer working on websites, applications, and HTML emails.",
+	"description": "Rakshit is a reliable Digital Marketer, blogger, and a hobbyist developer playing around with HTML, CSS, wordpress and JAMstack.",
 	"scripts": {
 		"clean": "rimraf dist",
 		"eleventy:serve": "cross-env NODE_ENV=development eleventy --serve",
