@@ -27,6 +27,7 @@
 	"homepage": "https://github.com/TedGoas/Dante#readme",
 	"devDependencies": {
 		"@11ty/eleventy": "^0.12.1",
+		"@11ty/eleventy-navigation": "^0.3.2",
 		"@tailwindcss/typography": "^0.3.1",
 		"cross-env": "^7.0.3",
 		"html-minifier": "^4.0.0",

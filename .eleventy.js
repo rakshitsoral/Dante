@@ -23,6 +23,12 @@ module.exports = (config) => {
   config.addCollection('work', require('./lib/collections/work'));
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
 
+  const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+};
+
   return {
     dir: {
       input: 'src',
