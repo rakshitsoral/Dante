@@ -3,6 +3,7 @@ title: Click Depth - Why and How it matters for a Website’s pagination and SEO
 body_class: blog
 featured_image: lumberg.jpg
 description: The first blog post in the new site.
+
 ---
 
 Alot has been written on on-page SEO factors and how they affect search engine rankings.
