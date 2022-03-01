@@ -2,7 +2,7 @@ module.exports = {
   layout: 'post',
   title: 'Untitled',
   eleventyComputed: {
-    permalink: (data) => `blog/${data.page.fileSlug}/index.html`,
+    permalink: (data) => `${data.page.fileSlug}/index.html`,
     featured_image: (data) => {
       if (data.featured_image) {
         if (data.featured_image.search(/^https?:\/\//) !== -1) {
