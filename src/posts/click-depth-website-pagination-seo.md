@@ -1,7 +1,7 @@
 ---
 title: Click Depth - Why and How it matters for a Website’s pagination and SEO
 body_class: blog
-featured_image: lumberg.jpg
+featured_image: Click Depth SEO.png
 description: The first blog post in the new site.
 
 ---
@@ -16,7 +16,8 @@ In this article, we will understand the concept of Click Depth in SEO and how it
 
 Let’s dive in!
 
-What is Click Depth and How it helps in SEO?
+## What is Click Depth and How it helps in SEO?
+
 The term ‘Click Depth” describes the number of clicks needed from the homepage of your website to navigate to the other page.
 
 For instance, the page clicked from your homepage has a click-depth of one.
@@ -25,12 +26,14 @@ In Google eyes, a website homepage is considered as a cornerstone material where
 
 To make you understand how exactly does the click depth of a home page affect search rankings, let’s take an example of a 300-page website.
 
-The Anatomy of a 300-page Website and its SEO performance
+## The Anatomy of a 300-page Website and its SEO performance
+
 Imagine having a site with pagination from 1……300. For the purpose of this example, let’s assume they are blog posts with unique content. Here page number 1 is the Home page of the website and 300 is the last page of the website.
 
 Now assume that the site consists of pagination where these pages are connected to a simple “next page” link at the bottom of each blog post. (See image attached below for better understanding)
 
-Previous next pagination scheme
+![Previous next pagination scheme] ("src/assets/img/Previous next pagination scheme.png" "a title")
+
 
 From a human point of view, the pagination scheme is simple: you click the “next page” link and it takes you to the blog post number 2. You click on the “next page” one more time, it takes you to the number 3. To visit each and every page (say 300 times), you need to keep clicking on “next page” until you reach the page you want to visit. This looks like a holy grail of website pagination. Isn’t it?
 

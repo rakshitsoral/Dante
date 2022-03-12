@@ -14,7 +14,6 @@
 		"watch": "run-s clean postcss eleventy:watch",
 		"build": "run-s clean postcss eleventy:build",
 		"debug": "DEBUG=Eleventy* npm run build"
-		
 	},
 	"repository": {
 		"type": "git",
@@ -43,6 +42,7 @@
 	"dependencies": {
 		"@11tyrocks/eleventy-plugin-social-images": "^0.4.1",
 		"autoprefixer": "^10.2.5",
+		"netlify-cms-app": "^2.15.68",
 		"postcss-import": "^14.0.1",
 		"postcss-nested": "^5.0.5",
 		"rough-notation": "^0.5.1"
