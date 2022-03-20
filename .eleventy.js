@@ -22,7 +22,7 @@ module.exports = (config) => {
   config.addCollection('posts', require('./lib/collections/posts'));
   config.addCollection('work', require('./lib/collections/work'));
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
-  config.addPassthroughCopy("admin");
+  config.addPassthroughCopy("src/admin");
 
 
   const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
