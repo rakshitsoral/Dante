@@ -32,14 +32,17 @@ Imagine having a site with pagination from 1……300. For the purpose of this e
 
 Now assume that the site consists of pagination where these pages are connected to a simple “next page” link at the bottom of each blog post. (See image attached below for better understanding)
 
-![Previous next pagination scheme] ("src/assets/img/Previous next pagination scheme.png" "a title")
-
+<figure>
+    <img src="/assets/img/Previous next pagination scheme.png" alt="NY.gov redesign." width="750" height="300">
+</figure>
 
 From a human point of view, the pagination scheme is simple: you click the “next page” link and it takes you to the blog post number 2. You click on the “next page” one more time, it takes you to the number 3. To visit each and every page (say 300 times), you need to keep clicking on “next page” until you reach the page you want to visit. This looks like a holy grail of website pagination. Isn’t it?
 
 From the crawler’s point of view, however, the site looks like this:
 
-300-page website pagination
+<figure>
+    <img src="/assets/img/300 Pagination.jpg" alt="NY.gov redesign." width="750" height="300">
+</figure>
 
 The image above illustrates the visual representation of a discovery path that a search engine crawler has to follow to crawl the whole 300-page website. The tail shown in the diagram is a “tunnel” which represents a long connected sequence of pages that the crawler has to crawl at a time. Note that, for each page, the “next page” link works like navigation to the consecutive page. For a user, it will take 299 clicks to go to the last page of the website. Google sees this as a click depth of 299 clicks, which is very bad for SEO since it offers a poor user experience for your website.
 
@@ -47,9 +50,10 @@ As per Google, the optimal click depth of the home page should not be greater th
 
 Here’s what Google’s John Muller has to say about the importance of Click Depth in SEO,
 
-“What does matter for us ... is how easy it is to actually find the content. So especially if your homepage is generally the strongest page on your website, and from the homepage, it takes multiple clicks to actually get to one of these stores, then that makes it a lot harder for us to understand that these stores are actually pretty important."
+>“What does matter for us ... is how easy it is to actually find the content. So especially if your homepage is generally the strongest page on your website, and from the homepage, it takes multiple clicks to actually get to one of these stores, then that makes it a lot harder for us to understand that these stores are actually pretty important."
 
-“On the other hand, if it’s one click from the home page to one of these stores then that tells us that these stores are probably pretty relevant, and that probably we should be giving them a little bit of weight in the search results as well. So it’s more a matter of how many links you have to click through to actually get to that content rather than what the URL structure itself looks like.”
+>“On the other hand, if it’s one click from the home page to one of these stores then that tells us that these stores are probably pretty relevant, and that probably we should be giving them a little bit of weight in the search results as well. So it’s more a matter of how many links you have to click through to actually get to that content rather than what the URL structure itself looks like.”
+
 In essence: If a page needs more than 3 clicks to be reached, it’s performance will be considered as poorly to search engines. Hence, the pages that are deeper in your website silo’s will have issues to crawl as compared to the page of click depth one or two.
 
 If the stats are to be believed, deep pages have a lower page rank because search engines are less likely to find them. Hence, crawling issues will be there. These pages are less likely to perform and rank as compared to the pages that are easily found from the home page.
@@ -63,20 +67,26 @@ Even worse, if any of the links among “next” and “previous” returns an e
 Website visitors won’t click up to the 300th page or even lesser than that. That’s a bad user experience.
 So, how do we improve the click depth of a 300-page website?
 
-Enter the Midpoint link pagination scheme
+## Enter the Midpoint link pagination scheme
+
 The midpoint link pagination scheme is best for sites having a large number of pages. Here, pagination for the homepage looks like this:
 
-simplest mid point pagination
+<figure>
+    <img src="/assets/img/simplest mid point pagination.jpg" alt="NY.gov redesign." width="750" height="300">
+</figure>
 
 In the above image, 201 is the midpoint of the pagination and it lowers down the click depth from 300 to only a few clicks. What’s more, this scheme makes it possible for a crawler to navigate from any page to any other page in just a few steps.
 
 Here’s the crawl chart for the Midpoint pagination strategy:
 
-crawl chart for midpoint pagination
+<figure>
+    <img src="/assets/img/crawl chart for midpoint pagination1.jpg" alt="Crawl chart for midpoint pagination" width="750" height="300">
+</figure>
 
 Notice how easily your user will be able to go to the last page of your website from page no. 201. This leads us to an incredible level of crawlability improvement as compared to the previous “next” and “previous” pagination scheme.
 
-What is the relation between Click Depth and Page Rank?
+## What is the relation between Click Depth and Page Rank?
+
 If a website (or Homepage) has a poor Click Depth then it can adversely affect search engine rankings.
 
 The reason is simple: Google will not crawl the pages that are linked far away from the homepage. As a result, these pages won’t make their way to index. This will impact the rankings as there is little to no traffic on the pages.
@@ -89,12 +99,15 @@ The answer to this question lies in the internal linking graph optimization sche
 
 Kevin Indig, VP SEO & content at G2.com, has written a really awesome article on the internal linking graph optimization scheme of a website that has 1000+ pages. Kevin’s article illustrates a TIPR model that dives deep in a robin-hood fashion to improve the page rank of poor pages of a website by linking them internally from stronger pages.
 
-What are some strategies to improve the Click Depth of your website?
+## What are some strategies to improve the Click Depth of your website?
+
 To improve the click depth of a website, all you need to do is to make all your pages accessible within three to four clicks from the homepage.
 
 For starters, it can be done by visualizing your website as a tree graph to understand the overall structure of the website. (See the image attached below for reference)
 
-Tree graph of a big website
+<figure>
+    <img src="/assets/img/Tree graph of a big website.png" alt="Tree graph of a big website" width="750" height="300">
+</figure>
 
 Notice how efficient it becomes to understand the website structure if we visualize the tree graph and put it on a paper. In large websites, you can improve the Click Depth by internally linking the poorly performed pages to the useful pages.
 
