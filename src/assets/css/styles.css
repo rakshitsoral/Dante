@@ -25,6 +25,8 @@
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif
 }
 
+ #share-buttons img { width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline; }
+
 .resp-sharing-button__icon svg {
   width: 1em;
   height: 1em;
