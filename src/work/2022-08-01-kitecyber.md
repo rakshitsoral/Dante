@@ -46,16 +46,30 @@ year: Oct 2024 - present
   <section class="results p-8 rounded-lg">
     <h2 class="text-3xl font-semibold mb-4">The Results</h2>
     <p class="font-semibold mb-6">The Impact of My Work</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
-      <div>
-        <span class="text-5xl font-bold">2X</span>
-        <p>Opportunities</p>
-      </div>
-      <div>
-        <span class="text-5xl font-bold">300% Increase in</span>
-        <p>Traffic</p>
-      </div>
-    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; text-align: center; gap: 20px;">
+
+  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+260%</h3>
+    <p style="margin: 5px 0 0;">Increase in Marketing Qualified Leads</p>
+  </div>
+
+  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+89%</h3>
+    <p style="margin: 5px 0 0;">Increase in Website Traffic</p>
+  </div>
+
+  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+43%</h3>
+    <p style="margin: 5px 0 0;">Growth in Organic Search Visits</p>
+  </div>
+
+  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+75%</h3>
+    <p style="margin: 5px 0 0;">Improvement in Conversion Rate</p>
+  </div>
+
+</div>
+
   </section>
 
   <!-- Challenge -->
