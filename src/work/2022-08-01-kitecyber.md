@@ -98,7 +98,7 @@ year: Oct 2024 - present
   <!-- Solution -->
   <section class="solution space-y-4">
     <h3 class="text-2xl font-semibold">The Results</h3>
-    <ul class="list-disc ml-6 space-y-2">
+    <ul class="numbers">
       <li>Audience and keyword research: Conducted in‑depth analysis of buyer personas and Kitecyber's audience interests to guide campaigns.</li>
       <li>Advertising account management: Executed Google Ads</li>
       <li>Creation of ads and landing pages: Designed highly‑converting ads tailored to customer needs.</li>
