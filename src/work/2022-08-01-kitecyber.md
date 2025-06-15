@@ -1,5 +1,5 @@
 ---
-title: Kitecyber
+title: Kitecyber: Setting Up Inbound & Outbound Marketing Motion
 body_class: work
 excerpt: After 2 glorious year at Plutomen, I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. 
 highlightjs: true
@@ -38,7 +38,6 @@ year: 2022 - present
   <section class="intro text-center space-y-4">
     <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
     <p class="uppercase text-sm text-blue-600">Cybersecurity Company, SaaS</p>
-    <h1 class="text-4xl font-bold">Kitecyber: Setting Up Inbound & Outbound Marketing Motion</h1>
     <p>I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. At Kitecyber, I am responsible for setting up the inbound and outbound marketing function from ground up. Additionaly, I am also handling marketing automation sequences and drip email marketing sequences for the company. </p>
     <a href="/work" class="text-blue-500 hover:underline">← Back to All Work Experiences</a>
   </section>
@@ -117,8 +116,7 @@ year: 2022 - present
       </div>
       <!-- Simform -->
       <div class="case-study-card border rounded-lg overflow-hidden">
-        <img src="/assets/img/Simform.png" alt="Simform">
-        <div class="px-4 py-2">
+<img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Simform.png"></img>        <div class="px-4 py-2">
           <h4 class="font-semibold">Simform</h4>
           <p>Marketing for a Software Product Development Company</p>
         </div>
