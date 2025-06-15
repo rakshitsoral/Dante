@@ -77,7 +77,7 @@ year: Oct 2024 - present
     <h3 class="text-2xl font-semibold">The Challenge</h3>
     <p>Despite possessing a robust product, Kitecyber didn't have any marketing motion in place. They had hired a lean sales team of 2-3 people but faced challenges in acquiring an adequate number of prospects and business opportunities. The official company website lacked positioning and messaging, despite a few pages that were getting some visibility. </p>
     <p>They required a comprehensive demand generation strategy to:</p>
-    <ul class="list-disc ml-6 space-y-1">
+    <ul class="round">
       <li>Position their products in key categories in cybersecurity industry;</li>
       <li>Capture already existing demand by SEO, Paid Ads, and Outbound emails;</li>
       <li>Attain more qualified leads and opportunities.</li>
@@ -88,7 +88,7 @@ year: Oct 2024 - present
   <section class="goals space-y-4">
     <h3 class="text-2xl font-semibold">The Goals</h3>
     <p>In collaboration with the CEO & CPO of the company, I set the following objectives:</p>
-    <ol class="list-decimal ml-6 space-y-1">
+    <ol>
       <li>Revamp the website with new positioning, messaging, and keywords for SEO.</li>
       <li>Increase the quantity of opportunities.</li>
       <li>Achieve a positive return on investment.</li>
@@ -98,7 +98,7 @@ year: Oct 2024 - present
   <!-- Solution -->
   <section class="solution space-y-4">
     <h3 class="text-2xl font-semibold">The Results</h3>
-    <ul class="numbers">
+    <ul class="round">
       <li>Audience and keyword research: Conducted in‑depth analysis of buyer personas and Kitecyber's audience interests to guide campaigns.</li>
       <li>Advertising account management: Executed Google Ads</li>
       <li>Creation of ads and landing pages: Designed highly‑converting ads tailored to customer needs.</li>
