@@ -108,7 +108,7 @@ year: 2022 - present
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       <!-- Plutomen -->
       <div class="case-study-card border rounded-lg overflow-hidden">
-        <img src="/assets/img/Plutomen_trans.png" alt="Plutomen">
+       <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="Plutomen" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Plutomen_trans.png"></img>
         <div class="px-4 py-2">
           <h4 class="font-semibold">Plutomen Technologies</h4>
           <p>Spearheading entire GTM strategy for an XR powered Connected Worker Platform</p>
