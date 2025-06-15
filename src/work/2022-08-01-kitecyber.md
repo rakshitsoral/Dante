@@ -1,5 +1,6 @@
 ---
 title: Kitecyber - Setting Up Inbound & Outbound Marketing Motion
+meta_title: Kitecyber
 body_class: work
 excerpt: After 2 glorious year at Plutomen, I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. 
 highlightjs: true
@@ -45,7 +46,6 @@ year: Oct 2024 - present
   <!-- Results -->
   <section class="results p-8 rounded-lg">
     <h2 class="text-3xl font-semibold mb-4">The Results</h2>
-    <p class="font-semibold mb-6">The Impact of My Work</p>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; text-align: center; gap: 20px;">
 
   <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
