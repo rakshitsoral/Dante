@@ -1,5 +1,5 @@
 ---
-title: Kitecyber: Setting Up Inbound & Outbound Marketing Motion
+title: Kitecyber - Setting Up Inbound & Outbound Marketing Motion
 body_class: work
 excerpt: After 2 glorious year at Plutomen, I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. 
 highlightjs: true
