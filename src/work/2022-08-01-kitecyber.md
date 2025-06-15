@@ -39,11 +39,11 @@ year: 2022 - present
     <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
     <p class="uppercase text-sm text-blue-600">Cybersecurity Company, SaaS</p>
     <p>I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. At Kitecyber, I am responsible for setting up the inbound and outbound marketing function from ground up. Additionaly, I am also handling marketing automation sequences and drip email marketing sequences for the company. </p>
-    <a href="/work" class="text-blue-500 hover:underline">← Back to All Work Experiences</a>
+    
   </section>
 
   <!-- Results -->
-  <section class="results bg-gray-100 p-8 rounded-lg">
+  <section class="results p-8 rounded-lg">
     <h2 class="text-3xl font-semibold mb-4">The Results</h2>
     <p class="font-semibold mb-6">The Impact of My Work</p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
