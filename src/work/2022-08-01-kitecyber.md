@@ -121,15 +121,13 @@ year: Oct 2024 - present
     <h3 class="text-2xl font-semibold">More Work Experiences</h3>
     <div class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse grid grid-cols-1 sm:grid-cols-3 gap-6">
       <!-- Plutomen -->
-      <div class="case-study-card border rounded-lg overflow-hidden">
-       <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Plutomen_trans.png"></img>
+    <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Plutomen_trans.png"></img>
         <div class="px-4 py-2">
           <h4 class="font-semibold">Plutomen Technologies</h4>
           <p>Spearheading entire GTM strategy for an XR powered Connected Worker Platform</p>
         </div>
-      </div>
-      <!-- Simform -->
-      <div class="case-study-card border rounded-lg overflow-hidden">
+<!-- Simform -->
+      <div class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse grid grid-cols-1 sm:grid-cols-3 gap-6">
        <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Simform.png"></img>
         <div class="px-4 py-2">
           <h4 class="font-semibold">Simform</h4>
