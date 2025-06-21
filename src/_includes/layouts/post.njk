@@ -30,7 +30,23 @@ layout: default
         
     </section>
 
- 
+  <!-- Related Posts Sidebar -->
+  <aside class="hidden lg:block w-full max-w-xs sticky top-24 self-start">
+    {% if relatedPosts %}
+    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6 shadow-sm">
+      <h2 class="text-lg font-semibold mb-4">Related Posts</h2>
+      <ul class="space-y-3 text-sm">
+        {% for post in relatedPosts %}
+        <li>
+          <a href="{{ post.url }}" class="text-blue-600 hover:underline">
+            {{ post.data.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </aside>
 
 </article>
 
