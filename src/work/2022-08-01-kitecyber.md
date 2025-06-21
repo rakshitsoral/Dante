@@ -119,7 +119,7 @@ year: Oct 2024 - present
   <!-- Other Case Studies -->
   <section class="other-case-studies space-y-6">
     <h3 class="text-2xl font-semibold">More Work Experiences</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <div class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse grid grid-cols-1 sm:grid-cols-3 gap-6">
       <!-- Plutomen -->
       <div class="case-study-card border rounded-lg overflow-hidden">
        <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Plutomen_trans.png"></img>
