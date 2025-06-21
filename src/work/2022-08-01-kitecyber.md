@@ -44,7 +44,7 @@ year: Oct 2024 - present
   </section>
 
   <!-- Results -->
-  <section class="results p-8 rounded-lg">
+  <section class="work-section work-section--stackoverflow p-16 max-w-2xl mb-40 flex items-start self-end relative sm:p-8 sm:mt-12 sm:flex-col">
     <h2 class="text-3xl font-semibold mb-4">The Results</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; text-align: center; gap: 20px;">
 
