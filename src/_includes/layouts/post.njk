@@ -30,15 +30,15 @@ layout: default
         
     </section>
 
-    
+ {% if bskyId %}
+  <footer>
+    <h3>Comments</h3>
+    <bsky-comments post="{{bskyurl}}"></bsky-comments>
+  </footer>
+{% endif %}   
 
 </article>
 
-<script src="https://utteranc.es/client.js"
-        repo="rakshitsoral/Dante"
-        issue-term="title"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
-</script>
+<script type="module" src="https://esm.sh/gh/loueed/bsky@v1.0.0/comments"></script>
+
 
