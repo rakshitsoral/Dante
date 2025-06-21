@@ -7,22 +7,11 @@ pagination:
     alias: posts
 ---
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-    {% for post in collections.posts %}
-    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <div class="p-5">
-        <h2 class="text-xl font-semibold mb-2">
-          <a href="{{ post.url }}" class="text-blue-600 hover:underline">
-            {{ post.data.title }}
-          </a>
-        </h2>
-        <time class="text-sm text-gray-500">{{ post.date | readableDate }}</time>
-        {% if post.data.excerpt %}
-          <p class="mt-2 text-gray-700 text-sm">{{ post.data.excerpt }}</p>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-</div>
+<ul class="max-w-prose mx-auto">
+{% for post in collections.posts %}
+    <li class="my-4 leading-snug">
+        <a class="" href="{{ post.url}}">{{ post.data.title }}</a>
+        <time class="block">{{ post.date | readableDate }}</time>
+    </li>
+{% endfor %}
+</ul>
