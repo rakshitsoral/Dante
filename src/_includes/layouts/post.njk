@@ -2,43 +2,66 @@
 layout: default
 ---
 
-<article class="flex flex-col items-center">
-    {% if featured_image %}
-    <img src="{{ featured_image | url }}" loading="lazy" alt=""{% if featured_image_classes %} class="{{ featured_image_classes }}"{% endif %}>
-    {% endif %}
-    <div class="writing">
-    
+<article class="post-container max-w-4xl mx-auto px-6 py-12">
 
-        <header class="py-12">
-            <h1 class="mb-2">{{ title }}</h1>
-            <time>{{ page.date | readableDate }}</time>
-            <div id="share-buttons"> <!-- Facebook --> <a href="https://www.facebook.com/sharer.php?u=https://frinmash.blogspot.com" target="_blank"><img src="https://4.bp.blogspot.com/-raFYZvIFUV0/UwNI2ek6i3I/AAAAAAAAGSA/zs-kwq0q58E/s1600/facebook.png" alt="Facebook" /></a> <!-- Twitter --> <a href="https://twitter.com/share?url=https://frinmash.blogspot.com&text=Simple Share Buttons" target="_blank"><img src="https://4.bp.blogspot.com/--ISQEurz3aE/UwNI4hDaQMI/AAAAAAAAGS4/ZAgmPiM9Xpk/s1600/twitter.png" alt="Twitter" /></a> <!-- Google+ --> <a href="https://plus.google.com/share?url=https://frinmash.blogspot.com" target="_blank"><img src="https://2.bp.blogspot.com/-9ijXNtKTaSk/UwNI3ANT4MI/AAAAAAAAGSY/Tu4kE8x9SnI/s1600/google.png" alt="Google" /></a> <!-- Digg --> <a href="https://www.digg.com/submit?url=https://frinmash.blogspot.com" target="_blank"><img src="https://4.bp.blogspot.com/-AUdsqB7cajQ/UwNI2iqT_AI/AAAAAAAAGR8/0FV_ZcsiylU/s1600/diggit.png" alt="Digg" /></a> <!-- Reddit --> <a href="http://reddit.com/submit?url=https://frinmash.blogspot.com&title=Simple Share Buttons" target="_blank"><img src="https://4.bp.blogspot.com/-1-mZEa1eiyc/UwNI4JytiFI/AAAAAAAAGSs/AoKmBkkJR-s/s1600/reddit.png" alt="Reddit" /></a> <!-- LinkedIn --> <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://frinmash.blogspot.com" target="_blank"><img src="https://2.bp.blogspot.com/-3_cATk7Wlho/UwNI3eoTTLI/AAAAAAAAGSQ/Y8cpq6S-SeQ/s1600/linkedin.png" alt="LinkedIn" /></a> <!-- Pinterest --> <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','https://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="https://2.bp.blogspot.com/-3CfsOmDx-Dg/UwNI3kMVjgI/AAAAAAAAGSU/OSixn3lcjX4/s1600/pinterest.png" alt="Pinterest" /></a> <!-- StumbleUpon--> <a href="http://www.stumbleupon.com/submit?url=https://frinmash.blogspot.com&title=Simple Share Buttons" target="_blank"><img src="https://2.bp.blogspot.com/-si3v8X2IVGI/UwNI4bncQrI/AAAAAAAAGSo/iZepRnIJFZU/s1600/stumbleupon.png" alt="StumbleUpon" /></a> <!-- Email --> <a href="mailto:?Subject=FrinMash&Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://frinmash.blogspot.com"><img src="https://4.bp.blogspot.com/-njgKtNLrPqI/UwNI2o-9WfI/AAAAAAAAGR4/f8da1gBgyLs/s1600/email.png" alt="Email" /></a> </div>
+  {% if featured_image %}
+    <img src="{{ featured_image | url }}" alt="{{ title }}" class="rounded-md w-full object-cover mb-8" loading="lazy">
+  {% endif %}
 
- 
-
-        </header>
-        {{ content | safe }}
-        
+  <!-- Post Header -->
+  <header class="mb-8">
+    <h1 class="text-4xl font-extrabold leading-tight mb-4">{{ title }}</h1>
+    <div class="text-sm text-gray-500">
+      <time datetime="{{ page.date }}">{{ page.date | readableDate }}</time>
+      {% if author %} · By <span class="font-medium text-gray-700">{{ author }}</span>{% endif %}
     </div>
-    <section class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse">
-        <div>
-            <p>I enjoy <a href="/blog" class="link-misc">writing</a> about things I learn & I know, building scalable Digital Marketing campaigns, and learning a bit of <a href="https://github.com/rakshitsoral" class="link-misc">web development</a>, side-by-side.</p>
-            <p class="mt-6">When not in front of a screen I like to listen music, play guitar, read books, and binge-watch anime/ series. </p>
-        </div>
-        <div class="img relative flex-shrink-0 ml-12 sm:ml-0 sm:mb-8"><img src="/assets/img/Rakshit Soral.png" alt="Rakshit Soral portrait" loading="lazy" height="275" width="275" class="z-10 relative transform -rotate-2"></div>
-        <span class="curl3 absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
-        
-    </section>
+  </header>
 
- {% if bskyId %}
-  <footer>
-    <h3>Comments</h3>
-    <bsky-comments post="{{bskyurl}}"></bsky-comments>
-  </footer>
-{% endif %}   
+  <!-- Share Buttons -->
+  <div class="flex flex-wrap items-center space-x-4 text-sm text-gray-600 mb-10">
+    <span class="font-semibold text-gray-800">Share this:</span>
+    <a href="https://twitter.com/intent/tweet?url={{ page.url }}&text={{ title }}" class="hover:text-blue-500" target="_blank">Twitter</a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url }}&title={{ title }}" class="hover:text-blue-600" target="_blank">LinkedIn</a>
+    <a href="mailto:?subject={{ title }}&body=Check out this article: {{ page.url }}" class="hover:text-red-600">Email</a>
+  </div>
+
+  <!-- Table of Contents Placeholder -->
+  <nav id="toc" class="mb-12 border-l-4 border-blue-100 pl-4 text-sm text-gray-700 bg-blue-50 rounded-md py-4 px-2">
+    <p class="font-bold mb-2 text-gray-800">In this article</p>
+    <ul class="space-y-1">
+      <li><a href="#section1" class="hover:underline text-blue-600">Understanding GKE Billing</a></li>
+      <li><a href="#section2" class="hover:underline text-blue-600">Breaking Down Cost Categories</a></li>
+      <li><a href="#section3" class="hover:underline text-blue-600">Tools For GKE Cost Allocation</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Post Body -->
+  <div class="prose lg:prose-lg prose-blue max-w-none">
+    {{ content | safe }}
+  </div>
+
+  <!-- Related Posts -->
+  {% if relatedPosts %}
+  <section class="mt-16">
+    <h2 class="text-2xl font-bold mb-6">Keep Reading</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {% for post in relatedPosts %}
+        <a href="{{ post.url }}" class="block p-4 border rounded-md hover:shadow-sm transition">
+          <h3 class="font-semibold text-lg">{{ post.data.title }}</h3>
+          <p class="text-sm text-gray-500">{{ post.data.description || post.templateContent | striptags | truncate(100) }}</p>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Author Bio -->
+  <section class="mt-20 border-t pt-10 flex items-center space-x-6">
+    <img src="/assets/img/Rakshit Soral.png" alt="Rakshit Soral portrait" class="w-20 h-20 rounded-full object-cover" loading="lazy">
+    <div>
+      <p class="font-semibold text-gray-800">Rakshit Soral</p>
+      <p class="text-sm text-gray-600 mt-1">I write about digital marketing strategy, technology, and web experimentation. I also enjoy music, anime, and open-source tinkering.</p>
+    </div>
+  </section>
 
 </article>
-
-<script type="module" src="https://esm.sh/gh/loueed/bsky@v1.0.0/comments"></script>
-
-
