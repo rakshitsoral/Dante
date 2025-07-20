@@ -89,7 +89,7 @@ year: Oct 2024 - present
     <h3 class="text-2xl font-semibold">The Goals</h3>
     <p>In collaboration with the CEO & CPO of the company, I set the following objectives:</p>
     <ol>
-      <li>Define clear positioning and messaging to align with KiteCyber’s ICP (CISOs, IT Heads).</li>
+      <li>Define clear positioning and messaging to align with KiteCyber’s ICP (CISOs, CTOs, CEOs, IT Security Heads).</li>
 
 <li>Drive qualified traffic to the website through SEO and targeted paid campaigns.</li>
 
