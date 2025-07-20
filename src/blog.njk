@@ -7,11 +7,30 @@ pagination:
     alias: posts
 ---
 
-<ul class="max-w-prose mx-auto">
-{% for post in collections.posts %}
-    <li class="my-4 leading-snug">
-        <a class="" href="{{ post.url}}">{{ post.data.title }}</a>
-        <time class="block">{{ post.date | readableDate }}</time>
-    </li>
-{% endfor %}
-</ul>
+<title>{{ site.title }}</title>
+  <subtitle>{{ site.description }}</subtitle>
+  <link href="{{ site.url + page.url }}" rel="self"/>
+  <link href="{{ site.url }}"/>
+
+  {%- set latest_post = collections.posts | sort(attribute='date', reverse=true) | first %}
+  <updated>{{ latest_post.date | date('YYYY-MM-DDTHH:mm:ssZ') }}</updated>
+  <id>{{ site.url }}/</id>
+
+  <author>
+    <name>{{ site.author.name }}</name>
+  </author>
+
+  {%- for post in collections.posts | sort(attribute='date', reverse=true) %}
+    <entry>
+      <title>{{ post.data.title }}</title>
+      <link href="{{ site.url + post.url }}"/>
+      <updated>{{ post.date | date('YYYY-MM-DDTHH:mm:ssZ') }}</updated>
+      <id>{{ site.url + post.url }}</id>
+      <content type="html">
+        <![CDATA[
+          {{ post.templateContent | safe }}
+        ]]>
+      </content>
+    </entry>
+  {%- endfor %}
+</feed>
