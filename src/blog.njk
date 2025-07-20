@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: Blog
@@ -7,41 +8,30 @@ pagination:
     alias: posts
 ---
 
-<section class="max-w-6xl mx-auto px-4 py-12">
-  <h1 class="text-4xl font-bold mb-8 text-center">{{ title }}</h1>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {% for post in collections.posts | sort(attribute='date', reverse=true) %}
-      <article class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col h-full">
-        
-        {% if post.data.featured_image %}
-          <a href="{{ post.url }}">
-            <img src="{{ post.data.featured_image }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover">
-          </a>
-        {% endif %}
-
-        <div class="p-4 flex flex-col justify-between flex-grow">
-          <div>
-            <h2 class="text-lg font-semibold mb-2">
-              <a href="{{ post.url }}" class="text-blue-600 hover:underline">
-                {{ post.data.title }}
-              </a>
-            </h2>
-            {% if post.data.excerpt %}
-              <p class="text-gray-700 text-sm mb-4">
-                {{ post.data.excerpt }}
-              </p>
-            {% else %}
-              <p class="text-gray-700 text-sm mb-4">
-                {{ post.templateContent | striptags | truncate(100, true, '...') }}
-              </p>
-            {% endif %}
-          </div>
-          <p class="text-gray-500 text-xs mt-auto">
-            Published: {{ post.date | date("yyyy-MM-dd") }}
-          </p>
-        </div>
-      </article>
-    {% endfor %}
-  </div>
-</section>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <h1 class="text-3xl font-bold mb-8">{{ title }}</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for post in collections.posts %}
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                {% if post.data.featured_image %}
+                    <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover" loading="lazy">
+                {% else %}
+                    <div class="w-full h-48 bg-gray-200"></div>
+                {% endif %}
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold mb-2">
+                        <a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800">{{ post.data.title }}</a>
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        {% if post.data.excerpt %}
+                            {{ post.data.excerpt | safe }}
+                        {% else %}
+                            {{ post.content | truncate(100) | safe }}
+                        {% endif %}
+                    </p>
+                    <time class="text-sm text-gray-500">{{ post.date | readableDate }}</time>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
