@@ -39,7 +39,7 @@ year: Oct 2024 - present
   <section class="intro text-center space-y-4">
     <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
     <p class="uppercase text-sm text-blue-600">Cybersecurity Company, SaaS</p>
-    <p>I joined Kitecyber as a Demand Generation Manager on October 2024. This is my first time to work in cybersecurity industry. At Kitecyber, I am responsible for setting up the inbound and outbound marketing function from ground up. Additionaly, I am also handling marketing automation sequences and drip email marketing sequences for the company. </p>
+    <p>KiteCyber, founded in 2023, offers a hyperconverged endpoint security platform with modules covering UEM, Data Security, Internet & SaaS Security, and Zero Trust Network Access. Despite having a strong product and a lean sales team, KiteCyber lacked a structured marketing motion, resulting in limited visibility and inconsistent lead flow. In November 2024, I joined KiteCyber to build its inbound and outbound marketing engine from scratch, while managing marketing automation, drip/cold email sequences, SEO/ Content Marketing, Paid Ads (Twitter, Google) and analytics. </p>
     
   </section>
 
@@ -49,22 +49,22 @@ year: Oct 2024 - present
     <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; text-align: center; gap: 20px;">
 
   <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+260%</h3>
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+135%</h3>
     <p style="margin: 5px 0 0;">Increase in Marketing Qualified Leads</p>
   </div>
 
   <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+89%</h3>
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+58%</h3>
     <p style="margin: 5px 0 0;">Increase in Website Traffic</p>
   </div>
 
   <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+43%</h3>
-    <p style="margin: 5px 0 0;">Growth in Organic Search Visits</p>
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+65%</h3>
+    <p style="margin: 5px 0 0;">Growth in SQLs</p>
   </div>
 
   <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+75%</h3>
+    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+42%</h3>
     <p style="margin: 5px 0 0;">Improvement in Conversion Rate</p>
   </div>
 
@@ -89,23 +89,30 @@ year: Oct 2024 - present
     <h3 class="text-2xl font-semibold">The Goals</h3>
     <p>In collaboration with the CEO & CPO of the company, I set the following objectives:</p>
     <ol>
-      <li>Revamp the website with new positioning, messaging, and keywords for SEO.</li>
-      <li>Increase the quantity of opportunities.</li>
-      <li>Achieve a positive return on investment.</li>
+      <li>Define clear positioning and messaging to align with KiteCyber’s ICP (CISOs, IT Heads).</li>
+
+<li>Drive qualified traffic to the website through SEO and targeted paid campaigns.</li>
+
+<li>Establish outbound prospecting workflows to support the sales pipeline.</li>
+
+<li>Implement a marketing automation stack for nurturing and attribution.</li>
+
+<li>Build a repeatable, data-driven demand generation engine with positive ROI.</li>
     </ol>
   </section>
 
   <!-- Solution -->
   <section class="solution space-y-4">
-    <h3 class="text-2xl font-semibold">The Results</h3>
+    <h3 class="text-2xl font-semibold">Key Actions Performed</h3>
     <ul class="round">
-      <li>Audience and keyword research: Conducted in‑depth analysis of buyer personas and Kitecyber's audience interests to guide campaigns.</li>
-      <li>Advertising account management: Executed Google Ads</li>
-      <li>Creation of ads and landing pages: Designed highly‑converting ads tailored to customer needs.</li>
+      <li> Audience & Keyword Research: Mapped ICP, buyer journeys, and SEO keyword opportunities.</li>
+      <li>Website Revamp: Collaborated with CEO on repositioning, copy refresh, and technical SEO fixes.</li>
+      <li>Google Ads, Twitter Ads & LinkedIn Ads: Launched targeted paid campaigns to capture in-market demand.</li>
       <li>Web analytics: Installed Google Analytics to monitor performance and attribute prospects/revenue.</li>
-      <li>Integration with HubSpot: Tracked end‑to‑end customer journey via CRM integration.</li>
+      <li>Integration with HubSpot: Tracked end‑to‑end customer journey & leads status via CRM integration.</li>
       <li>Optimization: A/B testing, data‑driven enhancements, and proactive improvements.</li>
-      <li>Marketing automation: Implemented email flows & chatbots to nurture leads.</li>
+      <li>Marketing Automation: Built drip sequences, lead scoring, and chatbot workflows for qualification.</li>
+      <li> Outbound Email Campaigns: Built and executed cold outbound sequences with personalization. (Atleast 3000 Emails Per Month)</li>
     </ul>
   </section>
 
