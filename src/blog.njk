@@ -8,27 +8,29 @@ pagination:
 ---
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-3xl font-bold mb-8">{{ title }}</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <h1 class="text-4xl font-bold mb-10 text-gray-900">{{ title }}</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
         {% for post in collections.posts %}
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
                 {% if post.data.featured_image %}
-                    <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="w-full h-48 object-cover" loading="lazy">
+                    <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="w-full h-56 object-cover" loading="lazy">
                 {% else %}
-                    <div class="w-full h-48 bg-gray-200"></div>
+                    <div class="w-full h-56 bg-gray-100 flex items-center justify-center text-gray-400">No Image</div>
                 {% endif %}
                 <div class="p-6">
-                    <h2 class="text-xl font-semibold mb-2">
-                        <a href="{{ post.url }}" class="text-blue-600 hover:text-blue-800">{{ post.data.title }}</a>
+                    <h2 class="text-2xl font-semibold mb-3">
+                        <a href="{{ post.url }}" class="text-gray-900 hover:text-blue-600 transition-colors">{{ post.data.title }}</a>
                     </h2>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-gray-600 mb-4 line-clamp-3">
                         {% if post.data.excerpt %}
                             {{ post.data.excerpt | safe }}
                         {% else %}
-                            {{ post.content | truncate(100) | safe }}
+                            {{ post.content | truncate(120) | safe }}
                         {% endif %}
                     </p>
-                    <time class="text-sm text-gray-500">{{ post.date | readableDate }}</time>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <time>{{ post.date | readableDate }}</time>
+                    </div>
                 </div>
             </div>
         {% endfor %}
