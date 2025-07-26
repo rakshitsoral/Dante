@@ -1,38 +1,86 @@
 ---
 layout: default
 title: Blog
+description: Blogs and Tips on Life, Web Development, Demand Gen, and Marketing.
 pagination:
     data: collections.posts
     size: 1000
     alias: posts
 ---
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-4xl font-bold mb-10 text-gray-900">{{ title }}</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-        {% for post in collections.posts %}
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
-                {% if post.data.featured_image %}
-                    <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="w-full h-56 object-cover" loading="lazy">
+<main style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <!-- Hero Section -->
+  <section class="blogs-hero" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 4rem 1rem; text-align: center;">
+    <h1 class="head_text long-shadow" style="font-size: 3rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+      <span class="head_text rainbow" style="background: linear-gradient(to right, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; color: transparent;">Blogs</span> and Tips
+    </h1>
+  </section>
+
+  <!-- Blog List Section -->
+  <section class="blog-list-section container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem;">
+    <div class="blog-list-container" style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+      {% for post in posts | reverse %}
+        <a href="{{ post.url | url }}" class="blog-link" style="text-decoration: none; color: inherit; flex: 1 1 300px; max-width: 400px;">
+          <div class="blog-card" style="background: #fff; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;">
+            {% if post.data.featured_image %}
+              <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" style="width: 100%; height: 224px; object-fit: cover;" loading="lazy">
+            {% else %}
+              <div style="width: 100%; height: 224px; background: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #6b7280; font-size: 1rem;">
+                No Image
+              </div>
+            {% endif %}
+            <div style="padding: 1.5rem;">
+              <h1 class="blog-title subhead_text" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; color: #1f2937;">{{ post.data.title }}</h1>
+              <div class="blog-hashtags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                {% set comma = joiner() %}
+                {% for tag in post.data.tags %}
+                  {% if tag !== 'post' %}
+                    {{ comma() }}
+                    <a href="/tags/{{ tag | slug }}" class="post-tag" style="font-size: 0.875rem; color: #2563eb; text-decoration: none;">#{{ tag }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="blog-description" style="font-size: 1rem; color: #4b5563; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                {% if post.data.description %}
+                  {{ post.data.description | safe }}
                 {% else %}
-                    <div class="w-full h-56 bg-gray-100 flex items-center justify-center text-gray-400">No Image</div>
+                  {{ post.content | truncate(120) | safe }}
                 {% endif %}
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold mb-3">
-                        <a href="{{ post.url }}" class="text-gray-900 hover:text-blue-600 transition-colors">{{ post.data.title }}</a>
-                    </h2>
-                    <p class="text-gray-600 mb-4 line-clamp-3">
-                        {% if post.data.excerpt %}
-                            {{ post.data.excerpt | safe }}
-                        {% else %}
-                            {{ post.content | truncate(120) | safe }}
-                        {% endif %}
-                    </p>
-                    <div class="flex items-center text-sm text-gray-500">
-                        <time>{{ post.date | readableDate }}</time>
-                    </div>
-                </div>
+              </p>
+              <div class="blog-details" style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="{{ post.url | url }}" class="blog-link" style="font-size: 0.875rem; color: #2563eb; text-decoration: none;">Read Article &gt;&gt;</a>
+                <p class="blog-date" style="font-size: 0.875rem; color: #6b7280;">{{ post.data.date | postDate }}</p>
+              </div>
             </div>
+          </div>
+        </a>
+      {% endfor %}
+
+      <!-- Pagination -->
+      <div class="pagination" style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; font-size: 1rem; color: #4b5563;">
+        <p>
+          {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" style="text-decoration: none; color: #2563eb;">&lt;&lt;</a>
+          {% else %}
+            <span style="color: #d1d5db;">&lt;&lt;</span>
+          {% endif %}
+        </p>
+        {% for pageEntry in pagination.pages %}
+          <p>
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}"
+               {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" style="color: #2563eb; font-weight: bold; text-decoration: none;"{% else %} style="text-decoration: none; color: #4b5563;"{% endif %}>
+              {{ loop.index }}
+            </a>
+          </p>
         {% endfor %}
+        <p>
+          {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" style="text-decoration: none; color: #2563eb;">&gt;&gt;</a>
+          {% else %}
+            <span style="color: #d1d5db;">&gt;&gt;</span>
+          {% endif %}
+        </p>
+      </div>
     </div>
-</div>
+  </section>
+</main>
