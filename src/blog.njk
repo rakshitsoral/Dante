@@ -10,7 +10,7 @@ pagination:
 
 <main style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff;">
   <!-- Hero Section -->
-  <section class="blogs-hero" style="background: #1a1a2e; padding: 4rem 1rem; text-align: center;">
+  <section class="blogs-hero" style="background: #0e091d; padding: 4rem 1rem; text-align: center;">
     <h1 class="head_text long-shadow" style="font-size: 3rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); color: #fff;">
       <span class="head_text rainbow" style="background: linear-gradient(to right, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; color: transparent;">Blogs</span> and Tips
     </h1>
@@ -19,7 +19,7 @@ pagination:
   <!-- Blog List Section -->
   <section class="blog-list-section container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; background: #0e091d;">
     <div class="blog-list-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-      {% for post in posts | reverse %}
+      {% for post in posts %}
         <a href="{{ post.url | url }}" class="blog-link" style="text-decoration: none; color: inherit;">
           <div class="blog-card" style="background: #1a1a2e; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;">
             {% if post.data.featured_image %}
