@@ -49,7 +49,9 @@ pagination:
               </p>
               <div class="blog-details" style="display: flex; justify-content: space-between; align-items: center;">
                 <a href="{{ post.url | url }}" class="blog-link" style="font-size: 0.875rem; color: #2563eb; text-decoration: none;">Read Article &gt;&gt;</a>
-                <p class="blog-date" style="font-size: 0.875rem; color: #6b7280;">{{ post.data.date | postDate }}</p>
+                <p class="blog-date" style="font-size: 0.875rem; color: #6b7280;">
+                  {{ post.data.date | readableDate if readableDate else post.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) }}
+                </p>
               </div>
             </div>
           </div>
