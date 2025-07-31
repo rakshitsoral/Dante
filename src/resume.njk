@@ -1,332 +1,455 @@
----
-layout: default
-title: Rakshit Soral Resume
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rakshit Soral - Resume</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Fjalla+One|Permanent+Marker">
-  <style>
-    * {box-sizing: border-box;}
-    body {margin: 0 15%; background-color: #0e091d;}
-    img {display:block;}
-    hr {border-top: 1px rgb(30,30,30) solid; 
-      width:100%; 
-      margin-top: 0.4vw; 
-      margin-bottom: 0.4vw;}
-    .HeaderHr {
-      position: absolute; z-index: 2;
-      border: 1px solid white;
-      width: 4vw;
-      bottom: 0vw; 
-      margin-left: auto; margin-right: auto;}
-      #leftHr {left: 6.2vw;}
-      #rightHr {left: 13.7vw;}
-    .over {
-      color: white;
-      position: absolute; z-index: 2;
-      width: 100%; text-align: center;
-      margin-left: auto; margin-right: auto;}
-    .dot {
-      height: 0.5vw;
-      width: 0.5vw;
-      background-color: rgba(0,0,0,0);
-      border-radius: 50%; border: 3px solid white;
-      display: inline-block;}
-      #middleOne {background-color:white;}
-      #dotContainer {bottom: 0vw;}
-      #Profession {
-        top: -0.2vw;
-        font-family:"Lato";
-        letter-spacing: 0.05em;
-        font-weight: 200;}
-    h1 {font-family:"Fjalla One"; 
-      font-size:2.2em; 
-      letter-spacing:0.2em; 
-      font-weight:900;
-      margin: 0;
-      padding-bottom: 0.5vw;}
-    h2 {
-      font-family:"Fjalla One"; 
-      font-weight: 600; font-size: 1.6em;
-      letter-spacing: 0.2vw;}
-    h3 {font-family:"Lato"; font-size: 1em; margin:0;}
-    h4 {font-family:"Lato"; font-size: 0.9em; margin:0; font-style: italic; font-weight:400;}
-    .left {
-      display: inline-block; 
-      width:100%; 
-      text-align: center;}
-    .right {
-      display: inline-block; 
-      width:100%; 
-      text-align: left;
-      margin-bottom: 0.5vw;}
-    .flexContainer {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: no-wrap;
-      align-items: stretch;
-      justify-content: center;}
-      .leftColumn {width: 35%;}
-      .leftRow {
-        position: relative;
-        margin: 0px;
-        padding-bottom: 0px;
-        letter-spacing: 0.06vw; font-size: 0.85vw; font-family:"Lato";}
-      #name {
-        color: white;
-        font-family: "Permanent Marker"; font-size: 2vw; font-weight: 800;
-        position: absolute; z-index: 2; top: 16vw;
-        width: 100%; text-align: center;
-        margin-left: auto; margin-right: auto;
-        letter-spacing: 0.2em; line-height: 2.5vw;}
-      #Cone {
-        width: 24.1vw;
-        height: 8vw;
-        background: conic-gradient(rgb(56,23,6) 6%, rgb(0,0,0) 20%, white 0 80%, rgb(0,0,0) 0 81%, rgb(56,23,6) 92%);}
-      .Triangle1 {
-        position: absolute; z-index: 1;
-        width: 0; height: 0;
-        border-bottom: 4.25vw solid black;
-        top: 10px;}   
-        #LeftTriangle {left: 0; 
-          border-right: 12.8vw solid transparent;}
-        #RightTriangle {left: 11.45vw; 
-          border-left: 12.8vw solid transparent;}   
-      .Triangle2 {
-        position: absolute; z-index: 2; 
-        top: 15px;
-        width: 0; height: 0;
-        border-bottom: 4.01vw solid #C0D8DE;}    
-        #LeftTriangle2 {left: 0; 
-          border-right: 12vw solid transparent;}
-        #RightTriangle2 {left: 12.25vw; 
-          border-left: 12vw solid transparent;}
-      #LeftBottom {
-        top: -3.4vw;
-        padding: 0 2.5vw 3.4vw 2.5vw; 
-        margin: 0;
-        background-color: #C0D8DE;}
-        .skills {
-          position: relative;  
-          background-color: white;
-          margin-bottom: 0.5vw;
-          padding: 0.3vw;
-          font-size: .7vw;}
-        .skillBar {
-          position: absolute; 
-          border-top: 8px rgb(70,70,70) solid;
-          top: 0.175vw;
-          margin-left: 50%;
-          max-width: 48%;}
-          #hubSpot {width: 42%;} 
-          #freshworksCrm {width: 32%;} 
-          #mailchimp {width: 20%;} 
-          #apolloIo {width: 10%;}
-          #googleAds {width: 15%;}
-          #ahrefs {width: 40%;}
-          #googleAnalytics {width: 29%;}
-          #googleSearchConsole {width: 42%;}
-          #ubersuggest {width: 30%;}
-          #linkedinCampaignManager {width: 36%;}
-          #guitar {width: 36%;}
-          #reading {width: 36%;}
-    .rightColumn {
-      width: 65%;
-      flex: none;}
-      .rightRow {padding: 2vw 3vw; 
-        position: relative; 
-        z-index: 0;}
-      .rightText {letter-spacing: 0.1em; 
-        font-size: 1.1em; 
-        font-family:"Lato";
-        text-align: justify;
-        text-justify: inter-word;}
-      #rightHeader {background-color: rgb(213,213,215);}
-      .containerHl {
-        display: flex;
-        padding: 0vw 2vw;
-        align-items: center;
-        margin-top: 0;
-        margin-bottom: 0;}
-        .years {
-          border: 1px solid black;
-          background: #C0D8DE;
-          border-radius: 1vw;
-          width: 18%;
-          height: 2.5vw;
-          text-align: center;
-          margin: 0.1vw 5% 0.1vw 2%;
-          padding: 0.55vw 0.2vw 0.2vw 0.2vw;}
-        .jobs {
-          width: 82%;
-          padding: 0.3vw;
-          color: white;}
-      .containerText {
-        display: flex;
-        padding: 0vw 2vw;
-        align-items: center;
-        margin-bottom: 1vw;
-        padding-left: 4.1vw;
-        min-height: 0;}
-        .verticalLines {
-          border-left: 1px solid black;
-          border-right: 1px solid black;
-          min-height: 4.8vw;
-          width: 1.2%;
-          margin: 0 0.2vw;
-          text-align: center;}
-        .verticalLinesEdu {
-          border-left: 1px solid black;
-          border-right: 1px solid black;
-          min-height: 3vw;
-          width: 1.2%;
-          margin: 0 0.2vw;
-          text-align: center;}
-        .jobText {
-          width: 80%;
-          padding: 0.3vw;
-          margin-left: 3.3vw;
-          font-family: "Lato";
-          font-size: 1em;
-          letter-spacing: 0.05em;
-          color: white;}
-  </style>
+    <meta charset="UTF-8">
+    <title>CV Printable A4 - Rakshit Soral</title>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Rakshit Soral - Curriculum Vitae" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            background: rgb(204,204,204); 
+        }
+        page {
+            background: #fff;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 5mm;
+            margin-top: 5mm;
+        }
+        page[size="A4"] {  
+            width: 210mm;
+            height: 297mm;
+        }
+        @page {
+            size: 210mm 297mm;
+            margin: 0; 
+        }
+        @media print {
+            html, body, page {
+                width: 210mm;
+                height: 100%;
+                margin: 0 !important; 
+                padding: 0 !important;
+                overflow: hidden; 
+            }
+            .no-overflow {
+                overflow: hidden; 
+            }
+            #Header, #Footer { 
+                display: none !important;
+            }
+            button {
+                display: none;
+            }
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        html, body {
+            font-family: 'Lato', helvetica, arial, sans-serif;
+            font-size: 11pt;
+            color: #222;
+        }
+        .clear {
+            clear: both;
+        }
+        p {
+            line-height: 15pt;
+            margin-bottom: 4mm;
+            color: #444;
+            word-break: break-word;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover { 
+            text-decoration: underline;
+        }
+        a, .fa-check, .fa-arrow-right {
+            color: #da2d2d;
+        }
+        .cv {
+            width: 210mm;
+            height: 297mm;
+            background: #fff;
+        }
+        .mainDetails {
+            padding: 8mm 0 0 8mm;
+            background: #fff;
+        }
+        #name {
+            float: left;
+            text-transform: uppercase;
+            padding: 8.5mm 0 0 7mm;
+        }
+        #name h1 {
+            font-size: 33pt;
+            font-weight: 400;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            line-height: 38pt;
+            color: #da2d2d;
+        }
+        #name h2 {
+            font-size: 18pt;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            line-height: 20pt;
+        }
+        #mainArea, #mainAreaTwo {
+            padding: 0 8mm;
+        }
+        #headshot {
+            width: 46mm;
+            float: left;
+            margin-top: 10mm;
+            margin-left: -0.5mm;
+        }
+        #headshot img {
+            width: 100%;
+            height: auto;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .contactDetails {
+            float: right;
+            margin: 10mm 8mm 0 0;
+        }
+        .contactDetails ul { 
+            list-style-type: none;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        }
+        .contactDetails ul li {
+            line-height: 24pt;
+            color: #444;
+        }
+        .contactDetails ul li a, a[href^=tel] {
+            color: #444; 
+            padding: 4px 8px;
+            text-decoration: none;
+            -webkit-transition: all .1s ease-in;
+            -moz-transition: all .1s ease-in;
+            -o-transition: all .1s ease-in;
+            -ms-transition: all .1s ease-in;
+            transition: all .1s ease-in;
+        }
+        .contactDetails ul li a:hover { 
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: #da2d2d;
+        }
+        .icon {
+            font-size: 14pt;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        section {
+            border-top: 1mm dotted #444;
+            padding: 4mm 0 0 0;
+        }
+        section:first-child {
+            border-top: 0;
+            padding: 8mm 0 0 0;
+        }
+        section:last-child {
+            padding: 4mm 0 0 0;
+        }
+        .sectionTitle {
+            float: left;
+            width: 50mm;
+            margin-bottom: 6mm; 
+        }
+        .sectionContent {
+            float: right;
+            width: 141mm;
+        }
+        .sectionTitle h1 {
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 18pt;
+            color: #da2d2d;
+        }
+        .sectionContent h2 {
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 18pt;
+        }
+        .subDetails {
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            font-weight: bold;
+            color: #da2d2d;
+        }
+        .nameDetails {
+            font-size: 11pt;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #444;
+            text-transform: lowercase;
+        }
+        .keySkills {
+            list-style-type: none;
+            -moz-column-count: 3;
+            -webkit-column-count: 3;
+            column-count: 3;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
+        }
+        .keySkills ul li {
+            margin-bottom: 6mm;
+        }
+        .clients {
+            list-style-type: none;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
+            text-decoration: none;
+        }
+        .clients ul li {
+            margin-bottom: 6mm;
+        }
+        .list {
+            list-style-type: none;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
+        }
+        .list ul {
+            list-style-type: disc;
+            margin-left: 5mm;
+            margin-bottom: 2mm;
+        }
+        button {
+            background-color: black;
+            width: 245px;
+            border: none;
+            outline: 0;
+            color: #fff;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0px 550px;
+            cursor: pointer; 
+            text-transform: uppercase;
+        }
+        button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: #da2d2d;
+        }
+        @media print {    
+            .no-print, .no-print * {
+                display: none !important;
+            }
+        }
+        #button {
+            width: 210mm;
+            height: 40px;
+            position: fixed;
+            z-index: 10;
+            background: #da2d2d;
+            border-bottom: solid #da2d2d 6px;
+            top: 0px;
+        }
+    </style>
 </head>
-<body>
-  <div class="flexContainer">
-    <div class="leftColumn">
-      <div class="leftRow">
-        <img src="/assets/img/Rakshit Soral.png" alt="Rakshit Soral portrait" width="100%">
-        <p id="name">RAKSHIT<br>SORAL</p>
-        <hr class="HeaderHr" id="leftHr">
-        <hr class="HeaderHr" id="rightHr">
-        <div class="over" id="dotContainer">
-          <span class="dot"></span>
-          <span class="dot" id="middleOne"></span>
-          <span class="dot"></span>
+<body id="top">
+    <!-- Page 1 -->
+    <page size="A4">
+        <div id="button" class="no-print">
+            <button type="button" onclick="myFunction()"><span class="button-txt"><i class="fa fa-print" aria-hidden="true"></i>
+            &nbsp;Print</span></button>
+            <script>
+                function myFunction() {
+                    window.print();
+                }
+            </script>
         </div>
-      </div>
-      <div class="leftRow">
-        <div id="Cone"></div>
-        <p class="over" id="Profession">MARKETING LEADER</p>
-        <div class="Triangle1" id="LeftTriangle"></div>
-        <div class="Triangle2" id="LeftTriangle2"></div>
-        <div class="Triangle1" id="RightTriangle"></div>
-        <div class="Triangle2" id="RightTriangle2"></div>
-      </div>
-      <div class="leftRow" id="LeftBottom">
-        <br>
-        <h2 class="left">CONTACT</h2><hr>
-        <span class="left">+91 9602542617</span><hr>
-        <span class="left">rakshitksoral@gmail.com</span><hr>
-        <span class="left">rakshitsoral.com</span><hr>
-        <span class="left">github.com/rakshitsoral</span><hr><br>
-        <h2 class="left">SKILLS</h2>
-        <div class="skills">HubSpot<hr class="skillBar" id="hubSpot"></div>
-        <div class="skills">Freshworks CRM<hr class="skillBar" id="freshworksCrm"></div>
-        <div class="skills">Mailchimp<hr class="skillBar" id="mailchimp"></div>
-        <div class="skills">Apollo.io<hr class="skillBar" id="apolloIo"></div>
-        <div class="skills">Google Ads<hr class="skillBar" id="googleAds"></div>
-        <div class="skills">Ahrefs<hr class="skillBar" id="ahrefs"></div>
-        <div class="skills">Google Analytics<hr class="skillBar" id="googleAnalytics"></div>
-        <div class="skills">Google Search Console<hr class="skillBar" id="googleSearchConsole"></div>
-        <div class="skills">Ubersuggest<hr class="skillBar" id="ubersuggest"></div>
-        <div class="skills">LinkedIn Campaign Manager<hr class="skillBar" id="linkedinCampaignManager"></div>
-        <br>
-        <h2 class="left">HOBBIES</h2>
-        <div class="skills">Guitar<hr class="skillBar" id="guitar"></div>
-        <div class="skills">Reading<hr class="skillBar" id="reading"></div>
-        <br>
-        <h2 class="left">SOCIAL</h2><hr>
-        <span class="left">linkedin.com/in/rakshitsoral</span><hr>
-        <span class="left">github.com/rakshitsoral</span><hr><br>
-      </div>
-    </div>
-    <div class="rightColumn">
-      <div class="rightRow" id="rightHeader">
-        <h2 class="right">ABOUT ME</h2>
-        <span class="rightText">Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</span>
-      </div>
-      <div class="rightRow">
-        <h2 class="right">WORK EXPERIENCE</h2>
-      </div>
-      <div class="containerHl">
-        <div class="years">
-          <h3>01.2020 - Present</h3>
+        <div class="cv">
+            <div id="header">
+                <div class="contactDetails">
+                    <ul>
+                        <li class="icon" title="Email me!"><a href="mailto:rakshitksoral@gmail.com"><i class="fa fa-envelope">&nbsp;&nbsp;</i>rakshitksoral@gmail.com</a></li>
+                        <li class="icon" title="Call me!"><a href="tel:+919602542617"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+91 9602542617</a></li>
+                        <li class="icon" title="Visit my website!"><a href="https://rakshitsoral.com/"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;rakshitsoral.com</a></li>
+                        <li class="icon" title="Connect with me!"><a href="https://linkedin.com/in/rakshitsoral"><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;linkedin.com/in/rakshitsoral</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mainDetails">
+                <div id="headshot">
+                    <img id="avatar" src="https://visualangle.ee/delivery/temp_image/icon.png" alt="Rakshit Soral" title="This is me" />
+                </div>
+                <div id="name">
+                    <h1>Rakshit Soral</h1>
+                    <h2>Marketing Leader</h2>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div id="mainArea">
+                <section>
+                    <article>
+                        <div class="sectionTitle">
+                            <h1>Profile</h1>
+                        </div>
+                        <div class="sectionContent">
+                            <p>Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</p>
+                        </div>
+                    </article>
+                    <div class="clear"></div>
+                </section>
+                <section>
+                    <div class="sectionTitle">
+                        <h1>Tools</h1>
+                    </div>
+                    <div class="sectionContent">
+                        <ul class="keySkills">
+                            <li class="subDetails">Marketing Automation & CRM</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;HubSpot</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Freshworks CRM</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Mailchimp</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Apollo.io</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Outplay</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Clay.com</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Slintel</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Bambora</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Tribilio (ABM)</li>
+                            <li class="subDetails">SEO & Keyword Research</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Ahrefs</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Ubersuggest</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Keyword Planner</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Search Console</li>
+                            <li class="subDetails">Analytics & Performance Tracking</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Analytics 4 (GA4)</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Search Console</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;LinkedIn Campaign Manager</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Ads Manager</li>
+                            <li class="subDetails">Content Creation & CMS</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;WordPress CMS</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Canva</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;GitHub (for site versioning)</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;ChatGPT</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Claude</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;DeepSeek</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Grok</li>
+                            <li class="subDetails">Sales & Lead Intelligence Tools</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Slintel</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Bambora</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Clay.com</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Apollo.io</li>
+                            <li class="subDetails">AI & Productivity Tools</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;ChatGPT</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Claude</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;DeepSeek</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Grok</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </section>
+                <section>
+                    <div class="sectionTitle">
+                        <h1>Work Experience</h1>
+                    </div>
+                    <div class="sectionContent">
+                        <ul class="list">
+                            <li>
+                                <span class="subDetails">Oct 2024 - Present&nbsp;&nbsp;</span><span class="bold">Marketing & Demand Generation Specialist, Kitecyber, California (United States), Remote</span>
+                                <ul>
+                                    <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
+                                    <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
+                                    <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
+                                    <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
+                                    <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
+                                    <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
+                                </ul>
+                            </li></ul></div></section>
+            </div>
         </div>
-        <div class="jobs">
-          <h3>Head of Marketing</h3>
-          <h4>Tech SaaS Inc. / Remote</h4>
+    </page>
+    <!-- Page 2 -->
+    <page size="A4">
+        <div class="cv">
+            <div id="mainArea">
+               <section>
+                            <li>
+                                <span class="subDetails">Aug 2022 - Sep 2024&nbsp;&nbsp;</span><span class="bold">Product Marketing Manager, Plutomen Technologies, Ahmedabad, Remote</span>
+                                <ul>
+                                    <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
+                                    <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
+                                    <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
+                                    <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
+                                    <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="subDetails">Oct 2017 - July 2022&nbsp;&nbsp;</span><span class="bold">Demand Generation Lead, Simform Solutions, Ahmedabad, Hybrid</span>
+                                <ul>
+                                    <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
+                                    <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
+                                    <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
+                                    <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
+                                    <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="subDetails">April 2016 - Sep 2017&nbsp;&nbsp;</span><span class="bold">Inbound Marketing Executive, Hoojook (RimTim Technologies), Gurgaon, In-house</span>
+                                <ul>
+                                    <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
+                                    <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
+                                    <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
+                                    <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="subDetails">July 2015 - March 2016&nbsp;&nbsp;</span><span class="bold">Jr. Content Reporter, Girnar Softwares Pvt. Ltd., Jaipur, In-house</span>
+                                <ul>
+                                    <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
+                                    <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
+                                    <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </section>
+                <section>
+                    <div class="sectionTitle">
+                        <h1>Education</h1>
+                    </div>
+                    <div class="sectionContent">
+                        <ul class="list">
+                            <li><span class="subDetails">2011 - 2015&nbsp;&nbsp;</span>B.Tech, Computer Science Engineering, Rajasthan Technical University, Kota</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </section>
+            </div>
         </div>
-      </div>
-      <div class="containerText">
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="jobText">Led demand generation and ABM strategies, increasing pipeline by 40% YoY. Built a team of 12 marketers and implemented AI-driven campaign automation using HubSpot and Apollo.io.</div>
-      </div>
-      <div class="containerHl">
-        <div class="years">
-          <h3>03.2017 - 12.2019</h3>
-        </div>
-        <div class="jobs">
-          <h3>Senior Marketing Manager</h3>
-          <h4>SaaS Solutions Ltd. / Jaipur, India</h4>
-        </div>
-      </div>
-      <div class="containerText">
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="jobText">Developed content strategy and SEO campaigns, boosting organic traffic by 60%. Managed Google Ads and LinkedIn campaigns with a $500K annual budget.</div>
-      </div>
-      <div class="containerHl">
-        <div class="years">
-          <h3>06.2015 - 02.2017</h3>
-        </div>
-        <div class="jobs">
-          <h3>Marketing Specialist</h3>
-          <h4>Startup Innovate / Jaipur, India</h4>
-        </div>
-      </div>
-      <div class="containerText">
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="verticalLines"></div>
-        <div class="jobText">Executed cold outbound campaigns and email marketing using Mailchimp, achieving a 15% conversion rate. Supported product launches with GTM strategies.</div>
-      </div>
-      <div class="rightRow">
-        <h2 class="right">EDUCATION</h2>
-      </div>
-      <div class="containerHl">
-        <div class="years">
-          <h3>09.2011</h3>
-        </div>
-        <div class="jobs">
-          <h3>B.Tech in Computer Science Engineering</h3>
-          <h4>Rajasthan Technical University / Kota, India</h4>
-        </div>
-      </div>
-      <div class="containerText">
-        <div class="verticalLinesEdu"></div>
-        <div class="verticalLinesEdu"></div>
-        <div class="verticalLinesEdu"></div>
-        <div class="verticalLinesEdu"></div>
-        <div class="verticalLinesEdu"></div>
-        <div class="jobText">Graduated with a focus on software development and data structures, providing a strong technical foundation for marketing technology solutions.</div>
-      </div>
-    </div>
-  </div>
+    </page>
 </body>
 </html>
