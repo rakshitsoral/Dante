@@ -14,5 +14,9 @@
     {
         "label": "Blog",
         "url": "/blog"
+    },
+    {
+        "label": "Resume",
+        "url": "/resume"
     }
 ]

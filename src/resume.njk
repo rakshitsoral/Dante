@@ -1,0 +1,357 @@
+---
+layout: default
+title: Rakshit Soral Resume
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rakshit Soral - Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #0e091d;
+      color: white;
+    }
+    .resume-hero {
+      background-color: #1a142f;
+      padding: 40px 20px;
+      text-align: center;
+      {% if featured_image %}
+      background-image: url({{ featured_image | url }});
+      background-size: cover;
+      background-position: center;
+      {% endif %}
+    }
+    .head_text {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .subhead_text {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .resume-hero p a {
+      color: white;
+      text-decoration: underline;
+      margin: 0 5px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #850505;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .resume-section {
+      margin-bottom: 30px;
+    }
+    .headline {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .resume-section p, .resume-section ul {
+      color: white;
+    }
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+    }
+    .tool-logo {
+      background-color: #2a2347;
+      padding: 8px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tool-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .company-logo, .university-logo {
+      background-color: #2a2347;
+      padding: 8px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .company-logo img, .university-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .job, .degree {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .job h3, .degree h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+    .job p, .degree p {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+    .job ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      color: white;
+    }
+    .work-section {
+      max-width: 1024px;
+      padding: 16px;
+      margin-top: 24px;
+      display: flex;
+      align-items: flex-start;
+      align-self: center;
+      position: relative;
+      background-color: #1a142f;
+      border-radius: 5px;
+    }
+    .work-section p {
+      color: white;
+    }
+    .work-section a {
+      color: white;
+      text-decoration: underline;
+    }
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+    .work-section--misc {
+      /* Additional styling if needed */
+    }
+    .img {
+      position: relative;
+      flex-shrink: 0;
+      margin-left: 48px;
+    }
+    .img img {
+      height: 275px;
+      width: 275px;
+      z-index: 10;
+      position: relative;
+      transform: rotate(-2deg);
+    }
+    .curl3 {
+      position: absolute;
+      display: block;
+      background-repeat: no-repeat;
+      width: 50px;
+      height: 50px;
+      background-image: url('/assets/img/curl3.png');
+    }
+    @media (max-width: 600px) {
+      .head_text {
+        font-size: 2rem;
+      }
+      .subhead_text {
+        font-size: 1.2rem;
+      }
+      .resume-hero {
+        padding: 20px;
+      }
+      .resume-container {
+        padding: 20px;
+      }
+      .headline {
+        font-size: 1.5rem;
+      }
+      .job h3, .degree h3 {
+        font-size: 1.1rem;
+      }
+      .work-section {
+        padding: 8px;
+        margin-top: 12px;
+        flex-direction: column-reverse;
+      }
+      .img {
+        margin-left: 0;
+        margin-bottom: 8px;
+      }
+      .curl3 {
+        display: none;
+      }
+      .tool-logo img, .company-logo img, .university-logo img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero Section -->
+    <section class="resume-hero">
+      <h1 class="head_text">Rakshit Soral</h1>
+      <h2 class="subhead_text">Marketing Leader</h2>
+      <p>
+        <a href="mailto:rakshitksoral@gmail.com" aria-label="Email">rakshitksoral@gmail.com</a> |
+        <a href="tel:+919602542617" aria-label="Phone">+91 9602542617</a> |
+        <a href="https://rakshitsoral.com" target="_blank" aria-label="Website">https://rakshitsoral.com</a>
+      </p>
+      <a href="/assets/resume.pdf" download class="download-btn" aria-label="Download Resume PDF">Download Resume (PDF)</a>
+    </section>
+
+    <!-- Resume Content -->
+    <section class="resume-container">
+      <!-- Summary -->
+      <div class="resume-section">
+        <h2 class="headline">Summary</h2>
+        <p>Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</p>
+      </div>
+
+      <!-- Tools -->
+      <div class="resume-section">
+        <h2 class="headline">Tools</h2>
+        <div class="tools-grid">
+          <div class="tool-logo"><img src="/assets/img/tools/hubspot.png" alt="HubSpot logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/freshworks-crm.png" alt="Freshworks CRM logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/mailchimp.png" alt="Mailchimp logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/apollo-io.png" alt="Apollo.io logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/outplay.png" alt="Outplay logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/clay-com.png" alt="Clay.com logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/slintel.png" alt="Slintel logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/bambora.png" alt="Bambora logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/tribilio.png" alt="Tribilio logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/ahrefs.png" alt="Ahrefs logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/ubersuggest.png" alt="Ubersuggest logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/google-keyword-planner.png" alt="Google Keyword Planner logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/google-search-console.png" alt="Google Search Console logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/google-analytics.png" alt="Google Analytics 4 logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/linkedin-campaign-manager.png" alt="LinkedIn Campaign Manager logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/google-ads.png" alt="Google Ads Manager logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/wordpress.png" alt="WordPress CMS logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/canva.png" alt="Canva logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/github.png" alt="GitHub logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/chatgpt.png" alt="ChatGPT logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/claude.png" alt="Claude logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/deepseek.png" alt="DeepSeek logo" loading="lazy"></div>
+          <div class="tool-logo"><img src="/assets/img/tools/grok.png" alt="Grok logo" loading="lazy"></div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="resume-section">
+        <h2 class="headline">Experience</h2>
+        <div class="job">
+          <div class="company-logo"><img src="/assets/img/companies/kitecyber.png" alt="Kitecyber logo" loading="lazy"></div>
+          <div>
+            <h3>Marketing & Demand Generation Specialist at Kitecyber, California (United States), Remote</h3>
+            <p>Oct 2024 - Present</p>
+            <ul>
+              <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
+              <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
+              <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
+              <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
+              <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
+              <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="company-logo"><img src="/assets/img/companies/plutomen-technologies.png" alt="Plutomen Technologies logo" loading="lazy"></div>
+          <div>
+            <h3>Product Marketing Manager at Plutomen Technologies, Ahmedabad, Remote</h3>
+            <p>Aug 2022 - Sep 2024</p>
+            <ul>
+              <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
+              <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
+              <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
+              <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
+              <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="company-logo"><img src="/assets/img/companies/simform-solutions.png" alt="Simform Solutions logo" loading="lazy"></div>
+          <div>
+            <h3>Demand Generation Lead at Simform Solutions, Ahmedabad, Hybrid</h3>
+            <p>Oct 2017 - July 2022</p>
+            <ul>
+              <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
+              <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
+              <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
+              <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
+              <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="company-logo"><img src="/assets/img/companies/hoojook.png" alt="Hoojook (RimTim Technologies) logo" loading="lazy"></div>
+          <div>
+            <h3>Inbound Marketing Executive at Hoojook (RimTim Technologies), Gurgaon, In-house</h3>
+            <p>April 2016 - Sep 2017</p>
+            <ul>
+              <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
+              <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
+              <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
+              <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="company-logo"><img src="/assets/img/companies/girnar-softwares.png" alt="Girnar Softwares logo" loading="lazy"></div>
+          <div>
+            <h3>Jr. Content Reporter at Girnar Softwares Pvt. Ltd., Jaipur, In-house</h3>
+            <p>July 2015 - March 2016</p>
+            <ul>
+              <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
+              <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
+              <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="resume-section">
+        <h2 class="headline">Education</h2>
+        <div class="degree">
+          <div class="university-logo"><img src="/assets/img/companies/rajasthan-technical-university.png" alt="Rajasthan Technical University logo" loading="lazy"></div>
+          <div>
+            <h3>B.Tech in Computer Science Engineering</h3>
+            <p>Rajasthan Technical University, Kota | 2011 - 2015</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work Section (Personal Details) -->
+      <section class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12 sm:flex-col-reverse">
+        <div>
+          <p>I enjoy <a href="/blog" class="link-misc">writing</a> about things I learn & I know, building scalable Digital Marketing campaigns, and learning a bit of <a href="https://github.com/rakshitsoral" class="link-misc">web development</a>, side-by-side.</p>
+          <p class="mt-6">When not in front of a screen I like to listen music, play guitar, read books, and binge-watch anime/series.</p>
+        </div>
+        <div class="img relative flex-shrink-0 ml-12 sm:ml-0 sm:mb-8">
+          <img src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral portrait" height="275" width="275" class="z-10 relative transform -rotate-2">
+        </div>
+        <span class="curl3 absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
