@@ -13,22 +13,28 @@ title: A Short Bio
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <style>
-        /* OPTIMIZED STYLES */
-        body { background: rgb(204,204,204); }
+        body {
+            background: rgb(204,204,204); 
+        }
         page {
             background: #fff;
             display: block;
             margin: 0 auto;
-            margin-bottom: 2mm;
-            margin-top: 2mm;
+            margin-bottom: 5mm;
+            margin-top: 5mm;
         }
         page[size="A4"] {  
             width: 210mm;
             height: 297mm;
         }
-        @page { size: 210mm 297mm; margin: 0; }
-        
+        @page {
+            size: 210mm 297mm;
+            margin: 0; 
+        }
         @media print {
             html, body, page {
                 width: 210mm;
@@ -37,51 +43,243 @@ title: A Short Bio
                 padding: 0 !important;
                 overflow: hidden; 
             }
-            .no-print, .no-print * { display: none !important; }
+            .no-overflow {
+                overflow: hidden; 
+            }
+            #Header, #Footer { 
+                display: none !important;
+            }
+            button {
+                display: none;
+            }
         }
-        
-        /* COMPACT HEADER */
-        .mainDetails { padding: 4mm 0 0 4mm; }
-        #headshot { 
-            width: 40mm;
-            margin-top: 4mm;
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            vertical-align: baseline;
         }
-        #name { padding: 4mm 0 0 5mm; }
-        #name h1 { font-size: 28pt; line-height: 32pt; }
-        #name h2 { font-size: 16pt; line-height: 18pt; }
-        .contactDetails { margin: 4mm 4mm 0 0; }
-        .contactDetails ul li { line-height: 20pt; }
-        
-        /* CONTENT OPTIMIZATION */
-        #mainArea, #mainAreaTwo { padding: 0 4mm; }
-        section { padding: 2mm 0 0 0; }
-        .sectionTitle { width: 42mm; margin-bottom: 3mm; }
-        .sectionContent { width: 147mm; }
-        .sectionTitle h1 { font-size: 16pt; }
-        
-        /* TOOLS SECTION */
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        html, body {
+            font-family: 'Lato', helvetica, arial, sans-serif;
+            font-size: 11pt;
+            color: #222;
+        }
+        .clear {
+            clear: both;
+        }
+        p {
+            line-height: 15pt;
+            margin-bottom: 4mm;
+            color: #444;
+            word-break: break-word;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover { 
+            text-decoration: underline;
+        }
+        a, .fa-check, .fa-arrow-right {
+            color: #da2d2d;
+        }
+        .cv {
+            width: 210mm;
+            height: 297mm;
+            background: #fff;
+        }
+        .mainDetails {
+            padding: 8mm 0 0 8mm;
+            background: #fff;
+        }
+        #name {
+            float: left;
+            text-transform: uppercase;
+            padding: 8.5mm 0 0 7mm;
+        }
+        #name h1 {
+            font-size: 33pt;
+            font-weight: 400;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            line-height: 38pt;
+            color: #da2d2d;
+        }
+        #name h2 {
+            font-size: 18pt;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            line-height: 20pt;
+        }
+        #mainArea, #mainAreaTwo {
+            padding: 0 8mm;
+        }
+        #headshot {
+            width: 46mm;
+            float: left;
+            margin-top: 10mm;
+            margin-left: -0.5mm;
+        }
+        #headshot img {
+            width: 100%;
+            height: auto;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .contactDetails {
+            float: right;
+            margin: 10mm 8mm 0 0;
+        }
+        .contactDetails ul { 
+            list-style-type: none;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        }
+        .contactDetails ul li {
+            line-height: 24pt;
+            color: #444;
+        }
+        .contactDetails ul li a, a[href^=tel] {
+            color: #444; 
+            padding: 4px 8px;
+            text-decoration: none;
+            -webkit-transition: all .1s ease-in;
+            -moz-transition: all .1s ease-in;
+            -o-transition: all .1s ease-in;
+            -ms-transition: all .1s ease-in;
+            transition: all .1s ease-in;
+        }
+        .contactDetails ul li a:hover { 
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: #da2d2d;
+        }
+        .icon {
+            font-size: 14pt;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        section {
+            border-top: 1mm dotted #444;
+            padding: 4mm 0 0 0;
+        }
+        section:first-child {
+            border-top: 0;
+            padding: 8mm 0 0 0;
+        }
+        section:last-child {
+            padding: 4mm 0 0 0;
+        }
+        .sectionTitle {
+            float: left;
+            width: 50mm;
+            margin-bottom: 6mm; 
+        }
+        .sectionContent {
+            float: right;
+            width: 141mm;
+        }
+        .sectionTitle h1 {
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 18pt;
+            color: #da2d2d;
+        }
+        .sectionContent h2 {
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 18pt;
+        }
+        .subDetails {
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            font-weight: bold;
+            color: #da2d2d;
+        }
+        .nameDetails {
+            font-size: 11pt;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #444;
+            text-transform: lowercase;
+        }
         .keySkills {
-            -moz-column-count: 4;
-            -webkit-column-count: 4;
-            column-count: 4;
-            margin-bottom: 2mm;
-            font-size: 10pt;
+            list-style-type: none;
+            -moz-column-count: 3;
+            -webkit-column-count: 3;
+            column-count: 3;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
         }
-        .keySkills li { margin-bottom: 2mm; }
-        .subDetails { font-size: 10pt; }
-        
-        /* WORK EXPERIENCE */
-        .list { font-size: 10pt; line-height: 13pt; }
-        .list ul { margin-left: 3mm; margin-bottom: 1mm; }
-        .job-item { margin-bottom: 2mm; }
-        
-        /* PRINT BUTTON */
-        #button { height: 30px; }
-        button { 
-            width: 200px; 
-            font-size: 16px;
-            padding: 6px 15px;
-            margin: 0px 480px;
+        .keySkills ul li {
+            margin-bottom: 6mm;
+        }
+        .clients {
+            list-style-type: none;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
+            text-decoration: none;
+        }
+        .clients ul li {
+            margin-bottom: 6mm;
+        }
+        .list {
+            list-style-type: none;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+            column-count: 1;
+            margin-bottom: 4mm;
+            font-size: 11pt;
+            color: #444;
+            line-height: 15pt;
+        }
+        .list ul {
+            list-style-type: disc;
+            margin-left: 5mm;
+            margin-bottom: 2mm;
+        }
+        button {
+            background-color: black;
+            width: 245px;
+            border: none;
+            outline: 0;
+            color: #fff;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0px 550px;
+            cursor: pointer; 
+            text-transform: uppercase;
+        }
+        button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: #da2d2d;
+        }
+        @media print {    
+            .no-print, .no-print * {
+                display: none !important;
+            }
+        }
+        #button {
+            width: 210mm;
+            height: 40px;
+            position: fixed;
+            z-index: 10;
+            background: #da2d2d;
+            border-bottom: solid #da2d2d 6px;
+            top: 0px;
         }
     </style>
 </head>
@@ -89,24 +287,28 @@ title: A Short Bio
     <!-- Page 1 -->
     <page size="A4">
         <div id="button" class="no-print">
-            <button type="button" onclick="window.print()">
-                <i class="fa fa-print"></i>&nbsp;Print
-            </button>
+            <button type="button" onclick="myFunction()"><span class="button-txt"><i class="fa fa-print" aria-hidden="true"></i>
+            &nbsp;Print</span></button>
+            <script>
+                function myFunction() {
+                    window.print();
+                }
+            </script>
         </div>
         <div class="cv">
             <div id="header">
                 <div class="contactDetails">
                     <ul>
-                        <li class="icon"><a href="mailto:rakshitksoral@gmail.com"><i class="fa fa-envelope"></i>&nbsp;rakshitksoral@gmail.com</a></li>
-                        <li class="icon"><a href="tel:+919602542617"><i class="fa fa-phone"></i>&nbsp;+91 9602542617</a></li>
-                        <li class="icon"><a href="https://rakshitsoral.com/"><i class="fa fa-globe"></i>&nbsp;rakshitsoral.com</a></li>
-                        <li class="icon"><a href="https://linkedin.com/in/rakshitsoral"><i class="fa fa-linkedin"></i>&nbsp;linkedin.com/in/rakshitsoral</a></li>
+                        <li class="icon" title="Email me!"><a href="mailto:rakshitksoral@gmail.com"><i class="fa fa-envelope">&nbsp;&nbsp;</i>rakshitksoral@gmail.com</a></li>
+                        <li class="icon" title="Call me!"><a href="tel:+919602542617"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+91 9602542617</a></li>
+                        <li class="icon" title="Visit my website!"><a href="https://rakshitsoral.com/"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;rakshitsoral.com</a></li>
+                        <li class="icon" title="Connect with me!"><a href="https://linkedin.com/in/rakshitsoral"><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;linkedin.com/in/rakshitsoral</a></li>
                     </ul>
                 </div>
             </div>
             <div class="mainDetails">
                 <div id="headshot">
-                    <img id="avatar" src="https://visualangle.ee/delivery/temp_image/icon.png" alt="Rakshit Soral" />
+                    <img id="avatar" src="https://visualangle.ee/delivery/temp_image/icon.png" alt="Rakshit Soral" title="This is me" />
                 </div>
                 <div id="name">
                     <h1>Rakshit Soral</h1>
@@ -126,7 +328,6 @@ title: A Short Bio
                     </article>
                     <div class="clear"></div>
                 </section>
-                
                 <section>
                     <div class="sectionTitle">
                         <h1>Tools</h1>
@@ -134,79 +335,55 @@ title: A Short Bio
                     <div class="sectionContent">
                         <ul class="keySkills">
                             <li class="subDetails">Marketing Automation & CRM</li>
-                            <li><i class="fa fa-check"></i>&nbsp;HubSpot</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Freshworks CRM</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Mailchimp</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Apollo.io</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Outplay</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Clay.com</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Slintel</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Bambora</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Tribilio (ABM)</li>
-                            
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;HubSpot</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Freshworks CRM</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Mailchimp</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Apollo.io</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Outplay</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Clay.com</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Slintel</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Bambora</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Tribilio (ABM)</li>
                             <li class="subDetails">SEO & Keyword Research</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Ahrefs</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Ubersuggest</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Keyword Planner</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Search Console</li>
-                            
-                            <li class="subDetails">Analytics & Tracking</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Analytics 4</li>
-                            <li><i class="fa fa-check"></i>&nbsp;LinkedIn Campaign Manager</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Ads Manager</li>
-                            
-                            <li class="subDetails">Content & CMS</li>
-                            <li><i class="fa fa-check"></i>&nbsp;WordPress CMS</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Canva</li>
-                            <li><i class="fa fa-check"></i>&nbsp;GitHub</li>
-                            
-                            <li class="subDetails">AI & Productivity</li>
-                            <li><i class="fa fa-check"></i>&nbsp;ChatGPT</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Claude</li>
-                            <li><i class="fa fa-check"></i>&nbsp;DeepSeek</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Grok</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Ahrefs</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Ubersuggest</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Keyword Planner</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Search Console</li>
+                            <li class="subDetails">Analytics & Performance Tracking</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Analytics 4 (GA4)</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Search Console</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;LinkedIn Campaign Manager</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Google Ads Manager</li>
+                            <li class="subDetails">Content Creation & CMS</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;WordPress CMS</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Canva</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;GitHub (for site versioning)</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;ChatGPT</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Claude</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;DeepSeek</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Grok</li>
+                            <li class="subDetails">Sales & Lead Intelligence Tools</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Slintel</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Bambora</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Clay.com</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Apollo.io</li>
+                            <li class="subDetails">AI & Productivity Tools</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;ChatGPT</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Claude</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;DeepSeek</li>
+                            <li><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Grok</li>
                         </ul>
                     </div>
                     <div class="clear"></div>
                 </section>
-                
                 <section>
                     <div class="sectionTitle">
-                        <h1>Work Experience</h1>
+                        <h1>Portfolio & Social Media</h1>
                     </div>
                     <div class="sectionContent">
-                        <ul class="list">
-                            <li class="job-item">
-                                <span class="subDetails">Oct 2024 - Present&nbsp;&nbsp;</span>
-                                <span class="bold">Marketing & Demand Generation Specialist, Kitecyber, California (Remote)</span>
-                                <ul>
-                                    <li>Spearheaded website positioning overhaul driving 40% increase in product trial signups</li>
-                                    <li>Revived LinkedIn presence (+2,000 followers in 8 months)</li>
-                                    <li>Deployed cold email campaigns achieving 32% open rate</li>
-                                    <li>Launched Google Ads campaigns ($60K budget) driving 20% increase in qualified leads</li>
-                                </ul>
-                            </li>
-                            
-                            <li class="job-item">
-                                <span class="subDetails">Aug 2022 - Sep 2024&nbsp;&nbsp;</span>
-                                <span class="bold">Product Marketing Manager, Plutomen Technologies, Ahmedabad (Remote)</span>
-                                <ul>
-                                    <li>Built 4-member team executing omni-channel campaigns driving 200+ qualified leads</li>
-                                    <li>Executed co-marketing campaigns with Meta and RealWear</li>
-                                    <li>Repositioned Industrial XR + AI Connected Worker Suite</li>
-                                    <li>Developed content strategy publishing 100+ blogs generating $250K pipeline revenue</li>
-                                </ul>
-                            </li>
-                            
-                            <li class="job-item">
-                                <span class="subDetails">Oct 2017 - July 2022&nbsp;&nbsp;</span>
-                                <span class="bold">Demand Generation Lead, Simform Solutions, Ahmedabad (Hybrid)</span>
-                                <ul>
-                                    <li>Designed geo-targeted microsites delivering 30+ qualified leads/month</li>
-                                    <li>Led influencer-driven content campaigns boosting blog traffic by 1,000+ visits</li>
-                                    <li>Executed ABM campaigns resulting in 45% SQL conversion uplift</li>
-                                </ul>
-                            </li>
+                        <ul class="clients">
+                            <li title="Visit my website!"><a href="https://rakshitsoral.com/" target="_blank">rakshitsoral.com</a></li>
+                            <li title="Connect with me!"><a href="https://linkedin.com/in/rakshitsoral" target="_blank">linkedin.com/in/rakshitsoral</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
@@ -214,46 +391,68 @@ title: A Short Bio
             </div>
         </div>
     </page>
-    
     <!-- Page 2 -->
     <page size="A4">
         <div class="cv">
             <div id="mainArea">
                 <section>
+                    <div class="sectionTitle">
+                        <h1>Work Experience</h1>
+                    </div>
                     <div class="sectionContent">
                         <ul class="list">
-                            <!-- Continued Experience -->
-                            <li class="job-item">
-                                <span class="subDetails">Oct 2017 - July 2022&nbsp;&nbsp;</span>
-                                <span class="bold">Demand Generation Lead, Simform Solutions, Ahmedabad (Hybrid)</span>
+                            <li>
+                                <span class="subDetails">Oct 2024 - Present&nbsp;&nbsp;</span><span class="bold">Marketing & Demand Generation Specialist, Kitecyber, California (United States), Remote</span>
                                 <ul>
-                                    <li>Orchestrated multi-touch outreach increasing email response rates by 30%</li>
-                                    <li>Built 50+ backlinks increasing organic ranking by 40%</li>
+                                    <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
+                                    <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
+                                    <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
+                                    <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
+                                    <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
+                                    <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
                                 </ul>
                             </li>
-                            
-                            <li class="job-item">
-                                <span class="subDetails">April 2016 - Sep 2017&nbsp;&nbsp;</span>
-                                <span class="bold">Inbound Marketing Executive, Hoojook (RimTim Technologies), Gurgaon</span>
+                            <li>
+                                <span class="subDetails">Aug 2022 - Sep 2024&nbsp;&nbsp;</span><span class="bold">Product Marketing Manager, Plutomen Technologies, Ahmedabad, Remote</span>
                                 <ul>
-                                    <li>Scaled client websites to 3,000+ monthly visitors via SEO</li>
-                                    <li>Managed WordPress websites and created SEO-optimized content</li>
+                                    <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
+                                    <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
+                                    <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
+                                    <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
+                                    <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
                                 </ul>
                             </li>
-                            
-                            <li class="job-item">
-                                <span class="subDetails">July 2015 - March 2016&nbsp;&nbsp;</span>
-                                <span class="bold">Jr. Content Reporter, Girnar Softwares Pvt. Ltd., Jaipur</span>
+                            <li>
+                                <span class="subDetails">Oct 2017 - July 2022&nbsp;&nbsp;</span><span class="bold">Demand Generation Lead, Simform Solutions, Ahmedabad, Hybrid</span>
                                 <ul>
-                                    <li>Scaled website traffic to 100,000+ monthly visitors</li>
-                                    <li>Created automotive content for region-specific search trends</li>
+                                    <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
+                                    <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
+                                    <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
+                                    <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
+                                    <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="subDetails">April 2016 - Sep 2017&nbsp;&nbsp;</span><span class="bold">Inbound Marketing Executive, Hoojook (RimTim Technologies), Gurgaon, In-house</span>
+                                <ul>
+                                    <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
+                                    <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
+                                    <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
+                                    <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="subDetails">July 2015 - March 2016&nbsp;&nbsp;</span><span class="bold">Jr. Content Reporter, Girnar Softwares Pvt. Ltd., Jaipur, In-house</span>
+                                <ul>
+                                    <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
+                                    <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
+                                    <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                     <div class="clear"></div>
                 </section>
-                
                 <section>
                     <div class="sectionTitle">
                         <h1>Education</h1>
@@ -261,28 +460,6 @@ title: A Short Bio
                     <div class="sectionContent">
                         <ul class="list">
                             <li><span class="subDetails">2011 - 2015&nbsp;&nbsp;</span>B.Tech, Computer Science Engineering, Rajasthan Technical University, Kota</li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-                
-                <!-- Added Skills Section -->
-                <section>
-                    <div class="sectionTitle">
-                        <h1>Core Skills</h1>
-                    </div>
-                    <div class="sectionContent">
-                        <ul class="keySkills" style="column-count:3">
-                            <li>B2B SaaS Marketing</li>
-                            <li>Demand Generation</li>
-                            <li>Marketing Automation</li>
-                            <li>ABM Strategy</li>
-                            <li>Content Strategy</li>
-                            <li>SEO/SEM</li>
-                            <li>CRM Management</li>
-                            <li>Team Leadership</li>
-                            <li>Marketing Analytics</li>
-                            <li>Campaign Management</li>
                         </ul>
                     </div>
                     <div class="clear"></div>
