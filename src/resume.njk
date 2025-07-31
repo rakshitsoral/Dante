@@ -10,348 +10,417 @@ title: Rakshit Soral Resume
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakshit Soral - Resume</title>
   <style>
+    * {
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+    :root {
+      --miniColor: #C7EEFF;
+      --colorsp: #60a5fa;
+      --maincolor: #1a1a2e;
+      --mainMtop: 50px;
+      --borderRadiuse: 20px;
+      --widthdiv: 1000px;
+    }
+    .main {
+      margin: auto 20% 20%;
+    }
     body {
+      height: 100%;
+      margin: 0%;
+      font-family: 'Work Sans', sans-serif;
+      background-image: linear-gradient(to top, #030822, #60a5fa);
+      display: flex;
+      justify-content: center;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: var(--mainMtop);
+      width: 1000px;
+      height: 250px;
+      background-image: linear-gradient(to right, #0F044C, #60a5fa, #0F044C);
+      border-radius: var(--borderRadiuse);
+      animation: strock-move 3s infinite linear;
+      background-position: 50px 50px;
+      padding-left: 5px;
+      padding-right: 30px;
+    }
+    @keyframes strock-move {
+      to {
+        background-position: 1000px 1000px;
+      }
+    }
+    .head {
+      width: 990px;
+      height: 240px;
+      padding: 10px;
+      border-radius: var(--borderRadiuse);
+      background-color: var(--maincolor);
+      position: relative;
+      display: grid;
+      grid-template-columns: 400px 500px;
+    }
+    .icons-header {
+      width: 550px;
+      height: 83px;
+      display: grid;
+      grid-template-columns: 205px 1fr;
+      column-gap: -100px;
+      row-gap: 10px;
+      position: absolute;
+      left: 450px;
+      top: 150px;
+    }
+    .main-img img {
+      width: 220px;
+      height: 220px;
+      border-radius: var(--borderRadiuse);
+    }
+    .text h1 {
+      font-size: 90px;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: #0e091d;
-      color: white;
-    }
-    .resume-hero {
-      background-color: #1a142f;
-      padding: 40px 20px;
       text-align: center;
-      {% if featured_image %}
-      background-image: url({{ featured_image | url }});
-      background-size: cover;
-      background-position: center;
-      {% endif %}
+      color: var(--colorsp);
     }
-    .head_text {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: white;
+    .text > p {
+      font-size: 22px;
+      text-align: center;
+      margin: 0;
+      color: var(--miniColor);
     }
-    .subhead_text {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: white;
+    svg {
+      background-color: var(--colorsp);
+      padding: 3px;
+      border-radius: 50px;
+      color: var(--miniColor);
+      width: 30px;
+      height: 30px;
+      margin-bottom: -7px;
     }
-    .resume-hero p a {
-      color: white;
-      text-decoration: underline;
-      margin: 0 5px;
+    section {
+      margin-top: var(--mainMtop);
+      background-color: var(--maincolor);
+      width: var(--widthdiv);
+      height: 800px;
+      border-radius: var(--borderRadiuse);
+      display: flex;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: 300px 300px;
+      column-gap: 200px;
+      grid-template-rows: 250px;
+    }
+    .list-sk {
+      display: grid;
+      grid-template-columns: 150px 150px;
+      column-gap: 10px;
+    }
+    .info p {
+      font-size: 20px;
+      color: var(--miniColor);
+      border-bottom: solid var(--colorsp) 3px;
+    }
+    h2, h3, h4, h5 {
+      font-size: 32px;
+      color: var(--colorsp);
+    }
+    .list-sk > .li-one p, .list-sk > .li-tow p {
+      margin-top: -11px;
+      color: var(--miniColor);
+      font-size: 20px;
+      border-bottom: solid var(--colorsp) 3px;
+      padding-bottom: 5px;
+      width: 120px;
+    }
+    li {
+      list-style: none;
+      padding-bottom: 10px;
+      color: var(--miniColor);
+    }
+    ul {
+      position: relative;
+      right: 35px;
+    }
+    .lg > .p {
+      margin-top: -30px;
+      color: var(--miniColor);
+    }
+    .lg > .p p {
+      border-bottom: solid var(--colorsp) 3px;
+      padding-bottom: 3px;
+    }
+    .dc > p {
+      font-size: 20px;
+      color: var(--miniColor);
+      font-size: 18px;
+      border-bottom: solid 3px var(--colorsp);
+    }
+    span {
+      color: var(--miniColor);
+      font-size: 18px;
+    }
+    .info {
+      position: relative;
+    }
+    section .info::after {
+      content: "";
+      position: absolute;
+      top: 56px;
+      left: 370px;
+      background-image: linear-gradient(to bottom, #60a5fa, #60a5fa, #C7EEFF, #0077C0, #0077C0);
+      height: 450px;
+      width: 3px;
+    }
+    .li-one ul #o {
+      position: absolute;
+      top: 0px;
+      left: 92px;
+      width: 80px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-one ul #t {
+      position: absolute;
+      top: 28px;
+      left: 92px;
+      width: 75px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-one ul #th {
+      position: absolute;
+      top: 55px;
+      left: 92px;
+      width: 60px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-one ul #fo {
+      position: absolute;
+      top: 85px;
+      left: 92px;
+      width: 70px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-one ul #fi {
+      position: absolute;
+      top: 113px;
+      left: 92px;
+      width: 55px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-tow ul #ph {
+      position: absolute;
+      top: 0px;
+      left: 125px;
+      width: 85px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-tow ul #ill {
+      position: absolute;
+      top: 28px;
+      left: 125px;
+      width: 90px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-tow ul #in {
+      position: absolute;
+      top: 55px;
+      left: 125px;
+      width: 70px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-tow ul #ani {
+      position: absolute;
+      top: 85px;
+      left: 155px;
+      width: 75px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    .li-tow ul #pr {
+      position: absolute;
+      top: 113px;
+      left: 125px;
+      width: 60px;
+      border-bottom: solid var(--colorsp) 3px;
+      font-size: 10px;
+      text-align: end;
+    }
+    footer {
+      margin-top: 30px;
+    }
+    footer > h6 {
+      font-size: 32px;
+      color: var(--colorsp);
+      margin-top: -100px;
+    }
+    footer .main-footer {
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: space-around;
+      width: 800px;
+      height: 100px;
+      padding-bottom: 50px;
+      border-bottom: solid var(--colorsp) 3px;
+    }
+    .main-footer .ch a svg,
+    .main-footer .gt a svg,
+    .main-footer .book a svg {
+      width: 100px;
+      height: 100px;
+      border: solid 5px var(--colorsp);
+      padding: 10px;
+      background-color: var(--miniColor);
+    }
+    .ch a svg:hover, .gt a svg:hover, .book a svg:hover {
+      background-color: #60a5fa;
+    }
+    .icons-header a {
+      text-decoration: none;
+      color: var(--miniColor);
     }
     .download-btn {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #850505;
-      color: white;
+      background-color: var(--colorsp);
+      color: var(--miniColor);
       text-decoration: none;
       border-radius: 5px;
       font-size: 1rem;
     }
-    .resume-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .resume-section {
-      margin-bottom: 30px;
-    }
-    .headline {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: white;
-    }
-    .resume-section p, .resume-section ul {
-      color: white;
-    }
-    .tools-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-    }
-    .tool-logo {
-      background-color: #2a2347;
-      padding: 8px;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .tool-logo img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    .company-logo, .university-logo {
-      background-color: #2a2347;
-      padding: 8px;
-      border-radius: 5px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    .company-logo img, .university-logo img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    .job, .degree {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: flex-start;
-    }
-    .job h3, .degree h3 {
-      font-size: 1.3rem;
-      margin-bottom: 5px;
-      color: white;
-    }
-    .job p, .degree p {
-      font-size: 0.9rem;
-      margin-bottom: 5px;
-      color: white;
-    }
-    .job ul {
-      list-style-type: disc;
-      margin-left: 20px;
-      color: white;
-    }
-    .work-section {
-      max-width: 1024px;
-      padding: 16px;
-      margin-top: 24px;
-      display: flex;
-      align-items: flex-start;
-      align-self: center;
-      position: relative;
-      background-color: #1a142f;
-      border-radius: 5px;
-    }
-    .work-section p {
-      color: white;
-    }
-    .work-section a {
-      color: white;
-      text-decoration: underline;
-    }
-    .mt-6 {
-      margin-top: 1.5rem;
-    }
-    .work-section--misc {
-      /* Additional styling if needed */
-    }
-    .img {
-      position: relative;
-      flex-shrink: 0;
-      margin-left: 48px;
-    }
-    .img img {
-      height: 275px;
-      width: 275px;
-      z-index: 10;
-      position: relative;
-      transform: rotate(-2deg);
-    }
-    .curl3 {
-      position: absolute;
-      display: block;
-      background-repeat: no-repeat;
-      width: 50px;
-      height: 50px;
-      background-image: url('/assets/img/curl3.png');
-    }
-    @media (max-width: 600px) {
-      .head_text {
-        font-size: 2rem;
-      }
-      .subhead_text {
-        font-size: 1.2rem;
-      }
-      .resume-hero {
-        padding: 20px;
-      }
-      .resume-container {
-        padding: 20px;
-      }
-      .headline {
-        font-size: 1.5rem;
-      }
-      .job h3, .degree h3 {
-        font-size: 1.1rem;
-      }
-      .work-section {
-        padding: 8px;
-        margin-top: 12px;
-        flex-direction: column-reverse;
-      }
-      .img {
-        margin-left: 0;
-        margin-bottom: 8px;
-      }
-      .curl3 {
-        display: none;
-      }
-      .tool-logo img, .company-logo img, .university-logo img {
-        width: 32px;
-        height: 32px;
-      }
-    }
   </style>
 </head>
 <body>
-  <main>
-    <!-- Hero Section -->
-    <section class="resume-hero">
-      <h1 class="head_text">Rakshit Soral</h1>
-      <h2 class="subhead_text">Marketing Leader</h2>
-      <p>
-        <a href="mailto:rakshitksoral@gmail.com" aria-label="Email">rakshitksoral@gmail.com</a> |
-        <a href="tel:+919602542617" aria-label="Phone">+91 9602542617</a> |
-        <a href="https://rakshitsoral.com" target="_blank" aria-label="Website">https://rakshitsoral.com</a>
-      </p>
-      <a href="/assets/resume.pdf" download class="download-btn" aria-label="Download Resume PDF">Download Resume (PDF)</a>
+  <div class="main">
+    <header>
+      <div class="head">
+        <div class="main-img">
+          <img src="/assets/img/Rakshit Soral.png" alt="Rakshit Soral portrait" loading="lazy">
+        </div>
+        <div class="text">
+          <h1>Rakshit Soral</h1>
+          <p>Marketing Leader</p>
+        </div>
+        <div class="icons-header">
+          <div class="icon-one">
+            <a href="https://github.com/rakshitsoral">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="fill: #C7EEFF;">
+                <path d="M16 0.396c-8.837 0-16 7.163-16 16 0 7.07 4.584 13.066 10.94 15.179 0.8 0.147 1.093-0.347 1.093-0.773 0-0.38-0.013-1.387-0.02-2.72-4.449 0.966-5.387-2.145-5.387-2.145-0.727-1.847-1.775-2.34-1.775-2.34-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.737 4.656 1.33 0.145-1.034 0.558-1.738 1.015-2.14-3.553-0.404-7.287-1.776-7.287-7.907 0-1.747 0.624-3.174 1.647-4.293-0.165-0.405-0.715-2.031 0.156-4.235 0 0 1.344-0.43 4.4 1.64 1.276-0.355 2.645-0.532 4.005-0.538 1.36 0.006 2.728 0.183 4.005 0.538 3.056-2.07 4.4-1.64 4.4-1.64 0.872 2.204 0.322 3.83 0.157 4.235 1.023 1.119 1.647 2.546 1.647 4.293 0 6.147-3.738 7.5-7.297 7.897 0.573 0.496 1.085 1.473 1.085 2.968 0 2.14-0.02 3.867-0.02 4.393 0 0.427 0.293 0.927 1.1 0.773C27.416 29.462 32 23.466 32 16.396c0-8.837-7.163-16-16-16z"/>
+              </svg>
+            </a>
+            <span>@rakshitsoral</span>
+          </div>
+          <div class="icon-tow">
+            <a href="mailto:rakshitksoral@gmail.com">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" style="fill: #C7EEFF;">
+                <path d="M 5 4 C 3.3550302 4 2 5.3550302 2 7 L 2 8 L 2 42 L 2 43 C 2 44.64497 3.3550302 46 5 46 L 45 46 C 46.64497 46 48 44.64497 48 43 L 48 42 L 48 8 L 48 7 C 48 5.3550302 46.64497 4 45 4 L 5 4 z M 7.5273438 6 L 42.472656 6 L 24.996094 22.373047 L 7.5273438 6 z M 5 8.5273438 L 22.794922 25 L 5 41.472656 L 5 8.5273438 z M 45 8.5273438 L 45 41.472656 L 27.205078 25 L 45 8.5273438 z M 24.996094 27.626953 L 42.099609 43 L 7.9003906 43 L 24.996094 27.626953 z"/>
+              </svg>
+            </a>
+            <span>rakshitksoral@gmail.com</span>
+          </div>
+          <div class="icon-three">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" style="fill: #C7EEFF;">
+              <path d="M 12 1 C 11.476563 1 10.941406 1.183594 10.5625 1.5625 C 10.183594 1.941406 10 2.476563 10 3 L 10 47 C 10 47.523438 10.183594 48.058594 10.5625 48.4375 C 10.941406 48.816406 11.476563 49 12 49 L 38 49 C 38.523438 49 39.058594 48.816406 39.4375 48.4375 C 39.816406 48.058594 40 47.523438 40 47 L 40 3 C 40 2.476563 39.816406 1.941406 39.4375 1.5625 C 39.058594 1.183594 38.523438 1 38 1 Z M 12 3 L 38 3 L 38 47 L 12 47 Z M 14 5 L 14 29 L 36 29 L 36 5 Z M 16 7 L 34 7 L 34 27 L 16 27 Z M 25 30 C 23.894531 30 23 30.894531 23 32 C 23 33.105469 23.894531 34 25 34 C 26.105469 34 27 33.105469 27 32 C 27 30.894531 26.105469 30 25 30 Z M 18 35 C 15.789063 35 14 36.789063 14 39 L 14 41 C 14 43.210938 15.789063 45 18 45 L 32 45 C 34.210938 45 36 43.210938 36 41 L 36 39 C 36 36.789063 34.210938 35 32 35 Z M 18 37 L 20 37 L 20 39 L 16 39 C 16 37.808594 16.808594 37 18 37 Z M 22 37 L 28 37 L 28 39 L 22 39 Z M 30 37 L 32 37 C 33.191406 37 34 37.808594 34 39 L 30 39 Z M 16 41 L 20 41 L 20 43 L 18 43 C 16.808594 43 16 42.191406 16 41 Z M 22 41 L 28 41 L 28 43 L 22 43 Z M 30 41 L 34 41 C 34 42.191406 33.191406 43 32 43 L 30 43 Z"/>
+            </svg>
+            <span>+91 9602542617</span>
+          </div>
+          <div class="icon-foore">
+            <a href="https://rakshitsoral.com">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="fill: #C7EEFF;">
+                <path d="M 1 6.75 L 1 25.25 L 9.9375 25.25 C 10.765625 25.25 16.46875 25.082031 16.46875 19.875 C 16.46875 16.621094 14.230469 15.515625 13.09375 15.1875 C 13.929688 14.792969 15.59375 13.855469 15.59375 11.34375 C 15.59375 9.945313 15.394531 6.75 9.6875 6.75 Z M 21.375 8.46875 L 21.375 10.15625 L 28.28125 10.15625 L 28.28125 8.46875 Z M 5.0625 9.90625 L 8.875 9.90625 C 9.234375 9.90625 11.65625 9.714844 11.65625 12.03125 C 11.65625 14.011719 9.90625 14.21875 9.1875 14.21875 L 5.0625 14.21875 Z M 25 11.6875 C 19.777344 11.6875 18.6875 16.222656 18.6875 18.1875 C 18.6875 24.019531 23.46875 24.6875 25 24.6875 C 29.128906 24.6875 30.300781 22.015625 30.78125 20.53125 L 27.78125 20.53125 C 27.664063 20.914063 26.789063 22.15625 25.125 22.15625 C 22.335938 22.15625 22.09375 19.976563 22.09375 19 L 30.96875 19 C 31.148438 15.625 29.671875 11.6875 25 11.6875 Z M 24.90625 14.21875 C 25.738281 14.21875 26.410156 14.460938 26.8125 14.90625 C 27.214844 15.355469 27.511719 16.011719 27.59375 16.875 L 22.09375 16.875 C 22.109375 16.636719 22.164063 16.363281 22.25 16.0625 C 22.335938 15.753906 22.46875 15.460938 22.6875 15.1875 C 22.90625 14.917969 23.210938 14.683594 23.5625 14.5 C 23.921875 14.3125 24.367188 14.21875 24.90625 14.21875 Z M 5.0625 17 L 9.46875 17 C 10.34375 17 12.40625 17.136719 12.40625 19.65625 C 12.40625 22.097656 9.808594 22.09375 9.40625 22.09375 L 5.0625 22.09375 Z"/>
+              </svg>
+            </a>
+            <span>rakshitsoral.com</span>
+          </div>
+        </div>
+        <a href="/assets/resume.pdf" download class="download-btn" aria-label="Download Resume PDF">Download Resume (PDF)</a>
+      </div>
+    </header>
+    <section>
+      <div class="info">
+        <h2>Information</h2>
+        <p>About Me</p>
+        <span>Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</span>
+      </div>
+      <div class="sk">
+        <h3>Skills</h3>
+        <div class="list-sk">
+          <div class="li-one">
+            <p>Marketing Tools</p>
+            <ul>
+              <li>HubSpot</li><span id="o">90%</span>
+              <li>Freshworks CRM</li><span id="t">85%</span>
+              <li>Mailchimp</li><span id="th">80%</span>
+              <li>Apollo.io</li><span id="fo">75%</span>
+              <li>Google Ads</li><span id="fi">85%</span>
+            </ul>
+          </div>
+          <div class="li-tow">
+            <p>SEO & Analytics</p>
+            <ul>
+              <li>Ahrefs</li><span id="ph">80%</span>
+              <li>Google Analytics</li><span id="ill">90%</span>
+              <li>Google Search Console</li><span id="in">85%</span>
+              <li>Ubersuggest</li><span id="ani">75%</span>
+              <li>LinkedIn Campaign Manager</li><span id="pr">80%</span>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dc">
+        <h4>Education</h4>
+        <p>B.Tech in Computer Science Engineering</p>
+        <span>Rajasthan Technical University, Kota | 2011 - 2015</span>
+      </div>
+      <div class="lg">
+        <h5>Language</h5>
+        <div class="p">
+          <p>English</p>
+          <p>Hindi</p>
+        </div>
+      </div>
+      <footer>
+        <h6>Interests</h6>
+        <div class="main-footer">
+          <div class="ch">
+            <a href="https://www.musicca.com/guitar">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.003 512.003" style="fill: #0077C0;">
+                <path d="M497.942,14.062c-18.742-18.75-49.139-18.75-67.881,0l-47.999,47.999c-10.013,10.011-14.504,23.335-13.82,36.444 l-85.857,85.857c-22.24-17.691-41.358-25.218-61.018-24.312c-32.886,1.305-53.671,25.695-75.674,51.514 c-8.785,10.304-17.871,20.968-27.909,31.093c-3.168,2.352-14.75,6.984-23.206,10.367c-33.179,13.281-83.314,33.343-93.017,80.631 c-7.328,35.71,11.129,75.084,56.417,120.372c38.874,38.874,73.381,57.975,104.954,57.975c5.211,0,10.347-0.523,15.402-1.562 c47.292-9.703,67.346-59.85,80.615-93.029c3.285-8.211,7.75-19.367,10.16-22.921c10.718-10.664,21.199-19.593,31.343-28.234 c25.812-21.984,50.19-42.749,51.503-75.623c0.785-19.632-6.683-38.759-24.331-61.002l85.875-85.875 c0.838,0.045,1.666,0.24,2.506,0.24c12.285,0,24.57-4.687,33.941-14.062l47.999-47.999 C516.688,63.194,516.688,32.804,497.942,14.062z M224.008,319.992c-17.671,0-31.999-14.328-31.999-31.999 c0-17.673,14.328-31.999,31.999-31.999c17.673,0,31.999,14.326,31.999,31.999C256.007,305.664,241.681,319.992,224.008,319.992z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="book">
+            <a href="https://www.bookstores.com/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.387 68.387" style="fill: #0077C0;">
+                <path d="M61.847,14.207c-0.44-4.059-3.844-7.244-8.011-7.244H32.958L16.859,0.479C16.073,0.165,15.295,0,14.551,0 c-2.802,0-4.69,2.191-4.69,5.462v3.029c-1.83,1.311-3.067,3.361-3.321,5.715c-0.972,1.475-1.544,3.231-1.544,5.128v39.708 c0,5.16,4.184,9.344,9.343,9.344h39.709c5.16,0,9.343-4.184,9.343-9.344V19.334C63.391,17.438,62.818,15.681,61.847,14.207z M11.029,7.807V5.462c0-2.609,1.382-4.294,3.522-4.294c0.596,0,1.225,0.133,1.874,0.393L29.83,6.963l2.897,1.168l0.883,0.356v0.812 v0.692v50.124h-0.656l-16.094-6.487c-3.214-1.296-5.83-5.283-5.83-8.887V10.622V10.54V9.131V7.807z M39.038,9.994v5.447 l2.272-1.911l2.271,1.911V9.994v-0.69H53.84c1.412,0,2.681,0.53,3.68,1.37c1.264,1.062,2.083,2.627,2.083,4.398v39.277 c0,3.18-2.58,5.769-5.763,5.769H34.782V9.994v-0.69h4.261L39.038,9.994L39.038,9.994z M30.173,24.732l-7.226-2.915V20.63 l7.226,2.916V24.732z M30.173,29.259l-7.226-2.915v-1.188l7.226,2.911V29.259z M30.173,33.825L15.719,28v-1.187l14.454,5.826 V33.825z M30.173,38.35l-14.454-5.825v-1.192l14.454,5.825V38.35z M30.173,42.916L15.719,37.09v-1.186l14.454,5.826V42.916z M16.956,24.276l0.375-1.154l2.177,0.876l0.39,1.466l0.633,0.254l0.635,0.254l-2.026-7.239l-0.697-0.281l-0.693-0.277l-2.03,5.599 l0.624,0.243L16.956,24.276z M18.424,19.883v-0.004h0.002L18.424,19.883l0.762,2.882l-1.521-0.619L18.424,19.883z M48.358,43.605 c-0.378,0-0.755,0-1.133,0c0-1.62,0-3.235,0-4.854c0.388,0,0.779,0,1.167,0C48.368,40.363,48.437,42.049,48.358,43.605z M51.37,37.649c0.851,1.339,1.599,2.789,2.427,4.145c-0.326,0.178-0.646,0.352-0.949,0.552c-0.894-1.31-1.621-2.778-2.488-4.115 C50.651,37.989,51.06,37.866,51.37,37.649z M44.214,37.649c0.34,0.157,0.628,0.378,0.985,0.522c-0.75,1.426-1.587,2.775-2.37,4.179 c-0.367-0.13-0.646-0.356-0.976-0.527C42.533,40.325,43.443,39.057,44.214,37.649z M57.052,38.568 c-1.394-0.789-2.828-1.528-4.179-2.367c0.167-0.375,0.34-0.744,0.55-1.072c1.373,0.825,2.785,1.614,4.145,2.459 C57.424,37.943,57.209,38.224,57.052,38.568z M37.982,37.556c1.43-0.785,2.814-1.61,4.206-2.427c0.16,0.369,0.365,0.68,0.557,1.013 c-1.298,0.898-2.787,1.599-4.145,2.427C38.384,38.24,38.153,37.932,37.982,37.556z M48.114,37.277 c1.982-0.142,3.47-1.433,4.084-3.039c0.723-1.887,0.038-4.005-1.255-5.16c-0.267-0.236-0.755-0.409-0.86-0.733 c-0.144-0.452-0.029-1.072-0.029-1.598c0-0.566,0-1.077,0-1.661c-1.25-0.41-3.246-0.41-4.484,0c0,0.535,0,1.09,0,1.661 c0,0.535,0.128,1.233-0.034,1.656c-0.066,0.178-0.306,0.292-0.459,0.402c-1.097,0.762-1.978,2.168-1.969,3.838 C43.124,35.32,45.329,37.474,48.114,37.277z M45.478,29.944c0.306-0.255,0.724-0.403,0.981-0.8 c0.344-0.535,0.273-1.282,0.273-2.211c0.611-0.183,1.496-0.133,2.148-0.033c-0.043,1.019-0.021,1.966,0.436,2.485 c0.224,0.257,0.65,0.417,0.952,0.68c0.723,0.633,1.136,1.676,1.071,2.733c-0.104,1.729-1.426,3.157-3.226,3.312 c-1.225,0.109-2.253-0.442-2.857-1.072c-0.521-0.542-0.977-1.408-0.981-2.394C44.271,31.375,44.816,30.49,45.478,29.944z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
     </section>
-
-    <!-- Resume Content -->
-    <section class="resume-container">
-      <!-- Summary -->
-      <div class="resume-section">
-        <h2 class="headline">Summary</h2>
-        <p>Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</p>
-      </div>
-
-      <!-- Tools -->
-      <div class="resume-section">
-        <h2 class="headline">Tools</h2>
-        <div class="tools-grid">
-          <div class="tool-logo"><img src="/assets/img/tools/hubspot.png" alt="HubSpot logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/freshworks-crm.png" alt="Freshworks CRM logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/mailchimp.png" alt="Mailchimp logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/apollo-io.png" alt="Apollo.io logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/outplay.png" alt="Outplay logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/clay-com.png" alt="Clay.com logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/slintel.png" alt="Slintel logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/bambora.png" alt="Bambora logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/tribilio.png" alt="Tribilio logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/ahrefs.png" alt="Ahrefs logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/ubersuggest.png" alt="Ubersuggest logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/google-keyword-planner.png" alt="Google Keyword Planner logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/google-search-console.png" alt="Google Search Console logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/google-analytics.png" alt="Google Analytics 4 logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/linkedin-campaign-manager.png" alt="LinkedIn Campaign Manager logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/google-ads.png" alt="Google Ads Manager logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/wordpress.png" alt="WordPress CMS logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/canva.png" alt="Canva logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/github.png" alt="GitHub logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/chatgpt.png" alt="ChatGPT logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/claude.png" alt="Claude logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/deepseek.png" alt="DeepSeek logo" loading="lazy"></div>
-          <div class="tool-logo"><img src="/assets/img/tools/grok.png" alt="Grok logo" loading="lazy"></div>
-        </div>
-      </div>
-
-      <!-- Experience -->
-      <div class="resume-section">
-        <h2 class="headline">Experience</h2>
-        <div class="job">
-          <div class="company-logo"><img src="/assets/img/companies/kitecyber.png" alt="Kitecyber logo" loading="lazy"></div>
-          <div>
-            <h3>Marketing & Demand Generation Specialist at Kitecyber, California (United States), Remote</h3>
-            <p>Oct 2024 - Present</p>
-            <ul>
-              <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
-              <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
-              <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
-              <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
-              <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
-              <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="company-logo"><img src="/assets/img/companies/plutomen-technologies.png" alt="Plutomen Technologies logo" loading="lazy"></div>
-          <div>
-            <h3>Product Marketing Manager at Plutomen Technologies, Ahmedabad, Remote</h3>
-            <p>Aug 2022 - Sep 2024</p>
-            <ul>
-              <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
-              <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
-              <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
-              <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
-              <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="company-logo"><img src="/assets/img/companies/simform-solutions.png" alt="Simform Solutions logo" loading="lazy"></div>
-          <div>
-            <h3>Demand Generation Lead at Simform Solutions, Ahmedabad, Hybrid</h3>
-            <p>Oct 2017 - July 2022</p>
-            <ul>
-              <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
-              <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
-              <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
-              <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
-              <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="company-logo"><img src="/assets/img/companies/hoojook.png" alt="Hoojook (RimTim Technologies) logo" loading="lazy"></div>
-          <div>
-            <h3>Inbound Marketing Executive at Hoojook (RimTim Technologies), Gurgaon, In-house</h3>
-            <p>April 2016 - Sep 2017</p>
-            <ul>
-              <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
-              <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
-              <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
-              <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="job">
-          <div class="company-logo"><img src="/assets/img/companies/girnar-softwares.png" alt="Girnar Softwares logo" loading="lazy"></div>
-          <div>
-            <h3>Jr. Content Reporter at Girnar Softwares Pvt. Ltd., Jaipur, In-house</h3>
-            <p>July 2015 - March 2016</p>
-            <ul>
-              <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
-              <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
-              <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="resume-section">
-        <h2 class="headline">Education</h2>
-        <div class="degree">
-          <div class="university-logo"><img src="/assets/img/companies/rajasthan-technical-university.png" alt="Rajasthan Technical University logo" loading="lazy"></div>
-          <div>
-            <h3>B.Tech in Computer Science Engineering</h3>
-            <p>Rajasthan Technical University, Kota | 2011 - 2015</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Work Section (Personal Details) -->
-      <section class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12 sm:flex-col-reverse">
-        <div>
-          <p>I enjoy <a href="/blog" class="link-misc">writing</a> about things I learn & I know, building scalable Digital Marketing campaigns, and learning a bit of <a href="https://github.com/rakshitsoral" class="link-misc">web development</a>, side-by-side.</p>
-          <p class="mt-6">When not in front of a screen I like to listen music, play guitar, read books, and binge-watch anime/series.</p>
-        </div>
-        <div class="img relative flex-shrink-0 ml-12 sm:ml-0 sm:mb-8">
-          <img src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral portrait" height="275" width="275" class="z-10 relative transform -rotate-2">
-        </div>
-        <span class="curl3 absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
-      </section>
-    </section>
-  </main>
+  </div>
 </body>
 </html>
