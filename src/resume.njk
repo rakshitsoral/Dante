@@ -204,7 +204,31 @@ title: Rakshit Soral Marketing CV Printable A4
             margin-left: 5mm;
             margin-bottom: 2mm;
         }
-        button {
+        p {
+            line-height: 15pt;
+            margin-bottom: 4mm;
+            color: #444;
+            word-break: break-word;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover { 
+            text-decoration: underline;
+        }
+        a, .fa-check, .fa-arrow-right {
+            color: #da2d2d;
+        }
+        .bottom-cta-bar {
+            width: 100%;
+            padding: 20px 0;
+            background: #da2d2d;
+            text-align: center;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .bottom-cta-bar button {
             background-color: black;
             width: 245px;
             border: none;
@@ -221,54 +245,18 @@ title: Rakshit Soral Marketing CV Printable A4
             cursor: pointer; 
             text-transform: uppercase;
         }
-        button:hover {
+        .bottom-cta-bar button:hover {
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             color: #da2d2d;
         }
-        #button {
-            width: 210mm;
-            height: 40px;
-            position: fixed;
-            z-index: 10;
-            background: #da2d2d;
-            border-bottom: solid #da2d2d 6px;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
-        }
-        #button button {
-            margin: 0;
-        }
-        p {
-            line-height: 15pt;
-            margin-bottom: 4mm;
-            color: #444;
-            word-break: break-word;
-        }
-        a {
-            text-decoration: none;
-        }
-        a:hover { 
-            text-decoration: underline;
-        }
-        a, .fa-check, .fa-arrow-right {
-            color: #da2d2d;
+        @media print {
+            .bottom-cta-bar, .bottom-cta-bar * {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body id="top">
-
-    <!-- BUTTONS: Print and Download at the Top -->
-    <div id="button" class="no-print">
-        <button type="button" onclick="window.print()">
-            <i class="fa fa-print" aria-hidden="true"></i> Print
-        </button>
-        <button type="button" id="downloadResumeBtn">
-            <i class="fa fa-download" aria-hidden="true"></i> Download Resume
-        </button>
-    </div>
 
     <!-- Page 1 -->
     <div class="page">
@@ -434,22 +422,27 @@ title: Rakshit Soral Marketing CV Printable A4
             </div>
         </div>
     </div>
-    
+
+    <!-- --- Print and Download Resume Buttons (BOTTOM) --- -->
+    <div class="bottom-cta-bar no-print">
+        <button type="button" onclick="window.print()">
+            <i class="fa fa-print" aria-hidden="true"></i> Print
+        </button>
+        <button type="button" id="downloadResumeBtn">
+            <i class="fa fa-download" aria-hidden="true"></i> Download Resume
+        </button>
+    </div>
     <!-- PDF Generation Script -->
     <script>
     document.getElementById("downloadResumeBtn").addEventListener("click", function () {
-        // Select all the resume pages (both div.page elements)
         const resumePages = document.querySelectorAll(".page");
-        // Create a container div to hold clone of pages for pdf generation
         const pdfContainer = document.createElement("div");
         pdfContainer.style.background = "#fff";
-        // Clone each page and append to container so pdf captures styling and layout
         resumePages.forEach(page => {
             const clone = page.cloneNode(true);
-            clone.style.pageBreakAfter = "always"; // ensure page break in PDF
+            clone.style.pageBreakAfter = "always";
             pdfContainer.appendChild(clone);
         });
-        // Use html2pdf to generate PDF from container
         html2pdf()
           .set({
             margin: [10, 10, 10, 10],
