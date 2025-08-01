@@ -6,430 +6,146 @@ title: A Short Bio
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CV Printable A4 - Rakshit Soral</title>
+    <meta charset="UTF-8" />
+    <title>CV Tools Progress Bar Example - Rakshit Soral</title>
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Rakshit Soral - Curriculum Vitae" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
     <style>
-        body {
-            background: rgb(204,204,204); 
+        /* Reset and base */
+        html, body {
+            margin: 0; padding: 20px; 
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            color: #222;
+            background: #ccc;
         }
+        /* Container simulating one page */
         .page {
             width: 210mm;
             min-height: 297mm;
             background: #fff;
             margin: 0 auto 5mm auto;
+            padding: 15mm 20mm;
             box-sizing: border-box;
-            padding: 0;
-            position: relative;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
-        @media print {
-            body, html {
-                width: 210mm;
-                min-height: 297mm;
-                margin: 0 !important;
-                padding: 0 !important;
-                background: #fff;
-                overflow: visible !important;
-            }
-            .page {
-                page-break-after: always;
-                overflow: visible !important;
-            }
-            .no-print, .no-print * {
-                display: none !important;
-            }
-        }
-
-        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-            border: 0;
-            font: inherit;
-            font-size: 100%;
-            margin: 0;
-            padding: 0;
-            vertical-align: baseline;
-        }
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-        html, body {
-            font-family: 'Lato', helvetica, arial, sans-serif;
-            font-size: 11pt;
-            color: #222;
-        }
-        .cv {
-            width: 210mm;
-            min-height: 297mm;
-            background: #fff;
-            padding: 0;
-        }
-        .mainDetails {
-            padding: 8mm 0 0 8mm;
-            background: #fff;
-        }
-        #name {
-            float: left;
-            text-transform: uppercase;
-            padding: 8.5mm 0 0 7mm;
-        }
-        #name h1 {
-            font-size: 33pt;
-            font-weight: 400;
-            font-family: 'Oswald', Helvetica, Arial, sans-serif;
-            line-height: 38pt;
-            color: #da2d2d;
-        }
-        #name h2 {
-            font-size: 18pt;
-            font-family: 'Oswald', Helvetica, Arial, sans-serif;
-            line-height: 20pt;
-        }
-        #mainArea {
-            padding: 0 8mm;
-        }
-        #headshot {
-            width: 46mm;
-            float: left;
-            margin-top: 10mm;
-            margin-left: -0.5mm;
-        }
-        #headshot img {
-            width: 100%;
-            height: auto;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-        }
-        .contactDetails {
-            float: right;
-            margin: 10mm 8mm 0 0;
-        }
-        .contactDetails ul { 
-            list-style-type: none;
-            font-family: 'Oswald', Helvetica, Arial, sans-serif;
-        }
-        .contactDetails ul li {
-            line-height: 24pt;
-            color: #444;
-        }
-        .contactDetails ul li a, a[href^=tel] {
-            color: #444; 
-            padding: 4px 8px;
-            text-decoration: none;
-            transition: all .1s ease-in;
-        }
-        .contactDetails ul li a:hover { 
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-            color: #da2d2d;
-        }
-        .icon {
-            font-size: 14pt;
-        }
-        .bold {
-            font-weight: bold;
-        }
-        .clear {
-            clear: both;
-        }
-        section {
-            border-top: 1mm dotted #444;
-            padding: 4mm 0 0 0;
-        }
-        section:first-child {
-            border-top: 0;
-            padding: 8mm 0 0 0;
-        }
-        section:last-child {
-            padding: 4mm 0 0 0;
-        }
-        .sectionTitle {
-            float: left;
-            width: 50mm;
-            margin-bottom: 6mm; 
-        }
-        .sectionContent {
-            float: right;
-            width: 141mm;
-        }
+        /* Section Title */
         .sectionTitle h1 {
             font-family: 'Oswald', Helvetica, Arial, sans-serif;
             font-weight: 400;
-            text-transform: uppercase;
             font-size: 18pt;
             color: #da2d2d;
-        }
-        .sectionContent h2 {
-            font-family: 'Oswald', Helvetica, Arial, sans-serif;
-            text-transform: uppercase;
-            font-size: 18pt;
-        }
-        .subDetails {
-            font-family: 'Lato', Helvetica, Arial, sans-serif;
-            font-size: 11pt;
-            font-weight: bold;
-            color: #da2d2d;
-        }
-        .nameDetails {
-            font-size: 11pt;
-            font-family: 'Lato', Helvetica, Arial, sans-serif;
-            color: #444;
-            text-transform: lowercase;
-        }
-        .keySkills {
-            list-style-type: none;
-            column-count: 3;
-            margin-bottom: 4mm;
-            font-size: 11pt;
-            color: #444;
-            line-height: 15pt;
-        }
-        .keySkills ul li {
-            margin-bottom: 6mm;
-        }
-        .clients, .list {
-            list-style-type: none;
-            column-count: 1;
-            margin-bottom: 4mm;
-            font-size: 11pt;
-            color: #444;
-            line-height: 15pt;
-        }
-        .clients ul li,
-        .list ul li {
-            margin-bottom: 6mm;
-        }
-        .list ul {
-            list-style-type: disc;
-            margin-left: 5mm;
-            margin-bottom: 2mm;
-        }
-        button {
-            background-color: black;
-            width: 245px;
-            border: none;
-            outline: 0;
-            color: #fff;
-            font-family: 'Oswald', Helvetica, Arial, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 8px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            margin: 0px 550px;
-            cursor: pointer; 
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
-        button:hover {
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        /* Tools section wrapper */
+        .sectionContent {
+            max-width: 180mm;
+        }
+
+        /* Progress bar container */
+        .progress-bar-container {
+            /* no extra margin here */
+        }
+
+        /* Tool label */
+        .tool-label {
+            font-weight: bold;
+            font-size: 11pt;
             color: #da2d2d;
+            margin-top: 12px;
+            margin-bottom: 6px;
+            text-transform: none; /* keep normal casing */
         }
-        #button {
-            width: 210mm;
-            height: 40px;
-            position: fixed;
-            z-index: 10;
-            background: #da2d2d;
-            border-bottom: solid #da2d2d 6px;
-            top: 0px;
+
+        /* Progress bar background track */
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 6px;
+            height: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            /* Prevent breaking inside for print */
         }
-        p {
-            line-height: 15pt;
-            margin-bottom: 4mm;
-            color: #444;
-            word-break: break-word;
+
+        /* Progress bar fill */
+        .progress {
+            height: 100%;
+            background-color: #da2d2d;
+            border-radius: 6px 0 0 6px;
+            transition: width 0.5s ease;
         }
-        a {
-            text-decoration: none;
+
+        /* On screen hover effect (optional, no print effect) */
+        @media screen {
+            .progress-bar:hover .progress {
+                background-color: #b02929;
+            }
         }
-        a:hover { 
-            text-decoration: underline;
-        }
-        a, .fa-check, .fa-arrow-right {
-            color: #da2d2d;
+
+        /* Print styles */
+        @media print {
+            body, html {
+                margin: 0; padding: 0;
+                background: #fff;
+                font-size: 10pt;
+            }
+            .page {
+                box-shadow: none;
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0 auto 5mm auto;
+                padding: 15mm 15mm;
+                page-break-after: always;
+            }
+            /* Avoid page breaks inside progress bar blocks */
+            .progress-bar-container, .progress-bar, .progress {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
-<body id="top">
-    <!-- Page 1 -->
-    <div class="page">
-        <div id="button" class="no-print">
-            <button type="button" onclick="window.print()"><span class="button-txt">
-                <i class="fa fa-print" aria-hidden="true"></i> &nbsp;Print</span>
-            </button>
-        </div>
-        <div class="cv">
-            <div id="header">
-                <div class="contactDetails">
-                    <ul>
-                        <li class="icon" title="Email me!"><a href="mailto:rakshitksoral@gmail.com"><i class="fa fa-envelope">&nbsp;&nbsp;</i>rakshitksoral@gmail.com</a></li>
-                        <li class="icon" title="Call me!"><a href="tel:+919602542617"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+91 9602542617</a></li>
-                        <li class="icon" title="Visit my website!"><a href="https://rakshitsoral.com/"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;&nbsp;rakshitsoral.com</a></li>
-                        <li class="icon" title="Connect with me!"><a href="https://linkedin.com/in/rakshitsoral"><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp;&nbsp;linkedin.com/in/rakshitsoral</a></li>
-                    </ul>
+<body>
+    <div class="page" role="main">
+        <section>
+            <div class="sectionTitle">
+                <h1>Tools</h1>
+            </div>
+            <div class="sectionContent">
+                <div class="progress-bar-container">
+                    <div class="tool-label">HubSpot</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%;"></div>
+                    </div>
+
+                    <div class="tool-label">Mailchimp</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%;"></div>
+                    </div>
+
+                    <div class="tool-label">Google Analytics 4 (GA4)</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+
+                    <div class="tool-label">Apollo.io</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+
+                    <div class="tool-label">LinkedIn Campaign Manager</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+
+                    <div class="tool-label">ChatGPT</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
                 </div>
             </div>
-            <div class="mainDetails">
-                <div id="headshot">
-                    <img id="avatar" src="https://visualangle.ee/delivery/temp_image/icon.png" alt="Rakshit Soral" title="This is me" />
-                </div>
-                <div id="name">
-                    <h1>Rakshit Soral</h1>
-                    <h2>Marketing Leader</h2>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div id="mainArea">
-                <section>
-                    <article>
-                        <div class="sectionTitle">
-                            <h1>Profile</h1>
-                        </div>
-                        <div class="sectionContent">
-                            <p>Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.</p>
-                        </div>
-                    </article>
-                    <div class="clear"></div>
-                </section>
-                <section>
-                    <div class="sectionTitle">
-                        <h1>Tools</h1>
-                    </div>
-                    <div class="sectionContent">
-                        <ul class="keySkills">
-                            <li class="subDetails">Marketing Automation & CRM</li>
-                            <li><i class="fa fa-check"></i>&nbsp;HubSpot</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Freshworks CRM</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Mailchimp</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Apollo.io</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Outplay</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Clay.com</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Slintel</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Bambora</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Tribilio (ABM)</li>
-                            <li class="subDetails">SEO & Keyword Research</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Ahrefs</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Ubersuggest</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Keyword Planner</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Search Console</li>
-                            <li class="subDetails">Analytics & Performance Tracking</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Analytics 4 (GA4)</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Search Console</li>
-                            <li><i class="fa fa-check"></i>&nbsp;LinkedIn Campaign Manager</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Google Ads Manager</li>
-                            <li class="subDetails">Content Creation & CMS</li>
-                            <li><i class="fa fa-check"></i>&nbsp;WordPress CMS</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Canva</li>
-                            <li><i class="fa fa-check"></i>&nbsp;GitHub (for site versioning)</li>
-                            <li><i class="fa fa-check"></i>&nbsp;ChatGPT</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Claude</li>
-                            <li><i class="fa fa-check"></i>&nbsp;DeepSeek</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Grok</li>
-                            <li class="subDetails">Sales & Lead Intelligence Tools</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Slintel</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Bambora</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Clay.com</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Apollo.io</li>
-                            <li class="subDetails">AI & Productivity Tools</li>
-                            <li><i class="fa fa-check"></i>&nbsp;ChatGPT</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Claude</li>
-                            <li><i class="fa fa-check"></i>&nbsp;DeepSeek</li>
-                            <li><i class="fa fa-check"></i>&nbsp;Grok</li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-                <section>
-                    <div class="sectionTitle">
-                        <h1>Portfolio & Social Media</h1>
-                    </div>
-                    <div class="sectionContent">
-                        <ul class="clients">
-                            <li title="Visit my website!"><a href="https://rakshitsoral.com/" target="_blank">rakshitsoral.com</a></li>
-                            <li title="Connect with me!"><a href="https://linkedin.com/in/rakshitsoral" target="_blank">linkedin.com/in/rakshitsoral</a></li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <!-- Page 2 -->
-    <div class="page">
-        <div class="cv">
-            <div id="mainArea">
-                <section>
-                    <div class="sectionTitle">
-                        <h1>Work Experience</h1>
-                    </div>
-                    <div class="sectionContent">
-                        <ul class="list">
-                            <li>
-                                <span class="subDetails">Oct 2024 - Present&nbsp;&nbsp;</span><span class="bold">Marketing & Demand Generation Specialist, Kitecyber, California (United States), Remote</span>
-                                <ul>
-                                    <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
-                                    <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
-                                    <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
-                                    <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
-                                    <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
-                                    <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="subDetails">Aug 2022 - Sep 2024&nbsp;&nbsp;</span><span class="bold">Product Marketing Manager, Plutomen Technologies, Ahmedabad, Remote</span>
-                                <ul>
-                                    <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
-                                    <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
-                                    <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
-                                    <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
-                                    <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="subDetails">Oct 2017 - July 2022&nbsp;&nbsp;</span><span class="bold">Demand Generation Lead, Simform Solutions, Ahmedabad, Hybrid</span>
-                                <ul>
-                                    <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
-                                    <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
-                                    <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
-                                    <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
-                                    <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="subDetails">April 2016 - Sep 2017&nbsp;&nbsp;</span><span class="bold">Inbound Marketing Executive, Hoojook (RimTim Technologies), Gurgaon, In-house</span>
-                                <ul>
-                                    <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
-                                    <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
-                                    <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
-                                    <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span class="subDetails">July 2015 - March 2016&nbsp;&nbsp;</span><span class="bold">Jr. Content Reporter, Girnar Softwares Pvt. Ltd., Jaipur, In-house</span>
-                                <ul>
-                                    <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
-                                    <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
-                                    <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-                <section>
-                    <div class="sectionTitle">
-                        <h1>Education</h1>
-                    </div>
-                    <div class="sectionContent">
-                        <ul class="list">
-                            <li><span class="subDetails">2011 - 2015&nbsp;&nbsp;</span>B.Tech, Computer Science Engineering, Rajasthan Technical University, Kota</li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-                </section>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>
