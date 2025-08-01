@@ -7,99 +7,151 @@ title: A Short Bio
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>CV Tools Progress Bar Example - Rakshit Soral</title>
-    <meta name="viewport" content="width=device-width" />
+    <title>Rakshit Soral – CV (A4, Printable)</title>
+    <meta name="viewport" content="width=210mm" />
+    <meta name="description" content="Rakshit Soral - Resume" />
     <style>
-        /* Reset and base */
         html, body {
-            margin: 0; padding: 20px; 
+            margin: 0; padding: 0;
             font-family: 'Lato', Helvetica, Arial, sans-serif;
-            font-size: 11pt;
+            font-size: 10pt;
             color: #222;
             background: #ccc;
         }
-        /* Container simulating one page */
         .page {
             width: 210mm;
             min-height: 297mm;
             background: #fff;
             margin: 0 auto 5mm auto;
-            padding: 15mm 20mm;
+            padding: 8mm 12mm;
             box-sizing: border-box;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0 3px rgba(0,0,0,0.08);
+            position: relative;
         }
+        .cv {
+            width: 100%;
+        }
+        /* Header styles */
+        .mainDetails {
+            padding: 0 0 8mm 0;
+            display: flex;
+            align-items: center;
+        }
+        #headshot {
+            width: 28mm;
+            margin-right: 10mm;
+        }
+        #headshot img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        #name {
+            flex: 1;
+        }
+        #name h1 {
+            font-size: 23pt;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            color: #da2d2d;
+            margin: 0 0 2mm 0;
+            letter-spacing: 1px;
+        }
+        #name h2 {
+            font-size: 13pt;
+            font-family: 'Oswald', Helvetica, Arial, sans-serif;
+            margin: 0;
+        }
+        .contactDetails {
+            font-size: 9pt;
+        }
+        .contactDetails ul {
+            list-style: none;
+            padding: 0; margin: 0;
+            display: flex; flex-wrap: wrap; gap: 10px 20px;
+        }
+        .contactDetails li {
+            color: #444;
+        }
+        .contactDetails a { color: #da2d2d; text-decoration: none; }
+        .contactDetails a:hover { text-decoration: underline; }
+
         /* Section Title */
         .sectionTitle h1 {
             font-family: 'Oswald', Helvetica, Arial, sans-serif;
             font-weight: 400;
-            font-size: 18pt;
+            font-size: 15pt;
             color: #da2d2d;
-            margin-bottom: 12px;
+            margin-bottom: 7px;
             text-transform: uppercase;
         }
-        /* Tools section wrapper */
+        /* Section Content */
         .sectionContent {
-            max-width: 180mm;
+            max-width: 170mm;
+            margin-bottom: 9mm;
         }
-
-        /* Progress bar container */
-        .progress-bar-container {
-            /* no extra margin here */
-        }
-
-        /* Tool label */
+        /* Progress bar styles */
+        .progress-bar-container { margin-top: 0; }
         .tool-label {
             font-weight: bold;
-            font-size: 11pt;
+            font-size: 10pt;
             color: #da2d2d;
-            margin-top: 12px;
-            margin-bottom: 6px;
-            text-transform: none; /* keep normal casing */
+            margin-top: 9px;
+            margin-bottom: 4px;
         }
-
-        /* Progress bar background track */
         .progress-bar {
             background-color: #e0e0e0;
-            border-radius: 6px;
-            height: 14px;
+            border-radius: 5px;
+            height: 11px;
             width: 100%;
+            margin-bottom: 7px;
             box-sizing: border-box;
-            margin-bottom: 10px;
             page-break-inside: avoid;
-            /* Prevent breaking inside for print */
         }
-
-        /* Progress bar fill */
         .progress {
             height: 100%;
             background-color: #da2d2d;
-            border-radius: 6px 0 0 6px;
-            transition: width 0.5s ease;
+            border-radius: 5px 0 0 5px;
+            transition: width 0.5s;
         }
 
-        /* On screen hover effect (optional, no print effect) */
-        @media screen {
-            .progress-bar:hover .progress {
-                background-color: #b02929;
-            }
+        /* Experience bullets */
+        .exp-job { margin-bottom: 9px; }
+        .exp-role { font-weight: bold; color: #222; }
+        .exp-dates { color: #da2d2d; font-weight: bold; font-size: 9pt; }
+        .exp-list { margin: 0.5mm 0 3.5mm 0.5mm; padding-left: 16px; }
+        .exp-list li { margin-bottom: 2mm; }
+
+        /* Portfolio/Social */
+        .portfolio-list {
+            list-style: none;
+            margin: 0; padding: 0;
+            font-size: 10pt;
+            display: flex; gap: 15px;
+        }
+        .portfolio-list a {
+            color: #da2d2d; text-decoration: none;
+        }
+        .portfolio-list a:hover {
+            text-decoration: underline;
         }
 
-        /* Print styles */
+        /* Education */
+        .education-list { margin-top: 0; }
+        .education-item { margin-bottom: 3mm; }
+
+        /* Print adjustments */
         @media print {
-            body, html {
-                margin: 0; padding: 0;
-                background: #fff;
-                font-size: 10pt;
+            html, body {
+                background: #fff !important;
+                font-size: 9.4pt;
             }
             .page {
                 box-shadow: none;
-                width: 210mm;
-                min-height: 297mm;
-                margin: 0 auto 5mm auto;
-                padding: 15mm 15mm;
+                width: 210mm; min-height: 297mm;
+                margin: 0 auto 0 auto;
                 page-break-after: always;
+                padding: 8mm 10mm;
             }
-            /* Avoid page breaks inside progress bar blocks */
             .progress-bar-container, .progress-bar, .progress {
                 page-break-inside: avoid;
             }
@@ -107,7 +159,39 @@ title: A Short Bio
     </style>
 </head>
 <body>
-    <div class="page" role="main">
+<!-- PAGE 1 -->
+<div class="page">
+    <div class="cv">
+        <!-- Header -->
+        <div class="mainDetails">
+            <div id="headshot">
+                <img src="https://visualangle.ee/delivery/temp_image/icon.png" alt="Rakshit Soral">
+            </div>
+            <div id="name">
+                <h1>Rakshit Soral</h1>
+                <h2>Marketing Leader</h2>
+                <div class="contactDetails">
+                    <ul>
+                        <li><a href="mailto:rakshitksoral@gmail.com">rakshitksoral@gmail.com</a></li>
+                        <li><a href="tel:+919602542617">+91 9602542617</a></li>
+                        <li><a href="https://rakshitsoral.com/">rakshitsoral.com</a></li>
+                        <li><a href="https://linkedin.com/in/rakshitsoral">linkedin.com/in/rakshitsoral</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <section>
+            <div class="sectionTitle">
+                <h1>Profile</h1>
+            </div>
+            <div class="sectionContent">
+                B2B SaaS marketing leader with 10+ years’ experience in demand generation, omni-channel campaigns, high-performing teams, and revenue growth through digital strategy and data-driven execution.
+            </div>
+        </section>
+
+        <!-- Tools/Skills with Progress Bars -->
         <section>
             <div class="sectionTitle">
                 <h1>Tools</h1>
@@ -115,37 +199,105 @@ title: A Short Bio
             <div class="sectionContent">
                 <div class="progress-bar-container">
                     <div class="tool-label">HubSpot</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%;"></div>
-                    </div>
-
+                    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
                     <div class="tool-label">Mailchimp</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%;"></div>
-                    </div>
-
+                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
                     <div class="tool-label">Google Analytics 4 (GA4)</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%;"></div>
-                    </div>
-
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
                     <div class="tool-label">Apollo.io</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%;"></div>
-                    </div>
-
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
                     <div class="tool-label">LinkedIn Campaign Manager</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 70%;"></div>
-                    </div>
-
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                    <div class="tool-label">WordPress &amp; Canva</div>
+                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
                     <div class="tool-label">ChatGPT</div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 95%;"></div>
-                    </div>
+                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
                 </div>
             </div>
         </section>
+
+        <!-- Portfolio/Social -->
+        <section>
+            <div class="sectionTitle">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="sectionContent">
+                <ul class="portfolio-list">
+                    <li><a href="https://rakshitsoral.com/">rakshitsoral.com</a></li>
+                    <li><a href="https://linkedin.com/in/rakshitsoral">linkedin.com/in/rakshitsoral</a></li>
+                </ul>
+            </div>
+        </section>
     </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+    <div class="cv">
+        <!-- Work Experience -->
+        <section>
+            <div class="sectionTitle">
+                <h1>Experience</h1>
+            </div>
+            <div class="sectionContent">
+                <!-- Latest role -->
+                <div class="exp-job">
+                    <span class="exp-role">Marketing &amp; Demand Generation Specialist, Kitecyber, USA (Remote)</span>
+                    <span class="exp-dates">Oct 2024–Present</span>
+                    <ul class="exp-list">
+                        <li>Drove 40%+ trial signups via SEO, product mapping &amp; high-impact landing pages.</li>
+                        <li>Revived LinkedIn, adding 2,000+ followers and boosting brand authority in 8 months.</li>
+                        <li>Launched cold outbound/email, Google Ads ($60,000 budget), increasing leads 20%.</li>
+                    </ul>
+                </div>
+                <div class="exp-job">
+                    <span class="exp-role">Product Marketing Manager, Plutomen Technologies (Remote)</span>
+                    <span class="exp-dates">Aug 2022–Sep 2024</span>
+                    <ul class="exp-list">
+                        <li>Led 4-member team; delivered 200+ qualified leads &amp; $250K pipeline via omni-channel campaigns.</li>
+                        <li>Drove industrial XR+AI brand from zero to 30% organic market share with content &amp; co-marketing.</li>
+                        <li>Launched CRM-driven nurture, boosting lead engagement and conversions.</li>
+                    </ul>
+                </div>
+                <div class="exp-job">
+                    <span class="exp-role">Demand Generation Lead, Simform Solutions</span>
+                    <span class="exp-dates">Oct 2017–Jul 2022</span>
+                    <ul class="exp-list">
+                        <li>Consistently delivered 30+ qualified monthly leads via integrated SEO and paid strategies.</li>
+                        <li>Pioneered influencer/blog campaigns, yielding 1,000+ visits/month uplift; led ABM with 45% SQL uplift.</li>
+                        <li>Secured 50+ high-authority backlinks to strengthen domain rank by 40%.</li>
+                    </ul>
+                </div>
+                <div class="exp-job">
+                    <span class="exp-role">Inbound Marketing Exec, Hoojook (RimTim Tech)</span>
+                    <span class="exp-dates">Apr 2016–Sep 2017</span>
+                    <ul class="exp-list">
+                        <li>Grew client websites to 3,000+ monthly visitors through targeted SEO &amp; content.</li>
+                        <li>Ran Facebook ads for ongoing lead-gen.</li>
+                    </ul>
+                </div>
+                <div class="exp-job">
+                    <span class="exp-role">Jr. Content Reporter, Girnar Softwares</span>
+                    <span class="exp-dates">Jul 2015–Mar 2016</span>
+                    <ul class="exp-list">
+                        <li>Supported content team to scale traffic 100,000+ monthly; managed editorial workflow.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Education -->
+        <section>
+            <div class="sectionTitle">
+                <h1>Education</h1>
+            </div>
+            <div class="sectionContent">
+                <ul class="education-list">
+                    <li class="education-item"><span class="exp-dates">2011–2015</span> &nbsp;B.Tech, Computer Science Engineering, Rajasthan Technical University, Kota</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+
 </body>
 </html>
