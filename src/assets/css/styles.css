@@ -26,6 +26,201 @@
   overflow: hidden;
 }
 
+/* General centering for text */
+.content-center {
+  text-align: center;
+   display: flex;
+    justify-content: center
+}
+
+/* Limit paragraph width */
+.content-text {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+    
+    /* Wrapper containing the image and overlays */
+    .img-wrapper {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      font-family: Caveat Brush, cursive;
+    }
+    
+    /* Skewed sliding overlay */
+    .img-wrapper:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 180%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+      transform: skew(45deg);
+      transition: 0.5s;
+    }
+    
+    .img-wrapper:hover:before {
+      left: -180%;
+    }
+    
+    /* Image styling with grayscale and zoom on hover */
+    .img-wrapper img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 2s, transform 2s;
+      display: block;
+    }
+    
+    .img-wrapper:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+    
+    /* Name heading styles and flip effect */
+    .img-wrapper h2 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: tomato;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px 0;
+      font-weight: 600;
+      /* Flip out by default */
+      transform: perspective(400px) rotateY(90deg);
+      transform-origin: right;
+      transition: transform 1s;
+      z-index: 2;
+    }
+    
+    .img-wrapper:hover h2 {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    
+    /* Social icons container */
+    .img-wrapper ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      z-index: 2;
+      /* A bit spacing between icons */
+      gap: 5px;
+      background: transparent;
+    }
+    
+    /* Each icon container, flipped out initially */
+    .img-wrapper ul li {
+      background: #333;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 40px;
+      transform: perspective(800px) rotateY(90deg);
+      transform-origin: left;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
+    
+    /* Flip each icon in with delays on hover */
+    .img-wrapper:hover ul li {
+      transform: perspective(800px) rotateY(0deg);
+    }
+    .img-wrapper:hover ul li:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+    .img-wrapper:hover ul li:nth-child(2) {
+      transition-delay: 0.6s;
+    }
+    .img-wrapper:hover ul li:nth-child(3) {
+      transition-delay: 0.8s;
+    }
+    .img-wrapper:hover ul li:nth-child(4) {
+      transition-delay: 1s;
+    }
+    
+    /* Social links and icons styling */
+    .img-wrapper ul li a {
+      display: block;
+      color: tomato;
+      font-size: 20px;
+      line-height: 40px;
+      background: transparent;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .img-wrapper ul li a:hover,
+    .img-wrapper ul li a:focus {
+      color: #fff;
+      background: transparent;
+    }
+
+/* Skills row flexbox with gap and wrap to next line on mobile */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+}
+.skills__img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain; /* Maintain aspect ratio */
+  padding: 6px;        /* Optional: add some padding */
+  border-radius: 4px;  /* Optional: rounded corners */
+  box-sizing: border-box;
+}
+/* Profile image adjustments */
+.profile-image {
+  display: inline-block;
+  margin-bottom: 2rem;
+  height: 275px;
+  width: 275px;
+  transform: rotate(-2deg);
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .skills {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .skills__img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .profile-image {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+  .content-text {
+    padding: 0 1rem;
+  }
+ 
+  .gif img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .resp-sharing-button__link {
   text-decoration: none;
   color: #419e54;
