@@ -20,15 +20,15 @@
 
 .card {
   /* Optional styling for the cards */
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #0e091d;
+  border: 1px solid #419e54;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .resp-sharing-button__link {
   text-decoration: none;
-  color: #fff;
+  color: #419e54;
   margin: 0.5em
 }
 
