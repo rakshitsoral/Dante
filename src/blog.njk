@@ -1,90 +1,92 @@
 ---
-layout: layouts/default.njk
+layout: default
 title: Blog
 description: Blogs and Tips on Life, Web Development, Demand Gen, and Marketing.
 pagination:
-  data: collections.posts
-  size: 9
-  alias: blog
+    data: collections.posts
+    size: 1000
+    alias: posts
 ---
 
-<main>
-  <section class="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-8 col-lg-10 mx-auto">
-          <div class="blog-hero-content">
-            <h1 class="blog-hero-title">{{ title }}</h1>
-            <p>{{ description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<main style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff;">
+  <!-- Hero Section -->
+  <section class="blogs-hero" style="background: #0e091d; padding: 4rem 1rem; text-align: center;">
+    <h1 class="head_text long-shadow" style="font-size: 3rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); color: #fff;">
+      <span class="head_text rainbow" style="background: linear-gradient(to right, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; color: transparent;">Blogs</span> and Tips
+    </h1>
   </section>
-  <section class="blog @@padding @@blog-two">
-    <div class="container">
-      <div class="row">
-        {% for blogPost in blog %}
-          <div class="col-lg-4 col-md-6">
-            <article class="blog-post">
-              <div class="blog-post-thumb">
-                <a href="{{ blogPost.url | url }}">
-                  {% if blogPost.data.featured_image %}
-                    <img src="{{ blogPost.data.featured_image | url }}" alt="{{ blogPost.data.title }}" loading="lazy" />
-                  {% else %}
-                    <img src="/path/to/default-image.jpg" alt="No image available" loading="lazy" />
-                  {% endif %}
-                </a>
+
+  <!-- Blog List Section -->
+  <section class="blog-list-section container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; background: #0e091d;">
+    <div class="blog-list-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+      {% for post in posts %}
+        <a href="{{ post.url | url }}" class="blog-link" style="text-decoration: none; color: inherit;">
+          <div class="blog-card" style="background: #1a1a2e; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;">
+            {% if post.data.featured_image %}
+              <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" style="width: 100%; height: 224px; object-fit: cover;" loading="lazy">
+            {% else %}
+              <div style="width: 100%; height: 224px; background: #2a2a3e; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem;">
+                No Image
               </div>
-              <div class="blog-post-content">
-                <div class="blog-post-tag @@category">
-                  {% for tag in blogPost.data.tags | slice(0, 2) %}
-                    <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-                  {% endfor %}
-                </div>
-                <div class="blog-post-title">
-                  <a href="{{ blogPost.url | url }}">{{ blogPost.data.title }}</a>
-                </div>
-                <div class="blog-post-date">
-                  {% if blogPost.date %}
-                    {{ blogPost.date | readableDate }}
+            {% endif %}
+            <div style="padding: 1.5rem;">
+              <h1 class="blog-title subhead_text" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; color: #fff;">{{ post.data.title }}</h1>
+              <div class="blog-hashtags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                {% set comma = joiner() %}
+                {% for tag in post.data.tags %}
+                  {% if tag !== 'post' %}
+                    {{ comma() }}
+                    <a href="/tags/{{ tag | slug }}" class="post-tag" style="font-size: 0.875rem; color: #fff; text-decoration: none;">#{{ tag }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="blog-description" style="font-size: 1rem; color: #fff; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                {% if post.data.description %}
+                  {{ post.data.description | safe }}
+                {% else %}
+                  {{ post.content | truncate(120) | safe }}
+                {% endif %}
+              </p>
+              <div class="blog-details" style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="{{ post.url | url }}" class="blog-link" style="font-size: 0.875rem; color: #fff; text-decoration: none;">Read Article &gt;&gt;</a>
+                <p class="blog-date" style="font-size: 0.875rem; color: #fff;">
+                  {% if post.date %}
+                    {{ post.date | readableDate }}
                   {% else %}
                     No Date
                   {% endif %}
-                </div>
+                </p>
               </div>
-            </article>
+            </div>
           </div>
-        {% endfor %}
-      </div>
+        </a>
+      {% endfor %}
 
-      {% if pagination.hrefs | length > 1 %}
-        <nav class="blog-pagination w-100 mt-4">
-          <ul class="pagination justify-content-center">
-            {% if pagination.href.previous %}
-              <li class="page-item">
-                <a class="page-link btn btn-secondary" href="{{ pagination.href.previous }}" aria-label="Previous page">
-                  &laquo;
-                </a>
-              </li>
-            {% endif %}
-            {% for pageEntry in pagination.hrefs %}
-              <li class="page-item">
-                <a class="page-link btn btn-secondary {% if page.url == pageEntry %}active{% endif %}" href="{{ pageEntry }}">
-                  {{ loop.index }}
-                </a>
-              </li>
-            {% endfor %}
-            {% if pagination.href.next %}
-              <li class="page-item">
-                <a class="page-link btn btn-secondary" href="{{ pagination.href.next }}" aria-label="Next page">
-                  &raquo;
-                </a>
-              </li>
-            {% endif %}
-          </ul>
-        </nav>
-      {% endif %}
+      <!-- Pagination -->
+      <div class="pagination" style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; font-size: 1rem; color: #fff;">
+        <p>
+          {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}" style="text-decoration: none; color: #fff;">&lt;&lt;</a>
+          {% else %}
+            <span style="color: #666;">&lt;&lt;</span>
+          {% endif %}
+        </p>
+        {% for pageEntry in pagination.pages %}
+          <p>
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}"
+               {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" style="color: #fff; font-weight: bold; text-decoration: none;"{% else %} style="text-decoration: none; color: #fff;"{% endif %}>
+              {{ loop.index }}
+            </a>
+          </p>
+        {% endfor %}
+        <p>
+          {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}" style="text-decoration: none; color: #fff;">&gt;&gt;</a>
+          {% else %}
+            <span style="color: #666;">&gt;&gt;</span>
+          {% endif %}
+        </p>
+      </div>
     </div>
   </section>
 </main>
