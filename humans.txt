@@ -1,12 +1,9 @@
 /*
 	TEAM
 */
-Design, Markup, Code, Words, Images: Ted Goas
-Site: http://www.tedgoas.com
-Twitter: @tedgoas
-Dribbble: http://www.dribbble.com/tedgoas
-Github: http://www.github.com/tedgoas
-Location: New Jersey, United States
+Code, Words, Images: Rakshit Soral
+Site: https://rakshitsoral.com
+
 
 /*
 	SITE + TECHNOLOGY
@@ -16,7 +13,7 @@ Built With:
 Skeleventy: skeleventy.netlify.com/
 TailwindCSS: https://tailwindcss.com/
 SCSS/CSS, PurgeCSS, Webpack, SVG, HTML5, Media Queries, Dublin, Microformats
-More: http://builtwith.com/tedgoas.com
+
 
 /*
 	SOFTWARE:
