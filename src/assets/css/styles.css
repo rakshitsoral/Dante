@@ -12,6 +12,20 @@
   display: inline-block
 }
 
+.card_list.grid_two_columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; /* space between cards */
+}
+
+.card {
+  /* Optional styling for the cards */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .resp-sharing-button__link {
   text-decoration: none;
   color: #fff;

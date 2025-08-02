@@ -23,7 +23,7 @@ pagination:
     />
   </svg>
 
-  <div class="card_list">
+  <div class="card_list grid_two_columns">
     {%- for post in posts | reverse -%}
       <article class="card">
         <a href="{{ post.url | url }}" class="card_link">
