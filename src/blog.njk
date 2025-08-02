@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.njk
+layout: default
 title: Blog
 description: Blogs and Tips on Life, Web Development, Demand Gen, and Marketing.
 pagination:
@@ -8,27 +8,95 @@ pagination:
     alias: posts
 ---
 
-{# Set default counter start based on total posts plus 1 #}
-{% set postsListCounter = postsListCounter or collections.posts.length %}
-<ol reversed class="postlist" style="counter-reset: start-from {{ postsListCounter + 1 }}">
-  {% for post in collections.posts | reverse %}
-    <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-      <a href="{{ post.url | url }}" class="postlist-link">
-        {% if post.data.title %}
-          {{ post.data.title }}
-        {% else %}
-          <code>{{ post.url }}</code>
+<main>
+  <section class="blog-hero pt-xl-22 pt-sm-20 pt-18 pb-xxl-25 pb-xl-23 pb-22 position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-10 mx-auto">
+          <div class="blog-hero-content">
+            <h1 class="blog-hero-title">{{ title }}</h1>
+            <p>{{ description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="blog @@padding @@blog-two">
+    <div class="container">
+      <div class="row">
+        {% for blogPost in blog %}
+          <div class="col-lg-4 col-md-6">
+            <article class="blog-post">
+              <div class="blog-post-thumb">
+                <a href="{{ blogPost.url | url }}">
+                  {% if blogPost.data.featured_image %}
+                    <img src="{{ blogPost.data.featured_image | url }}" alt="{{ blogPost.data.title }}" loading="lazy" />
+                  {% else %}
+                    <img src="/path/to/default-image.jpg" alt="No image available" loading="lazy" />
+                  {% endif %}
+                </a>
+              </div>
+              <div class="blog-post-content">
+                <div class="blog-post-tag @@category">
+                  {% for tag in blogPost.data.tags | slice(0, 2) %}
+                    <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+                  {% endfor %}
+                </div>
+                <div class="blog-post-title">
+                  <a href="{{ blogPost.url | url }}">{{ blogPost.data.title }}</a>
+                </div>
+                <div class="blog-post-date">
+                  {% if blogPost.date %}
+                    {{ blogPost.date | readableDate }}
+                  {% else %}
+                    No Date
+                  {% endif %}
+                </div>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
+
+        {% if pagination.hrefs | length > 1 %}
+          <nav class="blog-pagination w-100 mt-4">
+            <ul class="pagination justify-content-center">
+              {% if pagination.href.previous %}
+                <li class="page-item">
+                  <a class="page-link btn btn-secondary" href="{{ pagination.href.previous }}" aria-label="Previous page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.657" height="11.314" viewBox="0 0 20.657 11.314" style="transform: scale(-1, 1)">
+                      <g fill="#fff" data-name="Group 12">
+                        <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
+                        <path d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z" data-name="Rectangle 2401"></path>
+                        <path d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z" data-name="Rectangle 2402"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+              {% endif %}
+              {% for pageEntry in pagination.hrefs %}
+                <li class="page-item">
+                  <a class="page-link btn btn-secondary {% if page.url == pageEntry %}active{% endif %}" href="{{ pageEntry }}">
+                    {{ loop.index }}
+                  </a>
+                </li>
+              {% endfor %}
+              {% if pagination.href.next %}
+                <li class="page-item">
+                  <a class="page-link btn btn-secondary" href="{{ pagination.href.next }}" aria-label="Next page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20.657" height="11.314" viewBox="0 0 20.657 11.314">
+                      <g fill="#fff" data-name="Group 12">
+                        <path d="M0 4.657h18v2H0z" data-name="Rectangle 2400"></path>
+                        <path d="M13.586 9.9l5.6568542-5.6568542 1.4142136 1.4142135-5.6568542 5.6568543z" data-name="Rectangle 2401"></path>
+                        <path d="M15 0l5.6568542 5.6568542-1.4142135 1.4142136-5.6568543-5.6568542z" data-name="Rectangle 2402"></path>
+                      </g>
+                    </svg>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
         {% endif %}
-      </a>
-      <time class="postlist-date" datetime="{{ post.date | dateToISOString }}">
-        {{ post.date | readableDate }}
-      </time>
-      {% for tag in post.data.tags %}
-        {% if collections.tagList and collections.tagList.indexOf(tag) != -1 %}
-          {% set tagUrl = "/tags/" + tag + "/" %}
-          <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-        {% endif %}
-      {% endfor %}
-    </li>
-  {% endfor %}
-</ol>
+      </div>
+    </div>
+  </section>
+</main>
