@@ -11,10 +11,10 @@ pagination:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ title or "Stylish Blog Page" }}</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
     <div class="container">
@@ -26,13 +26,13 @@ pagination:
                     <div class="blog">
                         <div class="blog-image">
                             {% if post.data.featured_image %}
-                                <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}">
+                                <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" />
                             {% else %}
-                                <img src="/path/to/default-image.png" alt="No image">
+                                <img src="/path/to/default-image.png" alt="No image" />
                             {% endif %}
                             <div class="date">
                                 {% if post.date %}
-                                    {{ post.date | date("MMMM D, YYYY") }}
+                                    {{ post.date | readableDate }}
                                 {% else %}
                                     No Date
                                 {% endif %}
@@ -54,15 +54,5 @@ pagination:
             </div>
         {% endfor %}
     </div>
-    <footer>
-        <div class="footer-container">
-            <p>&copy; {{ "now" | date("YYYY") }} My Blog. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
