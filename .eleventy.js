@@ -42,3 +42,9 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk'
   };
 };
+// In .eleventy.js
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addShortcode("isoDate", function(date) {
+    return date ? date.toISOString() : "1970-01-01";
+  });
+};
