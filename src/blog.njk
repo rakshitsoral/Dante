@@ -30,7 +30,7 @@ pagination:
 
         h1, h2, h3 {
             font-weight: bold;
-            color: #292929;
+            color: white;
         }
 
         h1 {
@@ -109,6 +109,8 @@ pagination:
       {%- set postsList = collections.posts | reverse -%}
       {%- for post in postsList -%}
         <article>
+          {% if post.data.featured_image %}
+              <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" style="width: 100%; height: 224px; object-fit: cover;" loading="lazy">
             <h1 class="post-title">
                 <a href="{{ post.url | url }}">{{ post.data.title }}</a>
             </h1>
