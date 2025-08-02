@@ -14,17 +14,9 @@ title: About Me
 
   <!-- Profile Image -->
   <div class="content-center">
-    <img 
-      src="/assets/img/Rakshit Soral.png" 
-      loading="lazy" 
-      alt="Rakshit Soral portrait" 
-      height="275" 
-      width="275" 
-      class="profile-image"
-    />
+   <div class="img relative flex-shrink-0 ml-12 sm:ml-0 sm:mb-8"><img src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral portrait" height="275" width="275" class="z-10 relative transform -rotate-2"></div>
   </div>
 
-  <h2 class="content-center" style="margin-top: 2.5rem; margin-bottom: 1rem;">About</h2>
   <p class="content-text content-center">
     For the past 10+ years, I’ve built omni-channel demand generation engines for B2B SaaS companies, using a mix of ABM, cold outbound, and revenue-focused content strategies to turn lead flow from a drip into a steady stream.
   </p>
@@ -33,14 +25,26 @@ title: About Me
   </p>
 <blockquote class="text-4xl leading-none">"If you're a good marketing person, you have to be a little <strike>lazy</strike> crazy. <span class="whitespace-nowrap">- Jim Metcalf</span></blockquote>
   <div class="content-center" style="margin-bottom: 3rem;">
-    <a href="/works/">
-      <button class="btn">My portfolio</button>
-    </a>
+   <a href="/work"
+     style="
+       display: inline-block;
+       padding: 12px 24px;
+       background-color: #60a5fa;
+       color: black;
+       font-weight: 600;
+       text-decoration: none;
+       border-radius: 0;
+       transition: background-color 0.3s ease;
+     "
+     onmouseover="this.style.backgroundColor='#28a745'"
+     onmouseout="this.style.backgroundColor='#60a5fa'">
+    View Portfolio
+  </a>
   </div>
 
   <h2 class="content-center" style="margin-bottom: 1rem;">Skills</h2>
   <div class="skills content-center">
-    <img class="skills__img" width="46" height="46" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"/>
+    <img class="skills__img" width="46" height="46" alt="Hubspot" src="https://www.flaticon.com/free-icon/hubspot_9534407?term=hubspot&page=1&position=4&origin=search&related_id=9534407"/>
     <img class="skills__img" width="46" height="46" alt="Golang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg"/>
     <img class="skills__img" width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
     <img class="skills__img" width="46" height="46" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"/>
