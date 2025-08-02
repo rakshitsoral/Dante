@@ -20,7 +20,7 @@ pagination:
           <code>{{ post.url }}</code>
         {% endif %}
       </a>
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+      <time class="postlist-date" datetime="{{ post.date | dateToISOString }}">
         {{ post.date | readableDate }}
       </time>
       {% for tag in post.data.tags %}
