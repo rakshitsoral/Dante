@@ -8,85 +8,61 @@ pagination:
     alias: posts
 ---
 
-<main style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff;">
-  <!-- Hero Section -->
-  <section class="blogs-hero" style="background: #0e091d; padding: 4rem 1rem; text-align: center;">
-    <h1 class="head_text long-shadow" style="font-size: 3rem; font-weight: bold; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); color: #fff;">
-      <span class="head_text rainbow" style="background: linear-gradient(to right, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; color: transparent;">Blogs</span> and Tips
-    </h1>
-  </section>
-
-  <!-- Blog List Section -->
-  <section class="blog-list-section container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; background: #0e091d;">
-    <div class="blog-list-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-      {% for post in posts %}
-        <a href="{{ post.url | url }}" class="blog-link" style="text-decoration: none; color: inherit;">
-          <div class="blog-card" style="background: #1a1a2e; border-radius: 0.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer;">
-            {% if post.data.featured_image %}
-              <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" style="width: 100%; height: 224px; object-fit: cover;" loading="lazy">
-            {% else %}
-              <div style="width: 100%; height: 224px; background: #2a2a3e; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem;">
-                No Image
-              </div>
-            {% endif %}
-            <div style="padding: 1.5rem;">
-              <h1 class="blog-title subhead_text" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; color: #fff;">{{ post.data.title }}</h1>
-              <div class="blog-hashtags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                {% set comma = joiner() %}
-                {% for tag in post.data.tags %}
-                  {% if tag !== 'post' %}
-                    {{ comma() }}
-                    <a href="/tags/{{ tag | slug }}" class="post-tag" style="font-size: 0.875rem; color: #fff; text-decoration: none;">#{{ tag }}</a>
-                  {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "Stylish Blog Page" }}</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        {# Blog rows: for 3 columns, chunk posts into rows of 3 #}
+        {% set postsList = collections.posts | reverse %}
+        {% for row in postsList | batch(3) %}
+            <div class="blog-row">
+                {% for post in row %}
+                    <div class="blog">
+                        <div class="blog-image">
+                            {% if post.data.featured_image %}
+                                <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}">
+                            {% else %}
+                                <img src="/path/to/default-image.png" alt="No image">
+                            {% endif %}
+                            <div class="date">
+                                {% if post.date %}
+                                    {{ post.date | date("MMMM D, YYYY") }}
+                                {% else %}
+                                    No Date
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <h2>{{ post.data.title }}</h2>
+                            <p>
+                                {% if post.data.description %}
+                                    {{ post.data.description }}
+                                {% else %}
+                                    {{ post.templateContent | striptags | truncate(120, true, "…") }}
+                                {% endif %}
+                            </p>
+                            <a href="{{ post.url | url }}">Read More</a>
+                        </div>
+                    </div>
                 {% endfor %}
-              </div>
-              <p class="blog-description" style="font-size: 1rem; color: #fff; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                {% if post.data.description %}
-                  {{ post.data.description | safe }}
-                {% else %}
-                  {{ post.content | truncate(120) | safe }}
-                {% endif %}
-              </p>
-              <div class="blog-details" style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="{{ post.url | url }}" class="blog-link" style="font-size: 0.875rem; color: #fff; text-decoration: none;">Read Article &gt;&gt;</a>
-                <p class="blog-date" style="font-size: 0.875rem; color: #fff;">
-                  {% if post.date %}
-                    {{ post.date | readableDate }}
-                  {% else %}
-                    No Date
-                  {% endif %}
-                </p>
-              </div>
             </div>
-          </div>
-        </a>
-      {% endfor %}
-
-      <!-- Pagination -->
-      <div class="pagination" style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; font-size: 1rem; color: #fff;">
-        <p>
-          {% if pagination.href.previous %}
-            <a href="{{ pagination.href.previous }}" style="text-decoration: none; color: #fff;">&lt;&lt;</a>
-          {% else %}
-            <span style="color: #666;">&lt;&lt;</span>
-          {% endif %}
-        </p>
-        {% for pageEntry in pagination.pages %}
-          <p>
-            <a href="{{ pagination.hrefs[ loop.index0 ] }}"
-               {% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page" style="color: #fff; font-weight: bold; text-decoration: none;"{% else %} style="text-decoration: none; color: #fff;"{% endif %}>
-              {{ loop.index }}
-            </a>
-          </p>
         {% endfor %}
-        <p>
-          {% if pagination.href.next %}
-            <a href="{{ pagination.href.next }}" style="text-decoration: none; color: #fff;">&gt;&gt;</a>
-          {% else %}
-            <span style="color: #666;">&gt;&gt;</span>
-          {% endif %}
-        </p>
-      </div>
     </div>
-  </section>
-</main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; {{ "now" | date("YYYY") }} My Blog. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
