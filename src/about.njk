@@ -6,7 +6,7 @@ title: About Me
 {% set pageTitle = pageTitle or "About" %}
 
 {% block content %}
-  <div class="gif">
+  <div class="gif" style="text-align:center; margin-bottom: 1.5rem;">
     <img
       src="/.netlify/images?url=/images/space.webp"
       role="presentation"
@@ -14,14 +14,30 @@ title: About Me
       height="259"
       decoding="async"
       alt=""
+      style="display: inline-block;"
     />
   </div>
 
-  <h1>Milky-Way</h1>
-  <span class="badge">Digital Craftsman (Developer)</span>
+  <h1 style="text-align:center; margin-bottom: 0.25rem;">Milky-Way</h1>
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <span class="badge">Digital Craftsman (Developer)</span>
+  </div>
 
-  <h2>About</h2>
-  <p>
+  <!-- Profile Image -->
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <img 
+      src="/assets/img/Rakshit Soral.png" 
+      loading="lazy" 
+      alt="Rakshit Soral portrait" 
+      height="275" 
+      width="275" 
+      class="z-10 relative transform -rotate-2" 
+      style="display: inline-block;"
+    />
+  </div>
+
+  <h2 style="text-align:center; margin-top: 0; margin-bottom: 1rem;">About</h2>
+  <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto;">
     Praesent malesuada mi nisi, quis tempus magna venenatis ut.
     Suspendisse tempor sem at scelerisque congue. Curabitur mollis,
     mi id molestie finibus, metus sem sagittis nunc, euismod feugiat orci neque non lorem.
@@ -30,21 +46,21 @@ title: About Me
     porttitor at massa. Phasellus a ultrices arcu. Donec viverra, lorem in pellentesque euismod,
     libero justo gravida nibh, non ultricies justo purus ultrices est.
   </p>
-  <p>
+  <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto; margin-bottom: 2rem;">
     Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh consequat accumsan.
     Proin semper semper dui nec feugiat. Donec cursus neque id aliquet finibus. Morbi
     facilisis turpis nibh, nec dictum orci dictum nec. In hac habitasse platea dictumst.
     Maecenas mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
   </p>
 
-  <div class="center">
+  <div class="center" style="text-align:center; margin-bottom: 3rem;">
     <a href="/works/">
       <button class="btn">My portfolio</button>
     </a>
   </div>
 
-  <h2>Skills</h2>
-  <div class="skills center">
+  <h2 style="text-align:center; margin-top: 0; margin-bottom: 1rem;">Skills</h2>
+  <div class="skills center" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: nowrap; margin-bottom: 3rem;">
     <img class="skills__img" width="46" height="46" alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"/>
     <img class="skills__img" width="46" height="46" alt="Golang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg"/>
     <img class="skills__img" width="46" height="46" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"/>
@@ -55,8 +71,8 @@ title: About Me
     <img class="skills__img" width="46" height="46" alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"/>
   </div>
 
-  <h2>Interests</h2>
-  <p>
+  <h2 style="text-align:center; margin-top: 0; margin-bottom: 1rem;">Interests</h2>
+  <p style="text-align:center; max-width: 700px; margin-left:auto; margin-right:auto; margin-bottom: 3rem;">
     Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh consequat accumsan.
     Proin semper semper dui nec feugiat. Donec cursus neque id aliquet finibus. Morbi
     facilisis turpis nibh, nec dictum orci dictum nec. In hac habitasse platea dictumst.
