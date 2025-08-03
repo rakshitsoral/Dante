@@ -27,6 +27,38 @@ title: Demand Gen Marketing CV Printable A4
             position: relative;
         }
         @media print {
+  /*
+  Hide everything first
+  */
+  body * {
+    visibility: hidden !important;
+  }
+  /*
+  Only show resume pages and their children
+  */
+  .page, .page * {
+    visibility: visible !important;
+  }
+  /*
+  Position the resume content at top left for print
+  */
+  .page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /*
+  Hide any print buttons or unnecessary UI
+  */
+  .bottom-cta-bar {
+    display: none !important;
+  }
+
+
             body, html {
                 width: 210mm;
                 min-height: 297mm;
