@@ -6,23 +6,28 @@ description: The first blog post in the new site.
 
 ---
 
-Alot has been written on on-page SEO factors and how they affect search engine rankings.
+Alot has been written on on-page SEO factors and how they affect search engine rankings. Unfortunately, not every article covering on-page SEO factors lists Click Depth or Page Depth as a ranking factor.
 
-Unfortunately, not every article covering on-page SEO factors lists Click Depth or Page Depth as a ranking factor.
+In fact, John Mueller (Webmaster Trend Analyst at Google) has stated that click depth is an important SEO ranking factor—possibly more important than URL structure. According to Mueller, Google evaluates how many clicks it takes from your homepage to reach specific content, and this click path is central to how search engines weigh a page’s importance.
 
-In fact, John Muller (Webmaster Trend Analyst at Google) has himself described Click depth as an important ranking factor for SEO, even more important than a URL structure. As per Muller, Google considers the number of clicks from a homepage to your content as the most important ranking factor in terms of SEO.
+In this article, we’ll go deeper into the concept of Click Depth in SEO and explain how it influences internal linking, pagination, crawl budget, PageRank, and the broader user experience.
 
-In this article, we will understand the concept of Click Depth in SEO and how it influences internal linking, pagination, and crawl budget of your website.
+## Why Click Depth is Crucial for SEO
 
-Let’s dive in!
+Click Depth is the number of clicks required to reach a specific page from your homepage. For example, if it takes one click from your homepage to a blog post, that blog post’s click depth is one.
 
-## What is Click Depth and How it helps in SEO?
+Google’s home page is seen as the central hub—the "cornerstone content"—on your site. Pages further away from this hub are generally considered less important.  As SEOs, it should be your goal to make it easy for the users to navigate to the important content of your website from the homepage.
 
-The term ‘Click Depth” describes the number of clicks needed from the homepage of your website to navigate to the other page.
+<blockquote>"Pages that are a single click away from the homepage are generally seen as more significant and receive more weight in Google’s rankings. The more clicks it takes, the less important a page appears to both Google and users." — John Muller</blockquote>
 
-For instance, the page clicked from your homepage has a click-depth of one.
+## Why Should SEOs Care About Click Depth?
+<ul class="round">
+<li><strong>Crawlers favor accessible content:</strong> Googlebot is far less likely to crawl pages more than three clicks away from your homepage.</li>
 
-In Google eyes, a website homepage is considered as a cornerstone material whereas every other page is considered as an essential material for SEO. Therefore, it should be your goal to make it easy for the users to navigate to the important content of your website from the homepage.
+<li><strong>Deep pages face indexing issues:</strong> Pages buried deep (high click depth) are less likely to be found, indexed, or ranked.</li>
+
+<li><strong>User experience suffers:</strong> Visitors are unlikely to click through endless “next” links—friction kills engagement.</li>
+</ul>
 
 To make you understand how exactly does the click depth of a home page affect search rankings, let’s take an example of a 300-page website.
 
@@ -69,7 +74,18 @@ So, how do we improve the click depth of a 300-page website?
 
 ## Enter the Midpoint link pagination scheme
 
-The midpoint link pagination scheme is best for sites having a large number of pages. Here, pagination for the homepage looks like this:
+Traditional “next/previous” pagination, while user-friendly for browsing, is an SEO pitfall. If your site has 300 blog posts spread over 300 sequential pages, it might take hundreds of clicks to reach the last page. Crawlers see this as a click-depth of 299, which is terrible for SEO.
+
+### The Drawbacks of Deep Pagination
+<ul class="round">
+<li>Important pages become invisible to search engines.</li>
+
+<li>Error-prone navigation: If a link along the chain breaks, everything after it becomes unfindable for crawlers.</li>
+
+<li>Poor user experience: No one is clicking “next” hundreds of times.</li>
+</ul>
+
+In our 300 page website example, pagination for the homepage looks like this:
 
 <figure>
     <img src="/assets/img/simplest mid point pagination.jpg" alt="NY.gov redesign." width="750" height="300">
@@ -120,7 +136,11 @@ Apart from internal linking, other strategies to improve the click depth of a we
 
 Sidebars to link top-performing pages and articles
 Breadcumbs to navigate the previous pages and home-page
-Conclusion
-Click depth (also referred to as Page depth sometimes) should be a key consideration while designing pagination for a website with a large structure. With the right approach, SEO can get the most out of Googlebot’s crawl budget, thereby improving the visibility of the site’s content.
 
-Is there any other way to improve CLick Depth of a large website? Let me know in the comment section.
+## Conclusion
+
+Click depth should be a front-and-center consideration when designing site architecture, planning pagination, and allocating crawl budget. Keeping your vital content within 2–3 clicks of your homepage benefits SEO, user experience, and business performance.
+
+Remember: Both search engines and humans reward sites that make important content easy to find. The shorter the click path, the better your chances of higher rankings, faster indexing, and deeper engagement.
+
+Have other tactics for handling click depth on a massive website? Share your thoughts in the comments!
