@@ -14,6 +14,98 @@ title: Demand Gen Marketing CV Printable A4
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
+
+    /* Responsive resume layout for screens up to 800px */
+@media screen and (max-width: 800px) {
+  .page, .cv {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 4vw !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+  #headshot {
+    float: none;
+    width: 120px;
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+  #headshot img {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  #name {
+    float: none;
+    text-align: center;
+    padding: 10px 0 0 0;
+  }
+  .contactDetails {
+    float: none;
+    text-align: center;
+    margin: 0 0 15px 0;
+  }
+  #mainArea {
+    padding: 0;
+  }
+  .sectionTitle {
+    float: none;
+    width: auto;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .sectionContent {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+  .skill-wrapper {
+    gap: 13px;
+    justify-content: center;
+  }
+  .skill-item {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .skill-item img, .skill-item svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  h1, .sectionTitle h1 {
+    font-size: 20pt !important;
+  }
+  h2, h3, .sectionContent h2, .sectionContent h3 {
+    font-size: 13pt !important;
+  }
+  p, .list, .sectionContent, .cv, body, html {
+    font-size: 11pt !important;
+  }
+  section {
+    padding: 10px 0;
+  }
+}
+
+/* Ultra-small screens: Stack all content, slightly reduce font sizes */
+@media screen and (max-width: 480px) {
+  .page, .cv {
+    padding: 0 1.5vw !important;
+  }
+  h1, .sectionTitle h1 {
+    font-size: 16pt !important;
+  }
+  h2, h3, .sectionContent h2, .sectionContent h3 {
+    font-size: 11pt !important;
+  }
+  .skill-item,
+  .skill-item img, .skill-item svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
         body {
             background: rgb(204,204,204); 
         }
@@ -27,37 +119,6 @@ title: Demand Gen Marketing CV Printable A4
             position: relative;
         }
         @media print {
-  /*
-  Hide everything first
-  */
-  body * {
-    visibility: hidden !important;
-  }
-  /*
-  Only show resume pages and their children
-  */
-  .page, .page * {
-    visibility: visible !important;
-  }
-  /*
-  Position the resume content at top left for print
-  */
-  .page {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  /*
-  Hide any print buttons or unnecessary UI
-  */
-  .bottom-cta-bar {
-    display: none !important;
-  }
-
 
             body, html {
                 width: 210mm;
