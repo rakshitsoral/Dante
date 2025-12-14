@@ -34,42 +34,79 @@ year: Oct 2024 - present
 
 <body class="bg-white text-gray-900">
 
+<table class="w-full mb-12">
+        <tr>
+            <td class="align-middle">
+                 <section class="intro text-center space-y-4"><table class="w-full">
+  <tr>
+    <td class="text-center align-middle">
+      <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
+    </td>
+    <td class="align-middle">
+      <p class="uppercase text-sm text-blue-600">
+        Cybersecurity Company, SaaS
+      </p>
+    </td>
+  </tr>
+</table>
+            </td>
+            <td class="text-right align-middle">
+                <button class="px-6 py-3 font-semibold text-red-600 bg-white border-2 btn-light-red rounded-lg shadow hover:bg-gray-50 transition duration-150">
+                    Download the Case Study
+                </button>
+            </td>
+        </tr>
+    </table>
+     <!-- Intro Section -->
+ 
 
-  <!-- Intro Section -->
-  <section class="intro text-center space-y-4">
-    <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
-    <p class="uppercase text-sm text-blue-600">Cybersecurity Company, SaaS</p>
-    <p>KiteCyber, founded in 2023, offers a hyperconverged endpoint security platform with modules covering UEM, Data Security, Internet & SaaS Security, and Zero Trust Network Access. Despite having a strong product and a lean sales team, KiteCyber lacked a structured marketing motion, resulting in limited visibility and inconsistent lead flow. In November 2024, I joined KiteCyber to build its inbound and outbound marketing engine from scratch, while managing marketing automation, drip/cold email sequences, SEO/ Content Marketing, Paid Ads (Twitter, Google) and analytics. </p>
-    
-  </section>
-
-  <!-- Results -->
+  <p>KiteCyber, founded in 2023, offers an <a href="https://kitecyber.com">"AI security Copilot for Endpoints and Network</a> with modules covering UEM, Data Security, Secure Web Gateway, and Zero Trust Network Access. Despite having a strong product and a lean sales team, KiteCyber lacked a structured marketing motion, resulting in limited visibility and inconsistent lead flow. In November 2024, I joined KiteCyber to build its inbound and outbound marketing engine from scratch, while managing marketing automation, drip/cold email sequences, SEO/ Content Marketing, Paid Ads (Linkedin, Google) and analytics. </p>
+   <!-- Results -->
   <h2 class="text-3xl font-semibold mb-4">The Results</h2>
-  <section class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; text-align: center; gap: 20px;">
+<div class="bg-[#0F172A] p-12 mb-12 flex justify-center items-center">
 
-  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+135%</h3>
-    <p style="margin: 5px 0 0;">Increase in Marketing Qualified Leads</p>
+  <div class="flex flex-wrap justify-center gap-8 w-full max-w-6xl">
+
+  <div class="w-56 p-6 bg-white rounded-lg text-center shadow-xl">
+  
+  <div class="text-3xl mb-3 text-indigo-600">
+                    &#x2B50;
+  </div>
+  <h4 class="text-xl font-semibold text-gray-800">Marketing Qualified Leads</h4>
+  <h3 class="text-3xl mb-3 text-green-600">+135%</h3>
   </div>
 
-  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+58%</h3>
-    <p style="margin: 5px 0 0;">Increase in Website Traffic</p>
+  <div class="w-56 p-6 bg-white rounded-lg text-center shadow-xl">
+  <div class="text-3xl mb-3 text-green-600">
+                    &#x1F4CA;
   </div>
+  <h4 class="text-xl font-semibold text-gray-800">Organic and Gen AI visibility</h4>
+  <h3 class="text-3xl font-extrabold text-green-700 mt-2">+58%</h3>
+   </div>
 
-  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+65%</h3>
-    <p style="margin: 5px 0 0;">Growth in SQLs</p>
+   <div class="w-56 p-6 bg-white rounded-lg text-center shadow-xl">
+   <div class="text-3xl mb-3 text-red-600">
+                    &#x1F680;
   </div>
+  <h4 class="text-xl font-semibold text-gray-800">Conversion Rate Optimization</h4>
+  <h3 class="text-3xl font-extrabold text-red-700 mt-2">+12.5%</h3>
+   </div>
 
-  <div style="flex: 1 1 45%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0; font-size: 24px; color: #0056b3;">+42%</h3>
-    <p style="margin: 5px 0 0;">Improvement in Conversion Rate</p>
+ <div class="w-56 p-6 bg-white rounded-lg text-center shadow-xl">
+  <div class="text-3xl mb-3 text-yellow-600">
+                    &#x1F4B8;
+   </div>
+
+   </div>
+
   </div>
+  
+  </div>
+  
 
-</div>
+ 
 
+ 
   </section>
 
   <!-- Challenge -->
@@ -112,7 +149,7 @@ year: Oct 2024 - present
       <li>Integration with HubSpot: Tracked end‑to‑end customer journey & leads status via CRM integration.</li>
       <li>Optimization: A/B testing, data‑driven enhancements, and proactive improvements.</li>
       <li>Marketing Automation: Built drip sequences, lead scoring, and chatbot workflows for qualification.</li>
-      <li> Outbound Email Campaigns: Built and executed cold outbound sequences with personalization. (Atleast 3000 Emails Per Month)</li>
+      <li> Outbound Email Campaigns: Built and executed cold outbound sequences with personalization. </li>
     </ul>
   </section>
 
