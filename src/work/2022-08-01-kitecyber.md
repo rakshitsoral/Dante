@@ -50,12 +50,8 @@ year: Oct 2024 - present
   </tr>
 </table>
             </td>
-            <td class="text-right align-middle">
-                <button class="px-6 py-3 font-semibold text-red-600 bg-white border-2 btn-light-red rounded-lg shadow hover:bg-gray-50 transition duration-150">
-                    Download the Case Study
-                </button>
-            </td>
-        </tr>
+           
+  </tr>
     </table>
      <!-- Intro Section -->
  
@@ -90,13 +86,6 @@ year: Oct 2024 - present
   </div>
   <h4 class="text-xl font-semibold text-gray-800">Conversion Rate Optimization</h4>
   <h3 class="text-3xl font-extrabold text-red-700 mt-2">+12.5%</h3>
-   </div>
-
- <div class="w-56 p-6 bg-white rounded-lg text-center shadow-xl">
-  <div class="text-3xl mb-3 text-yellow-600">
-                    &#x1F4B8;
-   </div>
-
    </div>
 
   </div>
