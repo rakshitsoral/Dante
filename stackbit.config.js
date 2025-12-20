@@ -1,48 +1,51 @@
-// ... inside new GitContentSource({
-models: [
-  {
-    name: "Page",
-    type: "page",
-    label: "Page",
-    urlPath: "/{slug}",
-    filePath: "src/pages/{slug}.md", // Dante typically keeps pages here
-    fields: [
-      { name: "title", type: "string", label: "Title", required: true },
-      { name: "description", type: "string", label: "Description" },
-      { name: "body", type: "markdown", label: "Content" }
-    ]
-  },
-  {
-    name: "Post",
-    type: "page",
-    label: "Blog Post",
-    urlPath: "/blog/{slug}",
-    filePath: "src/posts/{slug}.md", // Dante's blog posts location
-    fields: [
-      { name: "title", type: "string", label: "Title", required: true },
-      { name: "date", type: "date", label: "Date", required: true },
-      { name: "description", type: "string", label: "Excerpt/Description" },
-      { name: "tags", type: "list", items: { type: "string" }, label: "Tags" },
-      { name: "body", type: "markdown", label: "Content" }
-    ]
-  },
-  {
-    name: "Settings",
-    type: "data",
-    label: "Site Settings",
-    file: "src/_data/metadata.json", // Common Dante metadata file
-    fields: [
-      { name: "title", type: "string", label: "Site Title" },
-      { name: "url", type: "string", label: "Site URL" },
-      { name: "description", type: "string", label: "Site Description" },
-      { 
-        name: "author", 
-        type: "object", 
-        fields: [
-          { name: "name", type: "string" },
-          { name: "email", type: "string" }
-        ] 
-      }
-    ]
-  }
-]
+import { defineStackbitConfig } from "@stackbit/types";
+import { GitContentSource } from "@stackbit/cms-git";
+
+export default defineStackbitConfig({
+  stackbitVersion: '~0.6.0',
+  ssgName: 'eleventy',
+  nodeVersion: '20',
+  
+  contentSources: [
+    new GitContentSource({
+      rootPath: __dirname,
+      contentDirs: ["src"],
+      models: [
+        /**
+         * PAGE MODEL
+         * Matches: src/pages/about.md  =>  yourdomain.com/about/
+         */
+        {
+          name: "page",
+          label: "Page",
+          type: "page",
+          // Maps the filename {slug} directly to the root URL
+          urlPath: "/{slug}", 
+          filePath: "src/pages/{slug}.md",
+          fields: [
+            { name: "title", type: "string", label: "Title", required: true },
+            { name: "body", type: "markdown", label: "Content" }
+          ]
+        },
+
+        /**
+         * POST MODEL
+         * Matches: src/posts/my-first-post.md  =>  yourdomain.com/blog/my-first-post/
+         */
+        {
+          name: "post",
+          label: "Blog Post",
+          type: "page",
+          // Maps blog posts to a sub-directory
+          urlPath: "/blog/{slug}", 
+          filePath: "src/posts/{slug}.md",
+          fields: [
+            { name: "title", type: "string", label: "Title", required: true },
+            { name: "date", type: "date", label: "Date" },
+            { name: "body", type: "markdown", label: "Content" }
+          ]
+        }
+      ],
+    })
+  ]
+});
