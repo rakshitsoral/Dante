@@ -2,6 +2,10 @@
 layout: default
 ---
 
+
+<h1 data-sb-field-path="title">{{ title }}</h1>
+<div data-sb-field-path="content">{{ content | safe }}</div>
+
 <article class="flex flex-col items-center">
     {% if featured_image %}
     <img src="{{ featured_image | url }}" alt=""{% if featured_image_classes %} class="{{ featured_image_classes }}"{% endif %}>
