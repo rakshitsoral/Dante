@@ -1,8 +1,10 @@
-export default {
+import { defineStackbitConfig } from "@stackbit/types";
+import { GitContentSource } from "@stackbit/cms-git";
+
+export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
-  ssgName: 'custom',
-  nodeVersion: '16',
-  
+  ssgName: 'eleventy', // Using 'eleventy' from your module.exports
+  nodeVersion: '20',    // Updated to match your successful Netlify environment
   devCommand: 'npm run eleventy:serve',
   
   experimental: {
@@ -16,36 +18,33 @@ export default {
   },
 
   contentSources: [
-    {
-      name: 'local',
-      type: 'git'
-    }
-  ],
-
-  models: {
-    page: {
-      type: 'page',
-      label: 'Page',
-      filePath: 'src/{slug}.md',
-      fields: [
+    new GitContentSource({
+      rootPath: __dirname,
+      // Adjust contentDirs to where your actual .md or .json files live
+      contentDirs: ["src", "content"], 
+      models: [
         {
-          type: 'string',
-          name: 'title',
-          label: 'Title',
-          required: true
-        },
-        {
-          type: 'markdown',
-          name: 'body',
-          label: 'Content'
+          name: "page",
+          type: "page",
+          label: "Page",
+          urlPath: "/{slug}",
+          // Ensure this matches your actual file structure
+          filePath: "src/{slug}.md", 
+          fields: [
+            {
+              type: "string",
+              name: "title",
+              label: "Title",
+              required: true
+            },
+            {
+              type: "markdown",
+              name: "body",
+              label: "Content"
+            }
+          ]
         }
-      ]
-    }
-  }
-};
-module.exports = {
-  stackbitVersion: '~0.6.0',
-  ssgName: 'eleventy',
-  nodeVersion: '16',
-  contentSources: []
-};
+      ],
+    })
+  ]
+});
