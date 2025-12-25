@@ -31,32 +31,30 @@ year: Oct 2024 - present
 .resp-sharing-button--twitter:hover, .resp-sharing-button--twitter:active { background-color: #2795e9; border-color: #2795e9; }
 /* ...other platforms as in your original CSS... */
 </style>
-
 <body class="bg-white text-gray-900">
+  <section class="intro mb-12">
+    <div class="dream-job aligned flex items-center p-6 bg-gray-900 rounded-lg border-dashed border-gray-600 border sm:block">
+      <div class="flex-1 flex items-center justify-center sm:mb-6">
+        <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="h-16">
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:mb-4">
+        <p class="uppercase text-sm text-blue-600">
+          Cybersecurity Company, SaaS
+        </p>
+      </div>
+      <div class="flex-1 flex items-center justify-center">
+        <p class="uppercase text-sm text-gray-400">
+          Remote, United States
+        </p>
+      </div>
+    </div>
+  </section>
 
-<table class="w-full mb-12">
-        <tr>
-            <td class="align-middle">
-                 <section class="intro text-center space-y-4"><table class="w-full">
-  <tr>
-    <td class="text-center align-middle">
-      <img src="/assets/img/Kitecyber-logo-new.png" alt="Kitecyber logo" class="mx-auto h-16">
-    </td>
-    <td class="align-middle">
-      <p class="uppercase text-sm text-blue-600">
-        Cybersecurity Company, SaaS
-      </p>
-    </td>
-  </tr>
-</table>
-            </td>
-           
-  </tr>
-    </table>
-     <!-- Intro Section -->
+  <!-- Description Section -->
+
+  <p class="text-white">KiteCyber, founded in 2023, offers an <a href="https://kitecyber.com" class="text-blue-500 hover:underline">"AI security Copilot for Endpoints and Network</a> with modules covering UEM, Data Security, Secure Web Gateway, and Zero Trust Network Access. Despite having a strong product and a lean sales team, KiteCyber lacked a structured marketing motion, resulting in limited visibility and inconsistent lead flow. In November 2024, I joined KiteCyber to build its inbound and outbound marketing engine from scratch, while managing marketing automation, drip/cold email sequences, SEO/ Content Marketing, Paid Ads (Linkedin, Google) and analytics.</p>
  
-
-  <p>KiteCyber, founded in 2023, offers an <a href="https://kitecyber.com">"AI security Copilot for Endpoints and Network</a> with modules covering UEM, Data Security, Secure Web Gateway, and Zero Trust Network Access. Despite having a strong product and a lean sales team, KiteCyber lacked a structured marketing motion, resulting in limited visibility and inconsistent lead flow. In November 2024, I joined KiteCyber to build its inbound and outbound marketing engine from scratch, while managing marketing automation, drip/cold email sequences, SEO/ Content Marketing, Paid Ads (Linkedin, Google) and analytics. </p>
+</body>
    <!-- Results -->
   <h2 class="text-3xl font-semibold mb-4">The Results</h2>
 <div class="bg-[#0F172A] p-12 mb-12 flex justify-center items-center">
@@ -85,7 +83,7 @@ year: Oct 2024 - present
                     &#x1F680;
   </div>
   <h4 class="text-xl font-semibold text-gray-800">Conversion Rate Optimization</h4>
-  <h3 class="text-3xl font-extrabold text-red-700 mt-2">+12.5%</h3>
+  <h3 class="text-3xl font-extrabold text-green-700 mt-2">+12.5%</h3>
    </div>
 
   </div>
@@ -150,27 +148,27 @@ year: Oct 2024 - present
   </section>
 
   <!-- Other Case Studies -->
-  <section class="other-case-studies space-y-6">
-    <h3 class="text-2xl font-semibold">More Work Experiences</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-      <!-- Plutomen -->
-      <div class="case-study-card border rounded-lg overflow-hidden">
-       <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Plutomen_trans.png"></img>
-        <div class="px-4 py-2">
-          <h4 class="font-semibold">Plutomen Technologies</h4>
-          <p>Spearheading entire GTM strategy for an XR powered Connected Worker Platform</p>
-        </div>
-      </div>
-      <!-- Simform -->
-      <div class="case-study-card border rounded-lg overflow-hidden">
-       <img class="flex-shrink-0 mr-12 sm:mb-4" loading="lazy" alt="simform" width="96" height="74" viewBox="0 0 96 74" fill="none" src="/assets/img/Simform.png"></img>
-        <div class="px-4 py-2">
-          <h4 class="font-semibold">Simform</h4>
-          <p>Marketing for a Software Product Development Company</p>
-        </div>
-      </div>
-    <a href="/work" class="text-blue-500 hover:underline">← Back to All Work Experiences</a>
-  </section>
+  <h3 class="text-2xl font-semibold">More Work Experiences</h3>
+<section class="other-case-studies flex flex-wrap gap-6">
+
+  <div class="dream-job aligned flex items-start p-6 bg-gray-900 rounded-lg border-dashed border-gray-600 border sm:block flex-1 min-w-[45%]">
+    <img src="/assets/img/Plutomen_logo.avif" alt="Paid Ads" width="125" class="sm:mb-6 mr-8 sm:mr-0">
+    <div class="flex-1">
+      <h3> <a href="/work/plutomen" class="underline-green-500">Plutomen</a></h3><br>
+      <p>Establishing Demand Generation & Product Positioning for XR SaaS </p>
+    </div>
+  </div>
+  <div class="dream-job aligned flex items-start p-6 bg-gray-900 rounded-lg border-dashed border-gray-600 border sm:block flex-1 min-w-[45%]">
+    <img src="/assets/img/Simform.png" alt="SEO icon" width="125" class="sm:mb-6 mr-8 sm:mr-0">
+    <div class="flex-1">
+      <h3>  <a href="/work/simform" class="underline-green-500">Simform</a></h3><br>
+      <p>Demand Gen (Organic, Account-based, & Paid for AI Product Development Company) </p>
+    </div>
+    
+  </div>
+  
+</section>
+
 
 </main>
 
