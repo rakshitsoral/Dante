@@ -11,62 +11,48 @@ roughjs: true
     <section class="text-center max-w-4xl mx-auto mb-40" aria-labelledby="heading">
         <h1 class="font-display text-4xl leading-none sm:text-3xl">Hi! I’m Rakshit Soral, a <span class="highlight-yellow px-4 -mx-2 inline-block relative">reliable</span> Digital Marketer.</h1>
         <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-lg">I believe marketing is all about conveying your <strong class="box-blue mx-1">message</strong> to consumers and convincing them to show<strong class="box-green mx-1">interest</strong>, and <strong class="box-red mx-1">invest</strong> in your product & services</p>
-       
- <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-  <a href="/work"
-     style="
-       display: inline-block;
-       padding: 12px 24px;
-       background-color: #60a5fa;
-       color: black;
-       font-weight: 600;
-       text-decoration: none;
-       border-radius: 0;
-       transition: background-color 0.3s ease;
-     "
-     onmouseover="this.style.backgroundColor='#28a745'"
-     onmouseout="this.style.backgroundColor='#60a5fa'">
-    View Portfolio
-  </a>
+    
+    </section>
+    {% include "partials/work-list.njk" %}
+   <div class="text-center flex flex-col items-center justify-center max-w-3xl mx-auto px-6">
 
-  <a href="/resume"
-     style="
-       display: inline-block;
-       padding: 12px 24px;
-       background-color: #BF870B;
-       color: black;
-       font-weight: 600;
-       text-decoration: none;
-       border-radius: 0;
-       transition: background-color 0.3s ease;
-     "
-     onmouseover="this.style.backgroundColor='#28a745'"
-     onmouseout="this.style.backgroundColor='#BF870B'">
-    Download Resume
-  </a>
+    <h3 class="text-4xl font-display font-bold tracking-tight mb-4">
+        💬 Let’s Talk <span class="highlight-yellow px-4 -mx-2 inline-block relative">Growth</span>
+    </h3>
+
+    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+        Curious how demand generation or conversion strategy can boost your business?<br>
+        Drop me a message and let’s start something impactful!
+    </p>
+
+    <div class="space-y-2 text-base font-semibold text-gray-200 mb-8">
+        <p>
+            📧 <a href="mailto:rakshitsoral@gmail.com" class="underline hover:text-blue-400">
+            rakshitsoral@gmail.com</a>
+        </p>
+        <p>
+            📞 <a href="tel:+919602542617" class="underline hover:text-green-400">
+            +91 96025 42617</a>
+        </p>
+        <p class="opacity-80 text-sm">
+            Prefer convenience? → 
+            <a href="https://wa.me/919602542617" 
+               class="font-semibold underline hover:text-green-500">
+               Ping me on WhatsApp
+            </a> 
+            and I’ll reply faster.
+        </p>
+    </div>
+
+    <a href="mailto:rakshitsoral@gmail.com"
+       class="bg-yellow-500 text-black font-semibold py-3 px-8 rounded shadow-md
+              hover:bg-yellow-400 transition-transform hover:scale-[1.04]">
+        Increase My Conversions 🚀
+    </a>
+
 </div>
 
 
-
-    </section>
-    {% include "partials/work-list.njk" %}
-
-
-    <h2>Marketing Skills</h2>
-    <div class="dream-job aligned flex items-start mt-6 p-6 bg-gray-900 rounded-lg border-dashed border-gray-600 border sm:block">
-        <div class="mr-8">
-            <h3>Paid Demand Gen</h3><br>
-             <p>I’ve been doing Demand Gen with Paid Media Ads like Linkedin Ads, Google Adwords, Facebook Ads, Twitter Ads, & programmatic Ads both professionally and <a href="https://rakshitsoral.com/work">as a freelancer</a>. </p>
-        </div>
-        <img src="/assets/img/ADS icon.png" alt="Paid Ads" width="125" class="sm:mt-6">
-    </div>
-    <div class="dream-job aligned flex items-start mt-6 p-6 bg-gray-900 rounded-lg border-dashed border-gray-600 border sm:block">
-        <div class="mr-8">
-            <h3>Organic Demand Gen</h3><br>
-            <p>I also do Organic Product Led SEO and Content-based Demand Gen. I do LLM SEO, backinking, PR outreach, influencer outreach and technical SEO with ease. </p>
-        </div>
-        <img src="/assets/img/SEO icon.png" alt="SEO icon" width="125" class="sm:mt-6">
-    </div>
     <section class="work-section work-section--misc max-w-4xl p-16 mt-24 flex items-start self-center relative sm:p-8 sm:mt-12  sm:flex-col-reverse">
         <div>
             <p>I enjoy <a href="/blog" class="link-misc">writing</a> about things I learn & I know, building scalable Digital Marketing campaigns, and learning a bit of <a href="https://github.com/rakshitsoral" class="link-misc">web development</a>, side-by-side.</p>
