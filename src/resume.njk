@@ -2,7 +2,6 @@
 layout: default
 title: Demand Gen Marketing CV Printable A4
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +11,9 @@ title: Demand Gen Marketing CV Printable A4
     <meta name="description" content="Rakshit Soral - Demand Generation Marketing Curriculum Vitae" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
     /* Responsive resume layout for screens up to 800px */
 @media screen and (max-width: 800px) {
   .page, .cv {
@@ -87,7 +86,6 @@ title: Demand Gen Marketing CV Printable A4
     padding: 10px 0;
   }
 }
-
 /* Ultra-small screens: Stack all content, slightly reduce font sizes */
 @media screen and (max-width: 480px) {
   .page, .cv {
@@ -105,9 +103,8 @@ title: Demand Gen Marketing CV Printable A4
     height: 20px !important;
   }
 }
-
         body {
-            background: rgb(204,204,204); 
+            background: rgb(204,204,204);
         }
         .page {
             width: 210mm;
@@ -119,7 +116,6 @@ title: Demand Gen Marketing CV Printable A4
             position: relative;
         }
         @media print {
-
             body, html {
                 width: 210mm;
                 min-height: 297mm;
@@ -149,7 +145,7 @@ title: Demand Gen Marketing CV Printable A4
         }
         html, body {
             font-family: Caveat Brush, cursive;
-            font-size: 11pt;
+            font-size: 10pt;
             color: #222;
         }
         .cv {
@@ -159,33 +155,33 @@ title: Demand Gen Marketing CV Printable A4
             padding: 0;
         }
         .mainDetails {
-            padding: 8mm 0 0 8mm;
+            padding: 4mm 0 0 4mm;
             background: #fff;
         }
         #name {
             float: left;
             text-transform: uppercase;
-            padding: 8.5mm 0 0 7mm;
+            padding: 4mm 0 0 3mm;
         }
         #name h1 {
-            font-size: 33pt;
+            font-size: 28pt;
             font-weight: 400;
             font-family: Caveat Brush, cursive;
-            line-height: 38pt;
+            line-height: 32pt;
             color: #ec4899;
         }
         #name h2 {
-            font-size: 18pt;
+            font-size: 16pt;
             font-family: Caveat Brush, cursive;
-            line-height: 20pt;
+            line-height: 18pt;
         }
         #mainArea {
-            padding: 0 8mm;
+            padding: 0 4mm;
         }
         #headshot {
             width: 46mm;
             float: left;
-            margin-top: 10mm;
+            margin-top: 5mm;
             margin-left: -0.5mm;
         }
         #headshot img {
@@ -196,23 +192,23 @@ title: Demand Gen Marketing CV Printable A4
         }
         .contactDetails {
             float: right;
-            margin: 10mm 8mm 0 0;
+            margin: 5mm 4mm 0 0;
         }
-        .contactDetails ul { 
+        .contactDetails ul {
             list-style-type: none;
             font-family: Caveat Brush, cursive;
         }
         .contactDetails ul li {
-            line-height: 24pt;
+            line-height: 20pt;
             color: #444;
         }
         .contactDetails ul li a, a[href^=tel] {
-            color: #444; 
+            color: #444;
             padding: 4px 8px;
             text-decoration: none;
             transition: all .1s ease-in;
         }
-        .contactDetails ul li a:hover { 
+        .contactDetails ul li a:hover {
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             color: #0e091d;
         }
@@ -226,20 +222,20 @@ title: Demand Gen Marketing CV Printable A4
             clear: both;
         }
         section {
-            border-top: 1mm dotted #444;
-            padding: 4mm 0 0 0;
+            border-top: 0.5mm dotted #444;
+            padding: 2mm 0 0 0;
         }
         section:first-child {
             border-top: 0;
-            padding: 8mm 0 0 0;
+            padding: 2mm 0 0 0;
         }
         section:last-child {
-            padding: 4mm 0 0 0;
+            padding: 2mm 0 0 0;
         }
         .sectionTitle {
             float: left;
             width: 50mm;
-            margin-bottom: 6mm; 
+            margin-bottom: 6mm;
         }
         .sectionContent {
             float: right;
@@ -249,22 +245,22 @@ title: Demand Gen Marketing CV Printable A4
             font-family: Caveat Brush, cursive;
             font-weight: 400;
             text-transform: uppercase;
-            font-size: 18pt;
+            font-size: 16pt;
             color: #ec4899;
         }
         .sectionContent h2 {
             font-family: Caveat Brush, cursive;
             text-transform: uppercase;
-            font-size: 18pt;
+            font-size: 16pt;
         }
         .subDetails {
             font-family: Caveat Brush, cursive;
-            font-size: 11pt;
+            font-size: 10pt;
             font-weight: bold;
             color: #0e091d;
         }
         .nameDetails {
-            font-size: 11pt;
+            font-size: 10pt;
             font-family: Caveat Brush, cursive;
             color: #444;
             text-transform: lowercase;
@@ -272,41 +268,41 @@ title: Demand Gen Marketing CV Printable A4
         .keySkills {
             list-style-type: none;
             column-count: 3;
-            margin-bottom: 4mm;
-            font-size: 11pt;
+            margin-bottom: 2mm;
+            font-size: 10pt;
             color: #444;
-            line-height: 15pt;
+            line-height: 12pt;
         }
         .keySkills ul li {
-            margin-bottom: 6mm;
+            margin-bottom: 3mm;
         }
         .clients, .list {
             list-style-type: none;
             column-count: 1;
-            margin-bottom: 4mm;
-            font-size: 11pt;
+            margin-bottom: 2mm;
+            font-size: 10pt;
             color: #444;
-            line-height: 15pt;
+            line-height: 12pt;
         }
         .clients ul li,
         .list ul li {
-            margin-bottom: 6mm;
+            margin-bottom: 3mm;
         }
         .list ul {
             list-style-type: disc;
             margin-left: 5mm;
-            margin-bottom: 2mm;
+            margin-bottom: 1mm;
         }
         p {
-            line-height: 15pt;
-            margin-bottom: 4mm;
+            line-height: 12pt;
+            margin-bottom: 2mm;
             color: #444;
             word-break: break-word;
         }
         a {
             text-decoration: none;
         }
-        a:hover { 
+        a:hover {
             text-decoration: underline;
         }
         a, .fa-check, .fa-arrow-right {
@@ -335,7 +331,7 @@ title: Demand Gen Marketing CV Printable A4
             text-decoration: none;
             display: inline-block;
             margin: 0;
-            cursor: pointer; 
+            cursor: pointer;
             text-transform: uppercase;
         }
         .bottom-cta-bar button:hover {
@@ -347,11 +343,52 @@ title: Demand Gen Marketing CV Printable A4
                 display: none !important;
             }
         }
+        /* One-page optimizations */
+        .skill-wrapper {
+            gap: 10px;
+        }
+        .skill-item {
+            width: 30px;
+            height: 30px;
+        }
+        .skill-item img, .skill-item svg {
+            width: 30px;
+            height: 30px;
+        }
+        .mb-4 {
+            margin-bottom: 8px !important;
+        }
+        .mb-3 {
+            margin-bottom: 6px !important;
+        }
+        /* Skills section styles */
+        .skills-container {
+            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: black;
+            padding: 1rem;
+        }
+        .skills-container .bg-gray-800 {
+            background-color: #f3f4f6 !important;
+        }
+        .skills-container span {
+            background-color: white !important;
+            border-color: #d1d5db !important;
+            color: black !important;
+        }
+        .skills-container span:hover {
+            background-color: #f9fafb !important;
+        }
+        .skills-container .bg-gray-800\/50 {
+            background-color: rgba(243, 244, 246, 0.5) !important;
+        }
+        .skills-container h2 {
+            color: black !important;
+        }
     </style>
 </head>
 <body id="top">
-
-    <!-- Page 1 -->
+    <!-- Single Page -->
     <div class="page">
         <div class="cv">
             <div id="header">
@@ -386,158 +423,161 @@ title: Demand Gen Marketing CV Printable A4
                     </article>
                     <div class="clear"></div>
                 </section>
-<section>
-  <div class="sectionTitle" style="font-family:'Caveat Brush',cursive;font-size:18pt;color:#0e091d;float:left;width:50mm;margin-bottom:6mm;">
-    <h1 style="font-family:'Caveat Brush',cursive;font-size:18pt;margin:0;">Tools & Technologies</h1>
-  </div>
-  <div class="sectionContent" style="font-family:'Caveat Brush',cursive;font-size:11pt;color:#000;float:right;width:141mm;">
-    <!-- Marketing Automation & CRM -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">Marketing Automation & CRM</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://companieslogo.com/img/orig/HUBS-3bd277ce.png?t=1597493082" alt="HubSpot" title="HubSpot" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://www.testtriangle.com/wp-content/uploads/2023/11/freshMarketer-Icon.png" alt="Freshworks CRM" title="Freshworks CRM" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://images.squarespace-cdn.com/content/v1/533ac697e4b0885962ac8ede/1499338685403-KNO6B4VBYF94YO0E9WCA/mailchimp_01a.png" alt="Mailchimp" title="Mailchimp" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.Jdd02zTFt2-DIunCGY30tAAAAA?pid=Api&P=0&h=180" alt="Apollo.io" title="Apollo.io" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_8094f5ada14d98c06e02d2dbe6f172d2/outplay.png" alt="Outplay" title="Outplay" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://app.clay.com/assets/Clay-logo-tilt-2024-DKnp3RSV.png" alt="Clay.com" title="Clay.com" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://tse2.mm.bing.net/th/id/OIP.4YhqX0OZPZtVYr_5pXgLIwAAAA?pid=Api&P=0&h=180" alt="Slintel" title="Slintel" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://iconape.com/wp-content/files/fj/346256/png/bambora-logo.png" alt="Bambora" title="Bambora" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://b2bsalesmarketing.exchange/wp-content/uploads/2020/10/Triblio-768x324.png" alt="Triblio (ABM)" title="Triblio (ABM)" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <!-- SEO & Keyword Research -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">SEO & Keyword Research</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://companieslogo.com/img/orig/ahrefs_BIG-20d12c92.png?t=1701346903" alt="Ahrefs" title="Ahrefs" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://brigadeweb.com/wp-content/uploads/2022/12/icon-logo-ubersuggest.png" alt="Ubersuggest" title="Ubersuggest" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://cdn.worldvectorlogo.com/logos/google-search-console.svg" alt="Google Search Console" title="Google Search Console" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Analytics & Performance Tracking -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">Analytics & Performance Tracking</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://www.vectorlogo.zone/logos/google_analytics/google_analytics-official.svg" alt="Google Analytics 4 (GA4)" title="Google Analytics 4 (GA4)" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://www.thehitsdoctor.com/wp-content/uploads/2019/11/linkedin-Ads-logo.png" alt="LinkedIn Campaign Manager" title="LinkedIn Campaign Manager" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/820px-Google_Ads_logo.svg.png" alt="Google Ads Manager" title="Google Ads Manager" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Content Creation & CMS -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">Content Creation & CMS</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://images.seeklogo.com/logo-png/27/2/wordpress-logo-png_seeklogo-274093.png" alt="WordPress CMS" title="WordPress CMS" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/canva.svg" alt="Canva" title="Canva" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/github.svg" alt="GitHub" title="GitHub" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/chatgpt.svg" alt="ChatGPT" title="ChatGPT" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/claude.svg" alt="Claude" title="Claude" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/deepseek.svg" alt="DeepSeek" title="DeepSeek" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/grok.svg" alt="Grok" title="Grok" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Sales & Lead Intelligence -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">Sales & Lead Intelligence</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/slintel.svg" alt="Slintel" title="Slintel" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/bambora.svg" alt="Bambora" title="Bambora" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/claycom.svg" alt="Clay.com" title="Clay.com" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="/assets/logos/apolloio.svg" alt="Apollo.io" title="Apollo.io" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-
-    <!-- AI & Productivity Tools -->
-    <div class="mb-4 skill-item" style="font-family:'Caveat Brush',cursive;font-size:11pt;margin-bottom:16px;">
-      <h3 class="mb-3 text-uppercase" style="font-family:'Caveat Brush',cursive;font-size:14pt;color:#0e091d;margin-bottom:12px;">AI & Productivity Tools</h3>
-      <div class="skill-wrapper" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;">
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png" alt="ChatGPT" title="ChatGPT" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.png" alt="Claude" title="Claude" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://logoeps.com/wp-content/uploads/2025/02/DeepSeek_logo_icon.png" alt="DeepSeek" title="DeepSeek" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-        <div class="skill-item" style="width:35px;height:35px;">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvwGLjIYF5J3EJzmKaKFjLzLnCQl5fmrwoIA&s" alt="Grok" title="Grok" style="width:35px;height:35px;display:block;" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="clear"></div>
-</section>
-
-</div></div></div>
-
-    <!-- Page 2 -->
-    <section>
-                
-    <div class="page">
-        <div class="cv">
-            <div id="mainArea">
                 <section>
-                 <div class="sectionTitle">
+                    <div class="sectionTitle">
+                        <h1>Skills</h1>
+                    </div>
+                    <div class="sectionContent">
+                        <div class="skills-container max-w-7xl mx-auto space-y-6">
+                            <!-- Core Skills -->
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                                <div class="lg:col-span-3 bg-gray-800/50 rounded-lg p-6">
+                                    <div class="border-l-4 pl-4" style="border-color: #BF870B;">
+                                        <h2 class="text-xl font-bold tracking-wide">CORE SKILLS</h2>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-wrap gap-3">
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #BF870B;" onmouseenter="this.style.backgroundColor='rgba(191, 135, 11, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📊 DIGITAL MARKETING
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #BF870B;" onmouseenter="this.style.backgroundColor='rgba(191, 135, 11, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🎯 DEMAND GENERATION
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #BF870B;" onmouseenter="this.style.backgroundColor='rgba(191, 135, 11, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📈 CONVERSION OPTIMIZATION
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #BF870B;" onmouseenter="this.style.backgroundColor='rgba(191, 135, 11, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        ✍️ CONTENT STRATEGY
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Paid Media -->
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                                <div class="lg:col-span-3 bg-gray-800/50 rounded-lg p-6">
+                                    <div class="border-l-4 pl-4" style="border-color: #28A745;">
+                                        <h2 class="text-xl font-bold tracking-wide">PAID MEDIA</h2>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-wrap gap-3">
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        💼 LINKEDIN ADS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔍 GOOGLE ADWORDS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📘 FACEBOOK ADS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🐦 TWITTER ADS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🎯 PROGRAMMATIC ADS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #28A745;" onmouseenter="this.style.backgroundColor='rgba(40, 167, 69, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📺 DISPLAY ADS
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Organic / SEO -->
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                                <div class="lg:col-span-3 bg-gray-800/50 rounded-lg p-6">
+                                    <div class="border-l-4 pl-4" style="border-color: #16A34A;">
+                                        <h2 class="text-xl font-bold tracking-wide">ORGANIC / SEO</h2>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-wrap gap-3">
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔎 TECHNICAL SEO
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📝 CONTENT SEO
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🤖 LLM SEO
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔗 BACKLINKING
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📰 PR OUTREACH
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #16A34A;" onmouseenter="this.style.backgroundColor='rgba(22, 163, 74, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        ⭐ INFLUENCER OUTREACH
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Analytics & Tools -->
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                                <div class="lg:col-span-3 bg-gray-800/50 rounded-lg p-6">
+                                    <div class="border-l-4 pl-4" style="border-color: #EC4899;">
+                                        <h2 class="text-xl font-bold tracking-wide">ANALYTICS & TOOLS</h2>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-wrap gap-3">
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📊 GOOGLE ANALYTICS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔍 SEARCH CONSOLE
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📈 GTM
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🎨 CANVA
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📧 MAILCHIMP
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📬 HUBSPOT
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🎯 SEMRUSH
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #EC4899;" onmouseenter="this.style.backgroundColor='rgba(236, 72, 153, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔎 AHREFS
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Development (Bonus) -->
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                                <div class="lg:col-span-3 bg-gray-800/50 rounded-lg p-6">
+                                    <div class="border-l-4 pl-4" style="border-color: #B91C1C;">
+                                        <h2 class="text-xl font-bold tracking-wide">DEVELOPMENT</h2>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-9 flex flex-wrap gap-3">
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #B91C1C;" onmouseenter="this.style.backgroundColor='rgba(185, 28, 28, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🌐 HTML/CSS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #B91C1C;" onmouseenter="this.style.backgroundColor='rgba(185, 28, 28, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        ⚡ JAVASCRIPT
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #B91C1C;" onmouseenter="this.style.backgroundColor='rgba(185, 28, 28, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🎨 TAILWIND CSS
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #B91C1C;" onmouseenter="this.style.backgroundColor='rgba(185, 28, 28, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        📄 11TY
+                                    </span>
+                                    <span class="px-5 py-2.5 bg-gray-800 border rounded-lg font-semibold text-sm transition-colors cursor-default" style="border-color: #B91C1C;" onmouseenter="this.style.backgroundColor='rgba(185, 28, 28, 0.1)'" onmouseleave="this.style.backgroundColor=''">
+                                        🔧 GIT
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </section>
+                <section>
+                    <div class="sectionTitle">
                         <h1>Work Experience</h1>
-                    </div> 
+                    </div>
                     <div class="sectionContent">
                         <ul class="list">
                             <li>
@@ -606,8 +646,7 @@ title: Demand Gen Marketing CV Printable A4
             </div>
         </div>
     </div>
-
-    <!-- --- Print and Download Resume Buttons (BOTTOM) --- -->
+    <!-- Print and Download Resume Buttons (BOTTOM) -->
     <div class="bottom-cta-bar no-print">
         <button type="button" onclick="window.print()">
             <i class="fa fa-print" aria-hidden="true"></i> Print
