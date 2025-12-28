@@ -20,7 +20,13 @@ title: Demand Gen Marketing CV Printable A4
   }
       body { background: white; }
       .no-print { display: none !important; }
-      .page { box-shadow: none; margin: 0; }
+      .page {
+  width: 210mm;
+  height: 297mm; /* EXACT A4 height */
+  overflow: hidden; /* Prevents spill that causes blank page */
+  padding: 10mm 12mm; 
+  box-sizing: border-box;
+}
       .timeline-line::before { display: none; }
     }
 
@@ -407,11 +413,12 @@ clone.style.breakInside = "avoid-page";
         });
         html2pdf()
           .set({
-            margin: [10, 10, 10, 10],
             filename: 'Rakshit_Soral_Marketing_CV.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2, letterRendering: true, logging: false },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            margin: 0,
+  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
           })
           .from(pdfContainer)
           .save();
