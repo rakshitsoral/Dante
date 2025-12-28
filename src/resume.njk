@@ -15,6 +15,10 @@ title: Demand Gen Marketing CV Printable A4
     body { font-family: 'Poppins', sans-serif; }
     
     @media print {
+      .page {
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
       body { background: white; }
       .no-print { display: none !important; }
       /* CRITICAL: Remove margins/shadows for the PDF generator */
@@ -401,33 +405,18 @@ title: Demand Gen Marketing CV Printable A4
       </div>
     </section>
 
-  <script>
-    // Print functionality
-    document.getElementById("printResumeBtn").addEventListener("click", () => {
-      window.print();
-    });
-
-    // PDF Download functionality (FIXED)
-    document.getElementById("downloadResumeBtn").addEventListener("click", function () {
-        const element = document.getElementById("resume-to-print");
-        
-        // Configuration for html2pdf
-        const opt = {
-          margin:       [0, 0, 0, 0], // Zero margins to avoid blank Page 1
-          filename:     'Rakshit_Soral_Marketing_CV.pdf',
-          image:        { type: 'jpeg', quality: 0.98 },
-          html2canvas:  { 
-            scale: 2, 
-            useCORS: true, 
-            letterRendering: true,
-            scrollY: 0 // Prevents capture issues if the user is scrolled down
-          },
-          jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-          pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
-        };
-
-        // Run html2pdf directly on the element
-        html2pdf().set(opt).from(element).save();
-    });
-  </script>
+ <script>
+  document.getElementById("printResumeBtn").addEventListener("click", () => window.print());
+  
+  document.getElementById("downloadResumeBtn").addEventListener("click", () => {
+    const element = document.getElementById("resume");
+    html2pdf().set({
+      margin: 0,
+      filename: 'Rakshit_Soral_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }).from(element).save();
+  });
+</script>
 </body>
