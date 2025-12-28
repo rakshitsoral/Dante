@@ -20,6 +20,8 @@ title: Demand Gen Marketing CV Printable A4
       .no-print { display: none !important; }
       .page { box-shadow: none; margin: 0; }
       .timeline-line::before { display: none; }
+       margin: 0 !important;
+    box-shadow: none !important;
     }
     
     .timeline-line::before {
@@ -38,9 +40,16 @@ title: Demand Gen Marketing CV Printable A4
         margin-left: -1px;
       }
     }
+    .page-section {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  page-break-after: auto;
+}
+
   </style>
 </head>
   <!-- Action Buttons - Fixed Position -->
+  <section class="page-section">
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 no-print">
     <button id="printResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -401,12 +410,7 @@ title: Demand Gen Marketing CV Printable A4
         <p class="text-[#18487E] font-medium">Rajasthan Technical University, Kota</p>
       </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-6">
-      <p class="text-sm md:text-base"></p>
-    </footer>
-  </div>
+    </section>
 
   <!-- PDF Generation & Print Scripts -->
   <script>
@@ -422,7 +426,9 @@ title: Demand Gen Marketing CV Printable A4
         pdfContainer.style.background = "#fff";
         resumePages.forEach(page => {
             const clone = page.cloneNode(true);
-            clone.style.pageBreakAfter = "always";
+           clone.style.pageBreakInside = "avoid";
+clone.style.breakInside = "avoid-page";
+
             pdfContainer.appendChild(clone);
         });
         html2pdf()
