@@ -2,43 +2,29 @@
 layout: default
 title: Demand Gen Marketing CV Printable A4
 ---
-
-
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rakshit Soral - Resume</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Poppins', sans-serif; }
-
+   
     @media print {
-      .page {
-        margin: 0 !important;
-        box-shadow: none !important;
-      }
-      body {
-        background: white;
-      }
-      .no-print {
-        display: none !important;
-      }
-      #resume-to-print {
-        margin: 0 !important;
-        box-shadow: none !important;
-        width: 100% !important;
-      }
-      .timeline-line::before {
-        display: none;
-      }
+       .page {
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none; margin: 0; }
+      .timeline-line::before { display: none; }
     }
 
+   
     .timeline-line::before {
       content: '';
       position: absolute;
@@ -54,42 +40,36 @@ title: Demand Gen Marketing CV Printable A4
   page-break-after: auto;
 }
 
-
+   
     @media (min-width: 768px) {
       .timeline-line::before {
         left: 50%;
         margin-left: -1px;
       }
     }
-
-    .job-block {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
   </style>
 </head>
-
-
-  <!-- Action Buttons -->
+  <!-- Action Buttons - Fixed Position -->
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 no-print">
-    <button id="printResumeBtn"
-      class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+    <button id="printResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+      </svg>
       Print
     </button>
-    <button id="downloadResumeBtn"
-      class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+    <button id="downloadResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
       Download PDF
     </button>
   </div>
-
-  <!-- Printable Section -->
-  <div id="resume-to-print" class="max-w-5xl mx-auto bg-white shadow-2xl my-4 md:my-8 page">
-
+  <section class="page-section">
+  <div class="max-w-5xl mx-auto bg-white shadow-2xl my-4 md:my-8 page">
     <!-- Header -->
-    <section class="page-section">
     <header class="bg-gradient-to-r from-[#18487E] to-[#0d2d52] text-white p-6 md:p-12">
       <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-4 md:mb-6">
-        <img id="avatar" src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover" />
+        <img id="avatar" src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral" title="This is me" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover" />
         <div class="text-center md:text-left">
           <h1 class="text-3xl md:text-5xl font-bold mb-2">Rakshit Soral</h1>
           <p class="text-xl md:text-2xl font-light">Marketing Leader</p>
@@ -102,7 +82,6 @@ title: Demand Gen Marketing CV Printable A4
         <span>🔗 linkedin.com/in/rakshitsoral</span>
       </div>
     </header>
-
     <!-- Profile Section -->
     <section class="p-6 md:p-12 border-b-2 border-gray-200">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Profile</h2>
@@ -110,13 +89,11 @@ title: Demand Gen Marketing CV Printable A4
         Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.
       </p>
     </section>
-
     <!-- Skills Section -->
     <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Skills</h2>
-      
+     
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-
         <!-- Core Skills -->
         <div>
           <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Core Skills</h3>
@@ -127,7 +104,6 @@ title: Demand Gen Marketing CV Printable A4
             <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Content Strategy</span>
           </div>
         </div>
-
         <!-- Paid Media -->
         <div>
           <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Paid Media</h3>
@@ -140,7 +116,6 @@ title: Demand Gen Marketing CV Printable A4
             <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Display Ads</span>
           </div>
         </div>
-
         <!-- Organic/SEO -->
         <div>
           <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Organic / SEO</h3>
@@ -153,7 +128,6 @@ title: Demand Gen Marketing CV Printable A4
             <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Influencer Outreach</span>
           </div>
         </div>
-
         <!-- Analytics & Tools -->
         <div>
           <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Analytics & Tools</h3>
@@ -169,7 +143,6 @@ title: Demand Gen Marketing CV Printable A4
           </div>
         </div>
       </div>
-
       <!-- Development Skills -->
       <div class="mt-6">
         <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Development</h3>
@@ -182,18 +155,16 @@ title: Demand Gen Marketing CV Printable A4
         </div>
       </div>
     </section>
-
     <!-- Work Experience -->
     <section class="p-6 md:p-12 border-b-2 border-gray-200">
       <div class="text-center mb-8 md:mb-16">
         <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Professional Experience</h2>
         <p class="text-gray-500 mt-2 text-sm md:text-base">My journey in Marketing and Growth</p>
       </div>
-
       <div class="relative timeline-line max-w-5xl mx-auto">
-        
+       
         <!-- Job 1 -->
-        <div class="job-block relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
+        <div class="relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
           <div class="md:text-right mb-3 md:mb-0 pl-8 md:pl-0">
             <span class="text-xs font-bold text-[#18487E] uppercase tracking-wider block mb-1">Oct 2024 - Present</span>
             <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1">Marketing & Demand Generation Specialist</h3>
@@ -202,6 +173,8 @@ title: Demand Gen Marketing CV Printable A4
               California (United States), Remote
             </div>
           </div>
+         
+          <!-- Timeline Dot -->
           <div class="absolute left-[3px] md:left-1/2 md:-ml-[9px] top-1 w-[14px] h-[14px] md:w-[18px] md:h-[18px] bg-white border-4 border-[#18487E] rounded-full z-20 shadow-md"></div>
           <div class="bg-white p-3 md:p-6 rounded-xl shadow-sm border border-gray-200 ml-6 md:ml-0 md:pl-6 hover:shadow-md transition-shadow">
             <ul class="space-y-2 md:space-y-3">
@@ -232,9 +205,8 @@ title: Demand Gen Marketing CV Printable A4
             </ul>
           </div>
         </div>
-
         <!-- Job 2 -->
-        <div class="job-block relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
+        <div class="relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
           <div class="md:col-start-2 pl-8 md:pl-0 mb-3 md:mb-0 md:order-1">
             <span class="text-xs font-bold text-[#18487E] uppercase tracking-wider block mb-1">Aug 2022 - Sep 2024</span>
             <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1">Product Marketing Manager</h3>
@@ -269,9 +241,8 @@ title: Demand Gen Marketing CV Printable A4
             </ul>
           </div>
         </div>
-
         <!-- Job 3 -->
-        <div class="job-block relative z-10 mb-12 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
+        <div class="relative z-10 mb-12 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
           <div class="md:text-right mb-4 md:mb-0 pl-12 md:pl-0">
             <span class="text-xs md:text-sm font-bold text-[#18487E] uppercase tracking-wider">Oct 2017 - July 2022</span>
             <h3 class="text-xl md:text-2xl font-bold text-gray-900 mt-1">Demand Generation Lead</h3>
@@ -280,6 +251,7 @@ title: Demand Gen Marketing CV Printable A4
               Ahmedabad, Hybrid
             </div>
           </div>
+         
           <div class="absolute left-[6px] md:left-1/2 md:-ml-[9px] top-2 w-[18px] h-[18px] bg-white border-4 border-[#18487E] rounded-full z-20 shadow-md"></div>
           <div class="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-200 pl-12 md:pl-6 hover:shadow-md transition-shadow">
             <ul class="space-y-3">
@@ -306,9 +278,8 @@ title: Demand Gen Marketing CV Printable A4
             </ul>
           </div>
         </div>
-
         <!-- Job 4 -->
-        <div class="job-block relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
+        <div class="relative z-10 mb-8 md:mb-16 md:grid md:grid-cols-2 md:gap-10 items-start group">
           <div class="md:col-start-2 pl-8 md:pl-0 mb-3 md:mb-0 md:order-1">
             <span class="text-xs font-bold text-[#18487E] uppercase tracking-wider block mb-1">April 2016 - Sep 2017</span>
             <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1">Inbound Marketing Executive</h3>
@@ -339,9 +310,8 @@ title: Demand Gen Marketing CV Printable A4
             </ul>
           </div>
         </div>
-
         <!-- Job 5 -->
-        <div class="job-block relative z-10 md:grid md:grid-cols-2 md:gap-10 items-start group">
+        <div class="relative z-10 md:grid md:grid-cols-2 md:gap-10 items-start group">
           <div class="md:text-right mb-3 md:mb-0 pl-8 md:pl-0">
             <span class="text-xs font-bold text-[#18487E] uppercase tracking-wider block mb-1">July 2015 - March 2016</span>
             <h3 class="text-lg md:text-2xl font-bold text-gray-900 mb-1">Jr. Content Reporter</h3>
@@ -350,6 +320,7 @@ title: Demand Gen Marketing CV Printable A4
               Jaipur, In-house
             </div>
           </div>
+         
           <div class="absolute left-[3px] md:left-1/2 md:-ml-[9px] top-1 w-[14px] h-[14px] md:w-[18px] md:h-[18px] bg-white border-4 border-[#18487E] rounded-full z-20 shadow-md"></div>
           <div class="bg-white p-3 md:p-6 rounded-xl shadow-sm border border-gray-200 ml-6 md:ml-0 md:pl-6 hover:shadow-md transition-shadow">
             <ul class="space-y-2 md:space-y-3">
@@ -368,13 +339,12 @@ title: Demand Gen Marketing CV Printable A4
             </ul>
           </div>
         </div>
-
       </div>
     </section>
-
     <!-- Certifications -->
     <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
+     
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
           <div class="flex items-start gap-3">
@@ -405,7 +375,6 @@ title: Demand Gen Marketing CV Printable A4
         </div>
       </div>
     </section>
-
     <!-- Education -->
     <section class="p-6 md:p-12">
       <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Education</h2>
@@ -418,22 +387,33 @@ title: Demand Gen Marketing CV Printable A4
       </div>
     </section>
     </section>
-
-  </div> <!-- END PRINT AREA -->
-
+    
+  <!-- PDF Generation & Print Scripts -->
   <script>
-    document.getElementById("printResumeBtn").addEventListener("click", () => window.print());
-
-    document.getElementById("downloadResumeBtn").addEventListener("click", () => {
-      const element = document.getElementById("resume-to-print");
-      html2pdf().set({
-        margin: 0,
-        filename: 'Rakshit_Soral_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      }).from(element).save();
+    // Print functionality
+    document.getElementById("printResumeBtn").addEventListener("click", function () {
+      window.print();
+    });
+    // PDF Download functionality
+    document.getElementById("downloadResumeBtn").addEventListener("click", function () {
+        const resumePages = document.querySelectorAll(".page");
+        const pdfContainer = document.createElement("div");
+        pdfContainer.style.background = "#fff";
+        resumePages.forEach(page => {
+            const clone = page.cloneNode(true);
+            clone.style.pageBreakInside = "avoid";
+clone.style.breakInside = "avoid-page";
+            pdfContainer.appendChild(clone);
+        });
+        html2pdf()
+          .set({
+            margin: [10, 10, 10, 10],
+            filename: 'Rakshit_Soral_Marketing_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, letterRendering: true, logging: false },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+          })
+          .from(pdfContainer)
+          .save();
     });
   </script>
-
-
