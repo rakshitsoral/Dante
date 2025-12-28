@@ -16,12 +16,13 @@ title: Demand Gen Marketing CV Printable A4
     body { font-family: 'Poppins', sans-serif; }
     
     @media print {
-  body { background: white !important; }
-  .no-print { display: none !important; }
-  .page { box-shadow: none !important; margin: 0 !important; }
-  .timeline-line::before { display: none !important; }
-}
-
+      body { background: white; }
+      .no-print { display: none !important; }
+      .page { box-shadow: none; margin: 0; }
+      .timeline-line::before { display: none; }
+       margin: 0 !important;
+    box-shadow: none !important;
+    }
     
     .timeline-line::before {
       content: '';
@@ -39,16 +40,9 @@ title: Demand Gen Marketing CV Printable A4
         margin-left: -1px;
       }
     }
-    .page-section {
-  break-inside: avoid;
-  page-break-inside: avoid;
-  page-break-after: auto;
-}
-
   </style>
 </head>
   <!-- Action Buttons - Fixed Position -->
-  <section class="page-section">
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 no-print">
     <button id="printResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -409,7 +403,12 @@ title: Demand Gen Marketing CV Printable A4
         <p class="text-[#18487E] font-medium">Rajasthan Technical University, Kota</p>
       </div>
     </section>
-    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-6">
+      <p class="text-sm md:text-base"></p>
+    </footer>
+  </div>
 
   <!-- PDF Generation & Print Scripts -->
   <script>
@@ -418,30 +417,27 @@ document.getElementById("printResumeBtn").addEventListener("click", () => {
   window.print();
 });
 
-// Download PDF
-document.getElementById("downloadResumeBtn").addEventListener("click", () => {
-  const resumePages = document.querySelectorAll(".page");
-  const pdfContainer = document.createElement("div");
-  pdfContainer.style.background = "#fff";
+    // PDF Download functionality
+    document.getElementById("downloadResumeBtn").addEventListener("click", function () {
+        const resumePages = document.querySelectorAll(".page");
+        const pdfContainer = document.createElement("div");
+        pdfContainer.style.background = "#fff";
+        resumePages.forEach(page => {
+            const clone = page.cloneNode(true);
+           clone.style.pageBreakInside = "avoid";
+clone.style.breakInside = "avoid-page";
 
-  resumePages.forEach(page => {
-    const clone = page.cloneNode(true);
-    clone.style.pageBreakInside = "avoid";
-    clone.style.breakInside = "avoid-page";
-    pdfContainer.appendChild(clone);
-  });
-
-  html2pdf()
-    .set({
-      margin: [0, 0, 0, 0],
-      filename: 'Rakshit_Soral_Marketing_CV.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, letterRendering: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    })
-    .from(pdfContainer)
-    .save();
-});
-
+            pdfContainer.appendChild(clone);
+        });
+        html2pdf()
+          .set({
+            margin: [10, 10, 10, 10],
+            filename: 'Rakshit_Soral_Marketing_CV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, letterRendering: true, logging: false },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+          })
+          .from(pdfContainer)
+          .save();
+    });
   </script>
