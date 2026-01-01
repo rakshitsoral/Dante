@@ -1,0 +1,94 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "title": "B2B SaaS Blog Strategy",
+        "category": "content",
+        "company": "Kitecyber",
+        "description": "Developed comprehensive content strategy focusing on cybersecurity pain points and solutions",
+        "metrics": "SEO-optimized content",
+        "icon": "✍️",
+        "color": "#BF870B"
+      },
+      {
+        "id": 2,
+        "title": "Technical Whitepapers",
+        "category": "content",
+        "company": "Plutomen",
+        "description": "Created in-depth technical content on Industrial XR and AI Connected Worker solutions",
+        "metrics": "Thought leadership",
+        "icon": "📄",
+        "color": "#BF870B"
+      },
+      {
+        "id": 3,
+        "title": "Case Studies & Success Stories",
+        "category": "content",
+        "company": "Kitecyber",
+        "description": "Produced customer success stories highlighting ROI and implementation results",
+        "metrics": "12% ↑ MQL to SQL",
+        "icon": "📊",
+        "color": "#BF870B"
+      },
+      {
+        "id": 4,
+        "title": "Sales Enablement Content",
+        "category": "content",
+        "company": "Kitecyber",
+        "description": "Created brochures, one-pagers, and comparison guides for sales team",
+        "metrics": "Sales acceleration",
+        "icon": "📋",
+        "color": "#BF870B"
+      },
+      {
+        "id": 5,
+        "title": "SEO Content Marketing",
+        "category": "content",
+        "company": "Plutomen",
+        "description": "Published 100+ strategic blogs generating qualified pipeline",
+        "metrics": "$250K pipeline",
+        "icon": "📝",
+        "color": "#BF870B"
+      },
+      {
+        "id": 6,
+        "title": "Guest Posts & Thought Leadership",
+        "category": "content",
+        "company": "Simform",
+        "description": "Contributed articles to InfoQ, DZone, and Dataversity",
+        "metrics": "50+ backlinks",
+        "icon": "🔗",
+        "color": "#BF870B"
+      },
+      {
+        "id": 7,
+        "title": "Complete Website Repositioning",
+        "category": "website",
+        "company": "Kitecyber",
+        "description": "Comprehensive keyword targeting, product category mapping, and comparison pages",
+        "metrics": "40% ↑ trial signups",
+        "icon": "🎯",
+        "color": "#60A5FA"
+      },
+      {
+        "id": 8,
+        "title": "Product Messaging Overhaul",
+        "category": "website",
+        "company": "Plutomen",
+        "description": "Repositioned Industrial XR + AI Connected Worker Suite messaging",
+        "metrics": "30% ↑ brand visibility",
+        "icon": "🎨",
+        "color": "#60A5FA"
+      },
+      {
+        "id": 9,
+        "title": "Geo-Targeted Microsites",
+        "category": "website",
+        "company": "Simform",
+        "description": "Built location-specific landing pages with SEO optimization",
+        "metrics": "30+ leads/month",
+        "icon": "🌍",
+        "color": "#60A5FA"
+      }
+    ]
+  }
