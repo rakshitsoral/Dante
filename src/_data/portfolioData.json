@@ -2,13 +2,14 @@
     "projects": [
       {
         "id": 1,
-        "title": "B2B SaaS Blog Strategy",
+        "title": "Cybersecurity Website Content Strategy",
         "category": "content",
         "company": "Kitecyber",
         "description": "Developed comprehensive content strategy focusing on cybersecurity pain points and solutions",
         "metrics": "SEO-optimized content",
         "icon": "✍️",
-        "color": "#BF870B"
+        "color": "#BF870B",
+         "url": "https://kitecyber.com/blog"
       },
       {
         "id": 2,

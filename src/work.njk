@@ -101,6 +101,13 @@ pagination:
         border-color: #419E54;
         color: #419E54;
     }
+    /* Case Studies Section - Full Width on Mobile */
+#caseStudiesSection {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
 </style>
     
     <!-- Filter Buttons -->
@@ -109,13 +116,10 @@ pagination:
             Case Studies
         </button>
         <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="all">
-            All Projects
+            All
         </button>
         <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="content">
             Content Samples
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="website">
-            Website Overhaul
         </button>
         <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="linkedin">
             LinkedIn Ads
@@ -139,10 +143,8 @@ pagination:
 <!-- Portfolio Gallery -->
 <section class="max-w-6xl mx-auto px-4 pb-16 md:pb-24">
     <!-- When "Case Studies" filter is active, show this section -->
-    <div id="caseStudiesSection" class="hidden">
-        <div role="main" class="flex flex-col">
-            {% include "partials/work-list.njk" %}
-        </div>
+        <div id="caseStudiesSection" style="display: none;">
+        {% include "partials/work-list.njk" %}
     </div>
     
     <!-- Default portfolio grid -->
@@ -154,12 +156,11 @@ pagination:
     <div id="noResults" class="hidden text-center py-16">
         <div class="text-6xl mb-4">🔍</div>
         <h3 class="text-2xl font-bold text-white mb-2">No projects found</h3>
-        <p class="text-white/60">Try adjusting your search or filter criteria</p>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="bg-white/5 border-t border-white/10 py-16">
+<section>
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h3 class="text-4xl font-display font-bold tracking-tight mb-4">
             💬 Let's Create <span class="highlight-yellow px-4 -mx-2 inline-block relative">Your Next Campaign.</span>
@@ -196,6 +197,7 @@ pagination:
     </div>
 </section>
 
+<!-- Replace BOTH script blocks with this single, complete script -->
 <script>
     console.log('🔍 Portfolio Script Loading...');
     
@@ -225,12 +227,16 @@ pagination:
     // Initialize
     function init() {
         console.log('🚀 Initializing portfolio...');
+        
+        // Show case studies by default, hide portfolio grid
+        portfolioGrid.style.display = 'none';
+        caseStudiesSection.style.display = 'block';
+        noResults.style.display = 'none';
+        
         if (projects.length === 0) {
             console.warn('⚠️ No projects found in data');
-            noResults.classList.remove('hidden');
-            return;
         }
-        renderPortfolio();
+        
         setupEventListeners();
     }
 
@@ -238,15 +244,17 @@ pagination:
     function renderPortfolio() {
         // Handle Case Studies filter separately
         if (currentFilter === 'casestudies') {
-            portfolioGrid.classList.add('hidden');
-            caseStudiesSection.classList.remove('hidden');
-            noResults.classList.add('hidden');
+            portfolioGrid.style.display = 'none';
+            portfolioGrid.innerHTML = ''; // Clear grid content
+            caseStudiesSection.style.display = 'block';
+            noResults.style.display = 'none';
             resultsCount.textContent = 'Case Studies';
             return;
-        } else {
-            portfolioGrid.classList.remove('hidden');
-            caseStudiesSection.classList.add('hidden');
-        }
+        } 
+        
+        // For all other filters, hide case studies and show portfolio grid
+        portfolioGrid.style.display = 'grid';
+        caseStudiesSection.style.display = 'none';
         
         portfolioGrid.innerHTML = '';
         
@@ -265,16 +273,23 @@ pagination:
         
         // Show/hide no results message
         if (filteredProjects.length === 0) {
-            noResults.classList.remove('hidden');
+            noResults.style.display = 'block';
+            portfolioGrid.style.display = 'none';
             return;
         } else {
-            noResults.classList.add('hidden');
+            noResults.style.display = 'none';
+            portfolioGrid.style.display = 'grid';
         }
         
         // Render items
         filteredProjects.forEach((project, index) => {
-            const item = document.createElement('div');
-            item.className = 'portfolio-item bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300';
+            const item = document.createElement('a');
+            // Add href and link attributes
+            item.href = project.url || project.link || '#';
+            item.target = project.url || project.link ? '_blank' : '_self';
+            item.rel = 'noopener noreferrer';
+            
+            item.className = 'portfolio-item bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 block';
             item.style.animationDelay = `${index * 0.1}s`;
             
             item.innerHTML = `
@@ -296,11 +311,21 @@ pagination:
                     <p class="text-white/60 text-sm mb-4 line-clamp-2">
                         ${project.description}
                     </p>
-                    <div class="flex items-center text-[#EC4899] font-semibold text-sm">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                        </svg>
-                        ${project.metrics}
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-[#EC4899] font-semibold text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                            ${project.metrics}
+                        </div>
+                        ${project.url || project.link ? `
+                        <div class="flex items-center text-white/60 text-xs">
+                            <span>View</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </div>
+                        ` : ''}
                     </div>
                 </div>
             `;

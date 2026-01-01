@@ -46,3 +46,99 @@
       </div>
       <span class="toggle absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
   </section>
+<style>
+  /* Mobile-first responsive work sections */
+  .work-section {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .work-section img {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* Tablet and up */
+  @media (min-width: 768px) {
+    .work-section {
+      max-width: 42rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .work-section img {
+      margin-right: 3rem;
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .work-section {
+      max-width: 48rem;
+      padding: 4rem;
+      margin-bottom: 10rem;
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 640px) {
+    .work-section {
+      flex-direction: column;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    
+    .work-section img {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+    
+    /* Hide decorative elements on mobile */
+    .curl1,
+    .curl2,
+    .boxes,
+    .toggle {
+      display: none;
+    }
+  }
+
+  /* Keep decorative elements visible on larger screens */
+  @media (min-width: 641px) {
+    .curl1,
+    .curl2,
+    .boxes,
+    .toggle {
+      display: block;
+    }
+  }
+
+  /* Link styles */
+  .link-dialpad,
+  .link-stack,
+  .link-canfield {
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+  }
+
+  .link-dialpad:hover,
+  .link-stack:hover,
+  .link-canfield:hover {
+    opacity: 0.8;
+  }
+
+  /* Self-end alignment for alternating sections */
+  .work-section--stackoverflow {
+    align-self: flex-end;
+  }
+
+  @media (max-width: 640px) {
+    .work-section--stackoverflow {
+      align-self: auto;
+    }
+  }
+</style>
