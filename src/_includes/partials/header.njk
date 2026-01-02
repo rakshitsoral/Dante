@@ -14,9 +14,10 @@
         <a href="/about" class="{{ 'active' if '/about' in page.url }} p-2 mx-2 text-white inline-block no-underline">About</a>
         <a href="/work" class="{{ 'active' if '/work' in page.url }} p-2 mx-2 text-white inline-block no-underline">Work</a>
         <a href="/blog" class="{{ 'active' if '/blog' in page.url }} p-2 mx-2 text-white inline-block no-underline">Blog</a>
-         <a href="/resume" class="{{ 'active' if '/resume' in page.url }} p-2 mx-2 text-white inline-block no-underline">Resume</a>
+        <a href="/resume" class="{{ 'active' if '/resume' in page.url }} p-2 mx-2 text-white inline-block no-underline">Resume</a>
     </nav>
-    <div class="contact w-1/2 text-right sm:w-full sm:text-left">
-        
+    <div class="contact w-1/2 text-right sm:w-full sm:text-left flex items-center justify-end sm:justify-start sm:mt-4">
+        <!-- Dark Mode Toggle -->
+        {% include "src/darkmode-toggle.njk" %}
     </div>
 </header>

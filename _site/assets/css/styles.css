@@ -1,0 +1,522 @@
+@import 'tailwind.css';
+@import 'custom/typography.css';
+@import 'custom/header-footer.css';
+@import 'custom/home.css';
+@import 'custom/bio.css';
+@import 'custom/misc.css';
+@import 'custom/highlightjs.css';
+
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.card_list.grid_two_columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem; /* space between cards */
+}
+
+.card {
+  /* Optional styling for the cards */
+  background: #0e091d;
+  border: 1px solid #419e54;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* General centering for text */
+.content-center {
+  text-align: center;
+   display: flex;
+    justify-content: center
+}
+
+/* Limit paragraph width */
+.content-text {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+    
+    /* Wrapper containing the image and overlays */
+    .img-wrapper {
+      width: 300px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      font-family: Caveat Brush, cursive;
+    }
+    
+    /* Skewed sliding overlay */
+    .img-wrapper:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 180%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+      transform: skew(45deg);
+      transition: 0.5s;
+    }
+    
+    .img-wrapper:hover:before {
+      left: -180%;
+    }
+    
+    /* Image styling with grayscale and zoom on hover */
+    .img-wrapper img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 2s, transform 2s;
+      display: block;
+    }
+    
+    .img-wrapper:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.1);
+    }
+    
+    /* Name heading styles and flip effect */
+    .img-wrapper h2 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: tomato;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px 0;
+      font-weight: 600;
+      /* Flip out by default */
+      transform: perspective(400px) rotateY(90deg);
+      transform-origin: right;
+      transition: transform 1s;
+      z-index: 2;
+    }
+    
+    .img-wrapper:hover h2 {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    
+    /* Social icons container */
+    .img-wrapper ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      z-index: 2;
+      /* A bit spacing between icons */
+      gap: 5px;
+      background: transparent;
+    }
+    
+    /* Each icon container, flipped out initially */
+    .img-wrapper ul li {
+      background: #333;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 40px;
+      transform: perspective(800px) rotateY(90deg);
+      transform-origin: left;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
+    
+    /* Flip each icon in with delays on hover */
+    .img-wrapper:hover ul li {
+      transform: perspective(800px) rotateY(0deg);
+    }
+    .img-wrapper:hover ul li:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+    .img-wrapper:hover ul li:nth-child(2) {
+      transition-delay: 0.6s;
+    }
+    .img-wrapper:hover ul li:nth-child(3) {
+      transition-delay: 0.8s;
+    }
+    .img-wrapper:hover ul li:nth-child(4) {
+      transition-delay: 1s;
+    }
+    
+    /* Social links and icons styling */
+    .img-wrapper ul li a {
+      display: block;
+      color: tomato;
+      font-size: 20px;
+      line-height: 40px;
+      background: transparent;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .img-wrapper ul li a:hover,
+    .img-wrapper ul li a:focus {
+      color: #fff;
+      background: transparent;
+    }
+
+/* Skills row flexbox with gap and wrap to next line on mobile */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+}
+.skills__img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain; /* Maintain aspect ratio */
+  padding: 6px;        /* Optional: add some padding */
+  border-radius: 4px;  /* Optional: rounded corners */
+  box-sizing: border-box;
+}
+/* Profile image adjustments */
+.profile-image {
+  display: inline-block;
+  margin-bottom: 2rem;
+  height: 275px;
+  width: 275px;
+  transform: rotate(-2deg);
+  position: relative;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .skills {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .skills__img {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .profile-image {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1.5rem;
+  }
+  .content-text {
+    padding: 0 1rem;
+  }
+ 
+  .gif img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #419e54;
+  margin: 0.5em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+ #share-buttons img { width: 35px; padding: 5px; border: 0; box-shadow: 0; display: inline; }
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+/* Dark Mode Toggle Styles */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-checkbox {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.theme-checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-checkbox-label:hover {
+  background-color: #222;
+}
+
+.fa-moon {
+  color: #f1c40f;
+  font-size: 14px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 14px;
+}
+
+.theme-ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-checkbox:checked + .theme-checkbox-label .theme-ball {
+  transform: translateX(24px);
+}
+
+/* Dark Mode Styles */
+body {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #0E091D;
+  color: #e0e0e0;
+}
+
+/* Adjust other elements for dark mode */
+body.dark-mode a {
+  color: #6ea8fe;
+}
+
+body.dark-mode header {
+  background-color: rgba(14, 9, 29, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav a {
+  color: #e0e0e0;
+}
+
+body.dark-mode nav a:hover {
+  color: #fff;
+}
+
+body.dark-mode article,
+body.dark-mode .post,
+body.dark-mode .card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #fff;
+}
+
+body.dark-mode code,
+body.dark-mode pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode blockquote {
+  border-left-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
+}

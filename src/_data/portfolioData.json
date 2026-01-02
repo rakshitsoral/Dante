@@ -13,13 +13,14 @@
       },
       {
         "id": 2,
-        "title": "Technical Whitepapers",
+        "title": "Industrial SaaS Content Marketing",
         "category": "content",
         "company": "Plutomen",
         "description": "Created in-depth technical content on Industrial XR and AI Connected Worker solutions",
-        "metrics": "Thought leadership",
+        "metrics": "2k website visitors/month",
         "icon": "📄",
-        "color": "#BF870B"
+        "color": "#BF870B",
+        "url": "https://plutomen.com/blog"
       },
       {
         "id": 3,
@@ -83,13 +84,13 @@
       },
       {
         "id": 9,
-        "title": "Geo-Targeted Microsites",
-        "category": "website",
-        "company": "Simform",
-        "description": "Built location-specific landing pages with SEO optimization",
-        "metrics": "30+ leads/month",
-        "icon": "🌍",
-        "color": "#60A5FA"
+        "title": "Stick Figure Animation Video for Kitecyber",
+        "category": "videos",
+        "company": "Kitecyber",
+        "description": "Created a stick figure animation video for Kitecyber to promote their cybersecurity solutions",
+        "icon": "🎞️",
+        "color": "#419E54",
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       }
     ]
   }
