@@ -6,3 +6,300 @@
     <span class="theme-ball"></span>
   </label>
 </div>
+
+<style>
+/* Dark Mode Toggle Styles */
+.theme-toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.theme-checkbox {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.theme-checkbox-label {
+  background-color: #111 !important;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-checkbox-label:hover {
+  background-color: #222 !important;
+}
+
+.fa-moon {
+  color: #f1c40f;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.theme-ball {
+  background-color: #fff !important;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.theme-checkbox:checked + .theme-checkbox-label .theme-ball {
+  transform: translateX(24px);
+}
+
+/* Base Styles */
+html,
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode (Default) */
+body:not(.dark-mode) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) nav a {
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) nav a:hover {
+  color: #333333 !important;
+}
+
+body:not(.dark-mode) nav a.active {
+  color: #000000 !important;
+}
+
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6,
+body:not(.dark-mode) p,
+body:not(.dark-mode) span:not(.theme-ball),
+body:not(.dark-mode) li {
+  color: #000000 !important;
+}
+
+/* Dark Mode Styles */
+html.dark-mode,
+body.dark-mode {
+  background-color: #0E091D !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark Mode - Navigation */
+body.dark-mode nav a {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode nav a:hover {
+  color: #fff !important;
+}
+
+body.dark-mode nav a.active {
+  color: #fff !important;
+}
+
+/* Dark Mode - Text Content */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #fff !important;
+}
+
+body.dark-mode p:not(.theme-toggle-wrapper *),
+body.dark-mode span:not(.theme-ball):not(.theme-checkbox-label *),
+body.dark-mode li {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode a:not(nav a) {
+  color: #6ea8fe !important;
+}
+
+/* Dark Mode - Work Section Boxes - Make borders visible */
+body.dark-mode .work-section {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dark Mode - Keep all decorative backgrounds and pseudo-elements */
+body.dark-mode .highlight-yellow:before {
+  opacity: 0.7 !important;
+  filter: brightness(0.8);
+  display: block !important;
+  visibility: visible !important;
+}
+
+body.dark-mode .work-section:before,
+body.dark-mode .work-section:after,
+body.dark-mode .work-section--dialpad:before,
+body.dark-mode .work-section--dialpad:after,
+body.dark-mode .work-section--stackoverflow:before,
+body.dark-mode .work-section--stackoverflow:after,
+body.dark-mode .work-section--canfield:before,
+body.dark-mode .work-section--canfield:after,
+body.dark-mode .work-section--misc:before,
+body.dark-mode .work-section--misc:after {
+  opacity: 1 !important;
+  filter: invert(1) hue-rotate(180deg) !important;
+  mix-blend-mode: screen !important;
+  display: block !important;
+  visibility: visible !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+body.dark-mode .work-section--misc .img:after {
+  opacity: 0.3 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* CRITICAL: Make decorative SVG doodles visible using mix-blend-mode */
+body.dark-mode .curl1,
+body.dark-mode .curl2,
+body.dark-mode .curl3,
+body.dark-mode .boxes,
+body.dark-mode .toggle {
+  opacity: 1 !important;
+  filter: invert(1) hue-rotate(180deg) !important;
+  mix-blend-mode: screen !important;
+  visibility: visible !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  position: absolute !important;
+  display: block !important;
+}
+
+/* Override work-list.njk media query */
+@media (min-width: 641px) {
+  body.dark-mode .curl1,
+  body.dark-mode .curl2,
+  body.dark-mode .curl3,
+  body.dark-mode .boxes,
+  body.dark-mode .toggle {
+    display: block !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.dark-mode .curl1,
+  body.dark-mode .curl2,
+  body.dark-mode .curl3,
+  body.dark-mode .boxes,
+  body.dark-mode .toggle {
+    display: none !important;
+  }
+}
+
+/* Dark Mode - Code blocks */
+body.dark-mode code,
+body.dark-mode pre {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark Mode - Images slightly dimmed */
+body.dark-mode img:not(.logo img) {
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .theme-toggle-wrapper {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+</style>
+
+<script>
+// Dark Mode Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Dark mode script loaded');
+  
+  const themeCheckbox = document.getElementById('theme-checkbox');
+  const body = document.body;
+  const html = document.documentElement;
+  
+  if (!themeCheckbox) {
+    console.error('Theme checkbox not found!');
+    return;
+  }
+  
+  console.log('Theme checkbox found');
+  
+  // Check for saved theme preference - default to LIGHT mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  console.log('Current theme:', currentTheme);
+  
+  // Apply saved theme on page load
+  if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+    html.classList.add('dark-mode');
+    themeCheckbox.checked = true;
+    console.log('Applied dark mode from localStorage');
+  } else {
+    // Ensure light mode
+    body.classList.remove('dark-mode');
+    html.classList.remove('dark-mode');
+    themeCheckbox.checked = false;
+    console.log('Applied light mode (default)');
+  }
+  
+  // Theme toggle handler
+  themeCheckbox.addEventListener('change', function() {
+    console.log('Checkbox changed, checked:', this.checked);
+    
+    if (this.checked) {
+      // Switch to DARK mode
+      body.classList.add('dark-mode');
+      html.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+      console.log('Dark mode enabled');
+    } else {
+      // Switch to LIGHT mode
+      body.classList.remove('dark-mode');
+      html.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+      console.log('Light mode enabled');
+    }
+  });
+});
+
+// Backup: If DOMContentLoaded already fired, run immediately
+if (document.readyState === 'loading') {
+  console.log('DOM still loading, waiting...');
+} else {
+  console.log('DOM already loaded, running script now');
+  const event = new Event('DOMContentLoaded');
+  document.dispatchEvent(event);
+}
+</script>
