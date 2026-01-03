@@ -78,9 +78,9 @@
         "company": "Plutomen",
         "description": "Created a Video ad explaining the difference between video call and XR call",
         "metrics": "30% ↑ brand awareness",
-        "icon": "🎞️",
+        "icon": "🎥",
         "color": "#419E54",
-        "url": "/src/assets/files/Linkedin AR vs Video Call Ad.mp4"
+        "url": "/assets/files/Linkedin AR vs Video Call Ad.mp4"
       },
       {
         "id": 9,
@@ -91,7 +91,7 @@
         "metrics": "20% ↑ brand awareness",
         "icon": "🖼️",
         "color": "#419E54",
-        "image": "/src/assets/img/Plutomen-ad1.png"
+        "image": "/assets/img/Plutomen-ad1.png"
       }
     ]
   }

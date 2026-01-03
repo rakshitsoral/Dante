@@ -4,9 +4,89 @@ title: Blog
 description: Blogs and Tips on Life, Web Development, Demand Gen, and Marketing.
 pagination:
     data: collections.posts
-    size: 1000
+    size: 12
     alias: posts
 ---
+
+<style>
+  /* Modern Pagination Styles */
+  .modern-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 60px 0;
+    flex-wrap: wrap;
+  }
+
+  .pagination-btn {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border: 2px solid #087f5b;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .pagination-btn:hover:not(:disabled) {
+    background-color: #087f5b;
+  }
+
+  .pagination-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #ddd;
+  }
+
+  .pagination-btn-icon {
+    height: 24px;
+    width: 24px;
+    stroke: #087f5b;
+    transition: stroke 0.3s ease;
+  }
+
+  .pagination-btn:hover:not(:disabled) .pagination-btn-icon {
+    stroke: #fff;
+  }
+
+  .pagination-btn:disabled .pagination-btn-icon {
+    stroke: #ddd;
+  }
+
+  .pagination-link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .pagination-link:hover {
+    background-color: #087f5b;
+    color: #fff;
+  }
+
+  .pagination-link--current {
+    background-color: #087f5b;
+    color: #fff;
+  }
+
+  .pagination-dots {
+    color: #343a40;
+    font-size: 18px;
+    font-weight: bold;
+  }
+</style>
 
 <section class="blog">
   <h2 class="page_title">Blog Page</h2>
@@ -46,27 +126,95 @@ pagination:
 
   <hr />
 
-  <ul class="pagination">
-    <li>
-      {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}">← Previous</a>
-      {% else %}
-        ← Previous
-      {% endif %}
-    </li>
-    {%- for pageEntry in pagination.pages %}
-      <li>
-        <a href="{{ pagination.hrefs[loop.index0] }}" {% if page.url == pagination.hrefs[loop.index0] %}aria-current="page" class="currentPage"{% endif %}>
+  <!-- Modern Pagination Component -->
+  <div class="modern-pagination">
+    <!-- Previous Button -->
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="pagination-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </a>
+    {% else %}
+      <button class="pagination-btn" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+    {% endif %}
+
+    <!-- Page Numbers -->
+    {%- set currentPage = pagination.pageNumber -%}
+    {%- set totalPages = pagination.pages.length -%}
+
+    {%- if totalPages <= 7 -%}
+      {# Show all pages if 7 or fewer #}
+      {%- for pageEntry in pagination.pages -%}
+        <a 
+          href="{{ pagination.hrefs[loop.index0] }}" 
+          class="pagination-link {% if page.url == pagination.hrefs[loop.index0] %}pagination-link--current{% endif %}"
+        >
           {{ loop.index }}
         </a>
-      </li>
-    {%- endfor %}
-    <li>
-      {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}">Next →</a>
-      {% else %}
-        Next →
-      {% endif %}
-    </li>
-  </ul>
+      {%- endfor -%}
+    {%- else -%}
+      {# Show smart pagination for more than 7 pages #}
+      
+      {# Always show first page #}
+      <a 
+        href="{{ pagination.hrefs[0] }}" 
+        class="pagination-link {% if currentPage == 0 %}pagination-link--current{% endif %}"
+      >
+        1
+      </a>
+
+      {# Show dots or pages near current #}
+      {%- if currentPage > 2 -%}
+        <span class="pagination-dots">...</span>
+      {%- endif -%}
+
+      {# Show pages around current page #}
+      {%- for pageEntry in pagination.pages -%}
+        {%- set pageIndex = loop.index0 -%}
+        {%- if pageIndex > 0 and pageIndex < totalPages - 1 -%}
+          {%- if pageIndex >= currentPage - 1 and pageIndex <= currentPage + 1 -%}
+            <a 
+              href="{{ pagination.hrefs[pageIndex] }}" 
+              class="pagination-link {% if currentPage == pageIndex %}pagination-link--current{% endif %}"
+            >
+              {{ loop.index }}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {# Show dots before last page #}
+      {%- if currentPage < totalPages - 3 -%}
+        <span class="pagination-dots">...</span>
+      {%- endif -%}
+
+      {# Always show last page #}
+      <a 
+        href="{{ pagination.hrefs[totalPages - 1] }}" 
+        class="pagination-link {% if currentPage == totalPages - 1 %}pagination-link--current{% endif %}"
+      >
+        {{ totalPages }}
+      </a>
+    {%- endif -%}
+
+    <!-- Next Button -->
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="pagination-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </a>
+    {% else %}
+      <button class="pagination-btn" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+    {% endif %}
+  </div>
 </section>
