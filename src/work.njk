@@ -6,16 +6,15 @@ pagination:
     size: 10
     alias: work
 ---
-
 <style>
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    
+   
     .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
-    .portfolio-item { 
-        animation: fadeInUp 0.6s ease-out forwards; 
+    .portfolio-item {
+        animation: fadeInUp 0.6s ease-out forwards;
         opacity: 0;
         width: 100%;
         min-width: 0;
@@ -24,25 +23,50 @@ pagination:
     .portfolio-item:hover .item-image { transform: scale(1.05); }
     .item-image { transition: transform 0.3s ease; }
     .search-input:focus { box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2); }
-    
+   
     /* Grid Layout */
     #portfolioGrid {
         display: grid !important;
         grid-template-columns: repeat(1, minmax(0, 1fr));
+        width: 100%;  /* Force full width */
+        max-width: 100%;
     }
-
     @media (min-width: 768px) {
         #portfolioGrid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
-
     @media (min-width: 1024px) {
         #portfolioGrid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
-    
+
+    /* Mobile-First Full-Width Fixes */
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;  /* Prevent horizontal scroll */
+    }
+
+    section {
+        width: 100%;  /* Ensure sections don't constrain */
+    }
+
+    /* Reduce padding on very small screens */
+    @media (max-width: 640px) {
+        .max-w-6xl {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .filter-btn {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 0.875rem;  /* Smaller text/buttons on mobile */
+        }
+    }
+   
     /* Filter Button Styles */
     .filter-btn {
         background: rgba(255, 255, 255, 0.05);
@@ -51,65 +75,60 @@ pagination:
         cursor: pointer;
         transition: all 0.3s ease;
     }
-
     .filter-btn:hover {
         transform: translateY(-2px);
         background: rgba(236, 72, 153, 0.2);
         border-color: #EC4899;
         color: #EC4899;
     }
-
     .filter-btn.active {
         background: #EC4899 !important;
         color: white !important;
         border-color: #EC4899 !important;
     }
-
     .filter-btn.active:hover {
         background: rgba(236, 72, 153, 0.9) !important;
         border-color: #EC4899 !important;
     }
-
     /* Category-specific hover colors */
     .filter-btn[data-filter="casestudies"]:not(.active):hover {
         background: rgba(139, 92, 246, 0.2);
         border-color: #8B5CF6;
         color: #8B5CF6;
     }
-    
+   
     .filter-btn[data-filter="content"]:not(.active):hover {
         background: rgba(191, 135, 11, 0.2);
         border-color: #BF870B;
         color: #BF870B;
     }
-
     .filter-btn[data-filter="website"]:not(.active):hover,
     .filter-btn[data-filter="videos"]:not(.active):hover {
         background: rgba(96, 165, 250, 0.2);
         border-color: #60A5FA;
         color: #60A5FA;
     }
-
     .filter-btn[data-filter="linkedin"]:not(.active):hover {
         background: rgba(236, 72, 153, 0.2);
         border-color: #EC4899;
         color: #EC4899;
     }
-
     .filter-btn[data-filter="google"]:not(.active):hover {
         background: rgba(65, 158, 84, 0.2);
         border-color: #419E54;
         color: #419E54;
     }
     /* Case Studies Section - Full Width on Mobile */
-#caseStudiesSection {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
+    #caseStudiesSection {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 </style>
-    
+
+<!-- Filters Section -->
+<section class="max-w-6xl mx-auto px-4 pt-8 md:pt-12">
     <!-- Filter Buttons -->
     <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-8 animate-fade-in" style="animation-delay: 0.3s;">
         <button class="filter-btn active px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="casestudies">
@@ -131,7 +150,7 @@ pagination:
             Videos
         </button>
     </div>
-    
+ 
     <!-- Results Count -->
     <div class="text-white/60 text-sm mb-8 animate-fade-in" style="animation-delay: 0.4s;">
         <span id="resultsCount" class="font-semibold text-[#EC4899]">
@@ -141,19 +160,19 @@ pagination:
 </section>
 
 <!-- Portfolio Gallery -->
-<section class="max-w-6xl mx-auto px-4 pb-16 md:pb-24">
+<section class="w-full max-w-6xl mx-auto px-4 pb-16 md:pb-24">
     <!-- When "Case Studies" filter is active, show this section -->
-        <div id="caseStudiesSection" style="display: none;">
+    <div id="caseStudiesSection" style="display: none;">
         {% include "partials/work-list.njk" %}
     </div>
-    
+
     <!-- Default portfolio grid -->
-    <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <div id="portfolioGrid" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <!-- Portfolio items will be generated by JavaScript -->
     </div>
-    
+
     <!-- No Results Message -->
-    <div id="noResults" class="hidden text-center py-16">
+    <div id="noResults" class="hidden text-center py-16 w-full">
         <div class="text-6xl mb-4">🔍</div>
         <h3 class="text-2xl font-bold text-white mb-2">No projects found</h3>
     </div>
@@ -165,34 +184,23 @@ pagination:
         <h3 class="text-4xl font-display font-bold tracking-tight mb-4">
             💬 Let's Create <span class="highlight-yellow px-4 -mx-2 inline-block relative">Your Next Campaign.</span>
         </h3>
-
         <p class="text-lg text-gray-300 leading-relaxed mb-6">
             Interested in how I can help grow your business? Let's talk about your goals.
         </p>
-
         <div class="space-y-2 text-base font-semibold text-gray-200 mb-8">
-            <p>
-                📧 <a href="mailto:rakshitsoral@gmail.com" class="underline hover:text-blue-400">
-                rakshitsoral@gmail.com</a>
-            </p>
-            <p>
-                📞 <a href="tel:+919602542617" class="underline hover:text-green-400">
-                +91 96025 42617</a>
-            </p>
             <p class="opacity-80 text-sm">
-                Prefer convenience? → 
-                <a href="https://wa.me/919602542617" 
+                Prefer convenience? →
+                <a href="https://wa.me/919602542617"
                    class="font-semibold underline hover:text-green-500">
                    Ping me on WhatsApp
-                </a> 
+                </a>
                 and I'll reply faster.
             </p>
         </div>
-
         <a href="mailto:rakshitsoral@gmail.com"
            class="bg-yellow-500 text-black font-semibold py-3 px-8 rounded shadow-md
                   hover:bg-yellow-400 transition-transform hover:scale-[1.04] inline-block">
-            Increase My Conversions 🚀
+             Contact me 📧
         </a>
     </div>
 </section>
@@ -200,10 +208,10 @@ pagination:
 <!-- Replace BOTH script blocks with this single, complete script -->
 <script>
     console.log('🔍 Portfolio Script Loading...');
-    
+   
     // Portfolio data from 11ty - with fallback
     let projects = [];
-    
+   
     try {
         projects = {{ portfolioData.projects | dump | safe }};
         console.log('✅ Portfolio data loaded:', projects.length, 'projects');
@@ -211,7 +219,6 @@ pagination:
         console.error('❌ Error loading portfolio data:', e);
         console.log('Using fallback empty array');
     }
-
     // DOM Elements
     const portfolioGrid = document.getElementById('portfolioGrid');
     const caseStudiesSection = document.getElementById('caseStudiesSection');
@@ -219,27 +226,25 @@ pagination:
     const searchInput = document.getElementById('searchInput');
     const resultsCount = document.getElementById('resultsCount');
     const noResults = document.getElementById('noResults');
-
     // State
     let currentFilter = 'casestudies';
     let searchTerm = '';
-
     // Initialize
     function init() {
         console.log('🚀 Initializing portfolio...');
-        
+       
         // Show case studies by default, hide portfolio grid
         portfolioGrid.style.display = 'none';
+        portfolioGrid.style.width = '100%';  // Enforce width
         caseStudiesSection.style.display = 'block';
         noResults.style.display = 'none';
-        
+       
         if (projects.length === 0) {
             console.warn('⚠️ No projects found in data');
         }
-        
+       
         setupEventListeners();
     }
-
     // Render portfolio items
     function renderPortfolio() {
         // Handle Case Studies filter separately
@@ -250,14 +255,15 @@ pagination:
             noResults.style.display = 'none';
             resultsCount.textContent = 'Case Studies';
             return;
-        } 
-        
+        }
+       
         // For all other filters, hide case studies and show portfolio grid
         portfolioGrid.style.display = 'grid';
+        portfolioGrid.style.width = '100%';  // Enforce width
         caseStudiesSection.style.display = 'none';
-        
+       
         portfolioGrid.innerHTML = '';
-        
+       
         let filteredProjects = projects.filter(project => {
             const matchesFilter = currentFilter === 'all' || project.category === currentFilter;
             const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -265,12 +271,12 @@ pagination:
                                 project.company.toLowerCase().includes(searchTerm.toLowerCase());
             return matchesFilter && matchesSearch;
         });
-        
+       
         console.log('📊 Filtered projects:', filteredProjects.length);
-        
+       
         // Update results count
         resultsCount.textContent = filteredProjects.length + ' projects';
-        
+       
         // Show/hide no results message
         if (filteredProjects.length === 0) {
             noResults.style.display = 'block';
@@ -280,7 +286,7 @@ pagination:
             noResults.style.display = 'none';
             portfolioGrid.style.display = 'grid';
         }
-        
+       
         // Render items
         filteredProjects.forEach((project, index) => {
             const item = document.createElement('a');
@@ -288,10 +294,10 @@ pagination:
             item.href = project.url || project.link || '#';
             item.target = project.url || project.link ? '_blank' : '_self';
             item.rel = 'noopener noreferrer';
-            
+           
             item.className = 'portfolio-item bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 block';
             item.style.animationDelay = `${index * 0.1}s`;
-            
+           
             item.innerHTML = `
                 <div class="item-image relative h-48 flex items-center justify-center overflow-hidden" style="background-color: ${project.color};">
                     <span class="text-6xl opacity-30">${project.icon}</span>
@@ -329,11 +335,10 @@ pagination:
                     </div>
                 </div>
             `;
-            
+           
             portfolioGrid.appendChild(item);
         });
     }
-
     // Setup event listeners
     function setupEventListeners() {
         // Filter buttons
@@ -341,16 +346,16 @@ pagination:
             btn.addEventListener('click', () => {
                 // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                
+               
                 // Add active class to clicked button
                 btn.classList.add('active');
-                
+               
                 currentFilter = btn.dataset.filter;
                 console.log('🔄 Filter changed to:', currentFilter);
                 renderPortfolio();
             });
         });
-        
+       
         // Search input
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
@@ -363,7 +368,6 @@ pagination:
             });
         }
     }
-
     // Initialize app
     init();
 </script>

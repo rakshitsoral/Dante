@@ -1,35 +1,32 @@
-module.exports = (config) => {
-  config.setDataDeepMerge(true);
-
-  config.addPassthroughCopy('src/assets/img/');
-  config.addPassthroughCopy({ 'src/posts/img/': 'assets/img/' });
-  config.addPassthroughCopy({ 'src/work/img/': 'assets/img/' });
-  config.addPassthroughCopy('src/assets/files/');
-
-  config.addWatchTarget("src/assets/js/");
-  config.addWatchTarget("src/assets/css/");
-
-  config.addLayoutAlias('default', 'layouts/default.njk');
-  config.addLayoutAlias('post', 'layouts/post.njk');
-  config.addLayoutAlias('work', 'layouts/work.njk');
-
-  config.addFilter('readableDate', require('./lib/filters/readableDate'));
-  config.addFilter('minifyJs', require('./lib/filters/minifyJs'));
-
-  config.addTransform('postcss', require('./lib/transforms/postcss'));
-  config.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
-
-  config.addCollection('posts', require('./lib/collections/posts'));
-  config.addCollection('work', require('./lib/collections/work'));
-  config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
-  config.addPassthroughCopy("src/admin");
-
-
-  const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.setDataDeepMerge(true);
+
+  eleventyConfig.addPassthroughCopy('src/assets/img/');
+  eleventyConfig.addPassthroughCopy({ 'src/posts/img/': 'assets/img/' });
+  eleventyConfig.addPassthroughCopy({ 'src/work/img/': 'assets/img/' });
+  eleventyConfig.addPassthroughCopy('src/assets/files/');
+
+  eleventyConfig.addWatchTarget("src/assets/js/");
+  eleventyConfig.addWatchTarget("src/assets/css/");
+
+  eleventyConfig.addLayoutAlias('default', 'layouts/default.njk');
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias('work', 'layouts/work.njk');
+
+  eleventyConfig.addFilter('readableDate', require('./lib/filters/readableDate'));
+  eleventyConfig.addFilter('minifyJs', require('./lib/filters/minifyJs'));
+
+  eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
+  eleventyConfig.addTransform('minifyHtml', require('./lib/transforms/minifyHtml'));
+
+  eleventyConfig.addCollection('posts', require('./lib/collections/posts'));
+  eleventyConfig.addCollection('work', require('./lib/collections/work'));
+  eleventyConfig.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
+  eleventyConfig.addPassthroughCopy("src/admin");
+
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
-};
 
   return {
     dir: {
@@ -42,4 +39,3 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: 'njk'
   };
 };
-
