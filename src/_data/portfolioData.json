@@ -73,23 +73,25 @@
       },
       {
         "id": 8,
-        "title": "Product Messaging Overhaul",
-        "category": "website",
+        "title": "Plutomen Linkedin Video Ad 1",
+        "category": "linkedin",
         "company": "Plutomen",
-        "description": "Repositioned Industrial XR + AI Connected Worker Suite messaging",
-        "metrics": "30% ↑ brand visibility",
-        "icon": "🎨",
-        "color": "#60A5FA"
+        "description": "Created a Video ad explaining the difference between video call and XR call",
+        "metrics": "30% ↑ brand awareness",
+        "icon": "🎞️",
+        "color": "#419E54",
+        "url": "/src/assets/files/Linkedin AR vs Video Call Ad.mp4"
       },
       {
         "id": 9,
-        "title": "Geo-Targeted Microsites",
-        "category": "website",
-        "company": "Simform",
-        "description": "Built location-specific landing pages with SEO optimization",
-        "metrics": "30+ leads/month",
-        "icon": "🌍",
-        "color": "#60A5FA"
+        "title": "Plutomen Single Image Ad 1",
+        "category": "linkedin",
+        "company": "Plutomen",
+        "description": "Created a single image ad for Plutomen",
+        "metrics": "20% ↑ brand awareness",
+        "icon": "🖼️",
+        "color": "#419E54",
+        "image": "/src/assets/img/Plutomen-ad1.png"
       }
     ]
   }
