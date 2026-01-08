@@ -19,58 +19,425 @@ permalink: /about/
 />
 
 <style>
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* About Page Styles */
 .about-page {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 40px;
   background: #0E091D;
   min-height: 100vh;
+  color: white;
 }
 
-/* Profile Section - ORIGINAL CODE PRESERVED */
-.content-center {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
+/* Hero Section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 120px;
+  min-height: 600px;
 }
 
-.img-wrapper {
-  margin: 40px auto;
+.hero-content {
+  padding-right: 40px;
 }
 
-.img-wrapper img {
-  border-radius: 50%;
-  border: 4px solid transparent;
-  background: linear-gradient(#0E091D, #0E091D) padding-box,
-              linear-gradient(135deg, #EC4899, #B91C1C) border-box;
-  box-shadow: 0 10px 40px rgba(236, 72, 153, 0.3);
-  transition: transform 0.3s ease;
-  margin: 0 auto;
+.hero-greeting {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #A8B2D1, #8892B0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title-line {
   display: block;
 }
 
-.img-wrapper img:hover {
-  transform: scale(1.05);
-}
-
-.img-wrapper h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
+.contact-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: transparent;
   color: white;
-  margin: 20px 0;
+  border: 2px solid white;
+  border-radius: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
 }
 
-.img-wrapper ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.contact-button:hover {
+  background: white;
+  color: #0E091D;
+  transform: translateY(-2px);
+}
+
+/* Hero Image */
+.hero-image-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+/* Pulsing Rings for Hero */
+.pulse-rings-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  overflow: hidden;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  pointer-events: none;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.4; 
+  }
+  50% { 
+    transform: scale(1.08); 
+    opacity: 0.6; 
+  }
+}
+
+.pulse-ring-1 {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.5), rgba(59, 130, 246, 0.5));
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+.pulse-ring-2 {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5));
+  animation: pulse-ring 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #B8C5D6 20%, #8892B0 80%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.profile-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  display: block;
+}
+
+/* Section Titles */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #8892B0;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(136, 146, 176, 0.3);
+}
+
+/* About Section */
+.about-section {
+  margin-bottom: 120px;
+}
+
+.about-content {
+  max-width: 900px;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 60px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.skill-item {
+  text-align: center;
+}
+
+.skill-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.skill-experience {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Core Competencies Section */
+.competencies-section {
+  margin-bottom: 120px;
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.competency-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.competency-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(136, 146, 176, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.competency-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.competency-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Detailed Skills Section */
+.detailed-skills-section {
+  margin-bottom: 120px;
+}
+
+.skill-category {
+  margin-bottom: 50px;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #BF870B;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
-.img-wrapper ul li a {
+.category-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 18px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  border-color: #BF870B;
+  background: rgba(191, 135, 11, 0.05);
+  transform: translateX(5px);
+}
+
+.category-item-icon {
+  font-size: 1.5rem;
+}
+
+.category-item-name {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Work Section (Portfolio Preview) */
+.work-section {
+  margin-bottom: 80px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.work-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.work-image {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #5B4CB8, #7B6BC8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-badge {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-badge-icon {
+  font-size: 2.5rem;
+}
+
+.work-info {
+  padding: 30px;
+}
+
+.work-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.work-tech {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #EC4899 0%, #B91C1C 100%);
+  padding: 60px 50px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.cta-section .highlight {
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+.cta-button-primary {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 18px 50px;
+  background: #BF870B;
+  color: white;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button-primary:hover {
+  background: #D4A017;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(191, 135, 11, 0.4);
+}
+
+/* Social Links */
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0 0;
+  display: flex;
+  gap: 20px;
+}
+
+.social-links li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -84,491 +451,196 @@ permalink: /about/
   transition: all 0.3s ease;
 }
 
-.img-wrapper ul li a:hover {
+.social-links li a:hover {
   background: linear-gradient(135deg, #EC4899, #B91C1C);
   border-color: #EC4899;
   transform: translateY(-5px);
   box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4);
 }
 
-.badge {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #BF870B 0%, #D4A017 100%);
-  color: white;
-  border-radius: 50px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(191, 135, 11, 0.3);
-}
-
-.content-text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
-}
-
-blockquote {
-  margin: 40px auto;
-  padding: 30px 40px;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(185, 28, 28, 0.1) 100%);
-  border-left: 5px solid #EC4899;
-  border-radius: 10px;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.5rem;
-  line-height: 1.6;
-  max-width: 800px;
-}
-
-blockquote strike {
-  text-decoration: line-through;
-  opacity: 0.7;
-}
-
-blockquote .whitespace-nowrap {
-  display: block;
-  margin-top: 15px;
-  font-style: normal;
-  color: #BF870B;
-  font-weight: 600;
-  font-size: 1.125rem;
-  white-space: nowrap;
-}
-
-/* Skills Section */
-.skills-section {
-  margin: 80px 0;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  margin-bottom: 50px;
-  position: relative;
-  padding-bottom: 20px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #EC4899 0%, #B91C1C 100%);
-  border-radius: 2px;
-}
-
-/* Core Skills */
-.core-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.skill-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 40px 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-10px);
-  border-color: #EC4899;
-  box-shadow: 0 8px 30px rgba(236, 72, 153, 0.4);
-}
-
-.skill-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.skill-card h3 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-  margin: 0;
-}
-
-/* Skill Categories */
-.skill-category {
-  margin-bottom: 50px;
-}
-
-.category-title {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #BF870B;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.skill-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px 25px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.skill-item:hover {
-  border-color: #EC4899;
-  background: rgba(236, 72, 153, 0.1);
-  transform: translateX(5px);
-}
-
-.skill-item-icon {
-  font-size: 1.5rem;
-}
-
-.skill-item-name {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-/* CTA Section */
-.about-cta {
-  background: linear-gradient(135deg, #EC4899 0%, #B91C1C 100%);
-  color: white;
-  padding: 60px 40px;
-  border-radius: 20px;
-  text-align: center;
-  margin: 80px 0 40px;
-  box-shadow: 0 10px 40px rgba(236, 72, 153, 0.4);
-}
-
-.about-cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.about-cta p {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-  opacity: 0.95;
-  color: white;
-  line-height: 1.6;
-}
-
-.about-cta .highlight {
-  font-weight: bold;
-  font-size: 1.35rem;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 18px 50px;
-  background: #BF870B;
-  color: white;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #D4A017;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(191, 135, 11, 0.4);
-}
-
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .core-skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 1024px) {
-  .core-skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+  .about-page {
+    padding: 40px 30px;
   }
   
-  .skill-card {
-    padding: 35px 25px;
+  .hero-section {
+    gap: 60px;
+    margin-bottom: 100px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-image-container {
+    width: 380px;
+    height: 380px;
+  }
+  
+  .competencies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .about-page {
-    padding: 20px 15px;
-  }
-  
-  .img-wrapper h2 {
-    font-size: 2rem;
-  }
-  
-  .img-wrapper ul {
-    gap: 15px;
-  }
-  
-  .img-wrapper ul li a {
-    width: 45px;
-    height: 45px;
-    font-size: 1.25rem;
-  }
-  
-  .badge {
-    font-size: 1.125rem;
-    padding: 10px 25px;
-  }
-  
-  .content-text {
-    font-size: 1.125rem;
-  }
-  
-  blockquote {
-    padding: 25px 30px;
-    font-size: 1.25rem;
-  }
-  
-  blockquote .whitespace-nowrap {
-    font-size: 1rem;
-    white-space: normal;
-  }
-  
-  .skills-section {
-    margin: 60px 0;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .core-skills-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .skill-card {
     padding: 30px 20px;
   }
   
-  .skill-icon {
-    font-size: 2.5rem;
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+    text-align: center;
   }
   
-  .skill-card h3 {
+  .hero-content {
+    padding-right: 0;
+    order: 2;
+  }
+  
+  .hero-image-wrapper {
+    order: 1;
+  }
+  
+  .hero-greeting {
     font-size: 1.125rem;
   }
   
-  .skill-category {
-    margin-bottom: 40px;
+  .hero-title {
+    font-size: 2.75rem;
   }
   
-  .category-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  .hero-image-container {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-header {
+    gap: 20px;
+  }
+  
+  .about-text {
+    font-size: 1.0625rem;
   }
   
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 30px;
   }
   
-  .skill-item {
-    padding: 18px 20px;
+  .competencies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   
-  .skill-item-icon {
-    font-size: 1.25rem;
+  .work-grid {
+    grid-template-columns: 1fr;
   }
   
-  .skill-item-name {
-    font-size: 0.95rem;
+  .category-items {
+    grid-template-columns: 1fr;
   }
   
-  .about-cta {
-    padding: 40px 25px;
-    margin: 60px 0 30px;
+  .social-links {
+    justify-content: center;
   }
   
-  .about-cta h2 {
+  .cta-section {
+    padding: 40px 30px;
+  }
+  
+  .cta-section h2 {
     font-size: 2rem;
-  }
-  
-  .about-cta p {
-    font-size: 1.125rem;
-  }
-  
-  .about-cta .highlight {
-    font-size: 1.25rem;
-  }
-  
-  .cta-button {
-    padding: 15px 35px;
-    font-size: 1.125rem;
   }
 }
 
 @media (max-width: 480px) {
   .about-page {
-    padding: 15px 10px;
+    padding: 20px 15px;
   }
   
-  .img-wrapper {
-    margin: 30px auto;
+  .hero-title {
+    font-size: 2.25rem;
   }
   
-  .img-wrapper img {
-    width: 200px;
-    height: 200px;
+  .hero-image-container {
+    width: 280px;
+    height: 280px;
   }
   
-  .img-wrapper h2 {
-    font-size: 1.75rem;
-    margin: 15px 0;
-  }
-  
-  .img-wrapper ul {
-    gap: 12px;
-  }
-  
-  .img-wrapper ul li a {
-    width: 40px;
-    height: 40px;
-    font-size: 1.125rem;
-  }
-  
-  .badge {
+  .contact-button {
+    padding: 14px 32px;
     font-size: 1rem;
-    padding: 8px 20px;
-  }
-  
-  .content-text {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-  
-  blockquote {
-    padding: 20px 25px;
-    font-size: 1.125rem;
-    margin: 30px auto;
-  }
-  
-  blockquote .whitespace-nowrap {
-    font-size: 0.95rem;
-    margin-top: 12px;
   }
   
   .section-title {
-    font-size: 1.75rem;
-    margin-bottom: 25px;
+    font-size: 2rem;
   }
   
-  .section-title::after {
-    width: 80px;
-  }
-  
-  .core-skills-grid {
+  .section-header {
     gap: 15px;
   }
   
-  .skill-card {
-    padding: 25px 15px;
-  }
-  
-  .skill-icon {
-    font-size: 2.25rem;
-    margin-bottom: 15px;
-  }
-  
-  .skill-card h3 {
+  .about-text {
     font-size: 1rem;
+  }
+  
+  .skill-name {
+    font-size: 1.5rem;
+  }
+  
+  .competency-card {
+    padding: 30px 20px;
+  }
+  
+  .competency-icon {
+    font-size: 2.5rem;
   }
   
   .category-title {
     font-size: 1.25rem;
-    margin-bottom: 18px;
   }
   
-  .skill-item {
-    padding: 15px 18px;
-    gap: 12px;
-  }
-  
-  .skill-item-icon {
-    font-size: 1.125rem;
-  }
-  
-  .skill-item-name {
-    font-size: 0.9rem;
-  }
-  
-  .about-cta {
+  .cta-section {
     padding: 35px 20px;
   }
   
-  .about-cta h2 {
+  .cta-section h2 {
     font-size: 1.75rem;
-    margin-bottom: 15px;
   }
   
-  .about-cta p {
-    font-size: 1rem;
-    margin-bottom: 8px;
+  .cta-section p {
+    font-size: 1.0625rem;
   }
   
-  .about-cta .highlight {
-    font-size: 1.125rem;
-  }
-  
-  .cta-button {
-    padding: 14px 30px;
-    font-size: 1rem;
-    margin-top: 25px;
+  .cta-button-primary {
+    padding: 15px 35px;
+    font-size: 1.0625rem;
   }
 }
 
 @media (max-width: 360px) {
-  .img-wrapper img {
-    width: 180px;
-    height: 180px;
+  .hero-image-container {
+    width: 240px;
+    height: 240px;
   }
   
-  .img-wrapper h2 {
-    font-size: 1.5rem;
+  .hero-title {
+    font-size: 2rem;
   }
   
   .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .about-cta h2 {
-    font-size: 1.5rem;
-  }
-  
-  blockquote {
-    font-size: 1rem;
-    padding: 18px 20px;
+    font-size: 1.75rem;
   }
 }
 </style>
@@ -577,12 +649,17 @@ blockquote .whitespace-nowrap {
 {% block content %}
 
 <div class="about-page">
-  <!-- Profile Image - ORIGINAL CODE PRESERVED -->
-  <div class="content-center">
-    <div class="img-wrapper">
-      <img src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral portrait" height="275" width="275">
-      <h2>Rakshit Soral</h2>
-      <ul>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm Rakshit,</p>
+      <h1 class="hero-title">
+        <span class="hero-title-line">Marketing</span>
+        <span class="hero-title-line">Manager</span>
+      </h1>
+      <a href="mailto:rakshitsoral@gmail.com" class="contact-button">Contact Me</a>
+      
+      <ul class="social-links">
         <li>
           <a href="https://github.com/rakshitsoral" target="_blank" rel="noopener noreferrer"
             ><i class="fab fa-github"></i
@@ -600,236 +677,246 @@ blockquote .whitespace-nowrap {
         </li>
       </ul>
     </div>
-  </div><br>
-  
-  <div class="content-center" style="margin-bottom: 2rem;">
-    <h3 class="badge">Marketing Manager</h3>
-  </div>
-  
-  <p class="content-text content-center">
-    For the past 10+ years, I've built omni-channel demand generation engines for B2B SaaS companies, using a mix of ABM, cold outbound, and revenue-focused content strategies to turn lead flow from a drip into a steady stream.
-  </p><br>
-  
-  <p class="content-text content-center" style="margin-bottom: 2rem;">
-   Along the way, I've worked with B2B SaaS and tech companies, led high-performing teams, and consulted for local and international clients to help them increase demand for their products and services. 
-  </p>
-  
-  <blockquote class="text-4xl leading-none">"If you're a good marketing person, you have to be a little <strike>lazy</strike> crazy. <span class="whitespace-nowrap">- Jim Metcalf</span></blockquote>
-
-  <!-- Core Skills Section -->
-  <section class="skills-section">
-    <h2 class="section-title">Core Skills</h2>
     
-    <div class="core-skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">📊</div>
-        <h3>Digital Marketing</h3>
-      </div>
-      
-      <div class="skill-card">
-        <div class="skill-icon">🎯</div>
-        <h3>Demand Generation</h3>
-      </div>
-      
-      <div class="skill-card">
-        <div class="skill-icon">📈</div>
-        <h3>Conversion Optimization</h3>
-      </div>
-      
-      <div class="skill-card">
-        <div class="skill-icon">✍️</div>
-        <h3>Content Strategy</h3>
+    <div class="hero-image-wrapper">
+      <div class="hero-image-container">
+        <div class="pulse-rings-container">
+          <div class="pulse-ring pulse-ring-1"></div>
+          <div class="pulse-ring pulse-ring-2"></div>
+          <div class="profile-image-wrapper">
+            <img src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral portrait">
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Paid Media -->
-  <section class="skills-section">
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="section-header">
+      <h2 class="section-title">about</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="about-content">
+      <p class="about-text">
+        For the past 10+ years, I've built omni-channel demand generation engines for B2B SaaS companies, using a mix of ABM, cold outbound, and revenue-focused content strategies to turn lead flow from a drip into a steady stream. Along the way, I've worked with B2B SaaS and tech companies, led high-performing teams, and consulted for local and international clients to help them increase demand for their products and services.
+      </p>
+      
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-name">Digital Marketing</div>
+          <div class="skill-experience">10+ Years Experience</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-name">Demand Generation</div>
+          <div class="skill-experience">8+ Years Experience</div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-name">Content Strategy</div>
+          <div class="skill-experience">10+ Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Competencies -->
+  <section class="competencies-section">
+    <div class="section-header">
+      <h2 class="section-title">core skills</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="competencies-grid">
+      <div class="competency-card">
+        <div class="competency-icon">📊</div>
+        <div class="competency-name">Digital Marketing</div>
+      </div>
+      
+      <div class="competency-card">
+        <div class="competency-icon">🎯</div>
+        <div class="competency-name">Demand Generation</div>
+      </div>
+      
+      <div class="competency-card">
+        <div class="competency-icon">📈</div>
+        <div class="competency-name">Conversion Optimization</div>
+      </div>
+      
+      <div class="competency-card">
+        <div class="competency-icon">✍️</div>
+        <div class="competency-name">Content Strategy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Skills -->
+  <section class="detailed-skills-section">
     <div class="skill-category">
       <h3 class="category-title">Paid Media</h3>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-item-icon">💼</span>
-          <span class="skill-item-name">LinkedIn Ads</span>
+      <div class="category-items">
+        <div class="category-item">
+          <span class="category-item-icon">💼</span>
+          <span class="category-item-name">LinkedIn Ads</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔍</span>
-          <span class="skill-item-name">Google AdWords</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔍</span>
+          <span class="category-item-name">Google AdWords</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📘</span>
-          <span class="skill-item-name">Facebook Ads</span>
+        <div class="category-item">
+          <span class="category-item-icon">📘</span>
+          <span class="category-item-name">Facebook Ads</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🐦</span>
-          <span class="skill-item-name">Twitter Ads</span>
+        <div class="category-item">
+          <span class="category-item-icon">🐦</span>
+          <span class="category-item-name">Twitter Ads</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🎯</span>
-          <span class="skill-item-name">Programmatic Ads</span>
+        <div class="category-item">
+          <span class="category-item-icon">🎯</span>
+          <span class="category-item-name">Programmatic Ads</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📺</span>
-          <span class="skill-item-name">Display Ads</span>
+        <div class="category-item">
+          <span class="category-item-icon">📺</span>
+          <span class="category-item-name">Display Ads</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Organic/SEO -->
-  <section class="skills-section">
     <div class="skill-category">
       <h3 class="category-title">Organic / SEO</h3>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-item-icon">🔎</span>
-          <span class="skill-item-name">Technical SEO</span>
+      <div class="category-items">
+        <div class="category-item">
+          <span class="category-item-icon">🔎</span>
+          <span class="category-item-name">Technical SEO</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📝</span>
-          <span class="skill-item-name">Content SEO</span>
+        <div class="category-item">
+          <span class="category-item-icon">📝</span>
+          <span class="category-item-name">Content SEO</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🤖</span>
-          <span class="skill-item-name">LLM SEO</span>
+        <div class="category-item">
+          <span class="category-item-icon">🤖</span>
+          <span class="category-item-name">LLM SEO</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔗</span>
-          <span class="skill-item-name">Backlinking</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔗</span>
+          <span class="category-item-name">Backlinking</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📰</span>
-          <span class="skill-item-name">PR Outreach</span>
+        <div class="category-item">
+          <span class="category-item-icon">📰</span>
+          <span class="category-item-name">PR Outreach</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">⭐</span>
-          <span class="skill-item-name">Influencer Outreach</span>
+        <div class="category-item">
+          <span class="category-item-icon">⭐</span>
+          <span class="category-item-name">Influencer Outreach</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Analytics & Tools -->
-  <section class="skills-section">
     <div class="skill-category">
       <h3 class="category-title">Analytics & Tools</h3>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-item-icon">📊</span>
-          <span class="skill-item-name">Google Analytics</span>
+      <div class="category-items">
+        <div class="category-item">
+          <span class="category-item-icon">📊</span>
+          <span class="category-item-name">Google Analytics</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔍</span>
-          <span class="skill-item-name">Search Console</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔍</span>
+          <span class="category-item-name">Search Console</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📈</span>
-          <span class="skill-item-name">GTM</span>
+        <div class="category-item">
+          <span class="category-item-icon">📈</span>
+          <span class="category-item-name">GTM</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🎨</span>
-          <span class="skill-item-name">Canva</span>
+        <div class="category-item">
+          <span class="category-item-icon">🎨</span>
+          <span class="category-item-name">Canva</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📧</span>
-          <span class="skill-item-name">Mailchimp</span>
+        <div class="category-item">
+          <span class="category-item-icon">📧</span>
+          <span class="category-item-name">Mailchimp</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📬</span>
-          <span class="skill-item-name">HubSpot</span>
+        <div class="category-item">
+          <span class="category-item-icon">📬</span>
+          <span class="category-item-name">HubSpot</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🎯</span>
-          <span class="skill-item-name">SEMrush</span>
+        <div class="category-item">
+          <span class="category-item-icon">🎯</span>
+          <span class="category-item-name">SEMrush</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔎</span>
-          <span class="skill-item-name">Ahrefs</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔎</span>
+          <span class="category-item-name">Ahrefs</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- AI Tools -->
-  <section class="skills-section">
     <div class="skill-category">
       <h3 class="category-title">AI Tools</h3>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-item-icon">🤖</span>
-          <span class="skill-item-name">ChatGPT</span>
+      <div class="category-items">
+        <div class="category-item">
+          <span class="category-item-icon">🤖</span>
+          <span class="category-item-name">ChatGPT</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔮</span>
-          <span class="skill-item-name">Gemini</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔮</span>
+          <span class="category-item-name">Gemini</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🚀</span>
-          <span class="skill-item-name">Grok</span>
+        <div class="category-item">
+          <span class="category-item-icon">🚀</span>
+          <span class="category-item-name">Grok</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🧬</span>
-          <span class="skill-item-name">Higgsfield AI</span>
+        <div class="category-item">
+          <span class="category-item-icon">🧬</span>
+          <span class="category-item-name">Higgsfield AI</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🍌</span>
-          <span class="skill-item-name">NanoBanana</span>
+        <div class="category-item">
+          <span class="category-item-icon">🍌</span>
+          <span class="category-item-name">NanoBanana</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔄</span>
-          <span class="skill-item-name">n8n</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔄</span>
+          <span class="category-item-name">n8n</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🧠</span>
-          <span class="skill-item-name">Weave AI</span>
+        <div class="category-item">
+          <span class="category-item-icon">🧠</span>
+          <span class="category-item-name">Weave AI</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔍</span>
-          <span class="skill-item-name">Perplexity</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔍</span>
+          <span class="category-item-name">Perplexity</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Development -->
-  <section class="skills-section">
     <div class="skill-category">
       <h3 class="category-title">Development</h3>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <span class="skill-item-icon">🌐</span>
-          <span class="skill-item-name">HTML/CSS</span>
+      <div class="category-items">
+        <div class="category-item">
+          <span class="category-item-icon">🌐</span>
+          <span class="category-item-name">HTML/CSS</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">⚡</span>
-          <span class="skill-item-name">JavaScript</span>
+        <div class="category-item">
+          <span class="category-item-icon">⚡</span>
+          <span class="category-item-name">JavaScript</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🎨</span>
-          <span class="skill-item-name">Tailwind CSS</span>
+        <div class="category-item">
+          <span class="category-item-icon">🎨</span>
+          <span class="category-item-name">Tailwind CSS</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">📄</span>
-          <span class="skill-item-name">11ty</span>
+        <div class="category-item">
+          <span class="category-item-icon">📄</span>
+          <span class="category-item-name">11ty</span>
         </div>
-        <div class="skill-item">
-          <span class="skill-item-icon">🔧</span>
-          <span class="skill-item-name">Git</span>
+        <div class="category-item">
+          <span class="category-item-icon">🔧</span>
+          <span class="category-item-name">Git</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <div class="about-cta">
-    <h2>🤝 Hire Me Without Filling Boring Forms</h2>
-    <p>🚫 No forms. No contact page. No friction.</p>
-    <p class="highlight">If you want a marketer who keeps things simple:</p>
-    <p>Let's turn your ideas into revenue, without 10 clicks.</p>
-    <a href="mailto:rakshitsoral@gmail.com" class="cta-button">
-      Let's Talk Growth 📈
-    </a>
-  </div>
 </div>
 
 {% endblock %}
