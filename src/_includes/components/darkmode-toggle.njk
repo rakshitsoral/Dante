@@ -11,24 +11,41 @@
 </button>
 
 <style>
-    /* Smooth transitions for theme switching */
+    /* Apply to both html and body for immediate effect */
+    html,
     body {
         transition: background-color 0.3s ease, color 0.3s ease;
     }
     
-    /* Light mode styles - ONLY applied when .light-mode class is present */
+    /* Light mode styles - Applied to both html and body */
+    html.light-mode,
     body.light-mode {
         background-color: #ffffff !important;
         color: #000000 !important;
     }
     
+    html.light-mode body,
+    body.light-mode {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    html.light-mode .writing,
     body.light-mode .writing,
+    html.light-mode article,
     body.light-mode article,
+    html.light-mode main,
     body.light-mode main {
         background-color: #ffffff !important;
         color: #000000 !important;
     }
     
+    html.light-mode h1,
+    html.light-mode h2,
+    html.light-mode h3,
+    html.light-mode h4,
+    html.light-mode h5,
+    html.light-mode h6,
     body.light-mode h1,
     body.light-mode h2,
     body.light-mode h3,
@@ -38,6 +55,10 @@
         color: #000000 !important;
     }
     
+    html.light-mode p,
+    html.light-mode li,
+    html.light-mode span,
+    html.light-mode div,
     body.light-mode p,
     body.light-mode li,
     body.light-mode span,
@@ -45,171 +66,61 @@
         color: #000000 !important;
     }
     
+    html.light-mode a,
     body.light-mode a {
         color: #2563eb !important;
     }
     
+    html.light-mode a:hover,
     body.light-mode a:hover {
         color: #1d4ed8 !important;
     }
     
+    html.light-mode .work-section,
+    html.light-mode .work-section--misc,
     body.light-mode .work-section,
     body.light-mode .work-section--misc {
         background-color: #f9fafb !important;
         color: #000000 !important;
     }
     
+    html.light-mode time,
     body.light-mode time {
         color: #6b7280 !important;
     }
     
+    html.light-mode code,
     body.light-mode code {
         background-color: #f3f4f6 !important;
         color: #000000 !important;
     }
     
+    html.light-mode pre,
     body.light-mode pre {
         background-color: #f3f4f6 !important;
         color: #000000 !important;
     }
     
+    html.light-mode blockquote,
     body.light-mode blockquote {
         color: #374151 !important;
         border-left-color: #d1d5db !important;
     }
     
     /* Toggle button in light mode */
+    html.light-mode #theme-toggle,
     body.light-mode #theme-toggle {
         background-color: #1f2937 !important;
         border-color: #374151 !important;
     }
     
+    html.light-mode #theme-toggle:hover,
     body.light-mode #theme-toggle:hover {
         background-color: #111827 !important;
     }
     
+    html.light-mode #theme-toggle svg,
     body.light-mode #theme-toggle svg {
         color: #ffffff !important;
     }
 </style>
-
-<script>
-    (function() {
-        // Function to apply theme based on saved preference
-        function applyTheme() {
-            const savedTheme = localStorage.getItem('site-theme');
-            
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-            } else {
-                document.body.classList.remove('light-mode');
-            }
-            
-            updateButtonIcons();
-        }
-        
-        // Function to update button icons based on current theme
-        function updateButtonIcons() {
-            const sunIcon = document.getElementById('sun-icon');
-            const moonIcon = document.getElementById('moon-icon');
-            const isLightMode = document.body.classList.contains('light-mode');
-            
-            if (sunIcon && moonIcon) {
-                if (isLightMode) {
-                    sunIcon.classList.add('hidden');
-                    moonIcon.classList.remove('hidden');
-                } else {
-                    sunIcon.classList.remove('hidden');
-                    moonIcon.classList.add('hidden');
-                }
-            }
-        }
-        
-        // Apply theme immediately on script load
-        applyTheme();
-        
-        // Set up toggle button click handler
-        function setupToggleButton() {
-            const themeToggle = document.getElementById('theme-toggle');
-            
-            if (themeToggle && !themeToggle.dataset.initialized) {
-                themeToggle.dataset.initialized = 'true';
-                
-                themeToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const isLightMode = document.body.classList.contains('light-mode');
-                    
-                    if (isLightMode) {
-                        // Switch back to dark mode
-                        document.body.classList.remove('light-mode');
-                        localStorage.setItem('site-theme', 'dark');
-                    } else {
-                        // Switch to light mode
-                        document.body.classList.add('light-mode');
-                        localStorage.setItem('site-theme', 'light');
-                    }
-                    
-                    updateButtonIcons();
-                });
-            }
-        }
-        
-        // Initial setup
-        setupToggleButton();
-        
-        // Re-apply theme and setup button on any navigation (for SPAs/client-side routing)
-        // Listen for multiple events that might indicate navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            applyTheme();
-            setupToggleButton();
-        });
-        
-        // For frameworks that use pushState/popState (like Turbolinks, Barba.js, etc.)
-        window.addEventListener('popstate', function() {
-            setTimeout(function() {
-                applyTheme();
-                setupToggleButton();
-            }, 50);
-        });
-        
-        // Watch for URL changes (for SPAs without full page reload)
-        let lastUrl = location.href;
-        new MutationObserver(function() {
-            const url = location.href;
-            if (url !== lastUrl) {
-                lastUrl = url;
-                setTimeout(function() {
-                    applyTheme();
-                    setupToggleButton();
-                }, 50);
-            }
-        }).observe(document, { subtree: true, childList: true });
-        
-        // Also listen for custom events that your router might emit
-        window.addEventListener('load', function() {
-            applyTheme();
-            setupToggleButton();
-        });
-        
-        // For Swup or similar libraries
-        document.addEventListener('swup:contentReplaced', function() {
-            applyTheme();
-            setupToggleButton();
-        });
-        
-        // For Turbolinks
-        document.addEventListener('turbolinks:load', function() {
-            applyTheme();
-            setupToggleButton();
-        });
-        
-        // For Barba.js
-        if (window.barba) {
-            window.barba.hooks.after(function() {
-                applyTheme();
-                setupToggleButton();
-            });
-        }
-    })();
-</script>
