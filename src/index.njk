@@ -7,10 +7,10 @@ title: Digital Marketing Consultant, Conversion Strategist
 roughjs: true
 ---
 
-<div role="main" class="flex flex-col overflow-x-hidden">
-    <section class="text-center max-w-4xl mx-auto mb-40 sm:mb-20 px-4 w-full" aria-labelledby="heading">
-        <h1 class="font-display text-4xl leading-none sm:text-3xl">Hi! I'm Rakshit Soral, a <span class="highlight-yellow px-4 inline-block relative sm:px-2" style="margin-left: -0.5rem; margin-right: -0.5rem;">reliable</span> Digital Marketer.</h1>
-        <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-base sm:mt-6">I believe marketing is all about conveying your <strong class="box-blue mx-1">message</strong> to consumers and convincing them to show<strong class="box-green mx-1">interest</strong>, and <strong class="box-red mx-1">invest</strong> in your product & services</p>
+<div role="main" class="flex flex-col">
+    <section class="text-center max-w-4xl mx-auto mb-40" aria-labelledby="heading">
+        <h1 class="font-display text-4xl leading-none sm:text-3xl">Hi! I'm Rakshit Soral, <span class="highlight-yellow px-4 inline-block relative"> a reliable</span> Digital Marketer<span class="whitespace-nowrap"></span></h1>
+        <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-lg">I believe marketing is all about conveying your <strong class="box-blue mx-1">message</strong> to consumers and convincing them to show <strong class="box-green mx-1">interest</strong>, and <strong class="box-red mx-1">invest</strong> in your product and services.</p>
     
     </section>
 
@@ -20,7 +20,7 @@ roughjs: true
     <section class="max-w-4xl mx-auto mb-32 px-4 sm:mb-20 w-full">
         <div class="relative text-center">
             <h3 class="font-display mb-6 leading-tight sm:text-2xl" style="font-size: 2.1rem; line-height: 1.2;">
-                The Digital Marketer Who <span class="highlight-yellow px-4 inline-block relative sm:px-2" style="margin-left: -0.5rem; margin-right: -0.5rem;">Drives Results,</span> Not Just Traffic
+                The Digital Marketer Who <span class="highlight-yellow px-4 inline-block relative sm:px-2">Drives Results,</span> Not Just Traffic
             </h3>
             <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-base sm:mt-6">
                 Work with a strategic demand generation consultant focused on ROI, conversions, and sustainable growth
@@ -67,3 +67,40 @@ roughjs: true
   
 
 </div>
+
+
+ <style>
+        /* Prevent horizontal scroll */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        /* Ensure all containers respect viewport width */
+        * {
+            max-width: 100%;
+        }
+        
+        /* Fix specific problem elements */
+        .max-w-4xl, .max-w-3xl {
+            max-width: min(56rem, 100vw);
+        }
+        
+        /* Ensure padding doesn't cause overflow */
+        @media (max-width: 640px) {
+            .px-4 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* Fix gap that might cause overflow */
+            .gap-4 {
+                gap: 0.75rem !important;
+            }
+            
+            /* Ensure buttons don't overflow */
+            a {
+                max-width: 100%;
+            }
+        }
+    </style>
