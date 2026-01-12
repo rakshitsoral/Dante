@@ -2,109 +2,130 @@
 layout: default
 title: Demand Gen Marketing CV Printable A4
 ---
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rakshit Soral - Resume</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Poppins', sans-serif; }
-   
-    @media print {
-       .page {
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Protect header from Tailwind CDN interference */
+#header {
+  font-size: 16px !important;
+}
+
+#header .logo img {
+  width: 250px !important;
+  height: auto !important;
+}
+
+#header nav {
+  font-size: 1rem !important;
+}
+
+#header nav a {
+  padding: 0.5rem !important;
+  margin: 0 0.5rem !important;
+  font-size: 1rem !important;
+}
+
+/* Scope Tailwind to resume content only */
+#resume-container {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Make profile and timeline content inherit site font size */
+#resume-container .text-gray-700,
+#resume-container .text-slate-600 {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+#resume-container .text-base {
+  font-size: 1rem !important;
+}
+
+#resume-container .text-lg {
+  font-size: 1rem !important;
+}
+
+@media print {
+  .page {
     margin: 0 !important;
     box-shadow: none !important;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    padding: 10mm 12mm;
+    box-sizing: border-box;
   }
-      body { background: white; }
-      .no-print { display: none !important; }
-      .page {
-  width: 210mm;
-  height: 297mm; /* EXACT A4 height */
-  overflow: hidden; /* Prevents spill that causes blank page */
-  padding: 10mm 12mm; 
-  box-sizing: border-box;
+  body { background: white; }
+  .no-print { display: none !important; }
+  .timeline-line::before { display: none; }
 }
-      .timeline-line::before { display: none; }
-    }
 
-   
-    .timeline-line::before {
-      content: '';
-      position: absolute;
-      left: 9px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #18487E, #93c5fd);
-    }
-    .page-section {
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #18487E, #93c5fd);
+}
+
+.page-section {
   break-inside: avoid;
   page-break-inside: avoid;
   page-break-after: auto;
 }
 
-   
-    @media (min-width: 768px) {
-      .timeline-line::before {
-        left: 50%;
-        margin-left: -1px;
-      }
-    }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fillLine {
-            from {
-                height: 0;
-            }
-            to {
-                height: 100%;
-            }
-        }
-        
-        .timeline-item {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-        
-        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
-        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
-        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
-        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
-        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
-        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
-        
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 0;
-            background: linear-gradient(to bottom, #9333ea, #ec4899);
-            animation: fillLine 1.5s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-        
-        @media (max-width: 768px) {
-            .timeline-line::before {
-                left: 20px;
-            }
-        }
+@media (min-width: 768px) {
+  .timeline-line::before {
+    left: 50%;
+    margin-left: -1px;
+  }
+}
 
-  </style>
-</head>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.timeline-item {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+</style>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: {
+      preflight: false,
+    },
+    important: '#resume-container',
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div id="resume-container">
   <!-- Action Buttons - Fixed Position -->
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 no-print">
     <button id="printResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
@@ -120,400 +141,390 @@ title: Demand Gen Marketing CV Printable A4
       Download PDF
     </button>
   </div>
-  <section class="page-section">
-  <div class="max-w-5xl mx-auto bg-white shadow-2xl my-4 md:my-8 page">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-[#18487E] to-[#0d2d52] text-white p-6 md:p-12">
-      <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-4 md:mb-6">
-        <img id="avatar" src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral" title="This is me" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover" />
-        <div class="text-center md:text-left">
-          <h1 class="text-3xl md:text-5xl font-bold mb-2">Rakshit Soral</h1>
-          <p class="text-xl md:text-2xl font-light">Marketing Strategist</p>
-        </div>
-      </div>
-      <div class="mt-4 md:mt-6 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-xs md:text-sm">
-        <span>📧 rakshitsoral@gmail.com</span>
-        <span>📱 +91-9602542617</span>
-        <span>📍 Ahmedabad, Gujarat, IN</span>
-        <span>🔗 linkedin.com/in/rakshitsoral</span>
-      </div>
-    </header>
-    <!-- Profile Section -->
-    <section class="p-6 md:p-12 border-b-2 border-gray-200">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Profile</h2>
-      <p class="text-gray-700 leading-relaxed text-base md:text-lg">
-        Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, and leveraging AI and CRM tools to streamline marketing operations.
-      </p>
-    </section>
-    <!-- Skills Section -->
-    <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Skills</h2>
-     
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <!-- Core Skills -->
-        <div>
-          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Core Skills</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Digital Marketing</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Demand Generation</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Conversion Optimization</span>
-            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Content Strategy</span>
-          </div>
-        </div>
-        <!-- Paid Media -->
-        <div>
-          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Paid Media</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">LinkedIn Ads</span>
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Google AdWords</span>
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Facebook Ads</span>
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Twitter Ads</span>
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Programmatic Ads</span>
-            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Display Ads</span>
-          </div>
-        </div>
-        <!-- Organic/SEO -->
-        <div>
-          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Organic / SEO</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Technical SEO</span>
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Content SEO</span>
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">LLM SEO</span>
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Backlinking</span>
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">PR Outreach</span>
-            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Influencer Outreach</span>
-          </div>
-        </div>
-        <!-- Analytics & Tools -->
-        <div>
-          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Analytics & Tools</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Google Analytics</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Search Console</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">GTM</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Canva</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Mailchimp</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">HubSpot</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">SEMrush</span>
-            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Ahrefs</span>
-          </div>
-        </div>
-      </div>
-      <!-- Development Skills -->
-      <div class="mt-6">
-        <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Development</h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">HTML/CSS</span>
-          <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">JavaScript</span>
-          <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Tailwind CSS</span>
-          <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">11ty</span>
-          <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Git</span>
-        </div>
-      </div>
-    </section>
-    <!-- Work Experience -->
-   
-    
-    <!-- Header -->
-  
 
-    <!-- Timeline Container -->
-   
-    <div class="max-w-6xl mx-auto relative timeline-line">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">&nbsp &nbsp Work Experience</h2>
+  <section class="page-section">
+    <div class="max-w-5xl mx-auto bg-white shadow-2xl my-4 md:my-8 page">
+      <!-- Header -->
+      <header class="bg-gradient-to-r from-[#18487E] to-[#0d2d52] text-white p-6 md:p-12">
+        <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-4 md:mb-6">
+          <img id="avatar" src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral" title="This is me" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover" />
+          <div class="text-center md:text-left">
+            <h1 class="text-3xl md:text-5xl font-bold mb-2">Rakshit Soral</h1>
+            <p class="text-xl md:text-2xl font-light">Marketing Strategist</p>
+          </div>
+        </div>
+        <div class="mt-4 md:mt-6 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-xs md:text-sm">
+          <span>📧 rakshitsoral@gmail.com</span>
+          <span>📱 +91-9602542617</span>
+          <span>📍 Ahmedabad, Gujarat, IN</span>
+          <span>🔗 linkedin.com/in/rakshitsoral</span>
+        </div>
+      </header>
+
+      <!-- Profile Section -->
+      <section class="p-6 md:p-12 border-b-2 border-gray-200">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Profile</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, 1 to 10, and leveraging AI and CRM tools to streamline marketing operations.
+        </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Skills</h2>
+       
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <!-- Core Skills -->
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Core Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Digital Marketing</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Demand Generation</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Conversion Optimization</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Content Strategy</span>
+            </div>
+          </div>
+          <!-- Paid Media -->
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Paid Media</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">LinkedIn Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Google AdWords</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Facebook Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Twitter Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Programmatic Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Display Ads</span>
+            </div>
+          </div>
+          <!-- Organic/SEO -->
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Organic / SEO</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Technical SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Content SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">LLM SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Backlinking</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">PR Outreach</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Influencer Outreach</span>
+            </div>
+          </div>
+          <!-- Analytics & Tools -->
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Analytics & Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Google Analytics</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Search Console</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">GTM</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Canva</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Mailchimp</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">HubSpot</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">SEMrush</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Ahrefs</span>
+            </div>
+          </div>
+        </div>
+        <!-- Development Skills -->
+        <div class="mt-6">
+          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Development</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">HTML/CSS</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">JavaScript</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Tailwind CSS</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">11ty</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Git</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Experience Timeline -->
+      <div class="max-w-6xl mx-auto relative timeline-line">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">&nbsp;&nbsp;Work Experience</h2>
+        
         <!-- Timeline Item 1 -->
         <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-            <!-- Left Content (Desktop) / Top Content (Mobile) -->
-            <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-            
-            <!-- Center Icon -->
-            <div class="relative flex items-center justify-center z-10">
-                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                </div>
+          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
+          
+          <div class="relative flex items-center justify-center z-10">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
             </div>
-            
-            <!-- Right Content -->
-            <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2024 - Present</span>
-                </div>
-                <h3 class="text-2xl font-bold text-purple-700 mb-2">Marketing & Demand Generation Specialist</h3>
-                <h4 class="text-xl text-slate-700 font-semibold mb-1">Kitecyber</h4>
-                <p class="text-slate-500 mb-4">California (United States), Remote</p>
-                <ul class="space-y-2 text-slate-600">
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-purple-500 mr-2 mt-1">•</span>
-                        <span>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</span>
-                    </li>
-                </ul>
+          </div>
+          
+          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+            <div class="mb-4">
+              <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2024 - Present</span>
             </div>
+            <h3 class="text-2xl font-bold text-purple-700 mb-2">Marketing & Demand Generation Specialist</h3>
+            <h4 class="text-xl text-slate-700 font-semibold mb-1">Kitecyber</h4>
+            <p class="text-slate-500 mb-4">California (United States), Remote</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-purple-500 mr-2 mt-1">•</span>
+                <span>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Timeline Item 2 -->
         <div class="timeline-item mb-8 flex flex-col md:flex-row-reverse items-center md:justify-between relative">
-            <!-- Right Content (Desktop) -->
-            <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
-            
-            <!-- Center Icon -->
-            <div class="relative flex items-center justify-center z-10">
-                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                </div>
+          <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
+          
+          <div class="relative flex items-center justify-center z-10">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
             </div>
-            
-            <!-- Left Content -->
-            <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full">Aug 2022 - Sep 2024</span>
-                </div>
-                <h3 class="text-2xl font-bold text-blue-700 mb-2">Product Marketing Manager</h3>
-                <h4 class="text-xl text-slate-700 font-semibold mb-1">Plutomen Technologies</h4>
-                <p class="text-slate-500 mb-4">Ahmedabad, Remote</p>
-                <ul class="space-y-2 text-slate-600">
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 mt-1">•</span>
-                        <span>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 mt-1">•</span>
-                        <span>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 mt-1">•</span>
-                        <span>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 mt-1">•</span>
-                        <span>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-500 mr-2 mt-1">•</span>
-                        <span>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</span>
-                    </li>
-                </ul>
+          </div>
+          
+          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+            <div class="mb-4">
+              <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full">Aug 2022 - Sep 2024</span>
             </div>
+            <h3 class="text-2xl font-bold text-blue-700 mb-2">Product Marketing Manager</h3>
+            <h4 class="text-xl text-slate-700 font-semibold mb-1">Plutomen Technologies</h4>
+            <p class="text-slate-500 mb-4">Ahmedabad, Remote</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2 mt-1">•</span>
+                <span>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2 mt-1">•</span>
+                <span>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2 mt-1">•</span>
+                <span>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2 mt-1">•</span>
+                <span>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2 mt-1">•</span>
+                <span>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Timeline Item 3 -->
         <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-            <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-            
-            <div class="relative flex items-center justify-center z-10">
-                <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                </div>
+          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
+          
+          <div class="relative flex items-center justify-center z-10">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
             </div>
-            
-            <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <span class="inline-block bg-emerald-100 text-emerald-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2017 - July 2022</span>
-                </div>
-                <h3 class="text-2xl font-bold text-emerald-700 mb-2">Demand Generation Lead</h3>
-                <h4 class="text-xl text-slate-700 font-semibold mb-1">Simform Solutions</h4>
-                <p class="text-slate-500 mb-4">Ahmedabad, Hybrid</p>
-                <ul class="space-y-2 text-slate-600">
-                    <li class="flex items-start">
-                        <span class="text-emerald-500 mr-2 mt-1">•</span>
-                        <span>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-500 mr-2 mt-1">•</span>
-                        <span>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-500 mr-2 mt-1">•</span>
-                        <span>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-500 mr-2 mt-1">•</span>
-                        <span>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-500 mr-2 mt-1">•</span>
-                        <span>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</span>
-                    </li>
-                </ul>
+          </div>
+          
+          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+            <div class="mb-4">
+              <span class="inline-block bg-emerald-100 text-emerald-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2017 - July 2022</span>
             </div>
+            <h3 class="text-2xl font-bold text-emerald-700 mb-2">Demand Generation Lead</h3>
+            <h4 class="text-xl text-slate-700 font-semibold mb-1">Simform Solutions</h4>
+            <p class="text-slate-500 mb-4">Ahmedabad, Hybrid</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2 mt-1">•</span>
+                <span>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2 mt-1">•</span>
+                <span>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2 mt-1">•</span>
+                <span>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2 mt-1">•</span>
+                <span>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-emerald-500 mr-2 mt-1">•</span>
+                <span>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Timeline Item 4 -->
         <div class="timeline-item mb-8 flex flex-col md:flex-row-reverse items-center md:justify-between relative">
-            <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
-            
-            <div class="relative flex items-center justify-center z-10">
-                <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
-                    </svg>
-                </div>
+          <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
+          
+          <div class="relative flex items-center justify-center z-10">
+            <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+              </svg>
             </div>
-            
-            <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <span class="inline-block bg-amber-100 text-amber-700 text-sm font-semibold px-3 py-1 rounded-full">April 2016 - Sep 2017</span>
-                </div>
-                <h3 class="text-2xl font-bold text-amber-700 mb-2">Inbound Marketing Executive</h3>
-                <h4 class="text-xl text-slate-700 font-semibold mb-1">Hoojook (RimTim Technologies)</h4>
-                <p class="text-slate-500 mb-4">Gurgaon, In-house</p>
-                <ul class="space-y-2 text-slate-600">
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2 mt-1">•</span>
-                        <span>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2 mt-1">•</span>
-                        <span>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2 mt-1">•</span>
-                        <span>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-500 mr-2 mt-1">•</span>
-                        <span>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</span>
-                    </li>
-                </ul>
+          </div>
+          
+          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+            <div class="mb-4">
+              <span class="inline-block bg-amber-100 text-amber-700 text-sm font-semibold px-3 py-1 rounded-full">April 2016 - Sep 2017</span>
             </div>
+            <h3 class="text-2xl font-bold text-amber-700 mb-2">Inbound Marketing Executive</h3>
+            <h4 class="text-xl text-slate-700 font-semibold mb-1">Hoojook (RimTim Technologies)</h4>
+            <p class="text-slate-500 mb-4">Gurgaon, In-house</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2 mt-1">•</span>
+                <span>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2 mt-1">•</span>
+                <span>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2 mt-1">•</span>
+                <span>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2 mt-1">•</span>
+                <span>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Timeline Item 5 -->
         <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-            <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-            
-            <div class="relative flex items-center justify-center z-10">
-                <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                    </svg>
-                </div>
-            </div>
-            
-            <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-                <div class="mb-4">
-                    <span class="inline-block bg-rose-100 text-rose-700 text-sm font-semibold px-3 py-1 rounded-full">July 2015 - March 2016</span>
-                </div>
-                <h3 class="text-2xl font-bold text-rose-700 mb-2">Jr. Content Reporter</h3>
-                <h4 class="text-xl text-slate-700 font-semibold mb-1">Girnar Softwares Pvt. Ltd.</h4>
-                <p class="text-slate-500 mb-4">Jaipur, In-house</p>
-                <ul class="space-y-2 text-slate-600">
-                    <li class="flex items-start">
-                        <span class="text-rose-500 mr-2 mt-1">•</span>
-                        <span>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-rose-500 mr-2 mt-1">•</span>
-                        <span>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-rose-500 mr-2 mt-1">•</span>
-                        <span>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</span>
-                    </li>
-                </ul>
-            </div>
+          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
+          
+          <div class="relative flex items-center justify-center z-10">
+            <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+</svg>
+</div>
+</div>
+<div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+        <div class="mb-4">
+          <span class="inline-block bg-rose-100 text-rose-700 text-sm font-semibold px-3 py-1 rounded-full">July 2015 - March 2016</span>
         </div>
-
+        <h3 class="text-2xl font-bold text-rose-700 mb-2">Jr. Content Reporter</h3>
+        <h4 class="text-xl text-slate-700 font-semibold mb-1">Girnar Softwares Pvt. Ltd.</h4>
+        <p class="text-slate-500 mb-4">Jaipur, In-house</p>
+        <ul class="space-y-2 text-slate-600">
+          <li class="flex items-start">
+            <span class="text-rose-500 mr-2 mt-1">•</span>
+            <span>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-rose-500 mr-2 mt-1">•</span>
+            <span>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-rose-500 mr-2 mt-1">•</span>
+            <span>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</span>
+          </li>
+        </ul>
+      </div>
     </div>
-    <!-- Certifications -->
-    <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
-     
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-          <div class="flex items-start gap-3">
-            <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-            <div>
-              <h3 class="font-semibold text-gray-800">Google Analytics 4</h3>
-              <p class="text-sm text-gray-600 mt-1">Google</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-          <div class="flex items-start gap-3">
-            <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-            <div>
-              <h3 class="font-semibold text-gray-800">Google AdWords</h3>
-              <p class="text-sm text-gray-600 mt-1">Google</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-          <div class="flex items-start gap-3">
-            <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-            <div>
-              <h3 class="font-semibold text-gray-800">EF SET English Certificate</h3>
-              <p class="text-sm text-gray-600 mt-1">C1 Advanced</p>
-            </div>
+  </div>
+
+  <!-- Certifications -->
+  <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
+   
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+        <div class="flex items-start gap-3">
+          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
+          <div>
+            <h3 class="font-semibold text-gray-800">Google Analytics 4</h3>
+            <p class="text-sm text-gray-600 mt-1">Google</p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Education -->
-    <section class="p-6 md:p-12">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Education</h2>
-      <div class="border-l-4 border-[#18487E] pl-6">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-          <h3 class="text-lg md:text-xl font-semibold text-gray-800">B.Tech, Computer Science Engineering</h3>
-          <span class="text-sm text-gray-600">2011 - 2015</span>
+      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+        <div class="flex items-start gap-3">
+          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
+          <div>
+            <h3 class="font-semibold text-gray-800">Google AdWords</h3>
+            <p class="text-sm text-gray-600 mt-1">Google</p>
+          </div>
         </div>
-        <p class="text-[#18487E] font-medium">Rajasthan Technical University, Kota</p>
       </div>
-    </section>
-    </section>
-    
-  <!-- PDF Generation & Print Scripts -->
-  <script>
-    // Print functionality
-    document.getElementById("printResumeBtn").addEventListener("click", function () {
-      window.print();
+      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+        <div class="flex items-start gap-3">
+          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
+          <div>
+            <h3 class="font-semibold text-gray-800">EF SET English Certificate</h3>
+            <p class="text-sm text-gray-600 mt-1">C1 Advanced</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="p-6 md:p-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Education</h2>
+    <div class="border-l-4 border-[#18487E] pl-6">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+        <h3 class="text-lg md:text-xl font-semibold text-gray-800">B.Tech, Computer Science Engineering</h3>
+        <span class="text-sm text-gray-600">2011 - 2015</span>
+      </div>
+      <p class="text-[#18487E] font-medium">Rajasthan Technical University, Kota</p>
+    </div>
+  </section>
+</div>
+</section>
+</div>
+<script>
+  document.getElementById("printResumeBtn").addEventListener("click", function () {
+    window.print();
+  });
+  
+  document.getElementById("downloadResumeBtn").addEventListener("click", function () {
+    const resumePages = document.querySelectorAll(".page");
+    const pdfContainer = document.createElement("div");
+    pdfContainer.style.background = "#fff";
+    resumePages.forEach(page => {
+      const clone = page.cloneNode(true);
+      clone.style.pageBreakInside = "avoid";
+      clone.style.breakInside = "avoid-page";
+      pdfContainer.appendChild(clone);
     });
-    // PDF Download functionality
-    document.getElementById("downloadResumeBtn").addEventListener("click", function () {
-        const resumePages = document.querySelectorAll(".page");
-        const pdfContainer = document.createElement("div");
-        pdfContainer.style.background = "#fff";
-        resumePages.forEach(page => {
-            const clone = page.cloneNode(true);
-            clone.style.pageBreakInside = "avoid";
-clone.style.breakInside = "avoid-page";
-            pdfContainer.appendChild(clone);
-        });
-        html2pdf()
-          .set({
-            filename: 'Rakshit_Soral_Marketing_CV.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, letterRendering: true, logging: false },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            margin: 0,
-  jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-          })
-          .from(pdfContainer)
-          .save();
-    });
-  </script>
+    html2pdf()
+      .set({
+        filename: 'Rakshit_Soral_Marketing_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, letterRendering: true, logging: false },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        margin: 0
+      })
+      .from(pdfContainer)
+      .save();
+  });
+</script>

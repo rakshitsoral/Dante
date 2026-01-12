@@ -4,7 +4,8 @@
 @import 'custom/home.css';
 @import 'custom/bio.css';
 @import 'custom/misc.css';
-@import 'custom/highlightjs.css';
+@import 'custom/highlightjs.css'
+@import 'custom/resume.css'; 
 
 
 .resp-sharing-button__link,
