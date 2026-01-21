@@ -26,6 +26,254 @@ title: Demand Gen Marketing CV Printable A4
   font-size: 1rem !important;
 }
 
+/* Timeline Styles - Left-aligned Professional Timeline */
+.timeline-container {
+  position: relative;
+  padding: 1.5rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left-aligned timeline line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 35px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #18487E 0%, #3b82f6 25%, #10b981 50%, #f59e0b 75%, #ec4899 100%);
+  box-shadow: 0 0 10px rgba(24, 72, 126, 0.2);
+}
+
+/* Timeline Item - All items left-aligned */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  padding-left: 90px;
+}
+
+/* Timeline Dot with improved styling */
+.timeline-dot {
+  position: absolute;
+  left: 35px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-dot:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.timeline-dot svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+/* Timeline Connector Line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Timeline Content Card with very light backgrounds */
+.timeline-content {
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+/* Very light colored card backgrounds */
+.timeline-item:nth-child(1) .timeline-content {
+  background: linear-gradient(135deg, #f8fffe 0%, #f0fdf9 100%);
+}
+
+.timeline-item:nth-child(2) .timeline-content {
+  background: linear-gradient(135deg, #fffef7 0%, #fefce8 100%);
+}
+
+.timeline-item:nth-child(3) .timeline-content {
+  background: linear-gradient(135deg, #fff8fd 0%, #fdf2f8 100%);
+}
+
+.timeline-item:nth-child(4) .timeline-content {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.timeline-item:nth-child(5) .timeline-content {
+  background: linear-gradient(135deg, #f7fdff 0%, #f0f9ff 100%);
+}
+
+/* Timeline Typography - Consistent sizing */
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-company {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #18487E;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-location {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #18487E;
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+/* Timeline List */
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0 0;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #475569;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.timeline-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #18487E;
+  font-weight: bold;
+}
+
+/* Colored timeline dots with better icons */
+.timeline-item:nth-child(1) .timeline-dot {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.timeline-item:nth-child(2) .timeline-dot {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.timeline-item:nth-child(3) .timeline-dot {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+.timeline-item:nth-child(4) .timeline-dot {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.timeline-item:nth-child(5) .timeline-dot {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+/* Consistent font sizing throughout resume */
+#resume-container h1 { font-size: 2.5rem; }
+#resume-container h2 { font-size: 1.5rem; }
+#resume-container h3 { font-size: 1.1rem; }
+#resume-container p, #resume-container span, #resume-container li { font-size: 0.9rem; }
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .timeline-container::before {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 70px;
+  }
+  
+  .timeline-dot {
+    width: 45px;
+    height: 45px;
+    left: 20px;
+  }
+  
+  .timeline-dot svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .timeline-item::before {
+    left: 20px;
+    width: 30px;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  .timeline-title {
+    font-size: 1rem;
+  }
+  
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-list li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  .timeline-dot {
+    box-shadow: none;
+    border: 2px solid #18487E;
+  }
+  
+  .timeline-content {
+    box-shadow: none;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .timeline-container::before {
+    box-shadow: none;
+  }
+}
+
 /* Scope Tailwind to resume content only */
 #resume-container {
   font-family: 'Poppins', sans-serif;
@@ -58,59 +306,7 @@ title: Demand Gen Marketing CV Printable A4
   }
   body { background: white; }
   .no-print { display: none !important; }
-  .timeline-line::before { display: none; }
 }
-
-.timeline-line::before {
-  content: '';
-  position: absolute;
-  left: 9px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #18487E, #93c5fd);
-}
-
-.page-section {
-  break-inside: avoid;
-  page-break-inside: avoid;
-  page-break-after: auto;
-}
-
-@media (min-width: 768px) {
-  .timeline-line::before {
-    left: 50%;
-    margin-left: -1px;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fillLine {
-  from { height: 0; }
-  to { height: 100%; }
-}
-
-.timeline-item {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.2s; }
-.timeline-item:nth-child(3) { animation-delay: 0.3s; }
-.timeline-item:nth-child(4) { animation-delay: 0.4s; }
-.timeline-item:nth-child(5) { animation-delay: 0.5s; }
-.timeline-item:nth-child(6) { animation-delay: 0.6s; }
 </style>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -128,13 +324,13 @@ title: Demand Gen Marketing CV Printable A4
 <div id="resume-container">
   <!-- Action Buttons - Fixed Position -->
   <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 no-print">
-    <button id="printResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+    <button id="printResumeBtn" class="bg-[#419E54] hover:bg-[#357d43] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
       </svg>
       Print
     </button>
-    <button id="downloadResumeBtn" class="bg-[#18487E] hover:bg-[#0d2d52] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
+    <button id="downloadResumeBtn" class="bg-[#BF870B] hover:bg-[#9d6e09] text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       </svg>
@@ -149,11 +345,11 @@ title: Demand Gen Marketing CV Printable A4
         <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-4 md:mb-6">
           <img id="avatar" src="/assets/img/Rakshit Soral.png" loading="lazy" alt="Rakshit Soral" title="This is me" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg object-cover" />
           <div class="text-center md:text-left">
-            <h1 class="text-3xl md:text-5xl font-bold mb-2">Rakshit Soral</h1>
-            <p class="text-xl md:text-2xl font-light">Marketing Strategist</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">Rakshit Soral</h1>
+            <p class="text-lg md:text-xl font-light">Marketing Strategist</p>
           </div>
         </div>
-        <div class="mt-4 md:mt-6 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-xs md:text-sm">
+        <div class="mt-4 md:mt-6 flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-sm">
           <span>📧 rakshitsoral@gmail.com</span>
           <span>📱 +91-9602542617</span>
           <span>📍 Ahmedabad, Gujarat, IN</span>
@@ -163,344 +359,249 @@ title: Demand Gen Marketing CV Printable A4
 
       <!-- Profile Section -->
       <section class="p-6 md:p-12 border-b-2 border-gray-200">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Profile</h2>
-        <p class="text-gray-700 leading-relaxed">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">Profile</h2>
+        <p class="text-gray-700 leading-relaxed text-sm">
           Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound. Experienced in building and leading high-performing teams, scaling GTM strategy from 0 to 1, 1 to 10, and leveraging AI and CRM tools to streamline marketing operations.
         </p>
       </section>
 
       <!-- Skills Section -->
       <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Skills</h2>
+        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Skills</h2>
        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <!-- Core Skills -->
           <div>
-            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Core Skills</h3>
+            <h3 class="text-base md:text-lg font-semibold text-[#18487E] mb-3">Core Skills</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Digital Marketing</span>
-              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Demand Generation</span>
-              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Conversion Optimization</span>
-              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs md:text-sm">Content Strategy</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Digital Marketing</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Demand Generation</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Conversion Optimization</span>
+              <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Content Strategy</span>
             </div>
           </div>
           <!-- Paid Media -->
           <div>
-            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Paid Media</h3>
+            <h3 class="text-base md:text-lg font-semibold text-[#18487E] mb-3">Paid Media</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">LinkedIn Ads</span>
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Google AdWords</span>
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Facebook Ads</span>
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Twitter Ads</span>
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Programmatic Ads</span>
-              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs md:text-sm">Display Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">LinkedIn Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Google AdWords</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Facebook Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Twitter Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Programmatic Ads</span>
+              <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Display Ads</span>
             </div>
           </div>
           <!-- Organic/SEO -->
           <div>
-            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Organic / SEO</h3>
+            <h3 class="text-base md:text-lg font-semibold text-[#18487E] mb-3">Organic / SEO</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Technical SEO</span>
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Content SEO</span>
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">LLM SEO</span>
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Backlinking</span>
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">PR Outreach</span>
-              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs md:text-sm">Influencer Outreach</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Technical SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Content SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">LLM SEO</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Backlinking</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">PR Outreach</span>
+              <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Influencer Outreach</span>
             </div>
           </div>
           <!-- Analytics & Tools -->
           <div>
-            <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Analytics & Tools</h3>
+            <h3 class="text-base md:text-lg font-semibold text-[#18487E] mb-3">Analytics & Tools</h3>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Google Analytics</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Search Console</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">GTM</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Canva</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Mailchimp</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">HubSpot</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">SEMrush</span>
-              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs md:text-sm">Ahrefs</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Google Analytics</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Search Console</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">GTM</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Canva</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Mailchimp</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">HubSpot</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">SEMrush</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">Ahrefs</span>
             </div>
           </div>
         </div>
         <!-- Development Skills -->
         <div class="mt-6">
-          <h3 class="text-lg md:text-xl font-semibold text-[#18487E] mb-3">Development</h3>
+          <h3 class="text-base md:text-lg font-semibold text-[#18487E] mb-3">Development</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">HTML/CSS</span>
-            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">JavaScript</span>
-            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Tailwind CSS</span>
-            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">11ty</span>
-            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs md:text-sm">Git</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">HTML/CSS</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">JavaScript</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Tailwind CSS</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">11ty</span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Git</span>
           </div>
         </div>
       </section>
 
       <!-- Work Experience Timeline -->
-      <div class="max-w-6xl mx-auto relative timeline-line">
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">&nbsp;&nbsp;Work Experience</h2>
+      <section class="p-6 md:p-12 border-b-2 border-gray-200">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Work Experience</h2>
         
-        <!-- Timeline Item 1 -->
-        <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-          
-          <div class="relative flex items-center justify-center z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        <div class="timeline-container">
+          <!-- Timeline Item 1 - Marketing & Demand Generation Specialist -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
               </svg>
             </div>
-          </div>
-          
-          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-            <div class="mb-4">
-              <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2024 - Present</span>
+            
+            <div class="timeline-content">
+              <span class="timeline-badge">Oct 2024 - Present</span>
+              <h3 class="timeline-title">Marketing & Demand Generation Specialist</h3>
+              <h4 class="timeline-company">Kitecyber</h4>
+              <p class="timeline-location">California (United States), Remote</p>
+              <ul class="timeline-list">
+                <li>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</li>
+                <li>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</li>
+                <li>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</li>
+                <li>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</li>
+                <li>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</li>
+                <li>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</li>
+              </ul>
             </div>
-            <h3 class="text-2xl font-bold text-purple-700 mb-2">Marketing & Demand Generation Specialist</h3>
-            <h4 class="text-xl text-slate-700 font-semibold mb-1">Kitecyber</h4>
-            <p class="text-slate-500 mb-4">California (United States), Remote</p>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Spearheaded a comprehensive website positioning overhaul, including keyword targeting, product category mapping, and high-impact comparison pages—driving a 40% increase in product trial signups.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Revived LinkedIn presence through engaging carousels and video content, adding 2,000+ followers in 8 months and improving brand authority.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Deployed cold email outreach campaigns using Apollo.io, achieving a 32% open rate.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Launched Google Ads campaigns with a $60,000 budget, contributing to a 20% increase in qualified leads.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-purple-500 mr-2 mt-1">•</span>
-                <span>Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in 12% improvement in MQL-to-SQL conversions.</span>
-              </li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Timeline Item 2 -->
-        <div class="timeline-item mb-8 flex flex-col md:flex-row-reverse items-center md:justify-between relative">
-          <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
-          
-          <div class="relative flex items-center justify-center z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          <!-- Timeline Item 2 - Product Marketing Manager -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
               </svg>
             </div>
-          </div>
-          
-          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-            <div class="mb-4">
-              <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full">Aug 2022 - Sep 2024</span>
+            
+            <div class="timeline-content">
+              <span class="timeline-badge">Aug 2022 - Sep 2024</span>
+              <h3 class="timeline-title">Product Marketing Manager</h3>
+              <h4 class="timeline-company">Plutomen Technologies</h4>
+              <p class="timeline-location">Ahmedabad, Remote</p>
+              <ul class="timeline-list">
+                <li>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</li>
+                <li>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</li>
+                <li>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</li>
+                <li>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</li>
+                <li>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</li>
+              </ul>
             </div>
-            <h3 class="text-2xl font-bold text-blue-700 mb-2">Product Marketing Manager</h3>
-            <h4 class="text-xl text-slate-700 font-semibold mb-1">Plutomen Technologies</h4>
-            <p class="text-slate-500 mb-4">Ahmedabad, Remote</p>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1">•</span>
-                <span>Built and led a 4-member marketing team, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over 200+ qualified leads via email.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1">•</span>
-                <span>Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1">•</span>
-                <span>Collaborated with Sales and Product to reposition and refine messaging for an Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by 30% from zero baseline.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1">•</span>
-                <span>Developed and executed a long-term content marketing strategy, publishing 100+ blogs in 2 years, and generating $250K in marketing-attributed pipeline revenue.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1">•</span>
-                <span>Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion.</span>
-              </li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Timeline Item 3 -->
-        <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-          
-          <div class="relative flex items-center justify-center z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Timeline Item 3 - Demand Generation Lead -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-          </div>
-          
-          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-            <div class="mb-4">
-              <span class="inline-block bg-emerald-100 text-emerald-700 text-sm font-semibold px-3 py-1 rounded-full">Oct 2017 - July 2022</span>
+            
+            <div class="timeline-content">
+              <span class="timeline-badge">Oct 2017 - July 2022</span>
+              <h3 class="timeline-title">Demand Generation Lead</h3>
+              <h4 class="timeline-company">Simform Solutions</h4>
+              <p class="timeline-location">Ahmedabad, Hybrid</p>
+              <ul class="timeline-list">
+                <li>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</li>
+                <li>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</li>
+                <li>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</li>
+                <li>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</li>
+                <li>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</li>
+              </ul>
             </div>
-            <h3 class="text-2xl font-bold text-emerald-700 mb-2">Demand Generation Lead</h3>
-            <h4 class="text-xl text-slate-700 font-semibold mb-1">Simform Solutions</h4>
-            <p class="text-slate-500 mb-4">Ahmedabad, Hybrid</p>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start">
-                <span class="text-emerald-500 mr-2 mt-1">•</span>
-                <span>Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering 30+ qualified leads/month consistently.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-emerald-500 mr-2 mt-1">•</span>
-                <span>Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by 1,000+ monthly visits.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-emerald-500 mr-2 mt-1">•</span>
-                <span>Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a 45% uplift in SQL conversions.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-emerald-500 mr-2 mt-1">•</span>
-                <span>Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by 30%.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-emerald-500 mr-2 mt-1">•</span>
-                <span>Built 50+ high-quality backlinks via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by 40% and domain authority.</span>
-              </li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Timeline Item 4 -->
-        <div class="timeline-item mb-8 flex flex-col md:flex-row-reverse items-center md:justify-between relative">
-          <div class="w-full md:w-5/12 mb-4 md:mb-0"></div>
-          
-          <div class="relative flex items-center justify-center z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+          <!-- Timeline Item 4 - Inbound Marketing Executive -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
               </svg>
             </div>
-          </div>
-          
-          <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-            <div class="mb-4">
-              <span class="inline-block bg-amber-100 text-amber-700 text-sm font-semibold px-3 py-1 rounded-full">April 2016 - Sep 2017</span>
+            
+            <div class="timeline-content">
+              <span class="timeline-badge">April 2016 - Sep 2017</span>
+              <h3 class="timeline-title">Inbound Marketing Executive</h3>
+              <h4 class="timeline-company">Hoojook (RimTim Technologies)</h4>
+              <p class="timeline-location">Gurgaon, In-house</p>
+              <ul class="timeline-list">
+                <li>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</li>
+                <li>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</li>
+                <li>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</li>
+                <li>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</li>
+              </ul>
             </div>
-            <h3 class="text-2xl font-bold text-amber-700 mb-2">Inbound Marketing Executive</h3>
-            <h4 class="text-xl text-slate-700 font-semibold mb-1">Hoojook (RimTim Technologies)</h4>
-            <p class="text-slate-500 mb-4">Gurgaon, In-house</p>
-            <ul class="space-y-2 text-slate-600">
-              <li class="flex items-start">
-                <span class="text-amber-500 mr-2 mt-1">•</span>
-                <span>Implemented targeted SEO and content strategies, successfully scaling client websites to 3,000+ monthly visitors.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-amber-500 mr-2 mt-1">•</span>
-                <span>Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-amber-500 mr-2 mt-1">•</span>
-                <span>Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance.</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-amber-500 mr-2 mt-1">•</span>
-                <span>Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing and improve search rankings.</span>
-              </li>
-            </ul>
           </div>
-        </div>
 
-        <!-- Timeline Item 5 -->
-        <div class="timeline-item mb-8 flex flex-col md:flex-row items-center md:justify-between relative">
-          <div class="w-full md:w-5/12 md:text-right mb-4 md:mb-0"></div>
-          
-          <div class="relative flex items-center justify-center z-10">
-            <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-</svg>
-</div>
-</div>
-<div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
-        <div class="mb-4">
-          <span class="inline-block bg-rose-100 text-rose-700 text-sm font-semibold px-3 py-1 rounded-full">July 2015 - March 2016</span>
+          <!-- Timeline Item 5 - Jr. Content Reporter -->
+          <div class="timeline-item">
+            <div class="timeline-dot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+            </div>
+            
+            <div class="timeline-content">
+              <span class="timeline-badge">July 2015 - March 2016</span>
+              <h3 class="timeline-title">Jr. Content Reporter</h3>
+              <h4 class="timeline-company">Girnar Softwares Pvt. Ltd.</h4>
+              <p class="timeline-location">Jaipur, In-house</p>
+              <ul class="timeline-list">
+                <li>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</li>
+                <li>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</li>
+                <li>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <h3 class="text-2xl font-bold text-rose-700 mb-2">Jr. Content Reporter</h3>
-        <h4 class="text-xl text-slate-700 font-semibold mb-1">Girnar Softwares Pvt. Ltd.</h4>
-        <p class="text-slate-500 mb-4">Jaipur, In-house</p>
-        <ul class="space-y-2 text-slate-600">
-          <li class="flex items-start">
-            <span class="text-rose-500 mr-2 mt-1">•</span>
-            <span>Collaborated with the team to help scale website traffic to 100,000+ monthly visitors through high-quality, SEO-optimized content.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-500 mr-2 mt-1">•</span>
-            <span>Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends.</span>
-          </li>
-          <li class="flex items-start">
-            <span class="text-rose-500 mr-2 mt-1">•</span>
-            <span>Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing while ensuring timely updates and consistency.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  <!-- Certifications -->
-  <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Certifications</h2>
-   
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-        <div class="flex items-start gap-3">
-          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-          <div>
-            <h3 class="font-semibold text-gray-800">Google Analytics 4</h3>
-            <p class="text-sm text-gray-600 mt-1">Google</p>
+      <!-- Certifications -->
+      <section class="p-6 md:p-12 bg-gray-50 border-b-2 border-gray-200">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Certifications</h2>
+       
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-certificate text-[#18487E] text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold text-gray-800 text-sm">Google Analytics 4</h3>
+                <p class="text-xs text-gray-600 mt-1">Google</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-certificate text-[#18487E] text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold text-gray-800 text-sm">Google AdWords</h3>
+                <p class="text-xs text-gray-600 mt-1">Google</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-certificate text-[#18487E] text-xl mt-1"></i>
+              <div>
+                <h3 class="font-semibold text-gray-800 text-sm">EF SET English Certificate</h3>
+                <p class="text-xs text-gray-600 mt-1">C1 Advanced</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-        <div class="flex items-start gap-3">
-          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-          <div>
-            <h3 class="font-semibold text-gray-800">Google AdWords</h3>
-            <p class="text-sm text-gray-600 mt-1">Google</p>
-          </div>
-        </div>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#18487E] hover:shadow-md transition-shadow">
-        <div class="flex items-start gap-3">
-          <i class="fas fa-certificate text-[#18487E] text-2xl mt-1"></i>
-          <div>
-            <h3 class="font-semibold text-gray-800">EF SET English Certificate</h3>
-            <p class="text-sm text-gray-600 mt-1">C1 Advanced</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Education -->
-  <section class="p-6 md:p-12">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Education</h2>
-    <div class="border-l-4 border-[#18487E] pl-6">
-      <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-        <h3 class="text-lg md:text-xl font-semibold text-gray-800">B.Tech, Computer Science Engineering</h3>
-        <span class="text-sm text-gray-600">2011 - 2015</span>
-      </div>
-      <p class="text-[#18487E] font-medium">Rajasthan Technical University, Kota</p>
+      <!-- Education -->
+      <section class="p-6 md:p-12">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6">Education</h2>
+        <div class="border-l-4 border-[#18487E] pl-6">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <h3 class="text-base md:text-lg font-semibold text-gray-800">B.Tech, Computer Science Engineering</h3>
+            <span class="text-xs text-gray-600">2011 - 2015</span>
+          </div>
+          <p class="text-[#18487E] font-medium text-sm">Rajasthan Technical University, Kota</p>
+        </div>
+      </section>
     </div>
   </section>
 </div>
-</section>
-</div>
+
 <script>
   document.getElementById("printResumeBtn").addEventListener("click", function () {
     window.print();
