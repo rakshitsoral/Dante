@@ -736,70 +736,86 @@ title: Demand Gen Marketing CV Printable A4
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // PDF Download Functionality
-        async function downloadResumePDF() {
-            const { jsPDF } = window.jspdf;
-            
-            // Show loading state
-            const downloadBtn = document.getElementById('downloadPDF');
-            const originalIcon = downloadBtn.innerHTML;
-            downloadBtn.innerHTML = '<div class="animate-spin w-5 h-5 border-2 border-slate-600 border-t-transparent rounded-full"></div>';
-            downloadBtn.disabled = true;
+       // PDF Download Functionality - CORRECTED VERSION
+async function downloadResumePDF() {
+    const { jsPDF } = window.jspdf;
+    
+    // Show loading state
+    const downloadBtn = document.getElementById('downloadPDF');
+    if (!downloadBtn) {
+        console.error('Download button not found');
+        return;
+    }
+    
+    const originalContent = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<svg class="animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+    downloadBtn.disabled = true;
 
-            try {
-                // Hide navigation and scroll to top button for PDF
-                const nav = document.querySelector('nav');
-                const scrollBtn = document.getElementById('scrollToTop');
-                nav.style.display = 'none';
-                scrollBtn.style.display = 'none';
+    try {
+        // Wait a moment for the loading state to render
+        await new Promise(resolve => setTimeout(resolve, 100));
 
-                // Capture the body content
-                const canvas = await html2canvas(document.body, {
-                    scale: 2,
-                    useCORS: true,
-                    logging: false,
-                    windowWidth: document.body.scrollWidth,
-                    windowHeight: document.body.scrollHeight
-                });
+        // Capture the entire body
+        const canvas = await html2canvas(document.body, {
+            scale: 2,
+            useCORS: true,
+            allowTaint: true,
+            logging: false,
+            windowWidth: 1200,
+            windowHeight: document.body.scrollHeight,
+            backgroundColor: '#f8fafc'
+        });
 
-                // Calculate PDF dimensions
-                const imgWidth = 210; // A4 width in mm
-                const pageHeight = 297; // A4 height in mm
-                const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                let heightLeft = imgHeight;
-                
-                const pdf = new jsPDF('p', 'mm', 'a4');
-                let position = 0;
+        // Calculate PDF dimensions (A4 size)
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgWidth = 210; // A4 width in mm
+        const pageHeight = 297; // A4 height in mm
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
 
-                // Add first page
-                pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
+        // Add first page
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+        heightLeft -= pageHeight;
 
-                // Add additional pages if content exceeds one page
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    pdf.addPage();
-                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
-
-                // Save the PDF
-                pdf.save('Rakshit_Soral_Resume.pdf');
-
-                // Restore navigation and scroll button
-                nav.style.display = '';
-                scrollBtn.style.display = '';
-
-            } catch (error) {
-                console.error('Error generating PDF:', error);
-                alert('Failed to generate PDF. Please try again.');
-            } finally {
-                // Restore button state
-                downloadBtn.innerHTML = originalIcon;
-                downloadBtn.disabled = false;
-                lucide.createIcons();
-            }
+        // Add additional pages if needed
+        while (heightLeft > 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+            heightLeft -= pageHeight;
         }
+
+        // Save the PDF
+        pdf.save('Rakshit_Soral_Resume.pdf');
+        
+        console.log('PDF generated successfully');
+
+    } catch (error) {
+        console.error('Error generating PDF:', error);
+        alert('Failed to generate PDF. Please try again or use your browser\'s print function (Ctrl/Cmd + P) and select "Save as PDF".');
+    } finally {
+        // Restore button state
+        downloadBtn.innerHTML = originalContent;
+        downloadBtn.disabled = false;
+        // Re-initialize lucide icons (if using lucide)
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+}
+
+// Initialize the download button on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadBtn = document.getElementById('downloadPDF');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', downloadResumePDF);
+        console.log('PDF download button initialized');
+    } else {
+        console.error('Download button not found on page load');
+    }
+});
 
         // Scroll animations using Intersection Observer
         document.addEventListener('DOMContentLoaded', () => {
