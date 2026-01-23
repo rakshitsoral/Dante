@@ -4,6 +4,7 @@ body_class: blog
 featured_image: Generative AI strategies for AI Search.jpg
 description: Generative Engine Optimization (GEO) strategies are the practice of making your content the preferred source for AI models. You want ChatGPT, Gemini, and Perplexity to cite you. Success means moving from "click-through rates" to "citation rates."
 excerpt: In this article, I'll share some of my observations of how to execute GEO in 2025, including insights from Kevin Indig's latest research on AI search visibility.
+updated: 2026-01-20
 author: Rakshit Soral
 date: 2025-01-10
 ---

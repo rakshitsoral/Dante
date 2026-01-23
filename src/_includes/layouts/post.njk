@@ -2,9 +2,14 @@
 layout: default
 ---
 
+<!-- Reading Progress Bar -->
+<div id="reading-progress" class="fixed top-0 left-0 w-full h-1 z-[100]">
+    <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-purple-500 w-0 transition-all duration-150"></div>
+</div>
+
 <article class="flex flex-col items-center">
     <!-- Sticky Social Share Bar -->
-    <div id="share-bar" class="sticky top-0 z-50 w-full bg-inherit shadow-sm py-4 transition-colors duration-300">
+    <div id="share-bar" class="sticky top-1 z-50 w-full bg-inherit shadow-sm py-4 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6 flex items-center justify-center gap-3">
             <span class="text-sm font-medium text-gray-300">Share:</span>
             <div class="flex gap-2">
@@ -33,43 +38,57 @@ layout: default
     <img src="{{ featured_image | url }}" loading="lazy" alt="{{ title }}" {% if featured_image_classes %}class="{{ featured_image_classes }}"{% endif %}>
     {% endif %}
 
-    <!-- Mobile TOC (visible on small screens) -->
-    <nav id="toc-mobile" class="lg:hidden w-full max-w-3xl mx-auto px-6 mt-8">
-        <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-4">
-            <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-3">Table of Contents</h2>
-            <ul id="toc-list-mobile" class="space-y-2 text-sm"></ul>
-        </div>
-    </nav>
-
     <!-- Main Content Area with Desktop TOC -->
-    <div class="w-full max-w-7xl mx-auto px-6 lg:grid lg:grid-cols-[1fr_minmax(0,_48rem)_280px] lg:gap-8">
+    <div class="w-full relative">
         
-        <!-- Left Spacer (for balance) -->
-        <div class="hidden lg:block"></div>
+        <!-- Mobile TOC (Collapsible) -->
+        <details id="toc-mobile" class="lg:hidden w-full max-w-3xl mx-auto mt-8 mb-6">
+            <summary class="cursor-pointer border border-gray-700 rounded-lg bg-gray-900/50 p-4 list-none flex items-center justify-between">
+                <span class="text-sm font-semibold text-gray-300 uppercase tracking-wide">Table of Contents</span>
+                <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 toc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </summary>
+            <div class="border border-t-0 border-gray-700 rounded-b-lg bg-gray-900/50 p-4 pt-0">
+                <ul id="toc-list-mobile" class="space-y-2 text-sm mt-3"></ul>
+            </div>
+        </details>
 
-        <!-- Center Content -->
-        <div class="writing">
-            <header class="py-12 text-center">
-                <h1 class="mb-3 text-4xl font-bold">{{ title }}</h1>
-                <time class="text-gray-400 text-sm">{{ page.date | readableDate }}</time>
-                <div id="share-buttons" class="mt-4"></div>
-            </header>
+        <!-- Grid Layout: Content + Sidebar -->
+        <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-8">
+            
+            <!-- Left Spacer -->
+            <div class="hidden lg:block"></div>
 
-            <!-- Blog Content -->
-            <div id="article-content">
-                {{ content | safe }}
+            <!-- Center Content -->
+            <div class="writing">
+                <header class="py-12 text-center">
+                    <h1 class="mb-3 text-4xl font-bold">{{ title }}</h1>
+                    <div class="flex flex-col items-center gap-1">
+                        <time class="text-gray-400 text-sm">{{ page.date | readableDate }}</time>
+                        {% if updated %}
+                        <time class="text-gray-500 text-xs italic">Updated on {{ updated | readableDate }}</time>
+                        {% endif %}
+                    </div>
+                    <div id="share-buttons" class="mt-4"></div>
+                </header>
+
+                <!-- Blog Content -->
+                <div id="article-content">
+                    {{ content | safe }}
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Desktop TOC -->
+             <aside class="hidden lg:block">
+                 <nav id="toc-desktop" class="sticky top-28">
+                    <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-5 ml-4 xl:ml-6">
+                        <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-4">Table of Contents</h2>
+                        <ul id="toc-list-desktop" class="space-y-2 text-sm max-h-[calc(100vh-12rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"></ul>
+                    </div>
+                </nav>
             </div>
         </div>
-
-        <!-- Right Sidebar: Desktop TOC -->
-        <aside class="hidden lg:block">
-            <nav id="toc-desktop" class="sticky top-24">
-                <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-5">
-                    <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-4">Table of Contents</h2>
-                    <ul id="toc-list-desktop" class="space-y-2 text-sm max-h-[calc(100vh-12rem)] overflow-y-auto"></ul>
-                </div>
-            </nav>
-        </aside>
     </div>
 
     <!-- Author Section -->
@@ -89,8 +108,68 @@ layout: default
     </section>
 </article>
 
+<style>
+/* Collapsible TOC chevron rotation */
+details[open] .toc-chevron {
+    transform: rotate(180deg);
+}
+
+/* Hide default marker */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Active TOC link highlight */
+.toc-active {
+    color: white !important;
+    font-weight: 500;
+    border-left: 2px solid #3b82f6;
+    padding-left: 8px;
+    margin-left: -10px;
+}
+
+/* Smooth scrollbar for TOC */
+#toc-list-desktop::-webkit-scrollbar {
+    width: 4px;
+}
+#toc-list-desktop::-webkit-scrollbar-track {
+    background: transparent;
+}
+#toc-list-desktop::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 2px;
+}
+</style>
+
 <script>
 (function() {
+    // Reading Progress Bar
+    function updateProgressBar() {
+        const article = document.getElementById('article-content');
+        if (!article) return;
+        
+        const articleRect = article.getBoundingClientRect();
+        const articleTop = window.scrollY + articleRect.top;
+        const articleHeight = article.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        
+        // Calculate progress relative to article
+        const start = articleTop - windowHeight;
+        const end = articleTop + articleHeight;
+        const current = scrollPosition;
+        
+        let progress = 0;
+        if (current > start) {
+            progress = Math.min(((current - start) / (end - start)) * 100, 100);
+        }
+        
+        document.getElementById('progress-bar').style.width = progress + '%';
+    }
+    
+    window.addEventListener('scroll', updateProgressBar, { passive: true });
+    updateProgressBar();
+
     // Social Share Logic
     const pageUrl = encodeURIComponent(window.location.href);
     const pageTitle = encodeURIComponent(document.title);
@@ -118,47 +197,79 @@ layout: default
         const tocMobile = document.getElementById('toc-list-mobile');
 
         if (headings.length === 0) {
-            document.getElementById('toc-desktop').style.display = 'none';
-            document.getElementById('toc-mobile').style.display = 'none';
+            const desktopNav = document.getElementById('toc-desktop');
+            const mobileDetails = document.getElementById('toc-mobile');
+            if (desktopNav) desktopNav.style.display = 'none';
+            if (mobileDetails) mobileDetails.style.display = 'none';
             return;
         }
 
         headings.forEach((heading, index) => {
-            // Generate ID if not present
             if (!heading.id) {
                 heading.id = 'heading-' + index + '-' + heading.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             }
 
             const isH3 = heading.tagName === 'H3';
-            const listItem = document.createElement('li');
-            listItem.className = isH3 ? 'ml-4' : '';
+            
+            // Desktop TOC item
+            const desktopItem = document.createElement('li');
+            desktopItem.className = isH3 ? 'ml-4' : '';
+            const desktopLink = document.createElement('a');
+            desktopLink.href = '#' + heading.id;
+            desktopLink.textContent = heading.textContent;
+            desktopLink.className = 'block py-1.5 text-gray-400 hover:text-white transition-colors duration-200 leading-snug' + (isH3 ? ' text-xs' : ' text-sm');
+            desktopLink.dataset.headingId = heading.id;
+            desktopItem.appendChild(desktopLink);
+            tocDesktop.appendChild(desktopItem);
 
-            const link = document.createElement('a');
-            link.href = '#' + heading.id;
-            link.textContent = heading.textContent;
-            link.className = 'block py-1 text-gray-400 hover:text-white transition-colors duration-200 leading-snug' + (isH3 ? ' text-xs' : '');
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                history.pushState(null, null, '#' + heading.id);
-            });
-
-            listItem.appendChild(link);
-            tocDesktop.appendChild(listItem.cloneNode(true));
-            tocMobile.appendChild(listItem);
+            // Mobile TOC item
+            const mobileItem = document.createElement('li');
+            mobileItem.className = isH3 ? 'ml-4' : '';
+            const mobileLink = document.createElement('a');
+            mobileLink.href = '#' + heading.id;
+            mobileLink.textContent = heading.textContent;
+            mobileLink.className = 'block py-1 text-gray-400 hover:text-white transition-colors duration-200 leading-snug' + (isH3 ? ' text-xs' : ' text-sm');
+            mobileItem.appendChild(mobileLink);
+            tocMobile.appendChild(mobileItem);
         });
 
-        // Re-attach event listeners for cloned desktop items
-        tocDesktop.querySelectorAll('a').forEach((link, index) => {
+        // Smooth scroll for all TOC links
+        document.querySelectorAll('#toc-list-desktop a, #toc-list-mobile a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                headings[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                history.pushState(null, null, link.getAttribute('href'));
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    history.pushState(null, null, '#' + targetId);
+                }
             });
         });
+
+        // Active heading highlight on scroll
+        function highlightActiveHeading() {
+            const scrollPos = window.scrollY + 150;
+            let activeId = null;
+
+            headings.forEach(heading => {
+                if (heading.offsetTop <= scrollPos) {
+                    activeId = heading.id;
+                }
+            });
+
+            document.querySelectorAll('#toc-list-desktop a').forEach(link => {
+                if (link.dataset.headingId === activeId) {
+                    link.classList.add('toc-active');
+                } else {
+                    link.classList.remove('toc-active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveHeading, { passive: true });
+        highlightActiveHeading();
     }
 
-    // Run on DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', generateTOC);
     } else {
