@@ -3,371 +3,600 @@ layout: default
 title: Blog
 description: Blogs and Tips on Life, Web Development, Demand Gen, and Marketing.
 pagination:
-    data: collections.posts
-    size: 12
-    alias: posts
+  data: collections.posts
+  size: 12
+  alias: posts
 ---
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  /* Animated Background Orbs */
-  .bg-orbs {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-  }
+/* Animated Background */
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
 
-  .orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.2;
-    animation: float 20s ease-in-out infinite;
-  }
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: float 25s ease-in-out infinite;
+}
 
-  .orb-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #0E091D 0%, transparent 70%);
-    top: -200px;
-    left: -200px;
-  }
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #BF870B 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+}
 
-  .orb-2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #0E091D 0%, transparent 70%);
-    top: 30%;
-    right: -150px;
-    animation: float 25s ease-in-out infinite reverse;
-  }
+.orb-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #28A745 0%, transparent 70%);
+  top: 40%;
+  right: -200px;
+  animation: float 30s ease-in-out infinite reverse;
+}
 
-  .orb-3 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #0E091D 0%, transparent 70%);
-    bottom: -100px;
-    left: 20%;
-    animation: float 30s ease-in-out infinite;
-  }
+.orb-3 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #EC4899 0%, transparent 70%);
+  bottom: -150px;
+  left: 30%;
+  animation: float 35s ease-in-out infinite;
+}
 
-  @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
-  }
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -40px) scale(1.15); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
+}
 
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* Hero Section */
+.blog-hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 100px 20px 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  /* Hero Section */
-  .blog-hero {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 80px 20px 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.hero-badge {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 50px;
+  background: rgba(191, 135, 11, 0.15);
+  border: 1px solid rgba(191, 135, 11, 0.3);
+  color: #BF870B;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease;
+}
 
-  .hero-badge {
-    display: inline-block;
-    padding: 8px 20px;
-    border-radius: 50px;
-    background-color: rgba(191, 135, 11, 0.1);
-    color: #BF870B;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
+.blog-hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: #fff;
+  animation: fadeInUp 0.7s ease;
+}
 
-  .blog-hero h1 {
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    color: #fff;
-  }
+.blog-hero p {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  color: #d1d5db;
+  max-width: 750px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease;
+}
 
-  .blog-hero p {
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    color: #d1d5db;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  /* Blog Section */
-  .blog {
-    position: relative;
-    z-index: 1;
-    padding: 20px 0 80px;
-  }
-
-  /* Card Grid */
-  .card_list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 32px;
-    margin-bottom: 60px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-  }
-
-  @media (max-width: 768px) {
-    .card_list {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  }
-
-  /* Card Styles */
-  .card {
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    animation: slideUp 0.6s ease-out forwards;
+    transform: translateY(30px);
   }
-
-  .card:nth-child(1) { animation-delay: 0.1s; }
-  .card:nth-child(2) { animation-delay: 0.2s; }
-  .card:nth-child(3) { animation-delay: 0.3s; }
-  .card:nth-child(4) { animation-delay: 0.4s; }
-  .card:nth-child(5) { animation-delay: 0.5s; }
-  .card:nth-child(6) { animation-delay: 0.6s; }
-  .card:nth-child(7) { animation-delay: 0.7s; }
-  .card:nth-child(8) { animation-delay: 0.8s; }
-  .card:nth-child(9) { animation-delay: 0.9s; }
-  .card:nth-child(10) { animation-delay: 1s; }
-  .card:nth-child(11) { animation-delay: 1.1s; }
-  .card:nth-child(12) { animation-delay: 1.2s; }
-
-  .card_link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    height: 100%;
-    position: relative;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .card_link:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+/* Featured Article */
+.featured-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 32px;
+  background: #BF870B;
+  border-radius: 2px;
+}
+
+.featured-card {
+  background: rgba(20, 20, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(191, 135, 11, 0.3);
+  border-color: rgba(191, 135, 11, 0.3);
+}
+
+.featured-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-card:hover .featured-image {
+  transform: scale(1.08);
+}
+
+.featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(191, 135, 11, 0.1);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.featured-card:hover .featured-overlay {
+  opacity: 1;
+}
+
+.featured-content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background-color: rgba(191, 135, 11, 0.15);
+  color: #BF870B;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.featured-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+}
+
+.featured-card:hover .featured-title {
+  color: #BF870B;
+}
+
+.featured-description {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.featured-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-date::before {
+  content: '📅';
+  font-size: 14px;
+}
+
+.featured-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.featured-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Articles Grid */
+.articles-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.article-card {
+  background: rgba(20, 20, 30, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: slideUp 0.6s ease forwards;
+}
+
+.article-card:nth-child(1) { animation-delay: 0.1s; }
+.article-card:nth-child(2) { animation-delay: 0.15s; }
+.article-card:nth-child(3) { animation-delay: 0.2s; }
+.article-card:nth-child(4) { animation-delay: 0.25s; }
+.article-card:nth-child(5) { animation-delay: 0.3s; }
+.article-card:nth-child(6) { animation-delay: 0.35s; }
+.article-card:nth-child(7) { animation-delay: 0.4s; }
+.article-card:nth-child(8) { animation-delay: 0.45s; }
+.article-card:nth-child(9) { animation-delay: 0.5s; }
+.article-card:nth-child(10) { animation-delay: 0.55s; }
+.article-card:nth-child(11) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-
-  .card_image_wrapper {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 16 / 10;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .card_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(191, 135, 11, 0.25);
+  border-color: rgba(191, 135, 11, 0.25);
+}
+
+.article-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.article-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.1);
+}
+
+.article-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.article-card:hover .article-overlay {
+  opacity: 0.9;
+}
+
+.article-content {
+  padding: 28px;
+}
+
+.article-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+.article-card:hover .article-title {
+  color: #28A745;
+}
+
+.article-date {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.article-date::before {
+  content: '📅';
+  font-size: 13px;
+}
+
+.article-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.tag:nth-child(5n+1) {
+  background-color: rgba(191, 135, 11, 0.15);
+  color: #BF870B;
+  border: 1px solid rgba(191, 135, 11, 0.3);
+}
+
+.tag:nth-child(5n+2) {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #28A745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.tag:nth-child(5n+3) {
+  background-color: rgba(22, 163, 74, 0.15);
+  color: #16A34A;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.tag:nth-child(5n+4) {
+  background-color: rgba(236, 72, 153, 0.15);
+  color: #EC4899;
+  border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.tag:nth-child(5n+5) {
+  background-color: rgba(185, 28, 28, 0.15);
+  color: #B91C1C;
+  border: 1px solid rgba(185, 28, 28, 0.3);
+}
+
+/* CTA Section */
+.cta-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 100px auto 80px;
+  padding: 0 20px;
+}
+
+.cta-card {
+  background: rgba(191, 135, 11, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(191, 135, 11, 0.3);
+  border-radius: 28px;
+  padding: 64px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(191, 135, 11, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #28A745;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.3);
+  border: 2px solid transparent;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(40, 167, 69, 0.5);
+  background: #BF870B;
+}
+
+/* Pagination */
+.modern-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.pagination-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  min-width: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: rgba(20, 20, 30, 0.3);
+  border: 2px solid transparent;
+}
+
+.pagination-link:hover {
+  background: rgba(191, 135, 11, 0.2);
+  color: #BF870B;
+  border-color: rgba(191, 135, 11, 0.3);
+}
+
+.pagination-link--current {
+  background: #BF870B;
+  color: #0E091D;
+  border-color: #BF870B;
+  box-shadow: 0 4px 20px rgba(191, 135, 11, 0.4);
+}
+
+.pagination-dots {
+  color: #6b7280;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .featured-card {
+    grid-template-columns: 1fr;
   }
-
-  .card_link:hover .card_image {
-    transform: scale(1.1);
+  
+  .featured-content {
+    padding: 32px 28px;
   }
-
-  .card_image_overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
+  
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
   }
-
-  .card_link:hover .card_image_overlay {
-    opacity: 0.8;
+  
+  .cta-card {
+    padding: 48px 28px;
   }
+}
 
-  .card_content {
-    padding: 24px;
+@media (max-width: 640px) {
+  .blog-hero {
+    padding: 60px 20px 50px;
   }
-
-  .card_title {
+  
+  .section-title {
     font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    line-height: 1.3;
-    color: #fff;
-    transition: all 0.3s ease;
   }
-
-  .card_link:hover .card_title {
-    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  
+  .card-grid {
+    grid-template-columns: 1fr;
   }
-
-  .card_date {
-    display: flex;
-    align-items: center;
-    color: #9ca3af;
-    font-size: 0.9rem;
-    margin-bottom: 16px;
+  
+  .article-content {
+    padding: 20px;
   }
-
-  .card_date::before {
-    content: '';
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-right: 8px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
-  }
-
-  .card_tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 50px;
-    backdrop-filter: blur(10px);
-  }
-
-  .tag:nth-child(5n+1) {
-    background-color: rgba(191, 135, 11, 0.15);
-    color: #BF870B;
-    border: 1px solid rgba(191, 135, 11, 0.3);
-  }
-
-  .tag:nth-child(5n+2) {
-    background-color: rgba(40, 167, 69, 0.15);
-    color: #28A745;
-    border: 1px solid rgba(40, 167, 69, 0.3);
-  }
-
-  .tag:nth-child(5n+3) {
-    background-color: rgba(22, 163, 74, 0.15);
-    color: #16A34A;
-    border: 1px solid rgba(22, 163, 74, 0.3);
-  }
-
-  .tag:nth-child(5n+4) {
-    background-color: rgba(236, 72, 153, 0.15);
-    color: #EC4899;
-    border: 1px solid rgba(236, 72, 153, 0.3);
-  }
-
-  .tag:nth-child(5n+5) {
-    background-color: rgba(185, 28, 28, 0.15);
-    color: #B91C1C;
-    border: 1px solid rgba(185, 28, 28, 0.3);
-  }
-
-  /* Modern Pagination Styles */
-  .modern-pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 60px 0;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pagination-btn {
-    width: 48px;
-    height: 48px;
-    border: 2px solid rgba(191, 135, 11, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .pagination-btn:hover:not(:disabled) {
-    background-color: #419E54;
-    border-color: #BF870B;
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(191, 135, 11, 0.3);
-  }
-
-  .pagination-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    border-color: #333;
-  }
-
-  .pagination-btn-icon {
-    width: 24px;
-    height: 24px;
-    stroke: #9ca3af;
-    transition: stroke 0.3s ease;
-  }
-
-  .pagination-btn:hover:not(:disabled) .pagination-btn-icon {
-    stroke: #0E091D;
-  }
-
-  .pagination-btn:disabled .pagination-btn-icon {
-    stroke: #555;
-  }
-
-  .pagination-link {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-    color: #d1d5db;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-
-  .pagination-link:hover {
-    background-color: rgba(191, 135, 11, 0.2);
-    color: #BF870B;
-    transform: scale(1.1);
-  }
-
-  .pagination-link--current {
-    background-color: #419E54;
-    color: #0E091D;
-    box-shadow: 0 4px 15px rgba(191, 135, 11, 0.3);
-  }
-
-  .pagination-dots {
-    color: #6b7280;
-    font-size: 18px;
-    font-weight: bold;
-  }
+}
 </style>
 
 <!-- Animated Background -->
@@ -377,121 +606,137 @@ pagination:
   <div class="orb orb-3"></div>
 </div>
 
-<!-- Blog Section -->
-<section class="blog">
-  <div class="card_list">
-    {%- for post in posts | reverse -%}
-      <article class="card">
-        <a href="{{ post.url | url }}" class="card_link">
-          <div class="card_image_wrapper">
-            <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="card_image" />
-            <div class="card_image_overlay"></div>
+<!-- Hero Section -->
+<section class="blog-hero">
+  <div class="hero-badge">Resources</div>
+  <h1>Evolve. Expand. Advance.</h1>
+  <p>{{ description }}</p>
+</section>
+
+<!-- Featured Article (First Post from all posts) -->
+{%- set allPosts = collections.posts | reverse -%}
+{%- set featuredPost = allPosts[0] -%}
+{% if featuredPost %}
+<section class="featured-section">
+  <h2 class="section-title">Featured Article</h2>
+  <a href="{{ featuredPost.url | url }}" class="featured-link">
+    <article class="featured-card">
+      <div class="featured-image-wrapper">
+        <img src="{{ featuredPost.data.featured_image | url }}" alt="{{ featuredPost.data.title }}" class="featured-image" />
+        <div class="featured-overlay"></div>
+      </div>
+      <div class="featured-content">
+        <span class="featured-badge">Featured</span>
+        <h3 class="featured-title">{{ featuredPost.data.title }}</h3>
+        {% if featuredPost.data.description %}
+        <p class="featured-description">{{ featuredPost.data.description }}</p>
+        {% endif %}
+        <div class="featured-meta">
+          <span class="featured-date">{{ featuredPost.date | readableDate }}</span>
+        </div>
+        {% if featuredPost.data.tags and featuredPost.data.tags.length %}
+        <ul class="featured-tags">
+          {%- for tag in featuredPost.data.tags | slice(0, 3) -%}
+          <li class="tag">{{ tag }}</li>
+          {%- endfor -%}
+        </ul>
+        {% endif %}
+      </div>
+    </article>
+  </a>
+</section>
+{% endif %}
+
+<!-- Latest Articles (Remaining Posts) -->
+<section class="articles-section">
+  <h2 class="section-title">Latest Articles</h2>
+  <div class="card-grid">
+    {%- for post in allPosts -%}
+      {%- if loop.index > 1 -%}
+      <article class="article-card">
+        <a href="{{ post.url | url }}" class="article-link">
+          <div class="article-image-wrapper">
+            <img src="{{ post.data.featured_image | url }}" alt="{{ post.data.title }}" class="article-image" />
+            <div class="article-overlay"></div>
           </div>
-          <div class="card_content">
-            <h3 class="card_title">{{ post.data.title }}</h3>
-            <p class="card_date">{{ post.date | readableDate }}</p>
+          <div class="article-content">
+            <h3 class="article-title">{{ post.data.title }}</h3>
+            <p class="article-date">{{ post.date | readableDate }}</p>
             {% if post.data.tags and post.data.tags.length %}
-              <ul class="card_tags">
-                {%- for tag in post.data.tags -%}
-                  <li class="tag">{{ tag }}</li>
-                {%- endfor -%}
-              </ul>
+            <ul class="article-tags">
+              {%- for tag in post.data.tags | slice(0, 3) -%}
+              <li class="tag">{{ tag }}</li>
+              {%- endfor -%}
+            </ul>
             {% endif %}
           </div>
         </a>
       </article>
+      {%- endif -%}
     {%- endfor -%}
   </div>
+</section>
 
-  <!-- Modern Pagination Component -->
-  <div class="modern-pagination">
-    <!-- Previous Button -->
-    {% if pagination.href.previous %}
-      <a href="{{ pagination.href.previous }}" class="pagination-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
-      </a>
-    {% else %}
-      <button class="pagination-btn" disabled>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-        </svg>
-      </button>
-    {% endif %}
-
-    <!-- Page Numbers -->
-    {%- set currentPage = pagination.pageNumber -%}
-    {%- set totalPages = pagination.pages.length -%}
-
-    {%- if totalPages <= 7 -%}
-      {# Show all pages if 7 or fewer #}
-      {%- for pageEntry in pagination.pages -%}
-        <a 
-          href="{{ pagination.hrefs[loop.index0] }}" 
-          class="pagination-link {% if page.url == pagination.hrefs[loop.index0] %}pagination-link--current{% endif %}"
-        >
-          {{ loop.index }}
-        </a>
-      {%- endfor -%}
-    {%- else -%}
-      {# Show smart pagination for more than 7 pages #}
-      
-      {# Always show first page #}
-      <a 
-        href="{{ pagination.hrefs[0] }}" 
-        class="pagination-link {% if currentPage == 0 %}pagination-link--current{% endif %}"
-      >
-        1
-      </a>
-
-      {# Show dots or pages near current #}
-      {%- if currentPage > 2 -%}
-        <span class="pagination-dots">...</span>
-      {%- endif -%}
-
-      {# Show pages around current page #}
-      {%- for pageEntry in pagination.pages -%}
-        {%- set pageIndex = loop.index0 -%}
-        {%- if pageIndex > 0 and pageIndex < totalPages - 1 -%}
-          {%- if pageIndex >= currentPage - 1 and pageIndex <= currentPage + 1 -%}
-            <a 
-              href="{{ pagination.hrefs[pageIndex] }}" 
-              class="pagination-link {% if currentPage == pageIndex %}pagination-link--current{% endif %}"
-            >
-              {{ loop.index }}
-            </a>
-          {%- endif -%}
-        {%- endif -%}
-      {%- endfor -%}
-
-      {# Show dots before last page #}
-      {%- if currentPage < totalPages - 3 -%}
-        <span class="pagination-dots">...</span>
-      {%- endif -%}
-
-      {# Always show last page #}
-      <a 
-        href="{{ pagination.hrefs[totalPages - 1] }}" 
-        class="pagination-link {% if currentPage == totalPages - 1 %}pagination-link--current{% endif %}"
-      >
-        {{ totalPages }}
-      </a>
-    {%- endif -%}
-
-    <!-- Next Button -->
-    {% if pagination.href.next %}
-      <a href="{{ pagination.href.next }}" class="pagination-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-      </a>
-    {% else %}
-      <button class="pagination-btn" disabled>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pagination-btn-icon">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-        </svg>
-      </button>
-    {% endif %}
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-card">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Get Started?</h2>
+      <p class="cta-description">Explore our resources and discover insights that will help you grow.</p>
+      <a href="/contact" class="cta-button">Get in Touch</a>
+    </div>
   </div>
 </section>
+
+<!-- Pagination -->
+<div class="modern-pagination">
+  {%- set currentPage = pagination.pageNumber -%}
+  {%- set totalPages = pagination.pages.length -%}
+
+  {%- if totalPages <= 7 -%}
+    {%- for pageEntry in pagination.pages -%}
+      <a 
+        href="{{ pagination.hrefs[loop.index0] }}" 
+        class="pagination-link {% if page.url == pagination.hrefs[loop.index0] %}pagination-link--current{% endif %}"
+      >
+        {{ loop.index }}
+      </a>
+    {%- endfor -%}
+  {%- else -%}
+    <a 
+      href="{{ pagination.hrefs[0] }}" 
+      class="pagination-link {% if currentPage == 0 %}pagination-link--current{% endif %}"
+    >
+      1
+    </a>
+
+    {%- if currentPage > 2 -%}
+      <span class="pagination-dots">...</span>
+    {%- endif -%}
+
+    {%- for pageEntry in pagination.pages -%}
+      {%- set pageIndex = loop.index0 -%}
+      {%- if pageIndex > 0 and pageIndex < totalPages - 1 -%}
+        {%- if pageIndex >= currentPage - 1 and pageIndex <= currentPage + 1 -%}
+          <a 
+            href="{{ pagination.hrefs[pageIndex] }}" 
+            class="pagination-link {% if currentPage == pageIndex %}pagination-link--current{% endif %}"
+          >
+            {{ loop.index }}
+          </a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- if currentPage < totalPages - 3 -%}
+      <span class="pagination-dots">...</span>
+    {%- endif -%}
+
+    <a 
+      href="{{ pagination.hrefs[totalPages - 1] }}" 
+      class="pagination-link {% if currentPage == totalPages - 1 %}pagination-link--current{% endif %}"
+    >
+      {{ totalPages }}
+    </a>
+  {%- endif -%}
+</div>

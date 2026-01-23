@@ -70,9 +70,8 @@ title: Demand Gen Marketing CV Printable A4
                     </div>
 
                     <!-- Name (Massive Typography) -->
-                    <h1 class="font-['DM_Serif_Display'] text-5xl md:text-7xl lg:text-8xl text-slate-900 leading-[0.9] tracking-tight mb-6 animate-fadeInUp">
-                        Rakshit Soral
-                    </h1>
+                           <h1 class="font-display text-4xl sm:text-3xl"><span class="highlight-yellow px-4 inline-block relative">Rakshit Soral</span></h1>
+
 
                     <!-- Title -->
                     <p class="text-2xl md:text-3xl text-slate-600 font-light mb-6 animate-fadeInUp delay-200">
@@ -126,9 +125,8 @@ title: Demand Gen Marketing CV Printable A4
                     </div>
                 </div>
             </div>
-
-            <!-- Handwritten Accent - Repositioned -->
-            <div class="hidden xl:block absolute -right-8 bottom-12 rotate-[-8deg] pointer-events-none animate-float">
+<!-- Handwritten Accent - Repositioned -->
+<div class="hidden xl:block absolute -right-8 bottom-12 rotate-[-8deg] pointer-events-none animate-float">
                 <p class="font-['Reenie_Beanie'] text-4xl text-slate-400">let's create something great</p>
                 <svg class="w-8 h-8 text-slate-400 ml-auto mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -138,13 +136,12 @@ title: Demand Gen Marketing CV Printable A4
     </header>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 md:py-28 relative">
+    <section id="experience" class="py-20 md:py-28 relative overflow-hidden">
         <div class="max-w-5xl mx-auto px-6">
             <!-- Section Header -->
             <div class="mb-16 text-center">
                 <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Professional Journey</span>
                 <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Work Experience</h2>
-                <p class="text-slate-600 font-light max-w-2xl mx-auto">Building brands and driving growth through strategic marketing initiatives</p>
             </div>
 
             <!-- Timeline Container -->
@@ -366,7 +363,6 @@ title: Demand Gen Marketing CV Printable A4
             <div class="mb-16 text-center">
                 <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Core Competencies</span>
                 <h2 class="font-['DM_Serif_Display'] text-4xl md:text-6xl text-white tracking-tight mb-4">Skills & Expertise</h2>
-                <p class="text-slate-200 font-light max-w-2xl mx-auto text-lg">Comprehensive marketing toolkit spanning strategy, execution, and analysis</p>
             </div>
 
             <!-- Skills Grid with Enhanced Cards -->
@@ -541,13 +537,12 @@ title: Demand Gen Marketing CV Printable A4
     </section>
 
     <!-- Certifications Section -->
-    <section class="py-20 md:py-28 relative">
+    <section class="py-20 md:py-28 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6">
             <!-- Section Header -->
             <div class="mb-16 text-center">
                 <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Professional Development</span>
                 <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Certifications</h2>
-                <p class="text-slate-600 font-light max-w-2xl mx-auto">Industry-recognized credentials and continuous learning</p>
             </div>
 
             <!-- Certification Badges Grid -->
@@ -606,7 +601,6 @@ title: Demand Gen Marketing CV Printable A4
             <div class="mb-16 text-center">
                 <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Academic Background</span>
                 <h2 class="font-['DM_Serif_Display'] text-4xl md:text-6xl text-white tracking-tight mb-4">Education</h2>
-                <p class="text-slate-200 font-light max-w-2xl mx-auto text-lg">Strong academic foundation in technology and engineering</p>
             </div>
 
             <!-- Enhanced Education Card -->
@@ -736,7 +730,7 @@ title: Demand Gen Marketing CV Printable A4
         // Initialize Lucide icons
         lucide.createIcons();
 
-       // PDF Download Functionality - CORRECTED VERSION
+      // PDF Download Functionality - CORRECTED VERSION WITH HEADER/FOOTER HIDING
 async function downloadResumePDF() {
     const { jsPDF } = window.jspdf;
     
@@ -752,10 +746,33 @@ async function downloadResumePDF() {
     downloadBtn.disabled = true;
 
     try {
-        // Wait a moment for the loading state to render
+        // Hide elements that shouldn't be in PDF
+        const elementsToHide = [
+            document.querySelector('nav'),
+            document.querySelector('header nav'),
+            document.getElementById('scrollToTop'),
+            document.querySelector('.handwritten-accent'),
+            document.querySelector('[class*="cookie"]'),
+            document.querySelector('[class*="banner"]'),
+            // Add any other selectors for elements you want to hide
+        ];
+
+        // Store original display values and hide elements
+        const originalDisplayValues = [];
+        elementsToHide.forEach(element => {
+            if (element) {
+                originalDisplayValues.push({
+                    element: element,
+                    display: element.style.display
+                });
+                element.style.display = 'none';
+            }
+        });
+
+        // Wait a moment for elements to hide
         await new Promise(resolve => setTimeout(resolve, 100));
 
-        // Capture the entire body
+        // Capture the body content
         const canvas = await html2canvas(document.body, {
             scale: 2,
             useCORS: true,
@@ -763,7 +780,15 @@ async function downloadResumePDF() {
             logging: false,
             windowWidth: 1200,
             windowHeight: document.body.scrollHeight,
-            backgroundColor: '#f8fafc'
+            backgroundColor: '#f8fafc',
+            // Ignore elements with specific attributes
+            ignoreElements: function(element) {
+                // Ignore navigation, fixed headers, and other unwanted elements
+                if (element.tagName === 'NAV') return true;
+                if (element.classList.contains('no-print')) return true;
+                if (element.id === 'downloadPDF') return true;
+                return false;
+            }
         });
 
         // Calculate PDF dimensions (A4 size)
@@ -792,9 +817,27 @@ async function downloadResumePDF() {
         
         console.log('PDF generated successfully');
 
+        // Restore hidden elements
+        originalDisplayValues.forEach(item => {
+            item.element.style.display = item.display;
+        });
+
     } catch (error) {
         console.error('Error generating PDF:', error);
         alert('Failed to generate PDF. Please try again or use your browser\'s print function (Ctrl/Cmd + P) and select "Save as PDF".');
+        
+        // Make sure to restore elements even on error
+        const elementsToRestore = [
+            document.querySelector('nav'),
+            document.querySelector('header nav'),
+            document.getElementById('scrollToTop'),
+            document.querySelector('.handwritten-accent'),
+        ];
+        elementsToRestore.forEach(element => {
+            if (element && element.style.display === 'none') {
+                element.style.display = '';
+            }
+        });
     } finally {
         // Restore button state
         downloadBtn.innerHTML = originalContent;
@@ -816,6 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Download button not found on page load');
     }
 });
+
 
         // Scroll animations using Intersection Observer
         document.addEventListener('DOMContentLoaded', () => {
