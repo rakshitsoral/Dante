@@ -12,7 +12,6 @@
         z-index: -2;
     }
     &:after {
-        @apply bg-sitebg;
         content: "";
         display: block;
         position: absolute;

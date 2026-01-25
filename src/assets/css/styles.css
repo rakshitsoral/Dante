@@ -409,3 +409,87 @@ background-color: #FF6600
   background-color: #8c0615;
   border-color: #8c0615;
 }
+/* CTA Section */
+.cta-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 100px auto 80px;
+  padding: 0 20px;
+}
+
+.cta-card {
+  background: rgba(191, 135, 11, 0.1);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(191, 135, 11, 0.3);
+  border-radius: 28px;
+  padding: 64px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(191, 135, 11, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.cta-description {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #28A745;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.3);
+  border: 2px solid transparent;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(40, 167, 69, 0.5);
+  background: #BF870B;
+}
+
+/* Mobile Responsive for CTA */
+@media (max-width: 968px) {
+  .cta-card {
+    padding: 48px 28px;
+  }
+}
