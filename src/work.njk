@@ -1,10 +1,6 @@
 ---
 layout: default
 title: Rakshit Soral Demand Gen Portfolio
-pagination:
-    data: collections.work
-    size: 10
-    alias: work
 ---
 <style>
     @keyframes fadeInUp {
@@ -13,67 +9,42 @@ pagination:
     }
    
     .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+    
     .portfolio-item {
         animation: fadeInUp 0.6s ease-out forwards;
         opacity: 0;
         width: 100%;
         min-width: 0;
     }
-    .portfolio-item.hide { display: none; }
-    .portfolio-item:hover .item-image { transform: scale(1.05); }
-    .item-image { transition: transform 0.3s ease; }
-    .search-input:focus { box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2); }
-   
-    /* Grid Layout */
+    .portfolio-item.clickable { cursor: pointer; }
+    .portfolio-item.clickable:hover .item-image img { transform: scale(1.05); }
+    .portfolio-item .item-image img { transition: transform 0.3s ease; }
+    
     #portfolioGrid {
         display: grid !important;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        width: 100%;  /* Force full width */
-        max-width: 100%;
-    }
-    @media (min-width: 768px) {
-        #portfolioGrid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
-    @media (min-width: 1024px) {
-        #portfolioGrid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-    }
-
-    /* Mobile-First Full-Width Fixes */
-    html, body {
         width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;  /* Prevent horizontal scroll */
+        max-width: 100%;
+        gap: 1.5rem;
     }
+    @media (min-width: 768px) { #portfolioGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; } }
+    @media (min-width: 1024px) { #portfolioGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
-    section {
-        width: 100%;  /* Ensure sections don't constrain */
-    }
+    html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+    section { width: 100%; }
 
-    /* Reduce padding on very small screens */
     @media (max-width: 640px) {
-        .max-w-6xl {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        .filter-btn {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            font-size: 0.875rem;  /* Smaller text/buttons on mobile */
-        }
+        .max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+        .filter-btn { padding-left: 1rem; padding-right: 1rem; font-size: 0.875rem; }
     }
    
-    /* Filter Button Styles */
     .filter-btn {
-        background: rgba(128, 128, 128, 0.1);
+        background: inherit;
         color: inherit;
         border: 1px solid rgba(128, 128, 128, 0.2);
         cursor: pointer;
         transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
     }
     .filter-btn:hover {
         transform: translateY(-2px);
@@ -86,289 +57,424 @@ pagination:
         color: white !important;
         border-color: #EC4899 !important;
     }
-    .filter-btn.active:hover {
-        background: rgba(236, 72, 153, 0.9) !important;
-        border-color: #EC4899 !important;
+    
+    .filter-btn[data-filter="casestudies"]:not(.active):hover { background: rgba(139, 92, 246, 0.2); border-color: #8B5CF6; color: #8B5CF6; }
+    .filter-btn[data-filter="content"]:not(.active):hover { background: rgba(191, 135, 11, 0.2); border-color: #BF870B; color: #BF870B; }
+    .filter-btn[data-filter="google"]:not(.active):hover { background: rgba(65, 158, 84, 0.2); border-color: #419E54; color: #419E54; }
+    .filter-btn[data-filter="linkedin"]:not(.active):hover { background: rgba(96, 165, 250, 0.2); border-color: #60A5FA; color: #60A5FA; }
+    .filter-btn[data-filter="videos"]:not(.active):hover { background: rgba(139, 92, 246, 0.2); border-color: #8B5CF6; color: #8B5CF6; }
+    .filter-btn[data-filter="website"]:not(.active):hover { background: rgba(96, 165, 250, 0.2); border-color: #60A5FA; color: #60A5FA; }
+
+    #caseStudiesSection { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+
+    .lightbox-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px);
+        z-index: 9999; display: none; opacity: 0; transition: opacity 0.3s ease;
     }
-    /* Category-specific hover colors */
-    .filter-btn[data-filter="casestudies"]:not(.active):hover {
-        background: rgba(139, 92, 246, 0.2);
-        border-color: #8B5CF6;
-        color: #8B5CF6;
+    .lightbox-overlay.active { display: flex; opacity: 1; }
+    .lightbox-content {
+        position: relative; width: 100%; height: 100%;
+        display: flex; align-items: center; justify-content: center; padding: 2rem;
     }
-   
-    .filter-btn[data-filter="content"]:not(.active):hover {
-        background: rgba(191, 135, 11, 0.2);
-        border-color: #BF870B;
-        color: #BF870B;
+    .lightbox-image-container { max-width: 90%; max-height: 85vh; position: relative; }
+    .lightbox-image-container img {
+        max-width: 100%; max-height: 85vh; object-fit: contain;
+        border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
-    .filter-btn[data-filter="website"]:not(.active):hover,
-    .filter-btn[data-filter="videos"]:not(.active):hover {
-        background: rgba(96, 165, 250, 0.2);
-        border-color: #60A5FA;
-        color: #60A5FA;
+    .lightbox-video-container { max-width: 90%; max-height: 85vh; position: relative; }
+    .lightbox-video-container video {
+        max-width: 100%; max-height: 85vh; border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
-    .filter-btn[data-filter="linkedin"]:not(.active):hover {
-        background: rgba(236, 72, 153, 0.2);
-        border-color: #EC4899;
-        color: #EC4899;
+    .lightbox-nav {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2); color: white;
+        width: 50px; height: 50px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer; transition: all 0.3s ease; z-index: 10001;
     }
-    .filter-btn[data-filter="google"]:not(.active):hover {
-        background: rgba(65, 158, 84, 0.2);
-        border-color: #419E54;
-        color: #419E54;
+    .lightbox-nav:hover { background: rgba(236, 72, 153, 0.3); border-color: #EC4899; transform: translateY(-50%) scale(1.1); }
+    .lightbox-nav.prev { left: 2rem; }
+    .lightbox-nav.next { right: 2rem; }
+    .lightbox-close {
+        position: absolute; top: 2rem; right: 2rem;
+        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2); color: white;
+        width: 50px; height: 50px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer; transition: all 0.3s ease; z-index: 10001;
     }
-    /* Case Studies Section - Full Width on Mobile */
-    #caseStudiesSection {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
+    .lightbox-close:hover { background: rgba(185, 28, 28, 0.3); border-color: #B91C1C; transform: scale(1.1); }
+    .lightbox-counter {
+        position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2); color: white;
+        padding: 0.5rem 1.5rem; border-radius: 9999px; font-weight: 600; font-size: 0.875rem;
     }
+    .lightbox-info {
+        position: absolute; bottom: 5rem; left: 2rem; right: 2rem;
+        background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+        padding: 1rem 1.5rem; color: white; text-align: center;
+        max-width: 600px; margin: 0 auto;
+    }
+    .lightbox-info h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .lightbox-info p { font-size: 0.875rem; opacity: 0.7; }
+
+    @media (max-width: 768px) {
+        .lightbox-nav { width: 40px; height: 40px; }
+        .lightbox-nav.prev { left: 1rem; }
+        .lightbox-nav.next { right: 1rem; }
+        .lightbox-close { top: 1rem; right: 1rem; width: 40px; height: 40px; }
+        .lightbox-info { left: 1rem; right: 1rem; bottom: 5rem; }
+    }
+
+    .item-image { position: relative; height: 12rem; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .item-image img, .item-image video { width: 100%; height: 100%; object-fit: cover; }
+    .item-image .icon-fallback { font-size: 4rem; opacity: 0.3; }
+    .external-link-badge {
+        position: absolute; bottom: 0.75rem; right: 0.75rem;
+        background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px);
+        padding: 0.375rem 0.75rem; border-radius: 9999px;
+        font-size: 0.75rem; color: white; display: flex; align-items: center; gap: 0.25rem;
+    }
+    .play-badge {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        background: rgba(109, 73, 175, 0.6); backdrop-filter: blur(4px);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .portfolio-item:hover .play-badge { background: rgba(236, 72, 153, 0.8); transform: translate(-50%, -50%) scale(1.1); }
 </style>
 
-<!-- Filters Section -->
-<section class="max-w-6xl mx-auto px-4 pt-8 md:pt-12">
-    <!-- Filter Buttons -->
-    <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-8 animate-fade-in" style="animation-delay: 0.3s;">
-        <button class="filter-btn active px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="casestudies">
-            Case Studies
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="all">
-            All
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="content">
-            Content
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="linkedin">
-            LinkedIn Ads
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="google">
-            Google Ads
-        </button>
-        <button class="filter-btn px-6 py-2.5 rounded-lg font-semibold transition-all" data-filter="videos">
-            Videos
-        </button>
+<section class="flex flex-col justify-center items-center relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-pulse" style="background: rgba(236, 72, 153, 0.1);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style="background: rgba(139, 92, 246, 0.1); animation-delay: 1s;"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-8 animate-fade-in" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+            <span class="w-2 h-2 rounded-full animate-pulse" style="background: #419E54;"></span>
+            <span class="text-sm opacity-70">Available for new projects</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.1s;">
+            Hi, I'm <span style="color: #EC4899;">Rakshit Soral</span>
+        </h1>
+        <p class="text-xl md:text-2xl opacity-70 mb-4 animate-fade-in" style="animation-delay: 0.2s;">Demand Generation Specialist</p>
+        <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style="animation-delay: 0.3s;">
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(236, 72, 153, 0.2); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">LinkedIn Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(65, 158, 84, 0.2); color: #419E54; border-color: rgba(65, 158, 84, 0.3);">Google Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(191, 135, 11, 0.2); color: #BF870B; border-color: rgba(191, 135, 11, 0.3);">Content Marketing</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(139, 92, 246, 0.2); color: #8B5CF6; border-color: rgba(139, 92, 246, 0.3);">B2B Growth</span>
+        </div>
+        <p class="text-lg opacity-70 max-w-2xl mx-auto mb-10 animate-fade-in" style="animation-delay: 0.4s;">
+            I help B2B companies generate high-quality leads and scale their revenue through strategic paid advertising, compelling content, and data-driven campaigns.
+        </p>
+        
+    </div>
+</section>
+
+<section id="portfolio" class="py-8">
+    <div class="sticky top-0 z-40 py-4"; backdrop-filter: blur(10px);">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold" data-filter="casestudies">Case Studies</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="linkedin">LinkedIn Ads</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="google">Google Ads</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="content">Content</button>
+                <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold" data-filter="videos">Videos</button>
+            </div>
+        </div>
     </div>
  
-    <!-- Results Count -->
-    <div class="text-white/60 text-sm mb-8 animate-fade-in" style="animation-delay: 0.4s;">
-        <span id="resultsCount" class="font-semibold text-[#EC4899]">
-            Case Studies </span> showing
-    </div>
-</section>
-
-<!-- Portfolio Gallery -->
-<section class="w-full max-w-6xl mx-auto px-4 pb-16 md:pb-24">
-    <!-- When "Case Studies" filter is active, show this section -->
-    <div id="caseStudiesSection" style="display: none;">
-        {% include "partials/work-list.njk" %}
-    </div>
-
-    <!-- Default portfolio grid -->
-    <div id="portfolioGrid" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <!-- Portfolio items will be generated by JavaScript -->
-    </div>
-
-    <!-- No Results Message -->
-    <div id="noResults" class="hidden text-center py-16 w-full">
-        <div class="text-6xl mb-4">🔍</div>
-        <h3 class="text-2xl font-bold text-white mb-2">No projects found</h3>
-    </div>
-     <span class="curl2 absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
-      <span class="boxes absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
-</section>
-
-<!-- CTA Section -->
-<section>
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h3 class="text-4xl font-display font-bold tracking-tight mb-4">
-            💬 Let's Create <span class="highlight-yellow px-4 -mx-2 inline-block relative">Your Next Campaign.</span>
-        </h3>
-        <p class="text-lg text-gray-300 leading-relaxed mb-6">
-            Interested in how I can help grow your business? Let's talk about your goals.
-        </p>
-        <div class="space-y-2 text-base font-semibold text-gray-200 mb-8">
-            <p class="opacity-80 text-sm">
-                Prefer convenience? →
-                <a href="https://wa.me/919602542617"
-                   class="font-semibold underline hover:text-green-500">
-                   Ping me on WhatsApp
-                </a>
-                and I'll reply faster.
-            </p>
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="opacity-70 text-sm mb-6"><span id="resultsCount" class="font-semibold" style="color: #EC4899;">Case Studies</span></div>
+        <div id="caseStudiesSection">{% include "partials/work-list.njk" %}</div>
+        <div id="portfolioGrid"></div>
+        <div id="noResults" class="text-center py-16" style="display: none;">
+            <div class="text-6xl mb-4">🔍</div>
+            <h3 class="text-2xl font-bold mb-2">No projects found</h3>
         </div>
-        <a href="mailto:rakshitsoral@gmail.com"
-           class="bg-yellow-500 text-black font-semibold py-3 px-8 rounded shadow-md
-                  hover:bg-yellow-400 transition-transform hover:scale-[1.04] inline-block">
-             Contact me 📧
-        </a>
     </div>
 </section>
 
-<!-- Replace BOTH script blocks with this single, complete script -->
+<section class="py-20 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">💬 Let's Create Your Next Campaign</h2>
+        <p class="text-lg opacity-70 mb-8">Interested in how I can help grow your business? Let's talk about your goals.</p>
+        <p class="text-sm opacity-50 mb-6">Prefer convenience? → <a href="https://wa.me/919602542617" target="_blank" class="underline" style="color: #419E54;">Ping me on WhatsApp</a></p>
+        <a href="mailto:rakshitsoral@gmail.com" class="inline-block px-8 py-3 rounded-lg font-semibold transition-transform hover:scale-105" style="background: #BF870B; color: black;">Contact me 📧</a>
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox-overlay">
+    <div class="lightbox-content">
+        <button id="lightboxClose" class="lightbox-close">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <button id="lightboxPrev" class="lightbox-nav prev">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button id="lightboxNext" class="lightbox-nav next">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <div id="lightboxDisplay"></div>
+        <div id="lightboxInfo" class="lightbox-info" style="display: none;">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxDesc"></p>
+        </div>
+        <div id="lightboxCounter" class="lightbox-counter">1 / 1</div>
+    </div>
+</div>
+
 <script>
-    console.log('🔍 Portfolio Script Loading...');
-   
-    // Portfolio data from 11ty - with fallback
     let projects = [];
-   
+
     try {
         projects = {{ portfolioData.projects | dump | safe }};
-        console.log('✅ Portfolio data loaded:', projects.length, 'projects');
+        console.log('✅ Loaded', projects.length, 'projects');
     } catch(e) {
-        console.error('❌ Error loading portfolio data:', e);
-        console.log('Using fallback empty array');
+        console.log('⚠️ No portfolioData found');
     }
-    // DOM Elements
+
     const portfolioGrid = document.getElementById('portfolioGrid');
     const caseStudiesSection = document.getElementById('caseStudiesSection');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const searchInput = document.getElementById('searchInput');
     const resultsCount = document.getElementById('resultsCount');
     const noResults = document.getElementById('noResults');
-    // State
+    const lightbox = document.getElementById('lightbox');
+    const lightboxDisplay = document.getElementById('lightboxDisplay');
+    const lightboxCounter = document.getElementById('lightboxCounter');
+    const lightboxInfo = document.getElementById('lightboxInfo');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+
     let currentFilter = 'casestudies';
-    let searchTerm = '';
-    // Initialize
+    let currentLightboxIndex = 0;
+    let galleryItems = [];
+
+    // Check if URL is a video file
+    function isVideoFile(url) {
+        if (!url) return false;
+        return /\.(mp4|webm|ogg|mov)$/i.test(url);
+    }
+
+    // Check if URL is an image file
+    function isImageFile(url) {
+        if (!url) return false;
+        return /\.(png|jpg|jpeg|gif|webp|svg)$/i.test(url);
+    }
+
+    // Check if project has displayable media (image or video)
+    function hasMedia(project) {
+        return !!(project.image || (project.url && (isImageFile(project.url) || isVideoFile(project.url))));
+    }
+
+    // Check if project should open in gallery
+    function canOpenInGallery(project) {
+        // Only linkedin and google ads with images OR local video files open in gallery
+        if (project.category !== 'linkedin' && project.category !== 'google') return false;
+        return project.image || (project.url && isVideoFile(project.url));
+    }
+
+    // Check if project has an external link (not media)
+    function hasExternalLink(project) {
+        if (!project.url) return false;
+        // External links are URLs that are NOT image/video files
+        return !isImageFile(project.url) && !isVideoFile(project.url);
+    }
+
     function init() {
-        console.log('🚀 Initializing portfolio...');
-       
-        // Show case studies by default, hide portfolio grid
         portfolioGrid.style.display = 'none';
-        portfolioGrid.style.width = '100%';  // Enforce width
         caseStudiesSection.style.display = 'block';
         noResults.style.display = 'none';
-       
-        if (projects.length === 0) {
-            console.warn('⚠️ No projects found in data');
-        }
-       
         setupEventListeners();
     }
-    // Render portfolio items
+
     function renderPortfolio() {
-        // Handle Case Studies filter separately
         if (currentFilter === 'casestudies') {
             portfolioGrid.style.display = 'none';
-            portfolioGrid.innerHTML = ''; // Clear grid content
             caseStudiesSection.style.display = 'block';
             noResults.style.display = 'none';
             resultsCount.textContent = 'Case Studies';
             return;
         }
-       
-        // For all other filters, hide case studies and show portfolio grid
+
         portfolioGrid.style.display = 'grid';
-        portfolioGrid.style.width = '100%';  // Enforce width
         caseStudiesSection.style.display = 'none';
-       
         portfolioGrid.innerHTML = '';
-       
-        let filteredProjects = projects.filter(project => {
-            const matchesFilter = currentFilter === 'all' || project.category === currentFilter;
-            const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                project.company.toLowerCase().includes(searchTerm.toLowerCase());
-            return matchesFilter && matchesSearch;
-        });
-       
-        console.log('📊 Filtered projects:', filteredProjects.length);
-       
-        // Update results count
-        resultsCount.textContent = filteredProjects.length + ' projects';
-       
-        // Show/hide no results message
-        if (filteredProjects.length === 0) {
+
+        const filtered = projects.filter(p => p.category === currentFilter);
+        // Gallery items: linkedin/google with image or local video
+        galleryItems = filtered.filter(p => canOpenInGallery(p));
+        
+        resultsCount.textContent = filtered.length + ' projects';
+        
+        if (filtered.length === 0) {
             noResults.style.display = 'block';
             portfolioGrid.style.display = 'none';
             return;
-        } else {
-            noResults.style.display = 'none';
-            portfolioGrid.style.display = 'grid';
         }
-       
-        // Render items
-        filteredProjects.forEach((project, index) => {
-            const item = document.createElement('a');
-            // Add href and link attributes
-            item.href = project.url || project.link || '#';
-            item.target = project.url || project.link ? '_blank' : '_self';
-            item.rel = 'noopener noreferrer';
-           
-            item.className = 'portfolio-item bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 block';
+        noResults.style.display = 'none';
+
+        filtered.forEach((project, index) => {
+            const item = document.createElement('div');
+            const opensGallery = canOpenInGallery(project);
+            const hasLink = hasExternalLink(project);
+            const isVideo = project.url && isVideoFile(project.url);
+            
+            item.className = `portfolio-item bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 ${opensGallery ? 'clickable' : ''}`;
             item.style.animationDelay = `${index * 0.1}s`;
-           
+
+            if (opensGallery) {
+                const galleryIndex = galleryItems.findIndex(g => g.id === project.id);
+                item.addEventListener('click', () => openLightbox(galleryIndex));
+            }
+
+            // Determine what media to show
+            const showImage = !!project.image;
+            const showVideoThumb = isVideo && !project.image;
+
             item.innerHTML = `
-                <div class="item-image relative h-48 flex items-center justify-center overflow-hidden" style="background-color: ${project.color};">
-                    <span class="text-6xl opacity-30">${project.icon}</span>
-                    <div class="absolute top-4 right-4 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
+                <div class="item-image" style="background-color: ${project.color}20;">
+                    ${showImage 
+                        ? `<img src="${project.image}" alt="${project.title}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                           <div class="icon-fallback" style="display: none; width: 100%; height: 100%; align-items: center; justify-content: center;">${project.icon}</div>`
+                        : showVideoThumb
+                            ? `<video src="${project.url}" muted preload="metadata" style="pointer-events: none;"></video>
+                               <div class="play-badge"><svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>`
+                            : `<div class="icon-fallback">${project.icon}</div>`
+                    }
+                    <div class="absolute top-3 right-3 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20 bg-black/30">
                         <span class="text-xs font-semibold text-white">${project.company}</span>
                     </div>
+                    ${hasLink ? `<div class="external-link-badge">
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 2h5v5M12 2L6 8"/></svg>
+                        Open
+                    </div>` : ''}
+                    ${isVideo && !hasLink ? `<div class="external-link-badge">▶ Video</div>` : ''}
                 </div>
-                <div class="p-6">
+                <div class="p-5">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-bold rounded-full uppercase tracking-wide border border-white/20">
+                        <span class="px-3 py-1 text-xs font-bold rounded-full uppercase tracking-wide" style="background: ${project.color}20; color: ${project.color}; border: 1px solid ${project.color}30;">
                             ${project.category}
                         </span>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 line-clamp-2">
-                        ${project.title}
-                    </h3>
-                    <p class="text-white/60 text-sm mb-4 line-clamp-2">
-                        ${project.description}
-                    </p>
+                    <h3 class="text-lg font-bold mb-2 line-clamp-2">${project.title}</h3>
+                    <p class="text-sm opacity-60 mb-4 line-clamp-2">${project.description}</p>
                     <div class="flex items-center justify-between">
-                        <div class="flex items-center text-[#EC4899] font-semibold text-sm">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
+                        <div class="flex items-center text-sm font-semibold" style="color: #EC4899;">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                             ${project.metrics}
                         </div>
-                        ${project.url || project.link ? `
-                        <div class="flex items-center text-white/60 text-xs">
-                            <span>View</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </div>
-                        ` : ''}
+                        ${hasLink 
+                            ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" class="flex items-center text-xs opacity-60 hover:opacity-100 transition-opacity" onclick="event.stopPropagation();">
+                                Open <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                               </a>`
+                            : opensGallery 
+                                ? `<span class="text-xs opacity-60">View →</span>` 
+                                : ''
+                        }
                     </div>
                 </div>
             `;
-           
             portfolioGrid.appendChild(item);
         });
     }
-    // Setup event listeners
+
+    function openLightbox(index) {
+        if (galleryItems.length === 0 || index < 0) return;
+        currentLightboxIndex = index;
+        showLightboxItem();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        // Pause any playing videos
+        const video = lightboxDisplay.querySelector('video');
+        if (video) video.pause();
+        
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showLightboxItem() {
+        const item = galleryItems[currentLightboxIndex];
+        if (!item) return;
+        
+        lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
+        lightboxTitle.textContent = item.title;
+        lightboxDesc.textContent = item.company + (item.metrics ? ' • ' + item.metrics : '');
+        lightboxInfo.style.display = 'block';
+        
+        // Show image or video
+        if (item.image) {
+            lightboxDisplay.innerHTML = `
+                <div class="lightbox-image-container">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+            `;
+        } else if (item.url && isVideoFile(item.url)) {
+            lightboxDisplay.innerHTML = `
+                <div class="lightbox-video-container">
+                    <video src="${item.url}" controls autoplay></video>
+                </div>
+            `;
+        }
+    }
+
+    function nextLightboxItem() {
+        if (galleryItems.length === 0) return;
+        // Pause current video before switching
+        const video = lightboxDisplay.querySelector('video');
+        if (video) video.pause();
+        
+        currentLightboxIndex = (currentLightboxIndex + 1) % galleryItems.length;
+        showLightboxItem();
+    }
+
+    function prevLightboxItem() {
+        if (galleryItems.length === 0) return;
+        const video = lightboxDisplay.querySelector('video');
+        if (video) video.pause();
+        
+        currentLightboxIndex = (currentLightboxIndex - 1 + galleryItems.length) % galleryItems.length;
+        showLightboxItem();
+    }
+
     function setupEventListeners() {
-        // Filter buttons
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-               
-                // Add active class to clicked button
                 btn.classList.add('active');
-               
                 currentFilter = btn.dataset.filter;
-                console.log('🔄 Filter changed to:', currentFilter);
                 renderPortfolio();
             });
         });
-       
-        // Search input
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                searchTerm = e.target.value;
-                console.log('🔍 Search term:', searchTerm);
-                // Disable search when on case studies
-                if (currentFilter !== 'casestudies') {
-                    renderPortfolio();
-                }
-            });
-        }
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxNext').addEventListener('click', nextLightboxItem);
+        document.getElementById('lightboxPrev').addEventListener('click', prevLightboxItem);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextLightboxItem();
+            if (e.key === 'ArrowLeft') prevLightboxItem();
+        });
+
+        let touchStartX = 0;
+        lightbox.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+        lightbox.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) diff > 0 ? nextLightboxItem() : prevLightboxItem();
+        });
     }
-    // Initialize app
+
     init();
 </script>
