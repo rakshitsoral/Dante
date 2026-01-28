@@ -26,21 +26,44 @@ title: Demand Gen Marketing CV Printable A4
       max-width: 100vw;
       margin: 0;
       padding: 0;
+      background: #1A1629;
+      color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* Light Mode Override */
+    html.light-mode,
+    body.light-mode,
+    html.light-mode body {
+      background: white !important;
+      color: #000000 !important;
     }
     
     .resume-section {
-      background: white;
+      background: #1A1629;
       padding: 80px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .resume-section,
+    body.light-mode .resume-section {
+      background: white !important;
     }
     
     /* Hero Section */
     .hero-section {
-      background: white;
+      background: #1A1629;
       padding: 60px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .hero-section,
+    body.light-mode .hero-section {
+      background: white !important;
     }
     
     .hero-container {
@@ -159,25 +182,43 @@ title: Demand Gen Marketing CV Printable A4
     
     .hero-name {
       font-family: 'DM Serif Display', serif;
-      color: #1e293b;
+      color: white;
       font-size: 3rem;
       line-height: 1.1;
       margin-bottom: 1rem;
       word-wrap: break-word;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .hero-name,
+    body.light-mode .hero-name {
+      color: #1e293b !important;
     }
     
     .hero-subtitle {
       font-size: 1.75rem;
       margin-bottom: 1rem;
       font-weight: 300;
-      color: #64748b;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .hero-subtitle,
+    body.light-mode .hero-subtitle {
+      color: #64748b !important;
     }
     
     .hero-description {
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
-      color: #64748b;
+      color: rgba(255, 255, 255, 0.8);
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .hero-description,
+    body.light-mode .hero-description {
+      color: #64748b !important;
     }
     
     .contact-buttons {
@@ -255,13 +296,18 @@ title: Demand Gen Marketing CV Printable A4
       box-shadow: 0 8px 25px rgba(191, 135, 11, 0.3);
     }
     
-    /* Experience Section - Dark Background with FORCED WHITE TEXT */
+    /* Experience Section - Dark Mode Compatible */
     .experience-section {
-      background: #1A1629 !important;
-      color: white !important;
+      background: #1A1629;
       padding: 80px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .experience-section,
+    body.light-mode .experience-section {
+      background: white !important;
     }
     
     .section-header {
@@ -285,10 +331,26 @@ title: Demand Gen Marketing CV Printable A4
       font-size: 2.5rem;
       margin: 0;
       word-wrap: break-word;
+      transition: color 0.3s ease;
     }
     
-    .section-title.light { color: #1e293b !important; }
-    .section-title.dark { color: white !important; }
+    .section-title.light { 
+      color: white;
+    }
+    
+    html.light-mode .section-title.light,
+    body.light-mode .section-title.light {
+      color: #1e293b !important;
+    }
+    
+    .section-title.dark { 
+      color: white;
+    }
+    
+    html.light-mode .section-title.dark,
+    body.light-mode .section-title.dark {
+      color: #1e293b !important;
+    }
     
     .timeline {
       position: relative;
@@ -301,7 +363,7 @@ title: Demand Gen Marketing CV Printable A4
     .timeline-item {
       position: relative;
       margin-bottom: 2rem;
-      background: rgba(255, 255, 255, 0.05) !important;
+      background: rgba(255, 255, 255, 0.05);
       border-left: 5px solid;
       padding: 1.5rem;
       border-radius: 12px;
@@ -311,10 +373,21 @@ title: Demand Gen Marketing CV Printable A4
       word-wrap: break-word;
     }
     
+    html.light-mode .timeline-item,
+    body.light-mode .timeline-item {
+      background: #f8fafc !important;
+    }
+    
     .timeline-item:hover {
-      background: rgba(255, 255, 255, 0.08) !important;
+      background: rgba(255, 255, 255, 0.08);
       transform: translateX(5px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    html.light-mode .timeline-item:hover,
+    body.light-mode .timeline-item:hover {
+      background: #f1f5f9 !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
     
     .timeline-item.active { border-color: #28A745; }
@@ -330,10 +403,16 @@ title: Demand Gen Marketing CV Printable A4
     .job-title {
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
-      color: white !important;
+      color: white;
       margin-bottom: 0.5rem;
       word-wrap: break-word;
       line-height: 1.3;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .job-title,
+    body.light-mode .job-title {
+      color: #1e293b !important;
     }
     
     .company-name {
@@ -344,8 +423,14 @@ title: Demand Gen Marketing CV Printable A4
     }
     
     .job-meta {
-      color: rgba(255, 255, 255, 0.6) !important;
+      color: rgba(255, 255, 255, 0.6);
       font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .job-meta,
+    body.light-mode .job-meta {
+      color: #64748b !important;
     }
     
     .achievement-list {
@@ -383,24 +468,42 @@ title: Demand Gen Marketing CV Printable A4
     .timeline-item.old .achievement-icon { color: #B91C1C; }
     
     .achievement-text {
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: rgba(255, 255, 255, 0.9);
       line-height: 1.6;
       flex: 1;
       word-wrap: break-word;
       overflow-wrap: break-word;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .achievement-text,
+    body.light-mode .achievement-text {
+      color: #334155 !important;
     }
     
     .achievement-highlight {
-      color: white !important;
+      color: white;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
     
-    /* Skills Section - White Background */
+    html.light-mode .achievement-highlight,
+    body.light-mode .achievement-highlight {
+      color: #1e293b !important;
+    }
+    
+    /* Skills Section */
     .skills-section {
-      background: white;
+      background: #1A1629;
       padding: 80px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .skills-section,
+    body.light-mode .skills-section {
+      background: white !important;
     }
     
     .skills-grid {
@@ -413,19 +516,30 @@ title: Demand Gen Marketing CV Printable A4
     }
     
     .skill-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 3px solid;
       border-radius: 16px;
       padding: 1.5rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       width: 100%;
       overflow: hidden;
     }
     
+    html.light-mode .skill-card,
+    body.light-mode .skill-card {
+      background: white !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    }
+    
     .skill-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    html.light-mode .skill-card:hover,
+    body.light-mode .skill-card:hover {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
     }
     
     .skill-card.gold { border-color: #BF870B; }
@@ -485,8 +599,13 @@ title: Demand Gen Marketing CV Printable A4
       align-items: center;
       gap: 0.75rem;
       transition: all 0.3s ease;
-      color: #334155;
+      color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
+    }
+    
+    html.light-mode .skill-list li,
+    body.light-mode .skill-list li {
+      color: #334155 !important;
     }
     
     .skill-list li:hover {
@@ -507,18 +626,29 @@ title: Demand Gen Marketing CV Printable A4
     .skill-card.teal .skill-bullet { background: #16A34A; }
     
     .development-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 3px solid #16A34A;
       border-radius: 16px;
       padding: 1.5rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       margin: 0 1rem;
+    }
+    
+    html.light-mode .development-card,
+    body.light-mode .development-card {
+      background: white !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
     }
     
     .development-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2);
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.4);
+    }
+    
+    html.light-mode .development-card:hover,
+    body.light-mode .development-card:hover {
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2) !important;
     }
     
     .development-tags {
@@ -534,10 +664,15 @@ title: Demand Gen Marketing CV Printable A4
       border-radius: 50px;
       font-weight: 600;
       color: #16A34A;
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       transition: all 0.3s ease;
       cursor: default;
       font-size: 0.875rem;
+    }
+    
+    html.light-mode .dev-tag,
+    body.light-mode .dev-tag {
+      background: white !important;
     }
     
     .dev-tag:hover {
@@ -546,12 +681,18 @@ title: Demand Gen Marketing CV Printable A4
       transform: scale(1.05);
     }
     
-    /* Certifications Section - White Background */
+    /* Certifications Section */
     .certifications-section {
-      background: white;
+      background: #1A1629;
       padding: 80px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .certifications-section,
+    body.light-mode .certifications-section {
+      background: white !important;
     }
     
     .cert-grid {
@@ -563,14 +704,20 @@ title: Demand Gen Marketing CV Printable A4
     }
     
     .cert-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       padding: 1.5rem;
       border: 3px solid;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       width: 100%;
       overflow: hidden;
+    }
+    
+    html.light-mode .cert-card,
+    body.light-mode .cert-card {
+      background: white !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
     }
     
     .cert-card:nth-child(1) { border-color: #28A745; }
@@ -579,7 +726,12 @@ title: Demand Gen Marketing CV Printable A4
     
     .cert-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+    
+    html.light-mode .cert-card:hover,
+    body.light-mode .cert-card:hover {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15) !important;
     }
     
     .cert-icon-wrapper {
@@ -600,39 +752,68 @@ title: Demand Gen Marketing CV Printable A4
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: #1e293b;
+      color: white;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .cert-title,
+    body.light-mode .cert-title {
+      color: #1e293b !important;
     }
     
     .cert-org {
-      color: #64748b;
+      color: rgba(255, 255, 255, 0.7);
       font-size: 0.875rem;
       font-weight: 500;
+      transition: color 0.3s ease;
     }
     
-    /* Education Section - White Background */
+    html.light-mode .cert-org,
+    body.light-mode .cert-org {
+      color: #64748b !important;
+    }
+    
+    /* Education Section */
     .education-section {
-      background: white;
+      background: #1A1629;
       padding: 80px 0;
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .education-section,
+    body.light-mode .education-section {
+      background: white !important;
     }
     
     .education-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 3px solid #16A34A;
       border-radius: 24px;
       padding: 2rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       max-width: 900px;
       margin: 0 auto;
       width: calc(100% - 2rem);
       overflow: hidden;
     }
     
+    html.light-mode .education-card,
+    body.light-mode .education-card {
+      background: white !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    }
+    
     .education-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2);
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.4);
+    }
+    
+    html.light-mode .education-card:hover,
+    body.light-mode .education-card:hover {
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2) !important;
     }
     
     .degree-icon {
@@ -652,14 +833,26 @@ title: Demand Gen Marketing CV Printable A4
       font-size: 2rem;
       margin-bottom: 1rem;
       line-height: 1.2;
-      color: #1e293b;
+      color: white;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .degree-title,
+    body.light-mode .degree-title {
+      color: #1e293b !important;
     }
     
     .university-name {
       font-size: 1.125rem;
       margin-bottom: 1.5rem;
-      color: #64748b;
+      color: rgba(255, 255, 255, 0.7);
       font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .university-name,
+    body.light-mode .university-name {
+      color: #64748b !important;
     }
     
     .education-meta {
@@ -673,12 +866,18 @@ title: Demand Gen Marketing CV Printable A4
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.25rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 2px solid #16A34A;
       border-radius: 50px;
       color: #16A34A;
       font-weight: 600;
       font-size: 0.875rem;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .meta-badge,
+    body.light-mode .meta-badge {
+      background: white !important;
     }
     
     .year-badge {
@@ -693,27 +892,46 @@ title: Demand Gen Marketing CV Printable A4
       box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
     }
     
-    /* Footer Section - White Background */
+    /* Footer Section */
     .footer-section {
-      background: white;
+      background: #1A1629;
       padding: 60px 0;
-      border-top: 3px solid #f1f5f9;
+      border-top: 3px solid rgba(255, 255, 255, 0.1);
       overflow-x: hidden;
       width: 100%;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    html.light-mode .footer-section,
+    body.light-mode .footer-section {
+      background: white !important;
+      border-top-color: #f1f5f9 !important;
     }
     
     .footer-title {
       font-family: 'DM Serif Display', serif;
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      color: #1e293b;
+      color: white;
       word-wrap: break-word;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .footer-title,
+    body.light-mode .footer-title {
+      color: #1e293b !important;
     }
     
     .footer-subtitle {
       font-size: 1.25rem;
-      color: #64748b;
+      color: rgba(255, 255, 255, 0.7);
       margin-bottom: 2rem;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .footer-subtitle,
+    body.light-mode .footer-subtitle {
+      color: #64748b !important;
     }
     
     .contact-grid {
@@ -731,13 +949,18 @@ title: Demand Gen Marketing CV Printable A4
       align-items: center;
       gap: 1rem;
       padding: 1rem 1.25rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 2px solid;
       border-radius: 12px;
       transition: all 0.3s ease;
       text-decoration: none;
       width: 100%;
       overflow: hidden;
+    }
+    
+    html.light-mode .contact-item,
+    body.light-mode .contact-item {
+      background: white !important;
     }
     
     .contact-item:nth-child(1) { border-color: #B91C1C; }
@@ -777,10 +1000,16 @@ title: Demand Gen Marketing CV Printable A4
     .contact-item:nth-child(3):hover .contact-item-icon { color: #28A745; }
     
     .contact-text {
-      color: #334155;
+      color: rgba(255, 255, 255, 0.9);
       font-weight: 500;
       font-size: 0.95rem;
       word-break: break-word;
+      transition: color 0.3s ease;
+    }
+    
+    html.light-mode .contact-text,
+    body.light-mode .contact-text {
+      color: #334155 !important;
     }
     
     .contact-item:hover .contact-text {
@@ -792,12 +1021,18 @@ title: Demand Gen Marketing CV Printable A4
       align-items: center;
       gap: 0.75rem;
       padding: 0.75rem 1.5rem;
-      background: white;
+      background: rgba(255, 255, 255, 0.05);
       border: 2px solid #BF870B;
       border-radius: 50px;
       color: #BF870B;
       margin-bottom: 1rem;
       font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    
+    html.light-mode .location-badge,
+    body.light-mode .location-badge {
+      background: white !important;
     }
     
     .location-icon {
@@ -809,6 +1044,12 @@ title: Demand Gen Marketing CV Printable A4
       align-items: center;
       justify-content: center;
       color: white;
+    }
+    
+    /* Resume Content Wrapper */
+    #resume-content {
+      width: 100%;
+      overflow-x: hidden;
     }
     
     /* Mobile Responsive */
@@ -909,6 +1150,7 @@ title: Demand Gen Marketing CV Printable A4
 </head>
 
 <body>
+   <div id="resume-content">
    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-container">
@@ -1464,6 +1706,7 @@ title: Demand Gen Marketing CV Printable A4
             </div>
         </div>
     </footer>
+    </div><!-- End of resume-content -->
 
     <script>
         // Initialize Lucide icons
@@ -1481,14 +1724,52 @@ title: Demand Gen Marketing CV Printable A4
             downloadBtn.disabled = true;
 
             try {
-                const canvas = await html2canvas(document.body, {
+                // Get only the resume content div
+                const resumeContent = document.getElementById('resume-content');
+                if (!resumeContent) {
+                    throw new Error('Resume content not found');
+                }
+
+                // Hide elements that shouldn't be in PDF
+                const elementsToHide = [
+                    ...document.querySelectorAll('header'),
+                    ...document.querySelectorAll('nav'),
+                    ...document.querySelectorAll('.site-header'),
+                    ...document.querySelectorAll('.site-footer'),
+                    ...document.querySelectorAll('#theme-toggle'),
+                    document.getElementById('downloadPDF')
+                ].filter(el => el !== null);
+
+                // Store original display values and hide elements
+                const originalDisplayValues = elementsToHide.map(el => ({
+                    element: el,
+                    display: el.style.display
+                }));
+                
+                elementsToHide.forEach(el => {
+                    el.style.display = 'none';
+                });
+
+                // Capture only the resume content
+                const canvas = await html2canvas(resumeContent, {
                     scale: 2,
                     useCORS: true,
                     allowTaint: true,
                     logging: false,
                     windowWidth: 1200,
-                    windowHeight: document.body.scrollHeight,
+                    windowHeight: resumeContent.scrollHeight,
                     backgroundColor: '#ffffff',
+                    ignoreElements: (element) => {
+                        // Additional check to ignore specific elements
+                        return element.id === 'theme-toggle' || 
+                               element.tagName === 'HEADER' || 
+                               element.tagName === 'NAV';
+                    }
+                });
+
+                // Restore original display values
+                originalDisplayValues.forEach(({ element, display }) => {
+                    element.style.display = display;
                 });
 
                 const pdf = new jsPDF('p', 'mm', 'a4');
