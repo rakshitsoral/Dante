@@ -14,642 +14,1401 @@ title: Demand Gen Marketing CV Printable A4
   
   <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fresumeshow5830back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.14"></script>
   <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
-  </head>
-<body class="bg-slate-50 text-slate-900 font-['IBM_Plex_Sans'] antialiased selection:bg-slate-900 selection:text-slate-50">
+  
+  <style>
+    /* Resume Styles - Dark Mode Compatible */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .resume-section {
+      background: white;
+      padding: 80px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: white;
+      padding: 60px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+    
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+    }
+    
+    .hero-image-col {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .hero-content-col {
+      width: 100%;
+      text-align: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero-grid {
+        flex-direction: row;
+        gap: 4rem;
+      }
+      
+      .hero-image-col {
+        width: 40%;
+      }
+      
+      .hero-content-col {
+        width: 60%;
+        text-align: left;
+      }
+    }
+    
+    .profile-wrapper {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    
+    .profile-image {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #BF870B;
+      box-shadow: 0 10px 40px rgba(191, 135, 11, 0.3);
+      transition: all 0.3s ease;
+      display: block;
+    }
+    
+    .profile-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 50px rgba(191, 135, 11, 0.4);
+      border-color: #28A745;
+    }
+    
+    .floating-badge {
+      position: absolute;
+      bottom: 10px;
+      right: -10px;
+      background: #28A745;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+      animation: float 3s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .availability-badge {
+      background: #28A745;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+      margin-bottom: 1.5rem;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: white;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      color: #1e293b;
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+      color: #64748b;
+    }
+    
+    .hero-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #64748b;
+    }
+    
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .contact-buttons {
+        justify-content: flex-start;
+      }
+    }
+    
+    .contact-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      border: 3px solid;
+      cursor: pointer;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    
+    .contact-btn:hover {
+      transform: translateY(-5px) rotate(5deg);
+    }
+    
+    .contact-btn.email { 
+      background: #B91C1C; 
+      border-color: #B91C1C;
+      color: white;
+    }
+    .contact-btn.email:hover { 
+      background: white; 
+      color: #B91C1C;
+      box-shadow: 0 8px 25px rgba(185, 28, 28, 0.3);
+    }
+    
+    .contact-btn.linkedin { 
+      background: #28A745; 
+      border-color: #28A745;
+      color: white;
+    }
+    .contact-btn.linkedin:hover { 
+      background: white; 
+      color: #28A745;
+      box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+    }
+    
+    .contact-btn.phone { 
+      background: #EC4899; 
+      border-color: #EC4899;
+      color: white;
+    }
+    .contact-btn.phone:hover { 
+      background: white; 
+      color: #EC4899;
+      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.3);
+    }
+    
+    .contact-btn.download { 
+      background: #BF870B; 
+      border-color: #BF870B;
+      color: white;
+    }
+    .contact-btn.download:hover { 
+      background: white; 
+      color: #BF870B;
+      box-shadow: 0 8px 25px rgba(191, 135, 11, 0.3);
+    }
+    
+    /* Experience Section - Dark Background with FORCED WHITE TEXT */
+    .experience-section {
+      background: #1A1629 !important;
+      color: white !important;
+      padding: 80px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+    }
+    
+    .section-subtitle {
+      color: #BF870B !important;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+      word-wrap: break-word;
+    }
+    
+    .section-title.light { color: #1e293b !important; }
+    .section-title.dark { color: white !important; }
+    
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border-left: 5px solid;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      width: 100%;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+    
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, 0.08) !important;
+      transform: translateX(5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .timeline-item.active { border-color: #28A745; }
+    .timeline-item.recent { border-color: #16A34A; }
+    .timeline-item.past { border-color: #BF870B; }
+    .timeline-item.early { border-color: #EC4899; }
+    .timeline-item.old { border-color: #B91C1C; }
+    
+    .job-header {
+      margin-bottom: 1.5rem;
+    }
+    
+    .job-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: white !important;
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+      line-height: 1.3;
+    }
+    
+    .company-name {
+      color: #BF870B !important;
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .job-meta {
+      color: rgba(255, 255, 255, 0.6) !important;
+      font-size: 0.875rem;
+    }
+    
+    .achievement-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    
+    .achievement-item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      width: 100%;
+    }
+    
+    .achievement-item:hover {
+      padding-left: 5px;
+    }
+    
+    .achievement-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      min-width: 20px;
+    }
+    
+    .timeline-item.active .achievement-icon { color: #28A745; }
+    .timeline-item.recent .achievement-icon { color: #16A34A; }
+    .timeline-item.past .achievement-icon { color: #BF870B; }
+    .timeline-item.early .achievement-icon { color: #EC4899; }
+    .timeline-item.old .achievement-icon { color: #B91C1C; }
+    
+    .achievement-text {
+      color: rgba(255, 255, 255, 0.9) !important;
+      line-height: 1.6;
+      flex: 1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    .achievement-highlight {
+      color: white !important;
+      font-weight: 600;
+    }
+    
+    /* Skills Section - White Background */
+    .skills-section {
+      background: white;
+      padding: 80px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    
+    .skill-card {
+      background: white;
+      border: 3px solid;
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .skill-card.gold { border-color: #BF870B; }
+    .skill-card.pink { border-color: #EC4899; }
+    .skill-card.green { border-color: #28A745; }
+    .skill-card.red { border-color: #B91C1C; }
+    .skill-card.teal { border-color: #16A34A; }
+    
+    .skill-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid;
+    }
+    
+    .skill-card.gold .skill-card-header { border-color: #BF870B; }
+    .skill-card.pink .skill-card-header { border-color: #EC4899; }
+    .skill-card.green .skill-card-header { border-color: #28A745; }
+    .skill-card.red .skill-card-header { border-color: #B91C1C; }
+    .skill-card.teal .skill-card-header { border-color: #16A34A; }
+    
+    .skill-card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    
+    .skill-card.gold .skill-card-title { color: #BF870B; }
+    .skill-card.pink .skill-card-title { color: #EC4899; }
+    .skill-card.green .skill-card-title { color: #28A745; }
+    .skill-card.red .skill-card-title { color: #B91C1C; }
+    .skill-card.teal .skill-card-title { color: #16A34A; }
+    
+    .skill-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+    
+    .skill-card.gold .skill-icon { color: #BF870B; }
+    .skill-card.pink .skill-icon { color: #EC4899; }
+    .skill-card.green .skill-icon { color: #28A745; }
+    .skill-card.red .skill-icon { color: #B91C1C; }
+    .skill-card.teal .skill-icon { color: #16A34A; }
+    
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .skill-list li {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s ease;
+      color: #334155;
+      font-weight: 500;
+    }
+    
+    .skill-list li:hover {
+      padding-left: 10px;
+    }
+    
+    .skill-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .skill-card.gold .skill-bullet { background: #BF870B; }
+    .skill-card.pink .skill-bullet { background: #EC4899; }
+    .skill-card.green .skill-bullet { background: #28A745; }
+    .skill-card.red .skill-bullet { background: #B91C1C; }
+    .skill-card.teal .skill-bullet { background: #16A34A; }
+    
+    .development-card {
+      background: white;
+      border: 3px solid #16A34A;
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      margin: 0 1rem;
+    }
+    
+    .development-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2);
+    }
+    
+    .development-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .dev-tag {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #16A34A;
+      border-radius: 50px;
+      font-weight: 600;
+      color: #16A34A;
+      background: white;
+      transition: all 0.3s ease;
+      cursor: default;
+      font-size: 0.875rem;
+    }
+    
+    .dev-tag:hover {
+      background: #16A34A;
+      color: white;
+      transform: scale(1.05);
+    }
+    
+    /* Certifications Section - White Background */
+    .certifications-section {
+      background: white;
+      padding: 80px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      padding: 0 1rem;
+    }
+    
+    .cert-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 3px solid;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .cert-card:nth-child(1) { border-color: #28A745; }
+    .cert-card:nth-child(2) { border-color: #BF870B; }
+    .cert-card:nth-child(3) { border-color: #EC4899; }
+    
+    .cert-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .cert-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cert-card:nth-child(1) .cert-icon-wrapper { background: #28A745; color: white; }
+    .cert-card:nth-child(2) .cert-icon-wrapper { background: #BF870B; color: white; }
+    .cert-card:nth-child(3) .cert-icon-wrapper { background: #EC4899; color: white; }
+    
+    .cert-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+    
+    .cert-org {
+      color: #64748b;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    /* Education Section - White Background */
+    .education-section {
+      background: white;
+      padding: 80px 0;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .education-card {
+      background: white;
+      border: 3px solid #16A34A;
+      border-radius: 24px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      max-width: 900px;
+      margin: 0 auto;
+      width: calc(100% - 2rem);
+      overflow: hidden;
+    }
+    
+    .education-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(22, 163, 74, 0.2);
+    }
+    
+    .degree-icon {
+      width: 70px;
+      height: 70px;
+      background: #16A34A;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      color: white;
+    }
+    
+    .degree-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      color: #1e293b;
+    }
+    
+    .university-name {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    
+    .education-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: white;
+      border: 2px solid #16A34A;
+      border-radius: 50px;
+      color: #16A34A;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    
+    .year-badge {
+      background: #16A34A;
+      color: white;
+      padding: 1.25rem;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 1.125rem;
+      text-align: center;
+      min-width: 120px;
+      box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+    }
+    
+    /* Footer Section - White Background */
+    .footer-section {
+      background: white;
+      padding: 60px 0;
+      border-top: 3px solid #f1f5f9;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    .footer-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+      word-wrap: break-word;
+    }
+    
+    .footer-subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      width: calc(100% - 2rem);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: white;
+      border: 2px solid;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .contact-item:nth-child(1) { border-color: #B91C1C; }
+    .contact-item:nth-child(2) { border-color: #EC4899; }
+    .contact-item:nth-child(3) { border-color: #28A745; }
+    
+    .contact-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-item:nth-child(1):hover { background: #B91C1C; }
+    .contact-item:nth-child(2):hover { background: #EC4899; }
+    .contact-item:nth-child(3):hover { background: #28A745; }
+    
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+    }
+    
+    .contact-item:nth-child(1) .contact-item-icon { background: #B91C1C; }
+    .contact-item:nth-child(2) .contact-item-icon { background: #EC4899; }
+    .contact-item:nth-child(3) .contact-item-icon { background: #28A745; }
+    
+    .contact-item:hover .contact-item-icon {
+      background: white;
+    }
+    
+    .contact-item:nth-child(1):hover .contact-item-icon { color: #B91C1C; }
+    .contact-item:nth-child(2):hover .contact-item-icon { color: #EC4899; }
+    .contact-item:nth-child(3):hover .contact-item-icon { color: #28A745; }
+    
+    .contact-text {
+      color: #334155;
+      font-weight: 500;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+    
+    .contact-item:hover .contact-text {
+      color: white;
+    }
+    
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border: 2px solid #BF870B;
+      border-radius: 50px;
+      color: #BF870B;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .location-icon {
+      width: 24px;
+      height: 24px;
+      background: #BF870B;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero-section,
+      .experience-section,
+      .skills-section,
+      .certifications-section,
+      .education-section,
+      .footer-section {
+        padding: 50px 0;
+      }
+      
+      .section-title { 
+        font-size: 2rem !important;
+      }
+      
+      .hero-name {
+        font-size: 2.25rem !important;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.5rem !important;
+      }
+      
+      .hero-description {
+        font-size: 0.95rem !important;
+      }
+      
+      .profile-image { 
+        width: 200px !important; 
+        height: 200px !important;
+      }
+      
+      .floating-badge {
+        font-size: 10px;
+        padding: 5px 12px;
+        right: 0;
+      }
+      
+      .contact-btn {
+        width: 48px;
+        height: 48px;
+      }
+      
+      .skills-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .job-title {
+        font-size: 1.25rem !important;
+      }
+      
+      .degree-title {
+        font-size: 1.75rem;
+      }
+      
+      .footer-title {
+        font-size: 2rem;
+      }
+      
+      .availability-badge {
+        font-size: 10px;
+        padding: 6px 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 1.75rem !important;
+      }
+      
+      .hero-name {
+        font-size: 2rem !important;
+      }
+      
+      .profile-image {
+        width: 180px !important;
+        height: 180px !important;
+      }
+      
+      .job-title {
+        font-size: 1.125rem !important;
+      }
+      
+      .contact-btn {
+        width: 46px;
+        height: 46px;
+      }
+      
+      .contact-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  </style>
+</head>
 
-    <!-- Noise Overlay -->
-    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.015] bg-noise"></div>
-
+<body>
    <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <!-- Enhanced Ambient Background Glow with Brand Colors -->
-        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#BF870B]/8 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#28A745]/6 rounded-full blur-3xl pointer-events-none animate-pulse-slow delay-1000"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#EC4899]/4 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <!-- Hero Content Wrapper -->
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-                
-                <!-- Left: Profile Image with Creative Marketing Design -->
-                <div class="lg:w-2/5 flex justify-center lg:justify-start animate-fadeIn">
-                    <div class="relative group">
-                        <!-- Decorative Elements -->
-                        <div class="absolute -inset-4 bg-gradient-to-tr from-[#BF870B]/20 via-[#28A745]/20 to-[#EC4899]/20 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                        <div class="absolute -inset-2 border-2 border-[#BF870B]/30 rounded-full animate-spin-slow"></div>
-                        <div class="absolute -inset-6 border border-[#28A745]/20 rounded-full animate-ping-slow"></div>
-                        
-                        <!-- Profile Image Container -->
-                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                            <img 
-                                src="/assets/img/Rakshit Soral.png" 
-                                alt="Rakshit Soral - Marketing Strategist"
-                                class="w-full h-full object-cover"
-                                loading="eager"
-                            />
-                            <!-- Gradient Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-[#BF870B]/10 via-transparent to-[#28A745]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
-                        
-                        <!-- Floating Badge -->
-                        <div class="absolute -bottom-4 -right-4 glass-card px-4 py-2 rounded-full animate-float shadow-xl">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-[#28A745] animate-pulse"></span>
-                                <span class="text-xs font-semibold text-slate-900">10+ Years</span>
-                            </div>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <!-- Profile Image -->
+                <div class="hero-image-col">
+                    <div class="profile-wrapper">
+                        <img 
+                            src="/assets/img/Rakshit Soral.png" 
+                            alt="Rakshit Soral - Marketing Strategist"
+                            class="profile-image"
+                        />
+                        <div class="floating-badge">
+                            10+ Years
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Text Content -->
-                <div class="lg:w-3/5 text-center lg:text-left">
+                <!-- Text Content -->
+                <div class="hero-content-col">
                     <!-- Availability Badge -->
-                    <div class="inline-flex items-center gap-3 glass-card px-4 py-2 rounded-full mb-6 animate-fadeIn">
-                        <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                        <span class="text-xs uppercase tracking-widest text-slate-600">Available for Opportunities</span>
+                    <div class="availability-badge">
+                        <span class="status-dot"></span>
+                        <span>Available for Opportunities</span>
                     </div>
 
-                    <!-- Name (Massive Typography) -->
-                           <h1 class="font-display text-4xl sm:text-3xl"><span class="highlight-yellow px-4 inline-block relative">Rakshit Soral</span></h1>
-
+                    <!-- Name -->
+                    <h1 class="hero-name">
+                        Rakshit Soral
+                    </h1>
 
                     <!-- Title -->
-                    <p class="text-2xl md:text-3xl text-slate-600 font-light mb-6 animate-fadeInUp delay-200">
+                    <p class="hero-subtitle">
                         Marketing Strategist
                     </p>
 
                     <!-- Brief Tagline -->
-                    <p class="text-base md:text-lg text-slate-500 leading-relaxed font-light mb-8 animate-fadeInUp delay-300">
+                    <p class="hero-description">
                         Marketing leader with 10+ years of experience in B2B SaaS, demand generation, content strategy, and marketing automation. Proven ability to drive revenue through omni-channel campaigns, ABM, and cold outbound.
                     </p>
 
-                    <!-- Colorful Contact Icons with Brand Colors -->
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 animate-fadeInUp delay-400">
-                        <!-- Email Icon - Red Dark -->
-                        <a href="mailto:rakshitsoral@gmail.com" 
-                           class="group relative w-14 h-14 rounded-full flex items-center justify-center bg-[#B91C1C] text-white shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 hover:bg-[#991B1B]" 
-                           aria-label="Email Rakshit Soral"
-                           title="Email">
-                            <i data-lucide="mail" class="w-6 h-6 relative z-10"></i>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#B91C1C] to-[#EC4899] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <!-- Contact Buttons -->
+                    <div class="contact-buttons">
+                        <a href="mailto:rakshitsoral@gmail.com" class="contact-btn email" aria-label="Email" title="Email">
+                            <i data-lucide="mail" style="width: 24px; height: 24px;"></i>
                         </a>
                         
-                        <!-- LinkedIn Icon - Green Medium -->
-                        <a href="https://linkedin.com/in/rakshitsoral" 
-                           target="_blank" 
-                           rel="noopener noreferrer" 
-                           class="group relative w-14 h-14 rounded-full flex items-center justify-center bg-[#28A745] text-white shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 hover:bg-[#16A34A]" 
-                           aria-label="LinkedIn profile of Rakshit Soral"
-                           title="LinkedIn">
-                            <i data-lucide="linkedin" class="w-6 h-6 relative z-10"></i>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#28A745] to-[#16A34A] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="https://linkedin.com/in/rakshitsoral" target="_blank" rel="noopener noreferrer" class="contact-btn linkedin" aria-label="LinkedIn" title="LinkedIn">
+                            <i data-lucide="linkedin" style="width: 24px; height: 24px;"></i>
                         </a>
                         
-                        <!-- Phone Icon - Pink/Magenta -->
-                        <a href="tel:+919602542617" 
-                           class="group relative w-14 h-14 rounded-full flex items-center justify-center bg-[#EC4899] text-white shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 hover:bg-[#DB2777]" 
-                           aria-label="Call Rakshit Soral"
-                           title="Phone">
-                            <i data-lucide="phone" class="w-6 h-6 relative z-10"></i>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#EC4899] to-[#B91C1C] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <a href="tel:+919602542617" class="contact-btn phone" aria-label="Phone" title="Phone">
+                            <i data-lucide="phone" style="width: 24px; height: 24px;"></i>
                         </a>
                         
-                        <!-- Download Icon - Gold/Amber -->
-                        <button id="downloadPDF" 
-                                class="group relative w-14 h-14 rounded-full flex items-center justify-center bg-[#BF870B] text-golden shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 hover:bg-[#A67209]" 
-                                aria-label="Download resume PDF"
-                                title="Download PDF">
-                            <i data-lucide="download" class="w-6 h-6 relative z-10"></i>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#BF870B] to-[#D4A017] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <button id="downloadPDF" class="contact-btn download" aria-label="Download PDF" title="Download PDF">
+                            <i data-lucide="download" style="width: 24px; height: 24px;"></i>
                         </button>
-                    </div>
-                </div>
-            </div>
-<!-- Handwritten Accent - Repositioned -->
-<div class="hidden xl:block absolute -right-8 bottom-12 rotate-[-8deg] pointer-events-none animate-float">
-                <p class="font-['Reenie_Beanie'] text-4xl text-slate-400">let's create something great</p>
-                <svg class="w-8 h-8 text-slate-400 ml-auto mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-            </div>
-        </div>
-    </header>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 md:py-28 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6">
-            <!-- Section Header -->
-            <div class="mb-16 text-center">
-                <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Professional Journey</span>
-                <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Work Experience</h2>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="relative space-y-12">
-                <!-- Timeline Line -->
-                <div class="hidden md:block absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#28A745] via-[#16A34A] to-transparent"></div>
-
-                <!-- Job 1 - Kitecyber -->
-                <div class="relative pl-0 md:pl-20 animate-on-scroll">
-                    <div class="hidden md:block absolute left-[1.875rem] top-6 w-2.5 h-2.5 rounded-full bg-[#28A745] ring-4 ring-slate-50"></div>
-                    
-                    <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                            <div>
-                                <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-slate-900 tracking-tight mb-1">Marketing & Demand Generation Specialist</h3>
-                                <p class="text-[#BF870B] font-medium">Kitecyber</p>
-                                <p class="text-sm text-slate-500 mt-1">California (United States), Remote</p>
-                            </div>
-                            <span class="text-sm text-slate-500 font-light md:text-right">Oct 2024 - Present</span>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Spearheaded comprehensive website positioning overhaul, including keyword targeting and product category mapping—driving a <strong class="text-slate-900">40% increase in product trial signups</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="users" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Revived LinkedIn presence through engaging carousels and video content, adding <strong class="text-slate-900">2,000+ followers in 8 months</strong> and improving brand authority</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="mail" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Deployed cold email outreach campaigns using Apollo.io, achieving a <strong class="text-slate-900">32% open rate</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="dollar-sign" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Launched Google Ads campaigns with a <strong class="text-slate-900">$60,000 budget</strong>, contributing to a <strong>20% increase in qualified leads</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="target" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="file-text" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in <strong class="text-slate-900">12% improvement in MQL-to-SQL conversions</strong></span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 2 - Plutomen Technologies -->
-                <div class="relative pl-0 md:pl-20 animate-on-scroll">
-                    <div class="hidden md:block absolute left-[1.875rem] top-6 w-2.5 h-2.5 rounded-full bg-[#28A745] ring-4 ring-slate-50"></div>
-                    
-                    <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                            <div>
-                                <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-slate-900 tracking-tight mb-1">Product Marketing Manager</h3>
-                                <p class="text-[#BF870B] font-medium">Plutomen Technologies</p>
-                                <p class="text-sm text-slate-500 mt-1">Ahmedabad, Remote</p>
-                            </div>
-                            <span class="text-sm text-slate-500 font-light md:text-right">Aug 2022 - Sep 2024</span>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="users" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Built and led a <strong class="text-slate-900">4-member marketing team</strong>, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over <strong>200+ qualified leads via email</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="handshake" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Collaborated with Sales and Product to reposition messaging for Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by <strong class="text-slate-900">30% from zero baseline</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="pen-tool" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Developed and executed long-term content marketing strategy, publishing <strong class="text-slate-900">100+ blogs in 2 years</strong>, and generating <strong>$250K in marketing-attributed pipeline revenue</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="mail" class="w-5 h-5 text-[#28A745] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 3 - Simform Solutions -->
-                <div class="relative pl-0 md:pl-20 animate-on-scroll">
-                    <div class="hidden md:block absolute left-[1.875rem] top-6 w-2.5 h-2.5 rounded-full bg-[#16A34A] ring-4 ring-slate-50"></div>
-                    
-                    <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                            <div>
-                                <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-slate-900 tracking-tight mb-1">Demand Generation Lead</h3>
-                                <p class="text-[#BF870B] font-medium">Simform Solutions</p>
-                                <p class="text-sm text-slate-500 mt-1">Ahmedabad, Hybrid</p>
-                            </div>
-                            <span class="text-sm text-slate-500 font-light md:text-right">Oct 2017 - July 2022</span>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="globe" class="w-5 h-5 text-[#16A34A] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering <strong class="text-slate-900">30+ qualified leads/month consistently</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="megaphone" class="w-5 h-5 text-[#16A34A] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by <strong class="text-slate-900">1,000+ monthly visits</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="target" class="w-5 h-5 text-[#16A34A] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a <strong class="text-slate-900">45% uplift in SQL conversions</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="mail" class="w-5 h-5 text-[#16A34A] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by <strong class="text-slate-900">30%</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="link" class="w-5 h-5 text-[#16A34A] shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Built <strong class="text-slate-900">50+ high-quality backlinks</strong> via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by <strong>40%</strong> and domain authority</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 4 - Hoojook (RimTim Technologies) -->
-                <div class="relative pl-0 md:pl-20 animate-on-scroll">
-                    <div class="hidden md:block absolute left-[1.875rem] top-6 w-2.5 h-2.5 rounded-full bg-slate-400 ring-4 ring-slate-50"></div>
-                    
-                    <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift opacity-90">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                            <div>
-                                <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-slate-900 tracking-tight mb-1">Inbound Marketing Executive</h3>
-                                <p class="text-slate-600 font-medium">Hoojook (RimTim Technologies)</p>
-                                <p class="text-sm text-slate-500 mt-1">Gurgaon, In-house</p>
-                            </div>
-                            <span class="text-sm text-slate-500 font-light md:text-right">April 2016 - Sep 2017</span>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Implemented targeted SEO and content strategies, successfully scaling client websites to <strong class="text-slate-900">3,000+ monthly visitors</strong></span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="facebook" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="globe" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="pen-tool" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 5 - Girnar Softwares -->
-                <div class="relative pl-0 md:pl-20 animate-on-scroll">
-                    <div class="hidden md:block absolute left-[1.875rem] top-6 w-2.5 h-2.5 rounded-full bg-slate-300 ring-4 ring-slate-50"></div>
-                    
-                    <div class="glass-card p-6 md:p-8 rounded-2xl hover-lift opacity-80">
-                        <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-2">
-                            <div>
-                                <h3 class="font-['DM_Serif_Display'] text-2xl md:text-3xl text-slate-900 tracking-tight mb-1">Jr. Content Reporter</h3>
-                                <p class="text-slate-600 font-medium">Girnar Softwares Pvt. Ltd.</p>
-                                <p class="text-sm text-slate-500 mt-1">Jaipur, In-house</p>
-                            </div>
-                            <span class="text-sm text-slate-500 font-light md:text-right">July 2015 - March 2016</span>
-                        </div>
-                        
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="trending-up" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Collaborated with the team to help scale website traffic to <strong class="text-slate-900">100,000+ monthly visitors</strong> through high-quality, SEO-optimized content</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="search" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <i data-lucide="calendar" class="w-5 h-5 text-slate-500 shrink-0 mt-0.5"></i>
-                                <span class="text-slate-700">Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing</span>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- Skills Section -->
-    <section id="skills" class="py-20 md:py-28 relative overflow-hidden">
-        <!-- Enhanced Creative Background with Brand Colors -->
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#16A34A]/95 to-[#BF870B]/90"></div>
-        
-        <!-- Animated Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="hero-container">
+            <div class="section-header">
+                <span class="section-subtitle">Professional Journey</span>
+                <h2 class="section-title dark">Work Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- Job 1 - Kitecyber -->
+                <div class="timeline-item active">
+                    <div class="job-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h3 class="job-title">Marketing & Demand Generation Specialist</h3>
+                                    <p class="company-name">Kitecyber</p>
+                                    <p class="job-meta">California (United States), Remote</p>
+                                </div>
+                                <span class="job-meta">Oct 2024 - Present</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <i data-lucide="trending-up" class="achievement-icon"></i>
+                            <span class="achievement-text">Spearheaded comprehensive website positioning overhaul, including keyword targeting and product category mapping—driving a <span class="achievement-highlight">40% increase in product trial signups</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="users" class="achievement-icon"></i>
+                            <span class="achievement-text">Revived LinkedIn presence through engaging carousels and video content, adding <span class="achievement-highlight">2,000+ followers in 8 months</span> and improving brand authority</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="mail" class="achievement-icon"></i>
+                            <span class="achievement-text">Deployed cold email outreach campaigns using Apollo.io, achieving a <span class="achievement-highlight">32% open rate</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="dollar-sign" class="achievement-icon"></i>
+                            <span class="achievement-text">Launched Google Ads campaigns with a <span class="achievement-highlight">$60,000 budget</span>, contributing to a <span class="achievement-highlight">20% increase in qualified leads</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="target" class="achievement-icon"></i>
+                            <span class="achievement-text">Implemented a cohesive omni-channel growth strategy across SEO, email, LinkedIn, and paid media</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="file-text" class="achievement-icon"></i>
+                            <span class="achievement-text">Produced sales enablement tools including Case Studies, Brochures, and guides, resulting in <span class="achievement-highlight">12% improvement in MQL-to-SQL conversions</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 - Plutomen Technologies -->
+                <div class="timeline-item recent">
+                    <div class="job-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h3 class="job-title">Product Marketing Manager</h3>
+                                    <p class="company-name">Plutomen Technologies</p>
+                                    <p class="job-meta">Ahmedabad, Remote</p>
+                                </div>
+                                <span class="job-meta">Aug 2022 - Sep 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <i data-lucide="users" class="achievement-icon"></i>
+                            <span class="achievement-text">Built and led a <span class="achievement-highlight">4-member marketing team</span>, executing omnichannel campaigns (SEO, content, ABM, Google & LinkedIn Ads, outbound email), driving over <span class="achievement-highlight">200+ qualified leads via email</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="handshake" class="achievement-icon"></i>
+                            <span class="achievement-text">Executed high-impact co-marketing campaigns with Meta and RealWear in India to elevate brand presence in the industrial tech sector</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="trending-up" class="achievement-icon"></i>
+                            <span class="achievement-text">Collaborated with Sales and Product to reposition messaging for Industrial XR + AI Connected Worker Suite, increasing organic brand visibility by <span class="achievement-highlight">30% from zero baseline</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="pen-tool" class="achievement-icon"></i>
+                            <span class="achievement-text">Developed and executed long-term content marketing strategy, publishing <span class="achievement-highlight">100+ blogs in 2 years</span>, and generating <span class="achievement-highlight">$250K in marketing-attributed pipeline revenue</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="mail" class="achievement-icon"></i>
+                            <span class="achievement-text">Designed and launched CRM-based email onboarding and nurturing workflows, improving lead engagement and conversion</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 - Simform Solutions -->
+                <div class="timeline-item past">
+                    <div class="job-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h3 class="job-title">Demand Generation Lead</h3>
+                                    <p class="company-name">Simform Solutions</p>
+                                    <p class="job-meta">Ahmedabad, Hybrid</p>
+                                </div>
+                                <span class="job-meta">Oct 2017 - July 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <i data-lucide="globe" class="achievement-icon"></i>
+                            <span class="achievement-text">Designed and launched geo-targeted microsites supported by SEO and paid ad strategies, delivering <span class="achievement-highlight">30+ qualified leads/month consistently</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="megaphone" class="achievement-icon"></i>
+                            <span class="achievement-text">Led influencer-driven content campaigns in collaboration with industry experts from Wix, Facebook, and React Native, boosting blog traffic by <span class="achievement-highlight">1,000+ monthly visits</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="target" class="achievement-icon"></i>
+                            <span class="achievement-text">Executed intent-driven ABM campaigns using Tribilio and Bombora, resulting in a <span class="achievement-highlight">45% uplift in SQL conversions</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="mail" class="achievement-icon"></i>
+                            <span class="achievement-text">Orchestrated multi-touch cold outreach across email and LinkedIn, aligning with ABM workflows and increasing email response rates by <span class="achievement-highlight">30%</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="link" class="achievement-icon"></i>
+                            <span class="achievement-text">Built <span class="achievement-highlight">50+ high-quality backlinks</span> via guest posts on InfoQ, DZone, and Dataversity, increasing organic search ranking by <span class="achievement-highlight">40%</span> and domain authority</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Job 4 - Hoojook -->
+                <div class="timeline-item early">
+                    <div class="job-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h3 class="job-title">Inbound Marketing Executive</h3>
+                                    <p class="company-name">Hoojook (RimTim Technologies)</p>
+                                    <p class="job-meta">Gurgaon, In-house</p>
+                                </div>
+                                <span class="job-meta">April 2016 - Sep 2017</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <i data-lucide="trending-up" class="achievement-icon"></i>
+                            <span class="achievement-text">Implemented targeted SEO and content strategies, successfully scaling client websites to <span class="achievement-highlight">3,000+ monthly visitors</span></span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="facebook" class="achievement-icon"></i>
+                            <span class="achievement-text">Ran Facebook ad campaigns to drive consistent traffic to lead-gen focused landing pages</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="globe" class="achievement-icon"></i>
+                            <span class="achievement-text">Managed and updated WordPress websites, including reviewkeg.com and rimtim.com, ensuring optimal user experience and performance</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="pen-tool" class="achievement-icon"></i>
+                            <span class="achievement-text">Created SEO-optimized web content including blogs, infographics, and landing pages to support inbound marketing</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Job 5 - Girnar Softwares -->
+                <div class="timeline-item old">
+                    <div class="job-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                                <div>
+                                    <h3 class="job-title">Jr. Content Reporter</h3>
+                                    <p class="company-name">Girnar Softwares Pvt. Ltd.</p>
+                                    <p class="job-meta">Jaipur, In-house</p>
+                                </div>
+                                <span class="job-meta">July 2015 - March 2016</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="achievement-list">
+                        <li class="achievement-item">
+                            <i data-lucide="trending-up" class="achievement-icon"></i>
+                            <span class="achievement-text">Collaborated with the team to help scale website traffic to <span class="achievement-highlight">100,000+ monthly visitors</span> through high-quality, SEO-optimized content</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="search" class="achievement-icon"></i>
+                            <span class="achievement-text">Researched, planned, and created content across automotive categories including cars, bikes, and trucks to cater to region-specific search trends</span>
+                        </li>
+                        <li class="achievement-item">
+                            <i data-lucide="calendar" class="achievement-icon"></i>
+                            <span class="achievement-text">Managed the editorial calendar and content tracker, streamlining the workflow from ideation to publishing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <!-- Floating Decorative Elements -->
-        <div class="absolute top-20 left-10 w-32 h-32 bg-[#EC4899]/20 rounded-full blur-3xl animate-float"></div>
-        <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#BF870B]/20 rounded-full blur-3xl animate-float delay-1000"></div>
-        <div class="absolute top-1/2 left-1/3 w-24 h-24 bg-[#28A745]/20 rounded-full blur-2xl animate-pulse-slow"></div>
-        
-        <!-- Geometric Shapes -->
-        <div class="absolute top-10 right-20 w-16 h-16 border-2 border-[#EC4899]/30 rotate-45 animate-spin-slow"></div>
-        <div class="absolute bottom-32 left-32 w-12 h-12 border-2 border-[#BF870B]/30 rounded-full animate-pulse"></div>
-        
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
-            <!-- Section Header -->
-            <div class="mb-16 text-center">
-                <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Core Competencies</span>
-                <h2 class="font-['DM_Serif_Display'] text-4xl md:text-6xl text-white tracking-tight mb-4">Skills & Expertise</h2>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="hero-container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color: #BF870B !important;">Core Competencies</span>
+                <h2 class="section-title light">Skills & Expertise</h2>
             </div>
 
-            <!-- Skills Grid with Enhanced Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <!-- Core Skills -->
-                <div class="group relative bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#BF870B]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#BF870B]/20 animate-on-scroll">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#BF870B]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    <div class="relative z-10">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-['DM_Serif_Display'] text-xl text-white tracking-tight">Core Skills</h3>
-                            <i data-lucide="zap" class="w-6 h-6 text-[#BF870B] group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <ul class="space-y-3 text-sm text-slate-200">
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Digital Marketing
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Demand Generation
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Conversion Optimization
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Content Strategy
-                            </li>
-                        </ul>
+            <div class="skills-grid">
+                <!-- Core Skills Card -->
+                <div class="skill-card gold">
+                    <div class="skill-card-header">
+                        <h3 class="skill-card-title">Core Skills</h3>
+                        <i data-lucide="zap" class="skill-icon"></i>
                     </div>
+                    <ul class="skill-list">
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Digital Marketing</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Demand Generation</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Conversion Optimization</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Content Strategy</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Paid Media -->
-                <div class="group relative bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#EC4899]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#EC4899]/20 animate-on-scroll">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#EC4899]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    <div class="relative z-10">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-['DM_Serif_Display'] text-xl text-white tracking-tight">Paid Media</h3>
-                            <i data-lucide="dollar-sign" class="w-6 h-6 text-[#EC4899] group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <ul class="space-y-3 text-sm text-slate-200">
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                LinkedIn Ads
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                Google AdWords
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                Facebook Ads
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                Twitter Ads
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                Programmatic Ads
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#EC4899] animate-pulse"></span>
-                                Display Ads
-                            </li>
-                        </ul>
+                <!-- Paid Media Card -->
+                <div class="skill-card pink">
+                    <div class="skill-card-header">
+                        <h3 class="skill-card-title">Paid Media</h3>
+                        <i data-lucide="dollar-sign" class="skill-icon"></i>
                     </div>
+                    <ul class="skill-list">
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>LinkedIn Ads</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Google AdWords</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Facebook Ads</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Twitter Ads</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Programmatic Ads</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Display Ads</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Organic / SEO -->
-                <div class="group relative bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#28A745]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#28A745]/20 animate-on-scroll">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#28A745]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    <div class="relative z-10">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-['DM_Serif_Display'] text-xl text-white tracking-tight">Organic / SEO</h3>
-                            <i data-lucide="search" class="w-6 h-6 text-[#28A745] group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <ul class="space-y-3 text-sm text-slate-200">
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Technical SEO
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Content SEO
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                LLM SEO
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Backlinking
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                PR Outreach
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#28A745] animate-pulse"></span>
-                                Influencer Outreach
-                            </li>
-                        </ul>
+                <!-- Organic/SEO Card -->
+                <div class="skill-card green">
+                    <div class="skill-card-header">
+                        <h3 class="skill-card-title">Organic / SEO</h3>
+                        <i data-lucide="search" class="skill-icon"></i>
                     </div>
+                    <ul class="skill-list">
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Technical SEO</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Content SEO</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>LLM SEO</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Backlinking</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>PR Outreach</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Influencer Outreach</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Analytics & Tools -->
-                <div class="group relative bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#B91C1C]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#B91C1C]/20 animate-on-scroll">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#B91C1C]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    <div class="relative z-10">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="font-['DM_Serif_Display'] text-xl text-white tracking-tight">Analytics & Tools</h3>
-                            <i data-lucide="bar-chart-2" class="w-6 h-6 text-[#B91C1C] group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <ul class="space-y-3 text-sm text-slate-200">
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                Google Analytics
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                Search Console
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                GTM
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                Canva
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                Mailchimp
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                HubSpot
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                SEMrush
-                            </li>
-                            <li class="flex items-center gap-3 group-hover:translate-x-1 transition-transform">
-                                <span class="w-2 h-2 rounded-full bg-[#B91C1C] animate-pulse"></span>
-                                Ahrefs
-                            </li>
-                        </ul>
+                <!-- Analytics & Tools Card -->
+                <div class="skill-card red">
+                    <div class="skill-card-header">
+                        <h3 class="skill-card-title">Analytics & Tools</h3>
+                        <i data-lucide="bar-chart-2" class="skill-icon"></i>
                     </div>
+                    <ul class="skill-list">
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Google Analytics</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Search Console</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>GTM</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Canva</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Mailchimp</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>HubSpot</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>SEMrush</span>
+                        </li>
+                        <li>
+                            <span class="skill-bullet"></span>
+                            <span>Ahrefs</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Development Skills with Enhanced Design -->
-            <div class="group relative bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:bg-white/15 hover:border-[#BF870B]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#BF870B]/20 animate-on-scroll">
-                <div class="absolute inset-0 bg-gradient-to-br from-[#BF870B]/20 via-[#28A745]/10 to-[#EC4899]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                <div class="relative z-10">
-                    <div class="flex items-center justify-between mb-6">
-                        <h3 class="font-['DM_Serif_Display'] text-2xl text-white tracking-tight">Development</h3>
-                        <i data-lucide="code" class="w-8 h-8 text-[#BF870B] group-hover:scale-110 group-hover:rotate-12 transition-all"></i>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-5 py-2.5 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-[#BF870B] hover:border-[#BF870B] transition-all duration-300 hover:scale-110">HTML/CSS</span>
-                        <span class="px-5 py-2.5 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-[#28A745] hover:border-[#28A745] transition-all duration-300 hover:scale-110">JavaScript</span>
-                        <span class="px-5 py-2.5 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-[#EC4899] hover:border-[#EC4899] transition-all duration-300 hover:scale-110">Tailwind CSS</span>
-                        <span class="px-5 py-2.5 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-[#16A34A] hover:border-[#16A34A] transition-all duration-300 hover:scale-110">11ty</span>
-                        <span class="px-5 py-2.5 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-[#B91C1C] hover:border-[#B91C1C] transition-all duration-300 hover:scale-110">Git</span>
-                    </div>
+            <!-- Development Card -->
+            <div class="development-card">
+                <div class="skill-card-header" style="border-color: #16A34A;">
+                    <h3 class="skill-card-title" style="color: #16A34A;">Development</h3>
+                    <i data-lucide="code" class="skill-icon" style="color: #16A34A;"></i>
+                </div>
+                <div class="development-tags">
+                    <span class="dev-tag">HTML/CSS</span>
+                    <span class="dev-tag">JavaScript</span>
+                    <span class="dev-tag">Tailwind CSS</span>
+                    <span class="dev-tag">11ty</span>
+                    <span class="dev-tag">Git</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section class="py-20 md:py-28 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6">
-            <!-- Section Header -->
-            <div class="mb-16 text-center">
-                <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Professional Development</span>
-                <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Certifications</h2>
+    <section class="certifications-section">
+        <div class="hero-container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color: #BF870B !important;">Professional Development</span>
+                <h2 class="section-title light">Certifications</h2>
             </div>
 
-            <!-- Certification Badges Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="cert-grid">
                 <!-- Certification 1 -->
-                <div class="cert-badge glass-card p-6 rounded-2xl hover-lift animate-on-scroll">
-                    <div class="w-14 h-14 rounded-full bg-[#28A745]/10 flex items-center justify-center mb-4">
-                        <i data-lucide="award" class="w-7 h-7 text-[#28A745]"></i>
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <i data-lucide="award" style="width: 32px; height: 32px;"></i>
                     </div>
-                    <h3 class="font-['DM_Serif_Display'] text-xl text-slate-900 tracking-tight mb-2">Google Analytics 4</h3>
-                    <p class="text-sm text-slate-600 mb-3">Google</p>
+                    <h3 class="cert-title">Google Analytics 4</h3>
+                    <p class="cert-org">Google</p>
                 </div>
 
                 <!-- Certification 2 -->
-                <div class="cert-badge glass-card p-6 rounded-2xl hover-lift animate-on-scroll">
-                    <div class="w-14 h-14 rounded-full bg-[#BF870B]/10 flex items-center justify-center mb-4">
-                        <i data-lucide="award" class="w-7 h-7 text-[#BF870B]"></i>
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <i data-lucide="award" style="width: 32px; height: 32px;"></i>
                     </div>
-                    <h3 class="font-['DM_Serif_Display'] text-xl text-slate-900 tracking-tight mb-2">Google AdWords</h3>
-                    <p class="text-sm text-slate-600 mb-3">Google</p>
+                    <h3 class="cert-title">Google AdWords</h3>
+                    <p class="cert-org">Google</p>
                 </div>
 
                 <!-- Certification 3 -->
-                <div class="cert-badge glass-card p-6 rounded-2xl hover-lift animate-on-scroll">
-                    <div class="w-14 h-14 rounded-full bg-[#EC4899]/10 flex items-center justify-center mb-4">
-                        <i data-lucide="award" class="w-7 h-7 text-[#EC4899]"></i>
+                <div class="cert-card">
+                    <div class="cert-icon-wrapper">
+                        <i data-lucide="award" style="width: 32px; height: 32px;"></i>
                     </div>
-                    <h3 class="font-['DM_Serif_Display'] text-xl text-slate-900 tracking-tight mb-2">EF SET English Certificate</h3>
-                    <p class="text-sm text-slate-600 mb-3">C1 Advanced</p>
+                    <h3 class="cert-title">EF SET English Certificate</h3>
+                    <p class="cert-org">C1 Advanced</p>
                 </div>
             </div>
         </div>
     </section>
 
-   <!-- Education Section -->
-    <section class="py-20 md:py-28 relative overflow-hidden">
-        <!-- Creative Background with Academic Theme -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-[#BF870B] via-[#28A745] to-[#16A34A]"></div>
-        
-        <!-- Animated Academic Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-full h-full" style="background-image: linear-gradient(45deg, transparent 45%, white 45%, white 55%, transparent 55%), linear-gradient(-45deg, transparent 45%, white 45%, white 55%, transparent 55%); background-size: 60px 60px;"></div>
-        </div>
-        
-        <!-- Floating Graduation Elements -->
-        <div class="absolute top-16 left-20 w-24 h-24 bg-white/10 rounded-full blur-2xl animate-float"></div>
-        <div class="absolute bottom-16 right-20 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-float delay-1000"></div>
-        <div class="absolute top-1/3 right-1/4 w-20 h-20 bg-[#EC4899]/20 rounded-full blur-xl animate-pulse-slow"></div>
-        
-        <!-- Decorative Academic Icons -->
-        <div class="absolute top-20 right-32 w-12 h-12 border-2 border-white/30 rounded-lg rotate-12 animate-float"></div>
-        <div class="absolute bottom-28 left-40 w-16 h-16 border-2 border-white/30 rotate-45 animate-spin-slow"></div>
-        
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <!-- Section Header -->
-            <div class="mb-16 text-center">
-                <span class="text-xs uppercase tracking-widest text-[#BF870B] font-semibold mb-3 block">Academic Background</span>
-                <h2 class="font-['DM_Serif_Display'] text-4xl md:text-6xl text-white tracking-tight mb-4">Education</h2>
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="hero-container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color: #BF870B !important;">Academic Background</span>
+                <h2 class="section-title light">Education</h2>
             </div>
 
-            <!-- Enhanced Education Card -->
-            <div class="group relative bg-white/15 backdrop-blur-lg border border-white/30 p-10 md:p-12 rounded-3xl hover:bg-white/20 hover:border-white/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30 animate-on-scroll">
-                <!-- Gradient Overlay on Hover -->
-                <div class="absolute inset-0 bg-gradient-to-br from-[#BF870B]/30 via-transparent to-[#EC4899]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                
-                <!-- Decorative Corner Elements -->
-                <div class="absolute top-6 left-6 w-16 h-16 border-t-2 border-l-2 border-white/40 rounded-tl-2xl"></div>
-                <div class="absolute bottom-6 right-6 w-16 h-16 border-b-2 border-r-2 border-white/40 rounded-br-2xl"></div>
-                
-                <div class="relative z-10">
-                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-                        <div class="flex-1">
-                            <!-- Graduation Cap Icon -->
-                            <div class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
-                            </div>
-                            
-                            <h3 class="font-['DM_Serif_Display'] text-3xl md:text-4xl text-white tracking-tight mb-3 group-hover:text-[#BF870B] transition-colors">
-                                B.Tech, Computer Science Engineering
-                            </h3>
-                            <p class="text-white/90 font-medium text-xl mb-2">Rajasthan Technical University, Kota</p>
-                            
-                            <!-- Additional Details -->
-                            <div class="flex flex-wrap gap-3 mt-4">
-                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-sm text-white border border-white/30">
-                                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                                    4 Years Program
-                                </span>
-                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full text-sm text-white border border-white/30">
-                                    <i data-lucide="award" class="w-4 h-4"></i>
-                                    Bachelor's Degree
-                                </span>
-                            </div>
+            <div class="education-card">
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <div class="degree-icon">
+                            <i data-lucide="graduation-cap" style="width: 40px; height: 40px;"></i>
                         </div>
                         
-                        <!-- Year Badge -->
-                        <div class="shrink-0">
-                            <div class="relative">
-                                <div class="w-32 h-32 rounded-2xl bg-white/20 backdrop-blur-sm flex flex-col items-center justify-center border-2 border-white/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                    <span class="text-3xl font-bold text-white">2011</span>
-                                    <span class="text-white/70 text-sm">to</span>
-                                    <span class="text-3xl font-bold text-white">2015</span>
-                                </div>
-                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-[#EC4899] rounded-full flex items-center justify-center animate-pulse">
-                                    <i data-lucide="check" class="w-5 h-5 text-white"></i>
-                                </div>
-                            </div>
+                        <h3 class="degree-title">
+                            B.Tech, Computer Science Engineering
+                        </h3>
+                        <p class="university-name">Rajasthan Technical University, Kota</p>
+                        
+                        <div class="education-meta">
+                            <span class="meta-badge">
+                                <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+                                4 Years Program
+                            </span>
+                            <span class="meta-badge">
+                                <i data-lucide="award" style="width: 18px; height: 18px;"></i>
+                                Bachelor's Degree
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="year-badge">
+                            2011 - 2015
                         </div>
                     </div>
                 </div>
@@ -658,2095 +1417,117 @@ title: Demand Gen Marketing CV Printable A4
     </section>
 
     <!-- Footer / Contact Section -->
-    <footer id="contact" class="py-16 md:py-20 bg-slate-900 text-slate-200 relative overflow-hidden">
-        <!-- Enhanced Background Glow Matching Hero Design -->
-        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#BF870B]/8 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#28A745]/6 rounded-full blur-3xl pointer-events-none animate-pulse-slow delay-1000"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#EC4899]/4 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <!-- Main Contact Content -->
-            <div class="text-center mb-12">
-                <h2 class="font-['DM_Serif_Display'] text-4xl md:text-5xl text-white tracking-tight mb-3">Rakshit Soral</h2>
-                <p class="text-xl text-slate-400 font-light mb-8">Marketing Strategist</p>
+    <footer class="footer-section">
+        <div class="hero-container">
+            <div style="text-align: center;">
+                <h2 class="footer-title">Rakshit Soral</h2>
+                <p class="footer-subtitle">Marketing Strategist</p>
                 
-                <!-- Contact Methods with Brand Colors -->
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-10">
-                    <!-- Email with Red Dark Color -->
-                    <a href="mailto:rakshitsoral@gmail.com" 
-                       class="flex items-center gap-3 glass-card-dark px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300 group border border-white/5 hover:border-[#B91C1C]/30"
-                       aria-label="Email Rakshit Soral"
-                       title="Email">
-                        <div class="w-8 h-8 rounded-full bg-[#B91C1C] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="mail" class="w-4 h-4 text-white"></i>
+                <div class="contact-grid">
+                    <a href="mailto:rakshitsoral@gmail.com" class="contact-item">
+                        <div class="contact-item-icon">
+                            <i data-lucide="mail" style="width: 20px; height: 20px;"></i>
                         </div>
-                        <span class="text-slate-300 group-hover:text-white transition-colors">rakshitsoral@gmail.com</span>
+                        <span class="contact-text">rakshitsoral@gmail.com</span>
                     </a>
                     
-                    <!-- Phone Icon - Pink/Magenta -->
-                    <a href="tel:+919602542617" 
-                       class="flex items-center gap-3 glass-card-dark px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300 group border border-white/5 hover:border-[#EC4899]/30"
-                       aria-label="Call Rakshit Soral"
-                       title="Phone">
-                        <div class="w-8 h-8 rounded-full bg-[#EC4899] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="phone" class="w-4 h-4 text-white"></i>
+                    <a href="tel:+919602542617" class="contact-item">
+                        <div class="contact-item-icon">
+                            <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
                         </div>
-                        <span class="text-slate-300 group-hover:text-white transition-colors">+91-9602542617</span>
+                        <span class="contact-text">+91-9602542617</span>
                     </a>
                     
-                    <!-- LinkedIn with Green Medium Color -->
-                    <a href="https://linkedin.com/in/rakshitsoral" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="flex items-center gap-3 glass-card-dark px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300 group border border-white/5 hover:border-[#28A745]/30"
-                       aria-label="LinkedIn profile of Rakshit Soral"
-                       title="LinkedIn">
-                        <div class="w-8 h-8 rounded-full bg-[#28A745] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-white"></i>
+                    <a href="https://linkedin.com/in/rakshitsoral" target="_blank" rel="noopener noreferrer" class="contact-item">
+                        <div class="contact-item-icon">
+                            <i data-lucide="linkedin" style="width: 20px; height: 20px;"></i>
                         </div>
-                        <span class="text-slate-300 group-hover:text-white transition-colors">linkedin.com/in/rakshitsoral</span>
+                        <span class="contact-text">linkedin.com/in/rakshitsoral</span>
                     </a>
                 </div>
 
-                <!-- Location with Gold/Amber -->
-                <div class="inline-flex items-center gap-3 glass-card-dark px-5 py-2.5 rounded-full mb-6 border border-white/5">
-                    <div class="w-6 h-6 rounded-full bg-[#BF870B] flex items-center justify-center">
-                        <i data-lucide="map-pin" class="w-3 h-3 text-white"></i>
+                <div style="margin-top: 2rem;">
+                    <div class="location-badge">
+                        <div class="location-icon">
+                            <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+                        </div>
+                        <span>Ahmedabad, Gujarat, IN</span>
                     </div>
-                    <span class="text-sm text-slate-300">Ahmedabad, Gujarat, IN</span>
                 </div>
 
-                <!-- Availability Badge with Green -->
-                <div class="inline-flex items-center gap-3 glass-card-dark px-5 py-2.5 rounded-full border border-white/5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-[#28A745] animate-pulse"></span>
-                    <span class="text-sm text-slate-300">Available for new opportunities</span>
+                <div style="margin-top: 1.5rem;">
+                    <div class="availability-badge">
+                        <span class="status-dot"></span>
+                        <span>Available for new opportunities</span>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
 
-      // PDF Download Functionality - CORRECTED VERSION WITH HEADER/FOOTER HIDING
-async function downloadResumePDF() {
-    const { jsPDF } = window.jspdf;
-    
-    // Show loading state
-    const downloadBtn = document.getElementById('downloadPDF');
-    if (!downloadBtn) {
-        console.error('Download button not found');
-        return;
-    }
-    
-    const originalContent = downloadBtn.innerHTML;
-    downloadBtn.innerHTML = '<svg class="animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-    downloadBtn.disabled = true;
-
-    try {
-        // Hide elements that shouldn't be in PDF
-        const elementsToHide = [
-            document.querySelector('nav'),
-            document.querySelector('header nav'),
-            document.getElementById('scrollToTop'),
-            document.querySelector('.handwritten-accent'),
-            document.querySelector('[class*="cookie"]'),
-            document.querySelector('[class*="banner"]'),
-            // Add any other selectors for elements you want to hide
-        ];
-
-        // Store original display values and hide elements
-        const originalDisplayValues = [];
-        elementsToHide.forEach(element => {
-            if (element) {
-                originalDisplayValues.push({
-                    element: element,
-                    display: element.style.display
-                });
-                element.style.display = 'none';
-            }
-        });
-
-        // Wait a moment for elements to hide
-        await new Promise(resolve => setTimeout(resolve, 100));
-
-        // Capture the body content
-        const canvas = await html2canvas(document.body, {
-            scale: 2,
-            useCORS: true,
-            allowTaint: true,
-            logging: false,
-            windowWidth: 1200,
-            windowHeight: document.body.scrollHeight,
-            backgroundColor: '#f8fafc',
-            // Ignore elements with specific attributes
-            ignoreElements: function(element) {
-                // Ignore navigation, fixed headers, and other unwanted elements
-                if (element.tagName === 'NAV') return true;
-                if (element.classList.contains('no-print')) return true;
-                if (element.id === 'downloadPDF') return true;
-                return false;
-            }
-        });
-
-        // Calculate PDF dimensions (A4 size)
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const imgWidth = 210; // A4 width in mm
-        const pageHeight = 297; // A4 height in mm
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-        let heightLeft = imgHeight;
-        let position = 0;
-
-        // Add first page
-        const imgData = canvas.toDataURL('image/png');
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
-        heightLeft -= pageHeight;
-
-        // Add additional pages if needed
-        while (heightLeft > 0) {
-            position = heightLeft - imgHeight;
-            pdf.addPage();
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
-            heightLeft -= pageHeight;
-        }
-
-        // Save the PDF
-        pdf.save('Rakshit_Soral_Resume.pdf');
-        
-        console.log('PDF generated successfully');
-
-        // Restore hidden elements
-        originalDisplayValues.forEach(item => {
-            item.element.style.display = item.display;
-        });
-
-    } catch (error) {
-        console.error('Error generating PDF:', error);
-        alert('Failed to generate PDF. Please try again or use your browser\'s print function (Ctrl/Cmd + P) and select "Save as PDF".');
-        
-        // Make sure to restore elements even on error
-        const elementsToRestore = [
-            document.querySelector('nav'),
-            document.querySelector('header nav'),
-            document.getElementById('scrollToTop'),
-            document.querySelector('.handwritten-accent'),
-        ];
-        elementsToRestore.forEach(element => {
-            if (element && element.style.display === 'none') {
-                element.style.display = '';
-            }
-        });
-    } finally {
-        // Restore button state
-        downloadBtn.innerHTML = originalContent;
-        downloadBtn.disabled = false;
-        // Re-initialize lucide icons (if using lucide)
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
-    }
-}
-
-// Initialize the download button on page load
-document.addEventListener('DOMContentLoaded', () => {
-    const downloadBtn = document.getElementById('downloadPDF');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', downloadResumePDF);
-        console.log('PDF download button initialized');
-    } else {
-        console.error('Download button not found on page load');
-    }
-});
-
-
-        // Scroll animations using Intersection Observer
-        document.addEventListener('DOMContentLoaded', () => {
-            // PDF Download button event
-            document.getElementById('downloadPDF').addEventListener('click', downloadResumePDF);
-
-            // CRITICAL: Add CSS classes first before initializing observer
-            const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-fadeIn, .animate-fadeInUp, .delay-200, .delay-300, .delay-400');
+        // PDF Download Functionality
+        async function downloadResumePDF() {
+            const { jsPDF } = window.jspdf;
             
-            // Wrap in requestAnimationFrame to ensure DOM is fully rendered
-            requestAnimationFrame(() => {
-                const observerOptions = {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -10% 0px'
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            // Unobserve after animation to improve performance
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
-
-                // Check if elements are already visible before observing
-                animateElements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    const isVisible = rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
-                    
-                    if (isVisible) {
-                        // Element already visible, apply class immediately
-                        el.classList.add('visible');
-                    } else {
-                        // Element below fold, observe it
-                        observer.observe(el);
-                    }
-                });
-            });
-
-            // Scroll to top button
-            const scrollToTopBtn = document.getElementById('scrollToTop');
+            const downloadBtn = document.getElementById('downloadPDF');
+            if (!downloadBtn) return;
             
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
-                    scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                    scrollToTopBtn.classList.add('opacity-100');
-                } else {
-                    scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                    scrollToTopBtn.classList.remove('opacity-100');
+            const originalContent = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<svg style="width: 24px; height: 24px; animation: spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle style="opacity: 0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path style="opacity: 0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+            downloadBtn.disabled = true;
+
+            try {
+                const canvas = await html2canvas(document.body, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    logging: false,
+                    windowWidth: 1200,
+                    windowHeight: document.body.scrollHeight,
+                    backgroundColor: '#ffffff',
+                });
+
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                const imgData = canvas.toDataURL('image/png');
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+                heightLeft -= pageHeight;
+
+                while (heightLeft > 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+                    heightLeft -= pageHeight;
                 }
-            });
 
-            scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+                pdf.save('Rakshit_Soral_Resume.pdf');
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Failed to generate PDF. Please try again.');
+            } finally {
+                downloadBtn.innerHTML = originalContent;
+                downloadBtn.disabled = false;
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }
+        }
 
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href !== '') {
-                        e.preventDefault();
-                        const target = document.querySelector(href);
-                        if (target) {
-                            const offsetTop = target.offsetTop - 80; // Account for fixed nav
-                            window.scrollTo({
-                                top: offsetTop,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadBtn = document.getElementById('downloadPDF');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', downloadResumePDF);
+            }
         });
     </script>
-<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+    <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
 </body>
-
-<style>
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
-}
-
-/*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
-*/
-
-/*
-1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
-2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
-*/
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: #e5e7eb;
-  /* 2 */
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
-6. Use the user's configured `sans` font-variation-settings by default.
-7. Disable tap highlights on iOS
-*/
-
-html,
-:host {
-  line-height: 1.5;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
-  -o-tab-size: 4;
-     tab-size: 4;
-  /* 3 */
-  font-family: IBM Plex Sans, sans-serif;
-  /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
-  font-variation-settings: normal;
-  /* 6 */
-  -webkit-tap-highlight-color: transparent;
-  /* 7 */
-}
-
-/*
-1. Remove the margin in all browsers.
-2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
-*/
-
-body {
-  margin: 0;
-  /* 1 */
-  line-height: inherit;
-  /* 2 */
-}
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
-
-hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  border-top-width: 1px;
-  /* 3 */
-}
-
-/*
-Add the correct text decoration in Chrome, Edge, and Safari.
-*/
-
-abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-/*
-Remove the default font size and weight for headings.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-/*
-Add the correct font weight in Edge and Safari.
-*/
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/*
-1. Use the user's configured `mono` font-family by default.
-2. Use the user's configured `mono` font-feature-settings by default.
-3. Use the user's configured `mono` font-variation-settings by default.
-4. Correct the odd `em` font sizing in all browsers.
-*/
-
-code,
-kbd,
-samp,
-pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  /* 1 */
-  font-feature-settings: normal;
-  /* 2 */
-  font-variation-settings: normal;
-  /* 3 */
-  font-size: 1em;
-  /* 4 */
-}
-
-/*
-Add the correct font size in all browsers.
-*/
-
-small {
-  font-size: 80%;
-}
-
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
-
-table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
-  border-collapse: collapse;
-  /* 3 */
-}
-
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-feature-settings: inherit;
-  /* 1 */
-  font-variation-settings: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  font-weight: inherit;
-  /* 1 */
-  line-height: inherit;
-  /* 1 */
-  letter-spacing: inherit;
-  /* 1 */
-  color: inherit;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-  padding: 0;
-  /* 3 */
-}
-
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
-
-button,
-select {
-  text-transform: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
-
-button,
-input:where([type='button']),
-input:where([type='reset']),
-input:where([type='submit']) {
-  -webkit-appearance: button;
-  /* 1 */
-  background-color: transparent;
-  /* 2 */
-  background-image: none;
-  /* 2 */
-}
-
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
-
-:-moz-focusring {
-  outline: auto;
-}
-
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
-
-:-moz-ui-invalid {
-  box-shadow: none;
-}
-
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
-
-progress {
-  vertical-align: baseline;
-}
-
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
-
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
-
-[type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-}
-
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
-
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/*
-Add the correct display in Chrome and Safari.
-*/
-
-summary {
-  display: list-item;
-}
-
-/*
-Removes the default spacing and border for appropriate elements.
-*/
-
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-figure,
-p,
-pre {
-  margin: 0;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-legend {
-  padding: 0;
-}
-
-ol,
-ul,
-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/*
-Reset default styling for dialogs.
-*/
-
-dialog {
-  padding: 0;
-}
-
-/*
-Prevent resizing textareas horizontally by default.
-*/
-
-textarea {
-  resize: vertical;
-}
-
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-/*
-Set the default cursor for buttons.
-*/
-
-button,
-[role="button"] {
-  cursor: pointer;
-}
-
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
-
-:disabled {
-  cursor: default;
-}
-
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
-
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
-}
-
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden]:where(:not([hidden="until-found"])) {
-  display: none;
-}
-
-body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'DM Serif Display', serif;
-}
-
-/* Noise texture background */
-
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.35'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
-
-/* Glassmorphism Cards */
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-}
-
-.glass-card-dark {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Hover Lift Effect */
-
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-/* Skill Bars */
-
-/* Certification Badges */
-
-.cert-badge {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cert-badge:hover {
-  transform: translateY(-6px) scale(1.02);
-}
-
-.pointer-events-none {
-  pointer-events: none;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.static {
-  position: static;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.inset-0 {
-  inset: 0px;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.bottom-8 {
-  bottom: 2rem;
-}
-
-.left-1\/2 {
-  left: 50%;
-}
-
-.left-8 {
-  left: 2rem;
-}
-
-.left-\[1\.875rem\] {
-  left: 1.875rem;
-}
-
-.right-12 {
-  right: 3rem;
-}
-
-.right-8 {
-  right: 2rem;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-1\/2 {
-  top: 50%;
-}
-
-.top-1\/4 {
-  top: 25%;
-}
-
-.top-6 {
-  top: 1.5rem;
-}
-
-.z-0 {
-  z-index: 0;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
-.mb-12 {
-  margin-bottom: 3rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.mt-0\.5 {
-  margin-top: 0.125rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.block {
-  display: block;
-}
-
-.flex {
-  display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
-}
-
-.grid {
-  display: grid;
-}
-
-.hidden {
-  display: none;
-}
-
-.h-1\.5 {
-  height: 0.375rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
-.h-14 {
-  height: 3.5rem;
-}
-
-.h-2 {
-  height: 0.5rem;
-}
-
-.h-2\.5 {
-  height: 0.625rem;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
-.h-5 {
-  height: 1.25rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-7 {
-  height: 1.75rem;
-}
-
-.h-8 {
-  height: 2rem;
-}
-
-.h-\[400px\] {
-  height: 400px;
-}
-
-.h-\[600px\] {
-  height: 600px;
-}
-
-.w-1\.5 {
-  width: 0.375rem;
-}
-
-.w-12 {
-  width: 3rem;
-}
-
-.w-14 {
-  width: 3.5rem;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-2\.5 {
-  width: 0.625rem;
-}
-
-.w-4 {
-  width: 1rem;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-7 {
-  width: 1.75rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-\[600px\] {
-  width: 600px;
-}
-
-.w-\[800px\] {
-  width: 800px;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-px {
-  width: 1px;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
-}
-
-.max-w-5xl {
-  max-width: 64rem;
-}
-
-.max-w-6xl {
-  max-width: 72rem;
-}
-
-.shrink-0 {
-  flex-shrink: 0;
-}
-
-.-translate-x-1\/2 {
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-\[-8deg\] {
-  --tw-rotate: -8deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.grid-cols-1 {
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.items-start {
-  align-items: flex-start;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
-.gap-6 {
-  gap: 1.5rem;
-}
-
-.space-y-12 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(3rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(3rem * var(--tw-space-y-reverse));
-}
-
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.scroll-smooth {
-  scroll-behavior: smooth;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.border {
-  border-width: 1px;
-}
-
-.border-b {
-  border-bottom-width: 1px;
-}
-
-.border-t {
-  border-top-width: 1px;
-}
-
-.border-slate-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(226 232 240 / var(--tw-border-opacity, 1));
-}
-
-.border-slate-900\/5 {
-  border-color: rgb(15 23 42 / 0.05);
-}
-
-.border-white\/5 {
-  border-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-\[\#16A34A\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#28A745\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 167 69 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#28A745\]\/10 {
-  background-color: rgb(40 167 69 / 0.1);
-}
-
-.bg-\[\#B91C1C\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#BF870B\]\/10 {
-  background-color: rgb(191 135 11 / 0.1);
-}
-
-.bg-\[\#BF870B\]\/5 {
-  background-color: rgb(191 135 11 / 0.05);
-}
-
-.bg-\[\#EC4899\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#EC4899\]\/10 {
-  background-color: rgb(236 72 153 / 0.1);
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-50\/80 {
-  background-color: rgb(248 250 252 / 0.8);
-}
-
-.bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: none;
-}
-
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.from-\[\#28A745\] {
-  --tw-gradient-from: #28A745 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(40 167 69 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-transparent {
-  --tw-gradient-from: transparent var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.via-\[\#16A34A\] {
-  --tw-gradient-to: rgb(22 163 74 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #16A34A var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.via-slate-100\/50 {
-  --tw-gradient-to: rgb(241 245 249 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(241 245 249 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.to-transparent {
-  --tw-gradient-to: transparent var(--tw-gradient-to-position);
-}
-
-.p-6 {
-  padding: 1.5rem;
-}
-
-.p-8 {
-  padding: 2rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
-.pl-0 {
-  padding-left: 0px;
-}
-
-.pt-32 {
-  padding-top: 8rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.font-\[\'DM_Serif_Display\'\] {
-  font-family: 'DM Serif Display';
-}
-
-.font-\[\'IBM_Plex_Sans\'\] {
-  font-family: 'IBM Plex Sans';
-}
-
-.font-\[\'Reenie_Beanie\'\] {
-  font-family: 'Reenie Beanie';
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-.font-light {
-  font-weight: 300;
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.font-semibold {
-  font-weight: 600;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.leading-\[0\.9\] {
-  line-height: 0.9;
-}
-
-.leading-relaxed {
-  line-height: 1.625;
-}
-
-.tracking-tight {
-  letter-spacing: -0.025em;
-}
-
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
-.text-\[\#16A34A\] {
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#28A745\] {
-  --tw-text-opacity: 1;
-  color: rgb(40 167 69 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#B91C1C\] {
-  --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#BF870B\] {
-  --tw-text-opacity: 1;
-  color: rgb(191 135 11 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#EC4899\] {
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity, 1));
-}
-
-.text-slate-200 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-300 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-400 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-500 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-600 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-700 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: white;
-}
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.opacity-0 {
-  opacity: 0;
-}
-
-.opacity-100 {
-  opacity: 1;
-}
-
-.opacity-80 {
-  opacity: 0.8;
-}
-
-.opacity-90 {
-  opacity: 0.9;
-}
-
-.opacity-\[0\.015\] {
-  opacity: 0.015;
-}
-
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.ring-4 {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.ring-slate-50 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(248 250 252 / var(--tw-ring-opacity, 1));
-}
-
-.blur-3xl {
-  --tw-blur: blur(64px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.backdrop-blur-sm {
-  --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.delay-200 {
-  transition-delay: 200ms;
-}
-
-.delay-300 {
-  transition-delay: 300ms;
-}
-
-.duration-300 {
-  transition-duration: 300ms;
-}
-
-/* Scroll Animations */
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Fade In Animation */
-
-.animate-fadeIn {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-fadeInUp {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.delay-200 {
-  animation-delay: 0.2s;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
-.delay-400 {
-  animation-delay: 0.4s;
-}
-
-/* Custom Scrollbar */
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--slate-100);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--slate-400);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--slate-500);
-}
-
-/* CSS Variables */
-
-:root {
-  --slate-50: #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  --slate-800: #1e293b;
-  --slate-900: #0f172a;
-  --slate-950: #020617;
-  /* Brand Colors */
-  --gold-amber: #BF870B;
-  --green-medium: #28A745;
-  --green-darker: #16A34A;
-  --pink-magenta: #EC4899;
-  --red-dark: #B91C1C;
-  /* Legacy colors (maintained for backward compatibility) */
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
-  --green-500: #22c55e;
-}
-
-/* Base Styles */
-
-/* Component Styles */
-
-/* Utility Classes */
-
-/* Keyframe Animations */
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Adjustments */
-
-@media (max-width: 768px) {
-  .glass-card {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .skill-bar-bg {
-    height: 6px;
-  }
-}
-
-/* Print Styles (for PDF export) */
-
-@media print {
-  nav,
-  #scrollToTop,
-  .handwritten-accent {
-    display: none !important;
-  }
-
-  body {
-    background: white;
-    color: black;
-  }
-
-  .glass-card,
-  .glass-card-dark {
-    background: white;
-    border: 1px solid #e2e8f0;
-  }
-
-  section {
-    page-break-inside: avoid;
-  }
-
-  .animate-on-scroll,
-  .animate-fadeIn,
-  .animate-fadeInUp {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
-/* Focus Styles for Accessibility */
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--gold-amber);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-/* Reduced Motion Support */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .animate-on-scroll,
-  .animate-fadeIn,
-  .animate-fadeInUp {
-    opacity: 1;
-    transform: none;
-  }
-
-  .skill-bar {
-    transform: scaleX(1);
-    transition: none;
-  }
-}
-
-.selection\:bg-slate-900 *::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
-}
-
-.selection\:bg-slate-900 *::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
-}
-
-.selection\:text-slate-50 *::-moz-selection {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
-}
-
-.selection\:text-slate-50 *::selection {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
-}
-
-.selection\:bg-slate-900::-moz-selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
-}
-
-.selection\:bg-slate-900::selection {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
-}
-
-.selection\:text-slate-50::-moz-selection {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
-}
-
-.selection\:text-slate-50::selection {
-  --tw-text-opacity: 1;
-  color: rgb(248 250 252 / var(--tw-text-opacity, 1));
-}
-
-.hover\:scale-110:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:bg-\[\#16A34A\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1));
-}
-
-.hover\:bg-white\/10:hover {
-  background-color: rgb(255 255 255 / 0.1);
-}
-
-.hover\:text-\[\#28A745\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(40 167 69 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-\[\#BF870B\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(191 135 11 / var(--tw-text-opacity, 1));
-}
-
-.hover\:text-slate-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity, 1));
-}
-
-.group:hover .group-hover\:text-\[\#28A745\] {
-  --tw-text-opacity: 1;
-  color: rgb(40 167 69 / var(--tw-text-opacity, 1));
-}
-
-.group:hover .group-hover\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-@media (min-width: 768px) {
-  .md\:block {
-    display: block;
-  }
-
-  .md\:inline {
-    display: inline;
-  }
-
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
-  }
-
-  .md\:items-start {
-    align-items: flex-start;
-  }
-
-  .md\:justify-between {
-    justify-content: space-between;
-  }
-
-  .md\:p-8 {
-    padding: 2rem;
-  }
-
-  .md\:py-20 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  .md\:py-28 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
-  }
-
-  .md\:pb-28 {
-    padding-bottom: 7rem;
-  }
-
-  .md\:pl-20 {
-    padding-left: 5rem;
-  }
-
-  .md\:pt-40 {
-    padding-top: 10rem;
-  }
-
-  .md\:text-right {
-    text-align: right;
-  }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
-  .md\:text-8xl {
-    font-size: 6rem;
-    line-height: 1;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .lg\:text-9xl {
-    font-size: 8rem;
-    line-height: 1;
-  }
-}
-</style>
