@@ -15,55 +15,6 @@ pagination:
   box-sizing: border-box;
 }
 
-/* Animated Background */
-.bg-orbs {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.15;
-  animation: float 25s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #BF870B 0%, transparent 70%);
-  top: -150px;
-  left: -100px;
-}
-
-.orb-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, #28A745 0%, transparent 70%);
-  top: 40%;
-  right: -200px;
-  animation: float 30s ease-in-out infinite reverse;
-}
-
-.orb-3 {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, #EC4899 0%, transparent 70%);
-  bottom: -150px;
-  left: 30%;
-  animation: float 35s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, -40px) scale(1.15); }
-  66% { transform: translate(-30px, 30px) scale(0.95); }
-}
-
 /* Hero Section */
 .blog-hero {
   position: relative;
@@ -454,22 +405,6 @@ pagination:
   overflow: hidden;
 }
 
-.cta-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(191, 135, 11, 0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .cta-content {
   position: relative;
   z-index: 1;
@@ -598,13 +533,6 @@ pagination:
   }
 }
 </style>
-
-<!-- Animated Background -->
-<div class="bg-orbs">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-</div>
 
 <!-- Hero Section -->
 <section class="blog-hero">

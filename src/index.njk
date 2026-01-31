@@ -8,11 +8,20 @@ roughjs: true
 ---
 
 <div role="main" class="flex flex-col">
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-pulse" style="background: rgba(236, 72, 153, 0.1);"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style="background: rgba(139, 92, 246, 0.1); animation-delay: 1s;"></div>
+    </div>
     <section class="text-center max-w-4xl mx-auto mb-40" aria-labelledby="heading">
 <h1 class="text-3xl md:text-4xl font-bold text-center mb-4" style="font-size: 3.5rem;">
             Hi! I'm <span class="highlight-yellow px-4 inline-block relative sm:px-2">Rakshit Soral</span>, <span class="role-pink">a reliable Digital Marketer</span>
-        </h1>        <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-lg">I believe marketing is all about conveying your <strong class="box-blue mx-1">message</strong> to consumers and convincing them to show <strong class="box-green mx-1">interest</strong>, and <strong class="box-red mx-1">invest</strong> in your product and services.</p>
-    
+        </h1>        <p class="text-lg mt-8 mx-auto max-w-3xl sm:text-lg">I believe marketing is all about conveying your <strong class="box-blue mx-1">message</strong> to consumers and convincing them to show <strong class="box-green mx-1">interest</strong>, and <strong class="box-red mx-1">invest</strong> in your product and services.</p><br>
+     <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style="animation-delay: 0.3s;">
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(236, 72, 153, 0.2); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">LinkedIn Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(65, 158, 84, 0.2); color: #419E54; border-color: rgba(65, 158, 84, 0.3);">Google Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(191, 135, 11, 0.2); color: #BF870B; border-color: rgba(191, 135, 11, 0.3);">Content Marketing</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(139, 92, 246, 0.2); color: #8B5CF6; border-color: rgba(139, 92, 246, 0.3);">B2B Growth</span>
+        </div>
     </section>
 
     {% include "partials/work-list.njk" %}
