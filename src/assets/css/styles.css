@@ -13,6 +13,34 @@
   display: inline-block
 }
 
+/* Yellow name highlight */
+.highlight-yellow {
+  font-weight: 700;
+  color: #1f2937; /* light mode text */
+  background-color: rgba(191, 135, 11, 0.35);
+  border-radius: 0.5rem;
+  padding: 0.15em 0.35em;
+}
+
+/* Pink role text – force consistency */
+.role-pink {
+  color: #EC4899 !important;
+  font-weight: 600;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .highlight-yellow {
+    color: #ffffff;
+    background-color: rgba(191, 135, 11, 0.55);
+  }
+
+  .role-pink {
+    color: #EC4899 !important;/* stays pink, readable on dark */
+  }
+}
+
+
 .card_list.grid_two_columns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

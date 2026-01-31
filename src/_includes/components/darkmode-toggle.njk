@@ -123,4 +123,18 @@
     body.light-mode #theme-toggle svg {
         color: #ffffff !important;
     }
+    /* Preserve brand colors inside light mode */
+html.light-mode .role-pink,
+body.light-mode .role-pink {
+    color: #EC4899 !important;
+}
+
+/* Preserve SVG icon colors */
+html.light-mode svg,
+body.light-mode svg {
+    color: inherit !important;
+    fill: currentColor !important;
+}
+
+
 </style>
