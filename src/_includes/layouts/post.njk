@@ -45,30 +45,6 @@ layout: default
 </nav>
 
 <article class="flex flex-col items-center">
-    <!-- Sticky Social Share Bar -->
-    <div id="share-bar" class="sticky top-1 z-50 w-full bg-inherit shadow-sm py-4 transition-colors duration-300">
-        <div class="max-w-4xl mx-auto px-6 flex items-center justify-center gap-3">
-            <span class="text-sm font-medium text-gray-300">Share:</span>
-            <div class="flex gap-2">
-                <a href="#" id="twitter-share-top" class="p-2 rounded-full transition-all duration-300 bg-black hover:bg-gray-800" aria-label="Share on Twitter" target="_blank" rel="noopener">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                </a>
-                <a href="#" id="facebook-share-top" class="p-2 rounded-full transition-all duration-300 bg-blue-600 hover:bg-blue-700" aria-label="Share on Facebook" target="_blank" rel="noopener">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                </a>
-                <a href="#" id="linkedin-share-top" class="p-2 rounded-full transition-all duration-300 bg-blue-700 hover:bg-blue-800" aria-label="Share on LinkedIn" target="_blank" rel="noopener">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="#" id="whatsapp-share-top" class="p-2 rounded-full transition-all duration-300 bg-green-500 hover:bg-green-600" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
-                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                </a>
-                <button id="copy-link-top" class="p-2 rounded-full transition-all duration-300 bg-gray-700 hover:bg-gray-800" aria-label="Copy link">
-                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <div class="w-full h-8"></div>
 
     {% if featured_image %}
@@ -95,15 +71,45 @@ layout: default
             <div class="flex gap-8 xl:gap-12">
                 <!-- Main Content -->
                 <div class="writing w-full lg:max-w-3xl mx-auto">
-                    <header class="py-12 text-center">
-                        <h1 class="mb-3 text-4xl font-bold">{{ title }}</h1>
-                        <div class="flex flex-col items-center gap-1">
-                            <time class="text-gray-400 text-sm">{{ page.date | readableDate }}</time>
-                            {% if updated %}
-                            <time class="text-gray-500 text-xs italic">Updated on {{ updated | readableDate }}</time>
-                            {% endif %}
+                    <header class="py-12">
+                        <h1 class="mb-6 text-4xl font-bold">{{ title }}</h1>
+                        
+                        <!-- Author and Meta Info Bar -->
+                        <div class="author-meta-bar">
+                            <div class="author-section">
+                                <img src="/assets/img/Rakshit Soral.png" alt="Rakshit Soral" class="author-avatar">
+                                <span class="author-name">Rakshit Soral</span>
+                            </div>
+                            
+                            <div class="meta-divider"></div>
+                            
+                            <div class="meta-info">
+                                <!-- Reading Time -->
+                                {% if readingTime %}
+                                <div class="meta-item">
+                                    <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>{{ readingTime }}</span>
+                                </div>
+                                {% endif %}
+                                
+                                <!-- Publication Date -->
+                                <div class="meta-item">
+                                    <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+                                </div>
+                            </div>
                         </div>
-                        <div id="share-buttons" class="mt-4"></div>
+                        
+                        <!-- Updated Date (if exists) -->
+                        {% if updated %}
+                        <div class="updated-date">
+                            <time datetime="{{ updated | htmlDateString }}">Updated on {{ updated | readableDate }}</time>
+                        </div>
+                        {% endif %}
                     </header>
 
                     <!-- Blog Content -->
@@ -112,12 +118,42 @@ layout: default
                     </div>
                 </div>
 
-                <!-- Desktop TOC - Sticky on Right (Hidden on Mobile & Tablet) -->
+                <!-- Desktop Sidebar - Share Bar + TOC (Hidden on Mobile & Tablet) -->
                 <aside class="hidden lg:block lg:relative" style="width: 280px; flex-shrink: 0;">
-                    <div id="toc-desktop" class="sticky" style="top: 7rem;">
-                        <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-5">
-                            <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-4">What's in the blog?</h2>
-                            <ul id="toc-list-desktop" class="space-y-2 text-sm max-h-[calc(100vh-12rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"></ul>
+                    <div class="sticky" style="top: 7rem;">
+                        <!-- Static Share Bar -->
+                        <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-5 mb-4">
+                            <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-4">Share this article</h2>
+                            <div class="flex flex-col gap-2">
+                                <a href="#" id="twitter-share-desktop" class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 bg-black hover:bg-gray-800" aria-label="Share on Twitter" target="_blank" rel="noopener">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                    <span class="text-sm text-white">Twitter</span>
+                                </a>
+                                <a href="#" id="facebook-share-desktop" class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 bg-blue-600 hover:bg-blue-700" aria-label="Share on Facebook" target="_blank" rel="noopener">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                    <span class="text-sm text-white">Facebook</span>
+                                </a>
+                                <a href="#" id="linkedin-share-desktop" class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 bg-blue-700 hover:bg-blue-800" aria-label="Share on LinkedIn" target="_blank" rel="noopener">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    <span class="text-sm text-white">LinkedIn</span>
+                                </a>
+                                <a href="#" id="whatsapp-share-desktop" class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 bg-green-500 hover:bg-green-600" aria-label="Share on WhatsApp" target="_blank" rel="noopener">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                                    <span class="text-sm text-white">WhatsApp</span>
+                                </a>
+                                <button id="copy-link-desktop" class="flex items-center gap-3 p-2 rounded-lg transition-all duration-300 bg-gray-700 hover:bg-gray-800" aria-label="Copy link">
+                                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                    <span class="text-sm text-white">Copy Link</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Desktop TOC -->
+                        <div id="toc-desktop">
+                            <div class="border border-gray-700 rounded-lg bg-gray-900/50 p-5">
+                                <h2 class="text-sm font-semibold text-gray-300 uppercase tracking-wide mb-4">What's in the blog?</h2>
+                                <ul id="toc-list-desktop" class="space-y-2 text-sm max-h-[calc(100vh-28rem)] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent"></ul>
+                            </div>
                         </div>
                     </div>
                 </aside>
@@ -299,6 +335,172 @@ body:not(.light-mode) .breadcrumb-current {
     color: #ffffff;
 }
 
+/* Author Meta Bar Styles */
+.author-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 2rem;
+    border-radius: 1rem;
+    max-width: fit-content;
+    flex-wrap: wrap;
+}
+
+.author-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.author-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #8B5CF6;
+}
+
+.meta-divider {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(139, 92, 246, 0.2);
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: #6b7280;
+}
+
+.meta-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    color: #8B5CF6;
+}
+
+.updated-date {
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Light mode for author meta bar */
+html.light-mode .author-meta-bar,
+body.light-mode .author-meta-bar {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%) !important;
+}
+
+html.light-mode .author-name,
+body.light-mode .author-name {
+    color: #7C3AED !important;
+}
+
+html.light-mode .meta-item,
+body.light-mode .meta-item {
+    color: #4b5563 !important;
+}
+
+html.light-mode .meta-icon,
+body.light-mode .meta-icon {
+    color: #7C3AED !important;
+}
+
+html.light-mode .meta-divider,
+body.light-mode .meta-divider {
+    background: rgba(124, 58, 237, 0.2) !important;
+}
+
+html.light-mode .updated-date,
+body.light-mode .updated-date {
+    color: #6b7280 !important;
+}
+
+html.light-mode .author-avatar,
+body.light-mode .author-avatar {
+    border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Dark mode for author meta bar */
+@media (prefers-color-scheme: dark) {
+    .author-name {
+        color: #A78BFA;
+    }
+    
+    .meta-item {
+        color: #9ca3af;
+    }
+    
+    .meta-icon {
+        color: #A78BFA;
+    }
+    
+    .meta-divider {
+        background: rgba(167, 139, 250, 0.2);
+    }
+    
+    .updated-date {
+        color: #6b7280;
+    }
+    
+    .author-avatar {
+        border-color: rgba(167, 139, 250, 0.3);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .author-meta-bar {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+    }
+    
+    .author-avatar {
+        width: 3rem;
+        height: 3rem;
+    }
+    
+    .author-name {
+        font-size: 1rem;
+    }
+    
+    .meta-divider {
+        display: none;
+    }
+    
+    .meta-info {
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .meta-item {
+        font-size: 0.875rem;
+    }
+    
+    .meta-icon {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
 /* Collapsible TOC chevron rotation */
 details[open] .toc-chevron {
     transform: rotate(180deg);
@@ -337,9 +539,56 @@ details summary::-webkit-details-marker {
     margin-bottom: 0.75rem;
 }
 
+.toc-h2-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toc-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.toc-toggle:hover {
+    color: #1f2937;
+}
+
+.toc-toggle.expanded {
+    transform: rotate(90deg);
+}
+
+.toc-h2-link {
+    flex: 1;
+}
+
+.toc-h3-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.toc-h3-list.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
 .toc-h3-item {
     margin-bottom: 0.5rem;
-    margin-left: 1.5rem;
 }
 
 .toc-link {
@@ -423,6 +672,14 @@ details summary::-webkit-details-marker {
     
     .toc-active .toc-number {
         color: #ffffff;
+    }
+    
+    .toc-toggle {
+        color: #6b7280;
+    }
+    
+    .toc-toggle:hover {
+        color: #e5e7eb;
     }
 }
 
@@ -732,29 +989,38 @@ body.light-mode .related-article-date {
     const pageUrl = encodeURIComponent(window.location.href);
     const pageTitle = encodeURIComponent(document.title);
     
-    document.getElementById('twitter-share-top').href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-    document.getElementById('facebook-share-top').href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    document.getElementById('linkedin-share-top').href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
-    document.getElementById('whatsapp-share-top').href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+    // Desktop share buttons
+    const twitterDesktop = document.getElementById('twitter-share-desktop');
+    const facebookDesktop = document.getElementById('facebook-share-desktop');
+    const linkedinDesktop = document.getElementById('linkedin-share-desktop');
+    const whatsappDesktop = document.getElementById('whatsapp-share-desktop');
+    const copyDesktop = document.getElementById('copy-link-desktop');
     
-    document.getElementById('copy-link-top').addEventListener('click', function(e) {
-        e.preventDefault();
-        navigator.clipboard.writeText(window.location.href).then(function() {
-            const btn = e.currentTarget;
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>';
-            setTimeout(function() { btn.innerHTML = originalHTML; }, 2000);
+    if (twitterDesktop) twitterDesktop.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+    if (facebookDesktop) facebookDesktop.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+    if (linkedinDesktop) linkedinDesktop.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+    if (whatsappDesktop) whatsappDesktop.href = `https://wa.me/?text=${pageTitle}%20${pageUrl}`;
+    
+    if (copyDesktop) {
+        copyDesktop.addEventListener('click', function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                const btn = e.currentTarget;
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-sm text-white">Copied!</span>';
+                setTimeout(function() { btn.innerHTML = originalHTML; }, 2000);
+            });
         });
-    });
+    }
 
-    // Auto-generate TOC from h2 and h3 headings
+    // Auto-generate TOC from h2 and h3 headings with collapsible H3s
     function generateTOC() {
         const articleContent = document.getElementById('article-content');
-        const headings = articleContent.querySelectorAll('h2, h3');
+        const allHeadings = articleContent.querySelectorAll('h2, h3');
         const tocDesktop = document.getElementById('toc-list-desktop');
         const tocMobile = document.getElementById('toc-list-mobile');
 
-        if (headings.length === 0) {
+        if (allHeadings.length === 0) {
             const desktopTocContainer = document.getElementById('toc-desktop');
             const mobileDetails = document.getElementById('toc-mobile');
             if (desktopTocContainer) desktopTocContainer.parentElement.style.display = 'none';
@@ -763,8 +1029,12 @@ body.light-mode .related-article-date {
         }
 
         let h2Counter = 0;
+        let currentH2ItemDesktop = null;
+        let currentH2ItemMobile = null;
+        let currentH3ListDesktop = null;
+        let currentH3ListMobile = null;
         
-        headings.forEach((heading, index) => {
+        allHeadings.forEach((heading, index) => {
             if (!heading.id) {
                 heading.id = 'heading-' + index + '-' + heading.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
             }
@@ -773,51 +1043,117 @@ body.light-mode .related-article-date {
             
             if (isH2) {
                 h2Counter++;
-            }
-            
-            // Desktop TOC item
-            const desktopItem = document.createElement('li');
-            desktopItem.className = isH2 ? 'toc-h2-item' : 'toc-h3-item';
-            const desktopLink = document.createElement('a');
-            desktopLink.href = '#' + heading.id;
-            
-            // Add number prefix for H2 items
-            if (isH2) {
+                
+                // Desktop H2 TOC item
+                const desktopItem = document.createElement('li');
+                desktopItem.className = 'toc-h2-item';
+                
+                const desktopWrapper = document.createElement('div');
+                desktopWrapper.className = 'toc-h2-wrapper';
+                
+                const desktopLink = document.createElement('a');
+                desktopLink.href = '#' + heading.id;
+                desktopLink.className = 'toc-link toc-h2-link';
+                desktopLink.dataset.headingId = heading.id;
+                
                 const numberSpan = document.createElement('span');
                 numberSpan.className = 'toc-number';
                 numberSpan.textContent = h2Counter + '. ';
                 desktopLink.appendChild(numberSpan);
-            }
-            
-            const textSpan = document.createElement('span');
-            textSpan.textContent = heading.textContent;
-            desktopLink.appendChild(textSpan);
-            
-            desktopLink.className = 'toc-link';
-            desktopLink.dataset.headingId = heading.id;
-            desktopItem.appendChild(desktopLink);
-            tocDesktop.appendChild(desktopItem);
+                
+                const textSpan = document.createElement('span');
+                textSpan.textContent = heading.textContent;
+                desktopLink.appendChild(textSpan);
+                
+                desktopWrapper.appendChild(desktopLink);
+                desktopItem.appendChild(desktopWrapper);
+                
+                // Create collapsible H3 container for desktop
+                currentH3ListDesktop = document.createElement('ul');
+                currentH3ListDesktop.className = 'toc-h3-list collapsed';
+                desktopItem.appendChild(currentH3ListDesktop);
+                
+                tocDesktop.appendChild(desktopItem);
+                currentH2ItemDesktop = desktopItem;
 
-            // Mobile TOC item (same structure)
-            const mobileItem = document.createElement('li');
-            mobileItem.className = isH2 ? 'toc-h2-item' : 'toc-h3-item';
-            const mobileLink = document.createElement('a');
-            mobileLink.href = '#' + heading.id;
-            
-            if (isH2) {
-                const numberSpan = document.createElement('span');
-                numberSpan.className = 'toc-number';
-                numberSpan.textContent = h2Counter + '. ';
-                mobileLink.appendChild(numberSpan);
+                // Mobile H2 TOC item
+                const mobileItem = document.createElement('li');
+                mobileItem.className = 'toc-h2-item';
+                
+                const mobileWrapper = document.createElement('div');
+                mobileWrapper.className = 'toc-h2-wrapper';
+                
+                const mobileLink = document.createElement('a');
+                mobileLink.href = '#' + heading.id;
+                mobileLink.className = 'toc-link toc-h2-link';
+                
+                const numberSpan2 = document.createElement('span');
+                numberSpan2.className = 'toc-number';
+                numberSpan2.textContent = h2Counter + '. ';
+                mobileLink.appendChild(numberSpan2);
+                
+                const textSpanMobile = document.createElement('span');
+                textSpanMobile.textContent = heading.textContent;
+                mobileLink.appendChild(textSpanMobile);
+                
+                mobileWrapper.appendChild(mobileLink);
+                mobileItem.appendChild(mobileWrapper);
+                
+                // Create collapsible H3 container for mobile
+                currentH3ListMobile = document.createElement('ul');
+                currentH3ListMobile.className = 'toc-h3-list collapsed';
+                mobileItem.appendChild(currentH3ListMobile);
+                
+                tocMobile.appendChild(mobileItem);
+                currentH2ItemMobile = mobileItem;
+                
+            } else if (heading.tagName === 'H3' && currentH3ListDesktop && currentH3ListMobile) {
+                // Desktop H3 item
+                const desktopH3Item = document.createElement('li');
+                desktopH3Item.className = 'toc-h3-item';
+                
+                const desktopH3Link = document.createElement('a');
+                desktopH3Link.href = '#' + heading.id;
+                desktopH3Link.className = 'toc-link';
+                desktopH3Link.dataset.headingId = heading.id;
+                desktopH3Link.textContent = heading.textContent;
+                
+                desktopH3Item.appendChild(desktopH3Link);
+                currentH3ListDesktop.appendChild(desktopH3Item);
+                
+                // Mobile H3 item
+                const mobileH3Item = document.createElement('li');
+                mobileH3Item.className = 'toc-h3-item';
+                
+                const mobileH3Link = document.createElement('a');
+                mobileH3Link.href = '#' + heading.id;
+                mobileH3Link.className = 'toc-link';
+                mobileH3Link.textContent = heading.textContent;
+                
+                mobileH3Item.appendChild(mobileH3Link);
+                currentH3ListMobile.appendChild(mobileH3Item);
             }
-            
-            const textSpanMobile = document.createElement('span');
-            textSpanMobile.textContent = heading.textContent;
-            mobileLink.appendChild(textSpanMobile);
-            
-            mobileLink.className = 'toc-link';
-            mobileItem.appendChild(mobileLink);
-            tocMobile.appendChild(mobileItem);
+        });
+        
+        // Add toggle functionality to H2 items that have H3s
+        document.querySelectorAll('#toc-list-desktop .toc-h2-item, #toc-list-mobile .toc-h2-item').forEach(h2Item => {
+            const h3List = h2Item.querySelector('.toc-h3-list');
+            if (h3List && h3List.children.length > 0) {
+                const wrapper = h2Item.querySelector('.toc-h2-wrapper');
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toc-toggle';
+                toggleBtn.setAttribute('aria-label', 'Toggle subsections');
+                toggleBtn.innerHTML = '<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
+                
+                toggleBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    h3List.classList.toggle('collapsed');
+                    toggleBtn.classList.toggle('expanded');
+                });
+                
+                wrapper.insertBefore(toggleBtn, wrapper.firstChild);
+            }
         });
 
         // Smooth scroll for all TOC links
@@ -841,7 +1177,7 @@ body.light-mode .related-article-date {
             const scrollPos = window.scrollY + 150;
             let activeId = null;
 
-            headings.forEach(heading => {
+            allHeadings.forEach(heading => {
                 if (heading.offsetTop <= scrollPos) {
                     activeId = heading.id;
                 }
@@ -850,6 +1186,16 @@ body.light-mode .related-article-date {
             document.querySelectorAll('#toc-list-desktop a').forEach(link => {
                 if (link.dataset.headingId === activeId) {
                     link.classList.add('toc-active');
+                    
+                    // If it's an H3, expand its parent H2 section
+                    const parentH3List = link.closest('.toc-h3-list');
+                    if (parentH3List && parentH3List.classList.contains('collapsed')) {
+                        parentH3List.classList.remove('collapsed');
+                        const toggleBtn = parentH3List.parentElement.querySelector('.toc-toggle');
+                        if (toggleBtn) {
+                            toggleBtn.classList.add('expanded');
+                        }
+                    }
                 } else {
                     link.classList.remove('toc-active');
                 }
