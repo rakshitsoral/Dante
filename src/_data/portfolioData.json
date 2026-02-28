@@ -1,97 +1,130 @@
 {
-    "projects": [
-      {
-        "id": 1,
-        "title": "Cybersecurity Website Content Strategy",
-        "category": "content",
-        "company": "Kitecyber",
-        "description": "Developed comprehensive content strategy focusing on cybersecurity pain points and solutions",
-        "metrics": "SEO-optimized content",
-        "icon": "✍️",
-        "color": "#BF870B",
-         "url": "https://kitecyber.com/blog"
-      },
-      {
-        "id": 2,
-        "title": "Technical Whitepapers",
-        "category": "content",
-        "company": "Plutomen",
-        "description": "Created in-depth technical content on Industrial XR and AI Connected Worker solutions",
-        "metrics": "Thought leadership",
-        "icon": "📄",
-        "color": "#BF870B"
-      },
-      {
-        "id": 3,
-        "title": "Case Studies & Success Stories",
-        "category": "content",
-        "company": "Kitecyber",
-        "description": "Produced customer success stories highlighting ROI and implementation results",
-        "metrics": "12% ↑ MQL to SQL",
-        "icon": "📊",
-        "color": "#BF870B"
-      },
-      {
-        "id": 4,
-        "title": "Sales Enablement Content",
-        "category": "content",
-        "company": "Kitecyber",
-        "description": "Created brochures, one-pagers, and comparison guides for sales team",
-        "metrics": "Sales acceleration",
-        "icon": "📋",
-        "color": "#BF870B"
-      },
-      {
-        "id": 5,
-        "title": "SEO Content Marketing",
-        "category": "content",
-        "company": "Plutomen",
-        "description": "Published 100+ strategic blogs generating qualified pipeline",
-        "metrics": "$250K pipeline",
-        "icon": "📝",
-        "color": "#BF870B"
-      },
-      {
-        "id": 6,
-        "title": "Guest Posts & Thought Leadership",
-        "category": "content",
-        "company": "Simform",
-        "description": "Contributed articles to InfoQ, DZone, and Dataversity",
-        "metrics": "50+ backlinks",
-        "icon": "🔗",
-        "color": "#BF870B"
-      },
-      {
-        "id": 7,
-        "title": "Complete Website Repositioning",
-        "category": "website",
-        "company": "Kitecyber",
-        "description": "Comprehensive keyword targeting, product category mapping, and comparison pages",
-        "metrics": "40% ↑ trial signups",
-        "icon": "🎯",
-        "color": "#60A5FA"
-      },
-      {
-        "id": 8,
-        "title": "Plutomen Linkedin Video Ad 1",
-        "category": "linkedin",
-        "company": "Plutomen",
-        "description": "Created a Video ad explaining the difference between video call and XR call",
-        "metrics": "30% ↑ brand awareness",
-        "icon": "🎥",
-        "color": "#419E54",
-        "url": "/assets/files/Linkedin AR vs Video Call Ad.mp4"
-      },
-      {
-        "id": 9,
-        "title": "Plutomen Single Image Ad 1",
-        "category": "linkedin",
-        "company": "Plutomen",
-        "description": "Created a single image ad for Plutomen",
-        "metrics": "20% ↑ brand awareness",
-        "icon": "🖼️",
-        "color": "#419E54",
-        "image": "/assets/img/Plutomen-ad1.png"
-      }
-    ]
-  }
+  "projects": [
+    {
+      "id": 1,
+      "title": "Cybersecurity Website Content Strategy",
+      "category": "content",
+      "company": "Kitecyber",
+      "description": "Developed comprehensive content strategy focusing on cybersecurity pain points and solutions",
+      "metrics": "SEO-optimized content",
+      "icon": "✍️",
+      "color": "#BF870B",
+      "url": "https://kitecyber.com/blog"
+    },
+    {
+      "id": 2,
+      "title": "Technical Whitepapers",
+      "category": "content",
+      "company": "Plutomen",
+      "description": "Created in-depth technical content on Industrial XR and AI Connected Worker solutions",
+      "metrics": "Thought leadership",
+      "icon": "📄",
+      "color": "#BF870B"
+    },
+    {
+      "id": 3,
+      "title": "Case Studies & Success Stories",
+      "category": "content",
+      "company": "Kitecyber",
+      "description": "Produced customer success stories highlighting ROI and implementation results",
+      "metrics": "12% ↑ MQL to SQL",
+      "icon": "📊",
+      "color": "#BF870B"
+    },
+    {
+      "id": 4,
+      "title": "Sales Enablement Content",
+      "category": "content",
+      "company": "Kitecyber",
+      "description": "Created brochures, one-pagers, and comparison guides for sales team",
+      "metrics": "Sales acceleration",
+      "icon": "📋",
+      "color": "#BF870B"
+    },
+    {
+      "id": 5,
+      "title": "SEO Content Marketing",
+      "category": "content",
+      "company": "Plutomen",
+      "description": "Published 100+ strategic blogs generating qualified pipeline",
+      "metrics": "$250K pipeline",
+      "icon": "📝",
+      "color": "#BF870B"
+    },
+    {
+      "id": 6,
+      "title": "Guest Posts & Thought Leadership",
+      "category": "content",
+      "company": "Simform",
+      "description": "Contributed articles to InfoQ, DZone, and Dataversity",
+      "metrics": "50+ backlinks",
+      "icon": "🔗",
+      "color": "#BF870B"
+    },
+    {
+      "id": 7,
+      "title": "Complete Website Repositioning",
+      "category": "website",
+      "company": "Kitecyber",
+      "description": "Comprehensive keyword targeting, product category mapping, and comparison pages",
+      "metrics": "40% ↑ trial signups",
+      "icon": "🎯",
+      "color": "#60A5FA"
+    },
+    {
+      "id": 8,
+      "title": "Plutomen Linkedin Video Ad 1",
+      "category": "linkedin",
+      "company": "Plutomen",
+      "description": "Created a Video ad explaining the difference between video call and XR call",
+      "metrics": "30% ↑ brand awareness",
+      "icon": "🎥",
+      "color": "#419E54",
+      "url": "/assets/files/Linkedin AR vs Video Call Ad.mp4"
+    },
+    {
+      "id": 9,
+      "title": "Plutomen Single Image Ad 1",
+      "category": "linkedin",
+      "company": "Plutomen",
+      "description": "Created a single image ad for Plutomen",
+      "metrics": "20% ↑ brand awareness",
+      "icon": "🖼️",
+      "color": "#419E54",
+      "image": "/assets/img/Plutomen-ad1.png"
+    },
+    {
+      "id": 10,
+      "title": "Kitecyber Mobile Device Management Demo Video",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualize the script and created the demo video using AI and video creator software.",
+      "metrics": "20% ↑ brand awareness",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://www.youtube.com/watch?v=nvLdgUwxPdw"
+    },
+    {
+      "id": 11,
+      "title": "Kitecyber Animated Video for Insider Theft Management",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualize the script and created the animated video using AI and video creator software.",
+      "metrics": "45% ↑ brand awareness",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://www.youtube.com/shorts/b_pNGZ8fvM4"
+    },
+    {
+      "id": 12,
+      "title": "Kitecyber Visual Explainer Animated Video",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualize the script and created the animated video using AI and video creator software.",
+      "metrics": "15% ↑ brand awareness",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://www.youtube.com/watch?v=aH99VU627wM&t=11s"
+    }
+  ]
+}
