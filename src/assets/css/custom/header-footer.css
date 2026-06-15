@@ -1,4 +1,33 @@
-/* Site Header */
+/* Site Header Sticky Styles */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background-color: rgba(14, 9, 29, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin-bottom: 2rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+html.light-mode #header,
+body.light-mode #header {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Responsive adjustment for sm screens */
+@media (max-width: 639px) {
+    #header {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 .header nav a.active {
     color: var(--sitebg, #0a0a0a);
     background: url(/assets/img/nav-active.svg) center center no-repeat;
@@ -10,4 +39,48 @@
 .social-icon:not(:hover) polygon {
     fill: currentColor;
     color: #6b7280; /* gray-500 */
+}
+
+/* Floating Balloon Mascot */
+.balloon-container {
+    position: fixed; /* Fixed relative to viewport to align with floating theme toggle */
+    top: 0;
+    right: 1.5rem; /* Aligned with right-6 (1.5rem) of the theme toggle */
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 95;
+}
+
+.header-balloon {
+    width: 170px; /* Larger size */
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
+    animation: balloonFloat 6s ease-in-out infinite;
+}
+
+@keyframes balloonFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(1.5deg);
+    }
+}
+
+/* Responsive sizes for small screens */
+@media (max-width: 639px) {
+    .balloon-container {
+        right: 1.5rem; /* Keep aligned with theme toggle on mobile */
+    }
+    .header-balloon {
+        width: 110px; /* Larger mobile size */
+    }
+    @keyframes balloonFloat {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-8px) rotate(1deg);
+        }
+    }
 }
