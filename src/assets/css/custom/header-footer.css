@@ -85,7 +85,7 @@ footer aside {
         right: 1.5rem; /* Keep aligned with theme toggle on mobile */
     }
     .header-balloon {
-        width: 110px; /* Larger mobile size */
+        width: 70px; /* Smaller mobile size */
     }
     @keyframes balloonFloat {
         0%, 100% {
