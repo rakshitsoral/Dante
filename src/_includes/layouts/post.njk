@@ -156,6 +156,25 @@ layout: default
         </div>
     </div>
 
+    <!-- Blog Comments Section -->
+    <section class="w-full lg:max-w-3xl mx-auto px-4 sm:px-6 mt-16 mb-8 border-t border-gray-700/50 pt-10">
+        <h3 class="text-2xl font-bold mb-8">Comments</h3>
+        <div id="disqus_thread"></div>
+    </section>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = "{{ site.url }}{{ page.url }}";
+            this.page.identifier = "{{ page.url }}";
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://rakshitsoral.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
     <!-- Related Posts Section -->
     {% set relatedPosts = (collections.posts | reverse).slice(0, 6) %}
     {% if relatedPosts.length > 1 %}
