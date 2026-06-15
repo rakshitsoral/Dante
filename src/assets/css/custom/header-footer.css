@@ -35,6 +35,18 @@ body.light-mode #header {
 }
 
 /* Site Footer */
+footer aside {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+}
+
+.social-icon {
+    display: inline-block !important;
+}
+
 .social-icon:not(:hover) path, 
 .social-icon:not(:hover) polygon {
     fill: currentColor;
