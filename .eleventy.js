@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
 
   // Transforms
   eleventyConfig.addTransform("postcss", require("./lib/transforms/postcss"));
+  eleventyConfig.addTransform("highlightHeadings", require("./lib/transforms/highlightHeadings"));
   eleventyConfig.addTransform("minifyHtml", require("./lib/transforms/minifyHtml"));
 
   // Collections
