@@ -21,7 +21,7 @@ title: Rakshit Soral Demand Gen Portfolio
     .portfolio-item .item-image img { transition: transform 0.3s ease; }
     
     #portfolioGrid {
-        display: grid !important;
+        display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         width: 100%;
         max-width: 100%;
@@ -737,6 +737,7 @@ title: Rakshit Soral Demand Gen Portfolio
     function renderPortfolio() {
         if (currentFilter === 'casestudies') {
             portfolioGrid.style.display = 'none';
+            portfolioGrid.innerHTML = '';
             caseStudiesSection.style.display = 'block';
             noResults.style.display = 'none';
             resultsCount.textContent = 'Case Studies';
