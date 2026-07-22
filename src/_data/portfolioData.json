@@ -147,6 +147,17 @@
       "icon": "🎥",
       "color": "#EC4899",
       "url": "https://www.youtube.com/watch?v=fhv_5fvCodw"
+    },
+    {
+      "id": 15,
+      "title": "Kitecyber Insider Threat Detection and Management Solution Explainer Walkthrough",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualized the script and created the walkthrough explainer video showcasing endpoint monitoring, data protection, and access management.",
+      "metrics": "Brand awareness & visibility",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://www.youtube.com/watch?v=6Ljz6KqoBeI"
     }
   ]
 }
