@@ -1,0 +1,150 @@
+<div class="faq-accordion-section w-full lg:max-w-3xl mx-auto px-4 sm:px-6 mt-16 mb-8 border-t border-gray-700/50 pt-10">
+    <h3 class="text-2xl font-bold mb-8">Frequently Asked Questions</h3>
+    
+    <div class="faq-accordion-container space-y-4">
+        {% for item in faqs %}
+        {% set faqId = "faq-" + (item.question | slug) %}
+        <details id="{{ faqId }}" class="faq-item group border border-gray-700/60 rounded-lg bg-gray-900/20 overflow-hidden transition-all duration-300">
+            <summary class="faq-summary flex items-center justify-between p-5 cursor-pointer list-none select-none font-semibold text-gray-200 hover:text-white transition-colors duration-200">
+                <span class="flex items-center gap-3">
+                    <button class="faq-anchor-btn text-gray-500 hover:text-blue-400 transition-colors" data-anchor="#{{ faqId }}" aria-label="Copy link to this question">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                        </svg>
+                    </button>
+                    <span class="faq-question-text">{{ item.question }}</span>
+                </span>
+                <span class="faq-arrow-icon text-gray-400 transition-transform duration-300 group-open:rotate-180">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </span>
+            </summary>
+            <div class="faq-content p-5 pt-0 text-gray-300 border-t border-gray-800/40 leading-relaxed">
+                {{ item.answer | safe }}
+            </div>
+        </details>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* Prevent default webkit summary arrow */
+    .faq-summary::-webkit-details-marker {
+        display: none;
+    }
+    
+    /* FAQ Accordion Styling overrides */
+    .faq-item {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .faq-item[open] {
+        background-color: rgba(17, 24, 39, 0.4);
+        border-color: rgba(37, 99, 235, 0.4);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Light Mode Overrides */
+    html.light-mode .faq-item,
+    body.light-mode .faq-item {
+        background-color: #f9fafb !important;
+        border-color: #e5e7eb !important;
+    }
+    
+    html.light-mode .faq-item[open],
+    body.light-mode .faq-item[open] {
+        background-color: #ffffff !important;
+        border-color: #2563eb !important;
+    }
+    
+    html.light-mode .faq-summary,
+    body.light-mode .faq-summary {
+        color: #1f2937 !important;
+    }
+    
+    html.light-mode .faq-summary:hover,
+    body.light-mode .faq-summary:hover {
+        color: #111827 !important;
+    }
+    
+    html.light-mode .faq-content,
+    body.light-mode .faq-content {
+        color: #4b5563 !important;
+        border-top-color: #e5e7eb !important;
+    }
+
+    html.light-mode .faq-anchor-btn,
+    body.light-mode .faq-anchor-btn {
+        color: #9ca3af !important;
+    }
+    
+    html.light-mode .faq-anchor-btn:hover,
+    body.light-mode .faq-anchor-btn:hover {
+        color: #2563eb !important;
+    }
+
+    /* Dark Mode specific border color and active background rules */
+    @media (prefers-color-scheme: dark) {
+        .faq-item {
+            background-color: rgba(31, 41, 55, 0.2);
+            border-color: #374151;
+        }
+        .faq-item[open] {
+            background-color: rgba(31, 41, 55, 0.4);
+            border-color: #2563eb;
+        }
+    }
+</style>
+
+<script>
+(function() {
+    // 1. Auto-open FAQ from hash URL on load
+    function openFaqFromHash() {
+        const hash = window.location.hash;
+        if (!hash) return;
+        
+        const targetFaq = document.querySelector(hash);
+        if (targetFaq && targetFaq.tagName === 'DETAILS') {
+            targetFaq.setAttribute('open', '');
+            // Scroll to target smoothly after browser layout settles
+            setTimeout(() => {
+                targetFaq.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    }
+    
+    // 2. Listen to hashchange events (for intra-page navigation)
+    window.addEventListener('hashchange', openFaqFromHash);
+    
+    // Run on load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', openFaqFromHash);
+    } else {
+        openFaqFromHash();
+    }
+    
+    // 3. Anchor button logic to copy anchor link
+    document.querySelectorAll('.faq-anchor-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); // Stop details toggle from firing
+            
+            const anchor = this.dataset.anchor;
+            const fullUrl = window.location.origin + window.location.pathname + anchor;
+            
+            navigator.clipboard.writeText(fullUrl).then(() => {
+                // Temporary checkmark icon to show copied
+                const origHTML = this.innerHTML;
+                this.innerHTML = '<svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>';
+                setTimeout(() => {
+                    this.innerHTML = origHTML;
+                }, 1500);
+            });
+            
+            // Update browser hash silently
+            history.pushState(null, null, anchor);
+        });
+    });
+})();
+</script>

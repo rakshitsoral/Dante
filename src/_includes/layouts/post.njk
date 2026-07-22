@@ -116,6 +116,29 @@ layout: default
                     <div id="article-content">
                         {{ content | safe }}
                     </div>
+
+                    {% if show_faqs and faqs and faqs.length > 0 %}
+                        {% include "components/faq-accordion.njk" %}
+                        
+                        <script type="application/ld+json">
+                        {
+                          "@context": "https://schema.org",
+                          "@type": "FAQPage",
+                          "mainEntity": [
+                            {% for faq in faqs %}
+                            {
+                              "@type": "Question",
+                              "name": "{{ faq.question | escape }}",
+                              "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "{{ faq.answer | escape }}"
+                              }
+                            }{% if not loop.last %},{% endif %}
+                            {% endfor %}
+                          ]
+                        }
+                        </script>
+                    {% endif %}
                 </div>
 
                 <!-- Desktop Sidebar - Share Bar + TOC (Hidden on Mobile & Tablet) -->
@@ -880,9 +903,19 @@ body.light-mode .toc-active {
 @media (max-width: 640px) {
     .carousel-slide {
         width: 100%;
+        min-width: 0;
     }
     .carousel-container {
-        margin: 0 40px;
+        margin: 0 10px;
+    }
+    .carousel-nav {
+        display: none !important;
+    }
+    .related-article-image {
+        height: 180px;
+    }
+    .related-article-title {
+        font-size: 1rem;
     }
 }
 
@@ -891,10 +924,12 @@ body.light-mode .toc-active {
     height: 100%;
     display: flex;
     flex-direction: column;
+    text-decoration: none !important;
 }
 
 .related-article-card:hover {
     transform: translateY(-4px);
+    text-decoration: none !important;
 }
 
 .related-article-image {
@@ -915,6 +950,7 @@ body.light-mode .toc-active {
 .related-article-title {
     color: #1f2937;
     line-height: 1.4;
+    text-decoration: none !important;
 }
 
 .related-article-date {
@@ -1325,6 +1361,7 @@ body.light-mode .related-article-date {
 
         let currentIndex = 0;
         let slidesPerView = 3;
+        let totalPages = 1;
         
         // Calculate slides per view based on screen size
         function updateSlidesPerView() {
@@ -1337,18 +1374,20 @@ body.light-mode .related-article-date {
             }
         }
         
-        updateSlidesPerView();
-        
-        const totalPages = Math.ceil(slides.length / slidesPerView);
-        
-        // Create dots
-        for (let i = 0; i < totalPages; i++) {
-            const dot = document.createElement('button');
-            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToPage(i));
-            dotsContainer.appendChild(dot);
+        function renderDots() {
+            dotsContainer.innerHTML = '';
+            totalPages = Math.ceil(slides.length / slidesPerView);
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+                if (i === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToPage(i));
+                dotsContainer.appendChild(dot);
+            }
         }
+        
+        updateSlidesPerView();
+        renderDots();
         
         function updateCarousel() {
             const slideWidth = slides[0].offsetWidth;
@@ -1361,8 +1400,8 @@ body.light-mode .related-article-date {
             });
             
             // Update button states
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= totalPages - 1;
+            if (prevBtn) prevBtn.disabled = currentIndex === 0;
+            if (nextBtn) nextBtn.disabled = currentIndex >= totalPages - 1;
         }
         
         function goToPage(page) {
@@ -1370,19 +1409,23 @@ body.light-mode .related-article-date {
             updateCarousel();
         }
         
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        });
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+        }
         
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < totalPages - 1) {
-                currentIndex++;
-                updateCarousel();
-            }
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < totalPages - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+        }
         
         // Update on window resize
         window.addEventListener('resize', () => {
@@ -1390,9 +1433,52 @@ body.light-mode .related-article-date {
             updateSlidesPerView();
             if (oldSlidesPerView !== slidesPerView) {
                 currentIndex = 0;
+                renderDots();
+                updateCarousel();
+            } else {
                 updateCarousel();
             }
         });
+
+        // Swipe Gestures for Mobile
+        let startX = 0;
+        let diffX = 0;
+        let isDragging = false;
+        
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            track.style.transition = 'none';
+        }, { passive: true });
+        
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const currentX = e.touches[0].clientX;
+            diffX = currentX - startX;
+            
+            const slideWidth = slides[0].offsetWidth;
+            const currentTranslation = -currentIndex * slideWidth * slidesPerView;
+            track.style.transform = `translateX(${currentTranslation + diffX}px)`;
+        }, { passive: true });
+        
+        track.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            
+            const threshold = 50;
+            if (diffX < -threshold) {
+                if (currentIndex < totalPages - 1) {
+                    currentIndex++;
+                }
+            } else if (diffX > threshold) {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                }
+            }
+            updateCarousel();
+            diffX = 0;
+        }, { passive: true });
         
         updateCarousel();
     }
