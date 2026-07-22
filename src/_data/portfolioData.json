@@ -125,6 +125,17 @@
       "icon": "🎥",
       "color": "#EC4899",
       "url": "https://www.youtube.com/watch?v=aH99VU627wM&t=11s"
+    },
+    {
+      "id": 13,
+      "title": "Kitecyber AI Governance and DLP Solution Explainer Walkthrough",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualized the script and created the walkthrough explainer video highlighting security challenges of AI agents.",
+      "metrics": "Brand awareness & visibility",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://youtu.be/7yTYhks5AC0?si=fFhobRETL8dZ7QSd"
     }
   ]
 }
