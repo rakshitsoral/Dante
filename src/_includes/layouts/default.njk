@@ -16,7 +16,7 @@
 
 <!-- Example in your layout file -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light-mode">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,15 +59,17 @@
         api_host:'https://us.i.posthog.com',
         person_profiles:'identified_only'
       });
-// CRITICAL: This must be the FIRST script in <head> to prevent flash
+// CRITICAL: This must be the FIRST script in <head> to prevent flash - DEFAULT IS LIGHT MODE
 (function() {
     'use strict';
     
-    // Immediately apply saved theme to prevent flash
+    // Immediately apply saved theme to prevent flash (Default is Light Mode)
     const savedTheme = localStorage.getItem('site-theme');
     
-    // Apply theme to HTML element immediately (blocking, before render)
-    if (savedTheme === 'light') {
+    // Default is light mode. If user explicitly chose 'dark', remove light-mode.
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.remove('light-mode');
+    } else {
         document.documentElement.classList.add('light-mode');
     }
     
@@ -97,13 +99,14 @@
         
         if (!sunIcon || !moonIcon) return;
         
-        const isLight = document.documentElement.classList.contains('light-mode') || 
-                        document.body.classList.contains('light-mode');
+        const isLight = document.documentElement.classList.contains('light-mode');
         
         if (isLight) {
+            // In light mode, show moon icon to allow switching to dark
             sunIcon.classList.add('hidden');
             moonIcon.classList.remove('hidden');
         } else {
+            // In dark mode, show sun icon to allow switching to light
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
         }
@@ -111,17 +114,17 @@
     
     // Function to toggle theme
     function toggleTheme() {
-        const isLight = document.body.classList.contains('light-mode');
+        const isLight = document.documentElement.classList.contains('light-mode');
         
         if (isLight) {
-            // Turn OFF light mode
+            // Turn OFF light mode -> switch to DARK
             document.documentElement.classList.remove('light-mode');
-            document.body.classList.remove('light-mode');
+            if (document.body) document.body.classList.remove('light-mode');
             localStorage.setItem('site-theme', 'dark');
         } else {
-            // Turn ON light mode
+            // Turn ON light mode -> switch to LIGHT
             document.documentElement.classList.add('light-mode');
-            document.body.classList.add('light-mode');
+            if (document.body) document.body.classList.add('light-mode');
             localStorage.setItem('site-theme', 'light');
         }
         
@@ -185,14 +188,14 @@
     
 })();
     </script>
-     <!-- Include the theme toggle on ALL pages -->
-{% include "components/darkmode-toggle.njk" %}    
   </head>
 
   <body
     {% if body_class %}id="{{ body_class }}"{% endif %}
     class="flex flex-col min-h-screen bg-sitebg text-gray-100 text-base font-sans break-words"
   >
+    <!-- Include the theme toggle on ALL pages -->
+    {% include "components/darkmode-toggle.njk" %}    
 <script src="/lib/collections/darkmode.js"></script>
     <!-- Top anchor -->
     <div id="top"></div>
@@ -399,14 +402,26 @@
     {% if roughjs %}
       <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
       <script>
-        setTimeout(() => {
+        function triggerRoughNotation() {
+          if (typeof RoughNotation === 'undefined') return;
           const a = RoughNotation.annotate;
-          RoughNotation.annotationGroup([
-            a(document.querySelector('.box-blue'), { type:'box', color:'#3BC9DB' }),
-            a(document.querySelector('.box-green'), { type:'box', color:'#059669' }),
-            a(document.querySelector('.box-red'), { type:'box', color:'#B91C1C' })
-          ]).show();
-        }, 500);
+          const group = [];
+          
+          const blueEl = document.querySelector('.box-blue');
+          if (blueEl) group.push(a(blueEl, { type: 'box', color: '#00B4D8', strokeWidth: 2, padding: [2, 6], iterations: 2 }));
+          
+          const greenEl = document.querySelector('.box-green');
+          if (greenEl) group.push(a(greenEl, { type: 'box', color: '#059669', strokeWidth: 2, padding: [2, 6], iterations: 2 }));
+          
+          const redEl = document.querySelector('.box-red');
+          if (redEl) group.push(a(redEl, { type: 'box', color: '#DC2626', strokeWidth: 2, padding: [2, 6], iterations: 2 }));
+          
+          if (group.length > 0) {
+            RoughNotation.annotationGroup(group).show();
+          }
+        }
+        window.addEventListener('DOMContentLoaded', () => { setTimeout(triggerRoughNotation, 400); });
+        window.addEventListener('load', () => { setTimeout(triggerRoughNotation, 200); });
       </script>
     {% endif %}
 

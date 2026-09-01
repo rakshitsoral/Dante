@@ -1,22 +1,39 @@
-<header id="header" class="header flex items-center sm:block">
-    <div class="logo w-1/2 sm:w-full">
-        <a href="{{ '/' | url }}">
-            <img src="/assets/img/Rakshit Soral Logo_new (1).png" width="200" loading="lay" alt="Rakshit Soral logo" height="56" alt="{{ site.title }}">
-        </a>
-    </div>
-    <nav role="navigation" aria-label="Main Navigation" class="text-center whitespace-nowrap sm:overflow-y-auto sm:px-0 sm:pb-2 sm:text-left">
-        <!--
-        {% for item in menu %}
-        <a href="{{ item.url | url }}" class=" {% if page.url == item.url %}active{% endif %}">{{ item.label }}</a>
-        {% endfor %}
-        -->
-        
-        <a href="/about" class="{{ 'active' if '/about' in page.url }} p-2 mx-2 text-white inline-block no-underline">About</a>
-        <a href="/work" class="{{ 'active' if '/work' in page.url }} p-2 mx-2 text-white inline-block no-underline">Work</a>
-        <a href="/blog" class="{{ 'active' if '/blog' in page.url }} p-2 mx-2 text-white inline-block no-underline">Blog</a>
-         <a href="/resume" class="{{ 'active' if '/resume' in page.url }} p-2 mx-2 text-white inline-block no-underline">Resume</a>
-    </nav>
-    <div class="contact w-1/2 text-right sm:w-full sm:text-left">
-        
+<header id="header" class="header w-full">
+    <div class="header-inner flex items-center justify-between gap-4">
+        <!-- Logo -->
+        <div class="logo-wrapper flex-shrink-0">
+            <a href="{{ '/' | url }}" class="logo-link group flex items-center gap-2" aria-label="Rakshit Soral Home">
+                <img src="/assets/img/Rakshit Soral Logo_new (1).png" width="260" height="72" loading="eager" alt="Rakshit Soral logo" class="logo-img transition-transform duration-300 group-hover:scale-105">
+            </a>
+        </div>
+
+        <!-- Navigation Pill Capsule -->
+        <nav role="navigation" aria-label="Main Navigation" class="nav-capsule flex items-center">
+            <a href="{{ '/' | url }}" class="nav-item {{ 'active' if page.url == '/' }}">
+                <span>Home</span>
+            </a>
+            <a href="/work/" class="nav-item {{ 'active' if '/work' in page.url }}">
+                <span>Work</span>
+            </a>
+            <a href="/about/" class="nav-item {{ 'active' if '/about' in page.url }}">
+                <span>About</span>
+            </a>
+            <a href="/blog/" class="nav-item {{ 'active' if '/blog' in page.url }}">
+                <span>Blog</span>
+            </a>
+            <a href="/resume/" class="nav-item {{ 'active' if '/resume' in page.url }}">
+                <span>Resume</span>
+            </a>
+        </nav>
+
+        <!-- Right Side: Contact / CTA -->
+        <div class="header-actions flex items-center gap-3">
+            <a href="mailto:rakshitsoral@gmail.com" class="nav-cta-btn group">
+                <span>Let's Talk</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"></path>
+                </svg>
+            </a>
+        </div>
     </div>
 </header>

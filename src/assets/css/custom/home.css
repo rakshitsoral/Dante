@@ -108,10 +108,80 @@
 }
 .boxes {
     background-image: url(/assets/img/home/doodle-boxes.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 207px;
     width: 261px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Specific positioning when used within work-section */
+.work-section .boxes {
     left: -55%;
     top: -40%;
+    right: auto;
+    bottom: auto;
+}
+
+/* Compelling styling for .boxes in background on Home and About pages */
+#home .boxes,
+.home .boxes {
+    top: 14%;
+    right: 7%;
+    left: auto;
+    bottom: auto;
+    opacity: 0.35;
+    filter: invert(0.85) drop-shadow(0 0 20px rgba(236, 72, 153, 0.35)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.25));
+    animation: float-boxes 8s ease-in-out infinite alternate;
+}
+
+.hero .boxes,
+#about .boxes,
+.about .boxes {
+    top: 6%;
+    right: 4%;
+    left: auto;
+    bottom: auto;
+    opacity: 0.35;
+    filter: invert(0.85) drop-shadow(0 0 20px rgba(236, 72, 153, 0.35)) drop-shadow(0 0 40px rgba(139, 92, 246, 0.25));
+    animation: float-boxes 8.5s ease-in-out infinite alternate 1.2s;
+}
+
+/* Light mode overrides for background .boxes */
+body.light-mode #home .boxes,
+body.light-mode .home .boxes,
+body.light-mode .hero .boxes,
+body.light-mode #about .boxes,
+body.light-mode .about .boxes {
+    opacity: 0.45;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08));
+}
+
+/* Floating micro-animation */
+@keyframes float-boxes {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-12px) rotate(2deg) scale(1.02);
+    }
+    100% {
+        transform: translateY(-5px) rotate(-1.5deg) scale(0.98);
+    }
+}
+
+/* Responsive adjustment for medium screens */
+@media (max-width: 1024px) and (min-width: 641px) {
+    #home .boxes,
+    .home .boxes,
+    .hero .boxes,
+    #about .boxes,
+    .about .boxes {
+        transform: scale(0.85);
+        right: 2%;
+        top: 8%;
+    }
 }
 .curl3 {
     background-image: url(/assets/img/home/doodle-curl3.svg);

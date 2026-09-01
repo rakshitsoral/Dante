@@ -1019,33 +1019,268 @@ body.light-mode .toc-active {
 /* Light mode styles for related articles */
 html.light-mode .related-articles-title,
 body.light-mode .related-articles-title {
-    color: #000000 !important;
+    color: #0E091D !important;
 }
 
-html.light-mode .related-article-card,
-body.light-mode .related-article-card {
+/* 4 Rotating Brand Pastel Colors for Related Articles Carousel in Light Mode */
+html.light-mode .carousel-slide:nth-child(4n+1) .related-article-card,
+body.light-mode .carousel-slide:nth-child(4n+1) .related-article-card {
+    background-color: #F2E7CE !important; /* Soft Amber / Gold */
+    border-radius: 1.25rem !important;
+    border: none !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+1) .related-article-content,
+body.light-mode .carousel-slide:nth-child(4n+1) .related-article-content {
+    background-color: #F2E7CE !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+1) .related-article-title,
+body.light-mode .carousel-slide:nth-child(4n+1) .related-article-title {
+    color: #854d0e !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+1) .related-article-date,
+body.light-mode .carousel-slide:nth-child(4n+1) .related-article-date {
+    color: #a16207 !important;
+}
+
+html.light-mode .carousel-slide:nth-child(4n+2) .related-article-card,
+body.light-mode .carousel-slide:nth-child(4n+2) .related-article-card {
+    background-color: #D9ECDD !important; /* Soft Green */
+    border-radius: 1.25rem !important;
+    border: none !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+2) .related-article-content,
+body.light-mode .carousel-slide:nth-child(4n+2) .related-article-content {
+    background-color: #D9ECDD !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+2) .related-article-title,
+body.light-mode .carousel-slide:nth-child(4n+2) .related-article-title {
+    color: #166534 !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+2) .related-article-date,
+body.light-mode .carousel-slide:nth-child(4n+2) .related-article-date {
+    color: #15803d !important;
+}
+
+html.light-mode .carousel-slide:nth-child(4n+3) .related-article-card,
+body.light-mode .carousel-slide:nth-child(4n+3) .related-article-card {
+    background-color: #FBDAEB !important; /* Soft Pink */
+    border-radius: 1.25rem !important;
+    border: none !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+3) .related-article-content,
+body.light-mode .carousel-slide:nth-child(4n+3) .related-article-content {
+    background-color: #FBDAEB !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+3) .related-article-title,
+body.light-mode .carousel-slide:nth-child(4n+3) .related-article-title {
+    color: #9d174d !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+3) .related-article-date,
+body.light-mode .carousel-slide:nth-child(4n+3) .related-article-date {
+    color: #be185d !important;
+}
+
+html.light-mode .carousel-slide:nth-child(4n+4) .related-article-card,
+body.light-mode .carousel-slide:nth-child(4n+4) .related-article-card {
+    background-color: #E8DEFD !important; /* Soft Purple */
+    border-radius: 1.25rem !important;
+    border: none !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+4) .related-article-content,
+body.light-mode .carousel-slide:nth-child(4n+4) .related-article-content {
+    background-color: #E8DEFD !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+4) .related-article-title,
+body.light-mode .carousel-slide:nth-child(4n+4) .related-article-title {
+    color: #3730a3 !important;
+}
+html.light-mode .carousel-slide:nth-child(4n+4) .related-article-date,
+body.light-mode .carousel-slide:nth-child(4n+4) .related-article-date {
+    color: #4338ca !important;
+}
+
+/* ── Light Mode Brand Color Overrides for Blog Posts ── */
+html.light-mode,
+body.light-mode {
+    background-color: #f8fafc !important;
+}
+
+/* Breadcrumb in Light Mode */
+html.light-mode .breadcrumb-item a,
+body.light-mode .breadcrumb-item a {
+    color: #475569 !important;
+}
+html.light-mode .breadcrumb-item a:hover,
+body.light-mode .breadcrumb-item a:hover {
+    color: #EC4899 !important;
+}
+html.light-mode .breadcrumb-item.breadcrumb-current,
+body.light-mode .breadcrumb-item.breadcrumb-current {
+    color: #0E091D !important;
+    font-weight: 500;
+}
+
+/* Table of Contents in Light Mode */
+html.light-mode #toc-desktop .border,
+body.light-mode #toc-desktop .border,
+html.light-mode #toc-mobile summary,
+body.light-mode #toc-mobile summary,
+html.light-mode #toc-mobile .border-t-0,
+body.light-mode #toc-mobile .border-t-0 {
+    background-color: #F2E7CE !important; /* Soft Amber / Gold */
+    border: none !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode #toc-desktop h2,
+body.light-mode #toc-desktop h2,
+html.light-mode #toc-mobile summary span,
+body.light-mode #toc-mobile summary span {
+    color: #854d0e !important;
+    font-weight: 700 !important;
+}
+html.light-mode .toc-link,
+body.light-mode .toc-link {
+    color: #475569 !important;
+}
+html.light-mode .toc-link:hover,
+body.light-mode .toc-link:hover {
+    color: #854d0e !important;
+}
+html.light-mode .toc-active,
+body.light-mode .toc-active {
+    color: #854d0e !important;
+    font-weight: 700 !important;
+}
+html.light-mode .toc-active .toc-number,
+body.light-mode .toc-active .toc-number {
+    color: #854d0e !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar Social Share Box in Light Mode */
+html.light-mode aside .bg-gray-900\/50,
+body.light-mode aside .bg-gray-900\/50 {
+    background-color: #FBDAEB !important; /* Soft Pink */
+    border: none !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode aside h2,
+body.light-mode aside h2 {
+    color: #9d174d !important;
+    font-weight: 700 !important;
+}
+
+/* Article Typography in Light Mode */
+html.light-mode .writing h1,
+body.light-mode .writing h1,
+html.light-mode .writing h2,
+body.light-mode .writing h2,
+html.light-mode .writing h3,
+body.light-mode .writing h3,
+html.light-mode .writing h4,
+body.light-mode .writing h4 {
+    color: #0E091D !important;
+}
+html.light-mode .writing p,
+body.light-mode .writing p,
+html.light-mode .writing li,
+body.light-mode .writing li {
+    color: #334155 !important;
+    line-height: 1.8 !important;
+}
+html.light-mode .writing a,
+body.light-mode .writing a {
+    color: #EC4899 !important;
+    text-decoration-color: rgba(236, 72, 153, 0.4) !important;
+}
+html.light-mode .writing a:hover,
+body.light-mode .writing a:hover {
+    color: #BE185D !important;
+    text-decoration-color: #BE185D !important;
+}
+
+/* Highlight Strong Text in Light Mode with Brand Pastels */
+html.light-mode .writing b,
+body.light-mode .writing b,
+html.light-mode .writing strong,
+body.light-mode .writing strong {
+    background-color: #F2E7CE !important; /* Soft Gold */
+    color: #854d0e !important;
+    padding: 0.15rem 0.45rem !important;
+    border-radius: 0.375rem !important;
+    font-weight: 600 !important;
+}
+
+/* Blockquotes in Light Mode */
+html.light-mode .writing blockquote,
+body.light-mode .writing blockquote {
+    background: #FBDAEB !important; /* Soft Pink */
+    border-left: 5px solid #EC4899 !important;
+    border-radius: 1rem !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+    color: #9d174d !important;
+    font-style: normal !important;
+}
+html.light-mode .writing blockquote p,
+body.light-mode .writing blockquote p {
+    color: #334155 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+}
+
+/* Tables in Light Mode */
+html.light-mode .writing table,
+body.light-mode .writing table {
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 1rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+}
+html.light-mode .writing table th,
+body.light-mode .writing table th {
+    background-color: #D9ECDD !important; /* Soft Green */
+    color: #166534 !important;
+    font-weight: 700 !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+html.light-mode .writing table td,
+body.light-mode .writing table td {
     background-color: #ffffff !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #334155 !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-html.light-mode .related-article-card:hover,
-body.light-mode .related-article-card:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* Callout Boxes in Light Mode */
+html.light-mode .callout,
+body.light-mode .callout {
+    background-color: #E8DEFD !important; /* Soft Purple */
+    color: #3730a3 !important;
+    border: 1px solid rgba(55, 48, 163, 0.15) !important;
+    border-radius: 1rem !important;
 }
 
-html.light-mode .related-article-content,
-body.light-mode .related-article-content {
-    background-color: #ffffff !important;
+/* Author Section Bottom in Light Mode */
+html.light-mode .work-section--misc,
+body.light-mode .work-section--misc {
+    background-color: #E8DEFD !important; /* Soft Purple */
+    border-radius: 2rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
 }
-
-html.light-mode .related-article-title,
-body.light-mode .related-article-title {
-    color: #1f2937 !important;
+html.light-mode .work-section--misc p,
+body.light-mode .work-section--misc p {
+    color: #334155 !important;
 }
-
-html.light-mode .related-article-date,
-body.light-mode .related-article-date {
-    color: #6b7280 !important;
+html.light-mode .work-section--misc a.link-misc,
+body.light-mode .work-section--misc a.link-misc {
+    color: #3730a3 !important;
+    font-weight: 700 !important;
 }
 
 /* Dark mode overrides */

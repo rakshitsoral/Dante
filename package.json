@@ -4,8 +4,8 @@
 	"description": "Rakshit is a reliable Digital Marketer, blogger, and a hobbyist developer playing around with HTML, CSS, wordpress and JAMstack.",
 	"scripts": {
 		"clean": "rimraf dist",
-		"eleventy:serve": "cross-env NODE_ENV=development eleventy --serve",
-		"eleventy:watch": "cross-env NODE_ENV=development eleventy --watch",
+		"eleventy:serve": "cross-env NODE_OPTIONS=--max-old-space-size=4096 NODE_ENV=development eleventy --serve",
+		"eleventy:watch": "cross-env NODE_OPTIONS=--max-old-space-size=4096 NODE_ENV=development eleventy --watch",
 		"eleventy:build": "cross-env NODE_ENV=production eleventy",
 		"postcss": "postcss src/assets/css/styles.css -o dist/assets/css/styles.css",
 		"postcss:watch": "postcss src/assets/css/styles.css -o dist/assets/css/styles.css --watch",

@@ -524,13 +524,155 @@ pagination:
     font-size: 1.5rem;
   }
   
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .article-content {
     padding: 20px;
   }
+}
+
+/* ── Light Mode Overrides for Blog ── */
+body.light-mode .hero-badge {
+  background: #FBDAEB !important;
+  color: #9d174d !important;
+  border-color: rgba(157, 23, 77, 0.25) !important;
+}
+
+body.light-mode .blog-hero h1,
+body.light-mode .blog-hero h2 {
+  color: #0E091D !important;
+}
+
+body.light-mode .blog-hero p {
+  color: #475569 !important;
+}
+
+body.light-mode .section-title {
+  color: #0E091D !important;
+}
+
+body.light-mode .section-title::before {
+  background: #EC4899 !important;
+}
+
+/* Featured Card in Light Mode */
+body.light-mode .featured-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode .featured-badge {
+  background-color: #FBDAEB !important;
+  color: #9d174d !important;
+  border: 1px solid rgba(157, 23, 77, 0.25) !important;
+}
+
+body.light-mode .featured-title {
+  color: #0E091D !important;
+}
+
+body.light-mode .featured-card:hover .featured-title {
+  color: #EC4899 !important;
+}
+
+body.light-mode .featured-description {
+  color: #475569 !important;
+}
+
+body.light-mode .featured-meta,
+body.light-mode .featured-date {
+  color: #64748b !important;
+}
+
+/* Article Cards 4-Color Repeating Pastel Palette */
+body.light-mode .article-card {
+  border: none !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.3s ease;
+}
+
+body.light-mode .article-card:nth-child(4n+1) {
+  background-color: #F2E7CE !important; /* Amber / Gold */
+}
+
+body.light-mode .article-card:nth-child(4n+2) {
+  background-color: #D9ECDD !important; /* Soft Green */
+}
+
+body.light-mode .article-card:nth-child(4n+3) {
+  background-color: #FBDAEB !important; /* Soft Pink */
+}
+
+body.light-mode .article-card:nth-child(4n+4) {
+  background-color: #E8DEFD !important; /* Soft Purple */
+}
+
+body.light-mode .article-card .article-title {
+  color: #0E091D !important;
+}
+
+body.light-mode .article-card:hover .article-title {
+  color: #0E091D !important;
+}
+
+body.light-mode .article-card .article-date {
+  color: #64748b !important;
+}
+
+/* Article Tag Badges in Light Mode */
+body.light-mode .tag {
+  backdrop-filter: none !important;
+}
+
+body.light-mode .tag:nth-child(5n+1) {
+  background-color: #F2E7CE !important;
+  color: #854d0e !important;
+  border: 1px solid rgba(133, 77, 14, 0.25) !important;
+}
+
+body.light-mode .tag:nth-child(5n+2) {
+  background-color: #D9ECDD !important;
+  color: #166534 !important;
+  border: 1px solid rgba(22, 101, 52, 0.25) !important;
+}
+
+body.light-mode .tag:nth-child(5n+3) {
+  background-color: #FBDAEB !important;
+  color: #9d174d !important;
+  border: 1px solid rgba(157, 23, 77, 0.25) !important;
+}
+
+body.light-mode .tag:nth-child(5n+4) {
+  background-color: #E8DEFD !important;
+  color: #3730a3 !important;
+  border: 1px solid rgba(55, 48, 163, 0.25) !important;
+}
+
+body.light-mode .tag:nth-child(5n+5) {
+  background-color: #DBEAFE !important;
+  color: #1e40af !important;
+  border: 1px solid rgba(30, 64, 175, 0.25) !important;
+}
+
+/* Pagination in Light Mode */
+body.light-mode .pagination-link {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #0E091D !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+body.light-mode .pagination-link:hover {
+  background: #FBDAEB !important;
+  color: #9d174d !important;
+  border-color: rgba(157, 23, 77, 0.3) !important;
+}
+
+body.light-mode .pagination-link--current {
+  background: #EC4899 !important;
+  color: #ffffff !important;
+  border-color: #EC4899 !important;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35) !important;
 }
 </style>
 

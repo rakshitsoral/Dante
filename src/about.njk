@@ -6,6 +6,7 @@ eleventyNavigation:
   parent: Home
 meta_title: About Rakshit Soral - B2B SaaS Demand Generation Expert
 meta_description: Marketing Manager with 10+ years building omni-channel demand generation engines for B2B SaaS companies through ABM, content strategy, and data-driven campaigns.
+body_class: about
 permalink: /about/
 ---
 
@@ -356,6 +357,103 @@ permalink: /about/
   }
 }
 
+  /* ── Light Mode Overrides for About ── */
+  html.light-mode,
+  body.light-mode {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+  }
+
+  body.light-mode .hero-text .greeting {
+    color: #475569 !important;
+  }
+
+  body.light-mode .hero-text h1 {
+    color: #0E091D !important;
+  }
+
+  body.light-mode .hero-text p {
+    color: #475569 !important;
+  }
+
+  body.light-mode .section-title {
+    color: #0E091D !important;
+  }
+
+  body.light-mode .about-content p {
+    color: #334155 !important;
+  }
+
+  /* Stats Grid (3 Brand Pastel Cards) */
+  body.light-mode .stat-card {
+    border: none !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.3s ease;
+  }
+
+  body.light-mode .stat-card:nth-child(1) {
+    background-color: #F2E7CE !important; /* Gold */
+  }
+  body.light-mode .stat-card:nth-child(1) .number {
+    color: #854d0e !important;
+  }
+
+  body.light-mode .stat-card:nth-child(2) {
+    background-color: #D9ECDD !important; /* Green */
+  }
+  body.light-mode .stat-card:nth-child(2) .number {
+    color: #166534 !important;
+  }
+
+  body.light-mode .stat-card:nth-child(3) {
+    background-color: #FBDAEB !important; /* Pink */
+  }
+  body.light-mode .stat-card:nth-child(3) .number {
+    color: #9d174d !important;
+  }
+
+  body.light-mode .stat-card .label {
+    color: #475569 !important;
+    font-weight: 500;
+  }
+
+  /* Category Badges in Light Mode */
+  body.light-mode .badge {
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  }
+
+  body.light-mode .badge-primary {
+    background-color: #FBDAEB !important;
+    color: #9d174d !important;
+    border-color: rgba(157, 23, 77, 0.25) !important;
+  }
+
+  body.light-mode .badge-gold {
+    background-color: #F2E7CE !important;
+    color: #854d0e !important;
+    border-color: rgba(133, 77, 14, 0.25) !important;
+  }
+
+  body.light-mode .badge-green {
+    background-color: #D9ECDD !important;
+    color: #166534 !important;
+    border-color: rgba(22, 101, 52, 0.25) !important;
+  }
+
+  body.light-mode .badge-green-2 {
+    background-color: #DBEAFE !important;
+    color: #1e40af !important;
+    border-color: rgba(30, 64, 175, 0.25) !important;
+  }
+
+  body.light-mode .badge-red {
+    background-color: #E8DEFD !important;
+    color: #3730a3 !important;
+    border-color: rgba(55, 48, 163, 0.25) !important;
+  }
   </style>
 </head>
 <body>
@@ -364,6 +462,7 @@ permalink: /about/
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-3xl animate-pulse" style="background: rgba(236, 72, 153, 0.1);"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style="background: rgba(139, 92, 246, 0.1); animation-delay: 1s;"></div>
+        <span class="boxes absolute block bg-no-repeat sm:hidden" aria-hidden="true"></span>
     </div>
     <div class="container">
       <div class="hero-content">

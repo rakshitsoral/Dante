@@ -4,6 +4,34 @@ layout: default
 
 
 
+<style>
+/* Light Mode overrides for default work layout */
+body.light-mode .writing {
+    color: #334155 !important;
+}
+body.light-mode .writing header h1 {
+    color: #0E091D !important;
+}
+body.light-mode .writing header time {
+    background-color: #FBDAEB !important;
+    color: #9d174d !important;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+body.light-mode .writing h2 {
+    color: #0E091D !important;
+}
+body.light-mode .writing p {
+    color: #475569 !important;
+}
+body.light-mode .writing ul li {
+    color: #334155 !important;
+}
+</style>
+
 <article class="flex flex-col items-center">
     {% if featured_image %}
     <img src="{{ featured_image | url }}" alt=""{% if featured_image_classes %} class="{{ featured_image_classes }}"{% endif %}>

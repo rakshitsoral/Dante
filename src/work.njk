@@ -3,6 +3,172 @@ layout: default
 title: Rakshit Soral Demand Gen Portfolio
 ---
 <style>
+    /* ── Light Mode Portfolio Grid & Work Page Overrides ── */
+    body.light-mode .work-hero-badge {
+        background-color: #D9ECDD !important;
+        border-color: rgba(22, 101, 52, 0.25) !important;
+        color: #166534 !important;
+    }
+    body.light-mode .work-hero-badge span:first-child {
+        background-color: #166534 !important;
+    }
+    body.light-mode .work-hero-badge span:last-child {
+        color: #166534 !important;
+        opacity: 1 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Hero Tags in Light Mode */
+    body.light-mode .hero-tag-pink {
+        background-color: #FBDAEB !important;
+        color: #9d174d !important;
+        border-color: rgba(157, 23, 77, 0.25) !important;
+    }
+    body.light-mode .hero-tag-green {
+        background-color: #D9ECDD !important;
+        color: #166534 !important;
+        border-color: rgba(22, 101, 52, 0.25) !important;
+    }
+    body.light-mode .hero-tag-gold {
+        background-color: #F2E7CE !important;
+        color: #854d0e !important;
+        border-color: rgba(133, 77, 14, 0.25) !important;
+    }
+    body.light-mode .hero-tag-purple {
+        background-color: #E8DEFD !important;
+        color: #3730a3 !important;
+        border-color: rgba(55, 48, 163, 0.25) !important;
+    }
+
+    /* Filter Buttons in Light Mode */
+    body.light-mode .filter-btn {
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        color: #0E091D !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+    }
+    body.light-mode .filter-btn:hover {
+        background-color: #FBDAEB !important;
+        border-color: #EC4899 !important;
+        color: #9d174d !important;
+    }
+    body.light-mode .filter-btn.active {
+        background-color: #EC4899 !important;
+        color: #ffffff !important;
+        border-color: #EC4899 !important;
+        box-shadow: 0 4px 15px rgba(236, 72, 153, 0.35) !important;
+    }
+
+    /* Portfolio Items in Light Mode */
+    body.light-mode .portfolio-item {
+        border: none !important;
+        border-radius: 1.5rem !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+        transition: all 0.3s ease;
+    }
+    body.light-mode .portfolio-item:nth-child(4n+1) {
+        background-color: #F2E7CE !important; /* Gold/Amber */
+    }
+    body.light-mode .portfolio-item:nth-child(4n+2) {
+        background-color: #D9ECDD !important; /* Green */
+    }
+    body.light-mode .portfolio-item:nth-child(4n+3) {
+        background-color: #FBDAEB !important; /* Pink */
+    }
+    body.light-mode .portfolio-item:nth-child(4n+4) {
+        background-color: #E8DEFD !important; /* Purple */
+    }
+    body.light-mode .portfolio-item h3 {
+        color: #0E091D !important;
+    }
+    body.light-mode .portfolio-item p {
+        color: #475569 !important;
+    }
+    body.light-mode .portfolio-item .item-image {
+        border-radius: 1rem !important;
+        margin: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+    /* Testimonials in Light Mode */
+    body.light-mode .testimonial-slide:nth-child(4n+1) .testimonial-content {
+        background-color: #DBEAFE !important; /* Blue */
+    }
+    body.light-mode .testimonial-slide:nth-child(4n+2) .testimonial-content {
+        background-color: #FBDAEB !important; /* Pink */
+    }
+    body.light-mode .testimonial-slide:nth-child(4n+3) .testimonial-content {
+        background-color: #F2E7CE !important; /* Gold */
+    }
+    body.light-mode .testimonial-slide:nth-child(4n+4) .testimonial-content {
+        background-color: #D9ECDD !important; /* Green */
+    }
+    body.light-mode .testimonial-content {
+        border: none !important;
+        border-radius: 1.5rem !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+    }
+    body.light-mode .testimonial-quote {
+        color: #0E091D !important;
+    }
+    body.light-mode .author-name {
+        color: #0E091D !important;
+    }
+    body.light-mode .author-title {
+        color: #475569 !important;
+    }
+    body.light-mode .quote-icon {
+        color: #EC4899 !important;
+        opacity: 0.6 !important;
+    }
+    body.light-mode .testimonial-nav-btn {
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        color: #0E091D !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    }
+    body.light-mode .testimonial-nav-btn:hover {
+        background-color: #EC4899 !important;
+        border-color: #EC4899 !important;
+        color: #ffffff !important;
+    }
+
+    /* Case Studies (work-list.njk) in Light Mode */
+    body.light-mode .work-section {
+        border-radius: 1.5rem !important;
+        border: none !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04) !important;
+        margin-bottom: 2rem !important;
+        transition: all 0.3s ease;
+    }
+    body.light-mode .work-section:nth-of-type(5n+1) {
+        background-color: #DBEAFE !important; /* Kitecyber - Soft Blue */
+    }
+    body.light-mode .work-section:nth-of-type(5n+2) {
+        background-color: #F2E7CE !important; /* Plutomen - Soft Gold */
+    }
+    body.light-mode .work-section:nth-of-type(5n+3) {
+        background-color: #D9ECDD !important; /* Simform - Soft Green */
+    }
+    body.light-mode .work-section:nth-of-type(5n+4) {
+        background-color: #E8DEFD !important; /* hoojook - Soft Purple */
+    }
+    body.light-mode .work-section:nth-of-type(5n+5) {
+        background-color: #FBDAEB !important; /* GirnarSoft - Soft Pink */
+    }
+    body.light-mode .work-section h2 {
+        color: #0E091D !important;
+    }
+    body.light-mode .work-section p {
+        color: #475569 !important;
+    }
+    body.light-mode .work-section a {
+        color: #0E091D !important;
+        font-weight: 700 !important;
+    }
+    body.light-mode .work-section a:hover {
+        color: #EC4899 !important;
+    }
+
     @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(30px); }
         to { opacity: 1; transform: translateY(0); }
@@ -407,7 +573,7 @@ title: Rakshit Soral Demand Gen Portfolio
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse" style="background: rgba(139, 92, 246, 0.1); animation-delay: 1s;"></div>
     </div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-8 animate-fade-in" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-8 animate-fade-in work-hero-badge" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
             <span class="w-2 h-2 rounded-full animate-pulse" style="background: #419E54;"></span>
             <span class="text-sm opacity-70">Available for new projects</span>
         </div>
@@ -416,10 +582,10 @@ title: Rakshit Soral Demand Gen Portfolio
         </h1>
         <p class="text-xl md:text-2xl opacity-70 mb-4 animate-fade-in" style="animation-delay: 0.2s;">Demand Generation Specialist</p>
         <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style="animation-delay: 0.3s;">
-            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(236, 72, 153, 0.2); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">LinkedIn Ads</span>
-            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(65, 158, 84, 0.2); color: #419E54; border-color: rgba(65, 158, 84, 0.3);">Google Ads</span>
-            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(191, 135, 11, 0.2); color: #BF870B; border-color: rgba(191, 135, 11, 0.3);">Content Marketing</span>
-            <span class="px-4 py-2 rounded-full text-sm font-medium border" style="background: rgba(139, 92, 246, 0.2); color: #8B5CF6; border-color: rgba(139, 92, 246, 0.3);">B2B Growth</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border hero-tag hero-tag-pink" style="background: rgba(236, 72, 153, 0.2); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">LinkedIn Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border hero-tag hero-tag-green" style="background: rgba(65, 158, 84, 0.2); color: #419E54; border-color: rgba(65, 158, 84, 0.3);">Google Ads</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border hero-tag hero-tag-gold" style="background: rgba(191, 135, 11, 0.2); color: #BF870B; border-color: rgba(191, 135, 11, 0.3);">Content Marketing</span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium border hero-tag hero-tag-purple" style="background: rgba(139, 92, 246, 0.2); color: #8B5CF6; border-color: rgba(139, 92, 246, 0.3);">B2B Growth</span>
         </div>
         <p class="text-lg opacity-70 max-w-2xl mx-auto mb-10 animate-fade-in" style="animation-delay: 0.4s;">
             I help B2B companies generate high-quality <strong class="box-blue mx-1">leads</strong> and scale their <strong class="box-green mx-1">revenue</strong> through strategic paid advertising, compelling content, and data-driven campaigns.

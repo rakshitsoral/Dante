@@ -158,6 +158,17 @@
       "icon": "🎥",
       "color": "#EC4899",
       "url": "https://www.youtube.com/watch?v=6Ljz6KqoBeI"
+    },
+    {
+      "id": 16,
+      "title": "Kitecyber Mobile Device Management Explainer Video",
+      "category": "videos",
+      "company": "Kitecyber",
+      "description": "Conceptualized the script and created the explainer video showcasing mobile device management solutions.",
+      "metrics": "GTM & brand awareness",
+      "icon": "🎥",
+      "color": "#EC4899",
+      "url": "https://www.youtube.com/watch?v=ShhFslLubLg"
     }
   ]
 }
