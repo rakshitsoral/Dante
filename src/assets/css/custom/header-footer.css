@@ -211,37 +211,65 @@ body.light-mode .nav-cta-btn:hover {
 @media (max-width: 840px) {
     #header {
         border-radius: 1.25rem;
-        padding: 0.75rem 1rem;
+        padding: 0.6rem 0.75rem;
         margin-top: 0.5rem;
         margin-bottom: 1.25rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .header-inner {
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .logo-wrapper {
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    
+    .logo-img {
+        height: 36px;
+        width: auto;
+        max-width: 140px;
+        object-fit: contain;
+    }
+    
+    .header-actions {
+        flex-shrink: 0;
+    }
+    
+    .nav-cta-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+        gap: 0.35rem;
     }
     
     .nav-capsule {
         order: 3;
         width: 100%;
-        margin-top: 0.5rem;
-        justify-content: space-around;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 0.4rem;
+        justify-content: space-between;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         padding: 0.2rem;
+        gap: 0.2rem;
+        box-sizing: border-box;
     }
     
     .nav-item {
-        padding: 0.4rem 0.65rem;
-        font-size: 0.8125rem;
-    }
-    
-    .logo-img {
-        height: 46px;
-    }
-    
-    .nav-cta-btn {
-        padding: 0.45rem 0.85rem;
-        font-size: 0.8125rem;
+        flex: 1 1 auto;
+        text-align: center;
+        padding: 0.35rem 0.45rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
     }
 }
 
@@ -294,19 +322,8 @@ footer aside {
 }
 
 /* Responsive sizes for small screens */
-@media (max-width: 639px) {
+@media (max-width: 768px) {
     .balloon-container {
-        right: 1.5rem; /* Keep aligned with theme toggle on mobile */
-    }
-    .header-balloon {
-        width: 70px; /* Smaller mobile size */
-    }
-    @keyframes balloonFloat {
-        0%, 100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        50% {
-            transform: translateY(-8px) rotate(1deg);
-        }
+        display: none !important;
     }
 }

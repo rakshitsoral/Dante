@@ -206,11 +206,11 @@
     </div>
 
     <!-- Page wrapper -->
-    <div class="max-w-6xl w-full mx-auto px-2 flex-grow">
+    <div class="max-w-6xl w-full mx-auto px-4 sm:px-2 flex-grow box-border overflow-hidden">
 
       {% include "partials/header.njk" %}
 
-      <main>
+      <main class="relative w-full overflow-hidden">
         {{ content | safe }}
       </main>
 
